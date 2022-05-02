@@ -6,9 +6,6 @@ import  MainView  from './components/main-view/main-view';
 // Import statement to indicate that you need to bundle './index.scss'
 import './index.scss';
 
-// Bundles './index.scss' file
-import './index.scss';
-
 // Main component 
 class MyFlixApplication extends React.Component {
     render() {
