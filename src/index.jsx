@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 
 // Main component 
-class myFlixApplication extends React.Component {
+class MyFlixApplication extends React.Component {
     render() {
         return (
             <div className="my-flix">

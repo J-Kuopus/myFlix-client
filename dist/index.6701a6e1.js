@@ -948,7 +948,7 @@ var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
 // Bundles './index.scss' file
 var _indexScss = require("./index.scss");
 // Main component 
-class myFlixApplication extends _reactDefault.default.Component {
+class MyFlixApplication extends _reactDefault.default.Component {
     render() {
         return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
             className: "my-flix",
