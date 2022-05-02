@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+// Imports MainView component
+import { MainView } from './components/main-view/main-view';
 
 // Bundles './index.scss' file
 import './index.scss';
