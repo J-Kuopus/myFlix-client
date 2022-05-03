@@ -25360,7 +25360,7 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 class MovieCard extends _reactDefault.default.Component {
     render() {
-        const { movieData  } = this.props;
+        const { movieData  } = this.props; // Extracts MovieCard data
         return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
             className: "movie-card",
             children: movie.Title
