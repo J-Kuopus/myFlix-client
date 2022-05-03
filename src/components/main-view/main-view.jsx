@@ -6,7 +6,7 @@ import { MovieCard } from '../movie-card/movie-card';
 // Imports MovieView component
 import { MovieView } from '../movie-view/movie-view';
 
-export class MainView extends React.Component {
+class MainView extends React.Component {
 
     constructor(){
         super();
@@ -88,5 +88,5 @@ export class MainView extends React.Component {
         }
     }
                     
-            
+ export default MainView;           
 
