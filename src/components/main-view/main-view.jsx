@@ -65,8 +65,9 @@ export class MainView extends React.Component {
                     "ImagePath": "logans-run.png",
                     "Featured": true
                   }
-            ]
-        }
+            ],
+            selectedMovie: null
+        };
     }
 
     render() {

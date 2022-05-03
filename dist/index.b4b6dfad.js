@@ -25180,7 +25180,8 @@ class MainView extends _reactDefault.default.Component {
                     "ImagePath": "logans-run.png",
                     "Featured": true
                 }
-            ]
+            ],
+            selectedMovie: null
         };
     }
     render() {
@@ -25190,7 +25191,7 @@ class MainView extends _reactDefault.default.Component {
             children: "The list is empty!"
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 75,
+            lineNumber: 76,
             columnNumber: 41
         }, this);
         return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -25199,13 +25200,13 @@ class MainView extends _reactDefault.default.Component {
                     movieData: movie
                 }, movie._id, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 79,
+                    lineNumber: 80,
                     columnNumber: 38
                 }, this)
             )
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 78,
+            lineNumber: 79,
             columnNumber: 13
         }, this);
     }
