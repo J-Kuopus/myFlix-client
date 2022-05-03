@@ -3,6 +3,9 @@ import React from 'react';
 // Imports MovieCard component
 import { MovieCard } from '../movie-card/movie-card';
 
+// Imports MovieView component
+import { MovieView } from '../movie-view/movie-view';
+
 export class MainView extends React.Component {
 
     constructor(){
