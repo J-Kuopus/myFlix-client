@@ -25173,7 +25173,7 @@ class MainView extends _reactDefault.default.Component {
         }, this);
         return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
             className: "main-view",
-            children: movies.map((movie)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieCard.MovieCard, {}, void 0, false, {
+            children: movies.map((movie)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieCard.MovieCard, {}, movie._id, false, {
                     fileName: "src/components/main-view/main-view.jsx",
                     lineNumber: 79,
                     columnNumber: 38
