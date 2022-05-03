@@ -25360,12 +25360,13 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 class MovieCard extends _reactDefault.default.Component {
     render() {
+        const { movieData  } = this.props;
         return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
             className: "movie-card",
-            children: "some title"
+            children: movie.Title
         }, void 0, false, {
             fileName: "src/components/movie-card/movie-card.jsx",
-            lineNumber: 5,
+            lineNumber: 6,
             columnNumber: 16
         }, this);
     }
