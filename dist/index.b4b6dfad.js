@@ -25160,30 +25160,29 @@ class MainView extends _reactDefault.default.Component {
         };
     }
     render() {
-        const movies = this.state.movies;
+        const { movies  } = this.state;
         if (movies.length === 0) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
             className: "main-view",
             children: "The list is empty!"
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
             lineNumber: 72,
-            columnNumber: 20
+            columnNumber: 41
         }, this);
-        else return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+        return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
             className: "main-view",
-            children: movies.map((movie)=>{
-                return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+            children: movies.map((movie)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
                     children: movie.Title
-                }, void 0, false, {
+                }, movie._id, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 77,
-                    columnNumber: 32
-                }, this);
-            })
+                    lineNumber: 76,
+                    columnNumber: 38
+                }, this)
+            )
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
             lineNumber: 75,
-            columnNumber: 17
+            columnNumber: 13
         }, this);
     }
 }
