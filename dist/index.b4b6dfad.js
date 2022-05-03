@@ -25185,13 +25185,20 @@ class MainView extends _reactDefault.default.Component {
         };
     }
     render() {
-        const { movies  } = this.state;
+        const { movies , selectedMovie  } = this.state;
+        if (selectedMovie) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(MovieView, {
+            movie: selectedMovie
+        }, void 0, false, {
+            fileName: "src/components/main-view/main-view.jsx",
+            lineNumber: 76,
+            columnNumber: 35
+        }, this);
         if (movies.length === 0) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
             className: "main-view",
             children: "The list is empty!"
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 76,
+            lineNumber: 78,
             columnNumber: 41
         }, this);
         return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -25200,13 +25207,13 @@ class MainView extends _reactDefault.default.Component {
                     movieData: movie
                 }, movie._id, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 80,
+                    lineNumber: 82,
                     columnNumber: 38
                 }, this)
             )
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 79,
+            lineNumber: 81,
             columnNumber: 13
         }, this);
     }
