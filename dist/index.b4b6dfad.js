@@ -1011,6 +1011,7 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactDom = require("react-dom");
 var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
+var _client = require("react-dom/client");
 // Imports MainView component
 var _mainView = require("./components/main-view/main-view");
 var _mainViewDefault = parcelHelpers.interopDefault(_mainView);
@@ -1021,7 +1022,7 @@ class MyFlixApplication extends _reactDefault.default.Component {
     render() {
         return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_mainViewDefault.default, {}, void 0, false, {
             fileName: "src/index.jsx",
-            lineNumber: 13,
+            lineNumber: 15,
             columnNumber: 13
         }, this);
     }
@@ -1036,7 +1037,7 @@ _reactDomDefault.default.render(/*#__PURE__*/ _reactDefault.default.createElemen
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom":"j6uA9","./components/main-view/main-view":"4gflv","./index.scss":"lJZlQ","@parcel/transformer-js/src/esmodule-helpers.js":"h1Kx6","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom":"j6uA9","./components/main-view/main-view":"4gflv","./index.scss":"lJZlQ","@parcel/transformer-js/src/esmodule-helpers.js":"h1Kx6","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko","react-dom/client":"lOjBx"}],"iTorj":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/react-jsx-dev-runtime.development.js');
 
@@ -25194,7 +25195,40 @@ class MainView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"h1Kx6","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko","../movie-card/movie-card":"bwuIu"}],"h1Kx6":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"bwuIu","@parcel/transformer-js/src/esmodule-helpers.js":"h1Kx6","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko"}],"bwuIu":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$67b2.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MovieCard", ()=>MovieCard
+);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+class MovieCard extends _reactDefault.default.Component {
+    render() {
+        const { movieData  } = this.props; // Extracts MovieCard data
+        return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+            className: "movie-card",
+            children: movie.Title
+        }, void 0, false, {
+            fileName: "src/components/movie-card/movie-card.jsx",
+            lineNumber: 6,
+            columnNumber: 16
+        }, this);
+    }
+}
+
+  $parcel$ReactRefreshHelpers$67b2.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"h1Kx6","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko"}],"h1Kx6":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -25344,39 +25378,27 @@ function registerExportsForReactRefresh(module) {
     }
 }
 
-},{"react-refresh/runtime":"h5dJR"}],"bwuIu":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$67b2.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "MovieCard", ()=>MovieCard
-);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-class MovieCard extends _reactDefault.default.Component {
-    render() {
-        const { movieData  } = this.props; // Extracts MovieCard data
-        return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-            className: "movie-card",
-            children: movie.Title
-        }, void 0, false, {
-            fileName: "src/components/movie-card/movie-card.jsx",
-            lineNumber: 6,
-            columnNumber: 16
-        }, this);
+},{"react-refresh/runtime":"h5dJR"}],"lJZlQ":[function() {},{}],"lOjBx":[function(require,module,exports) {
+'use strict';
+var m = require('react-dom');
+var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+exports.createRoot = function(c, o) {
+    i.usingClientEntryPoint = true;
+    try {
+        return m.createRoot(c, o);
+    } finally{
+        i.usingClientEntryPoint = false;
     }
-}
+};
+exports.hydrateRoot = function(c, h, o) {
+    i.usingClientEntryPoint = true;
+    try {
+        return m.hydrateRoot(c, h, o);
+    } finally{
+        i.usingClientEntryPoint = false;
+    }
+};
 
-  $parcel$ReactRefreshHelpers$67b2.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"h1Kx6","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko"}],"lJZlQ":[function() {},{}]},["bCcsh","5phmu","d8Dch"], "d8Dch", "parcelRequireaec4")
+},{"react-dom":"j6uA9"}]},["bCcsh","5phmu","d8Dch"], "d8Dch", "parcelRequireaec4")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
