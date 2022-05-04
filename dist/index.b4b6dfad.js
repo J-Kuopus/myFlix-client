@@ -25249,11 +25249,11 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 class MovieCard extends _reactDefault.default.Component {
     render() {
-        const { movie  } = this.props; // Extracts MovieCard data
+        const { movie , onMovieClick  } = this.props; // Extracts MovieCard data
         return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
             className: "movie-card",
             onClick: ()=>{
-                this.state.selectedMovie = movie;
+                onMovieClick(movie);
             },
             children: movie.Title
         }, void 0, false, {
