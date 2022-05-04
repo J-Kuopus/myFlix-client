@@ -80,21 +80,21 @@ class MainView extends React.Component {
     }
 
     render() {
-        const { movies, selectedMovie } = this.state;
+        const { movies, selectedMovie } = this.state; // Deconstructed variables
 
-        if (selectedMovie) return <MovieView movie={selectedMovie} />;
+        if (selectedMovie) return <MovieView movie={selectedMovie} />; // Returns MovieView of selected movie
 
-        if (movies.length === 0) return <div className="main-view">The list is empty!</div>;
+        if (movies.length === 0) return <div className="main-view">The list is empty!</div>; // Display message if no movies are present
 
         return (
             <div className="main-view">
                 {movies.map(movie => 
-                <MovieCard key={movie._id} movie={movie} onMovieClick={ (movie) => { 
+                <MovieCard key={movie._id} movie={movie} onMovieClick={ (movie) => { // Display MovieCard data when movie is clicked
                   this.setSelectedMovie(movie) }}/>)}
                 </div>
             );
         }
     }
                     
- export default MainView;           
+ export default MainView; // Defines MainView as the default view          
 

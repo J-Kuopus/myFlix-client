@@ -25190,14 +25190,14 @@ class MainView extends _reactDefault.default.Component {
         });
     }
     render() {
-        const { movies , selectedMovie  } = this.state;
+        const { movies , selectedMovie  } = this.state; // Deconstructed variables
         if (selectedMovie) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieView.MovieView, {
             movie: selectedMovie
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
             lineNumber: 85,
             columnNumber: 35
-        }, this);
+        }, this); // Returns MovieView of selected movie
         if (movies.length === 0) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
             className: "main-view",
             children: "The list is empty!"
@@ -25205,7 +25205,7 @@ class MainView extends _reactDefault.default.Component {
             fileName: "src/components/main-view/main-view.jsx",
             lineNumber: 87,
             columnNumber: 41
-        }, this);
+        }, this); // Display message if no movies are present
         return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
             className: "main-view",
             children: movies.map((movie1)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieCard.MovieCard, {
@@ -25226,7 +25226,7 @@ class MainView extends _reactDefault.default.Component {
         }, this);
     }
 }
-exports.default = MainView;
+exports.default = MainView; // Defines MainView as the default view          
 
   $parcel$ReactRefreshHelpers$f7a6.postlude(module);
 } finally {
