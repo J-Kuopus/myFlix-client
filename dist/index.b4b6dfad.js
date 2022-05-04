@@ -25139,7 +25139,7 @@ class MainView extends _reactDefault.default.Component {
                         "Bio": "Dario Argento is an Italian film director, producer, screenwriter, actor and critic. His influential work in the horror genre during the 1970s and 1980s, has led him to being referred to as the 'Master of Thrill' and the 'Master of Horror'.",
                         "Birth": "1940"
                     },
-                    "ImagePath": "suspiria.png",
+                    "ImagePath": require("../../../img/suspiria.png"),
                     "Featured": true
                 },
                 {
@@ -25158,7 +25158,7 @@ class MainView extends _reactDefault.default.Component {
                         "Birth": "1889",
                         "Death": "1949"
                     },
-                    "ImagePath": "wizard-of-oz.png",
+                    "ImagePath": require("../../../img/wizard-of-oz.png"),
                     "Featured": true
                 },
                 {
@@ -25177,7 +25177,7 @@ class MainView extends _reactDefault.default.Component {
                         "Birth": "1920",
                         "Death": "2018"
                     },
-                    "ImagePath": "logans-run.png",
+                    "ImagePath": require("../../../img/logans-run.png"),
                     "Featured": true
                 }
             ],
@@ -25236,7 +25236,7 @@ exports.default = MainView; // Defines MainView as the default view
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","@parcel/transformer-js/src/esmodule-helpers.js":"h1Kx6","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko"}],"bwuIu":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","@parcel/transformer-js/src/esmodule-helpers.js":"h1Kx6","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko","../../../img/suspiria.png":"leZRe","../../../img/wizard-of-oz.png":"96uVY","../../../img/logans-run.png":"60v8D"}],"bwuIu":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -25530,6 +25530,49 @@ class MovieView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"h1Kx6","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko"}],"lJZlQ":[function() {},{}]},["bCcsh","5phmu","d8Dch"], "d8Dch", "parcelRequireaec4")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"h1Kx6","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko"}],"leZRe":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('byUka') + "suspiria.db178346.png" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"d2061"}],"d2061":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ('' + err.stack).match(/(https?|file|ftp|(chrome|moz)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return '/';
+}
+function getBaseURL(url) {
+    return ('' + url).replace(/^((?:https?|file|ftp|(chrome|moz)-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ('' + url).match(/(https?|file|ftp|(chrome|moz)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error('Origin not found');
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"96uVY":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('byUka') + "wizard-of-oz.cb6644d4.png" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"d2061"}],"60v8D":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('byUka') + "logans-run.7e70ffe3.png" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"d2061"}],"lJZlQ":[function() {},{}]},["bCcsh","5phmu","d8Dch"], "d8Dch", "parcelRequireaec4")
 
 //# sourceMappingURL=index.b4b6dfad.js.map

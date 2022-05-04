@@ -27,7 +27,7 @@ class MainView extends React.Component {
                       "Bio": "Dario Argento is an Italian film director, producer, screenwriter, actor and critic. His influential work in the horror genre during the 1970s and 1980s, has led him to being referred to as the 'Master of Thrill' and the 'Master of Horror'.",
                       "Birth": "1940"
                     },
-                    "ImagePath": "suspiria.png",
+                    "ImagePath": require("../../../img/suspiria.png"),
                     "Featured": true
                   },
                   {
@@ -46,7 +46,7 @@ class MainView extends React.Component {
                       "Birth": "1889",
                       "Death": "1949"
                     },
-                    "ImagePath": "wizard-of-oz.png",
+                    "ImagePath": require("../../../img/wizard-of-oz.png"),
                     "Featured": true
                   },
                   {
@@ -65,7 +65,7 @@ class MainView extends React.Component {
                       "Birth": "1920",
                       "Death": "2018"
                     },
-                    "ImagePath": "logans-run.png",
+                    "ImagePath": require("../../../img/logans-run.png"),
                     "Featured": true
                   }
             ],
