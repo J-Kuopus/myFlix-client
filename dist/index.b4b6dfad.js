@@ -25212,8 +25212,8 @@ class MainView extends _reactDefault.default.Component {
                     }
                 }, movie._id, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 85,
-                    columnNumber: 38
+                    lineNumber: 86,
+                    columnNumber: 17
                 }, this)
             )
         }, void 0, false, {
