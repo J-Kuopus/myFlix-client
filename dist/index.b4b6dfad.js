@@ -25180,7 +25180,8 @@ class MainView extends _reactDefault.default.Component {
                     "ImagePath": "logans-run.png",
                     "Featured": true
                 }
-            ]
+            ],
+            selectedMovie: null
         };
     }
     setSelectedMovie(newSelectedMovie) {
@@ -25207,12 +25208,12 @@ class MainView extends _reactDefault.default.Component {
         }, this);
         return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
             className: "main-view",
-            children: movies.map((movie)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieCard.MovieCard, {
-                    movie: movie,
-                    onMovieClick: (newSelectedMovie)=>{
+            children: movies.map((movie1)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieCard.MovieCard, {
+                    movie: movie1,
+                    onMovieClick: (movie)=>{
                         this.setSelectedMovie(movie);
                     }
-                }, movie._id, false, {
+                }, movie1._id, false, {
                     fileName: "src/components/main-view/main-view.jsx",
                     lineNumber: 92,
                     columnNumber: 17

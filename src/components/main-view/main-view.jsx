@@ -69,7 +69,7 @@ class MainView extends React.Component {
                     "Featured": true
                   }
             ],
-            //selectedMovie: null
+            selectedMovie: null
         };
     }
 
@@ -89,7 +89,7 @@ class MainView extends React.Component {
         return (
             <div className="main-view">
                 {movies.map(movie => 
-                <MovieCard key={movie._id} movie={movie} onMovieClick={newSelectedMovie => { 
+                <MovieCard key={movie._id} movie={movie} onMovieClick={ (movie) => { 
                   this.setSelectedMovie(movie) }}/>)}
                 </div>
             );
