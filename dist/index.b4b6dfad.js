@@ -25191,13 +25191,7 @@ class MainView extends _reactDefault.default.Component {
     }
     render() {
         const { movies , selectedMovie  } = this.state; // Deconstructed variables
-        if (selectedMovie) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieView.MovieView, {
-            movie: selectedMovie
-        }, void 0, false, {
-            fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 85,
-            columnNumber: 35
-        }, this); // Returns MovieView of selected movie
+        /*if (selectedMovie) return <MovieView movie={selectedMovie} />;*/ // Returns MovieView of selected movie
         if (movies.length === 0) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
             className: "main-view",
             children: "The list is empty!"
@@ -25208,15 +25202,24 @@ class MainView extends _reactDefault.default.Component {
         }, this); // Display message if no movies are present
         return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
             className: "main-view",
-            children: movies.map((movie1)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieCard.MovieCard, {
+            children: selectedMovie ? /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieView.MovieView, {
+                movie: selectedMovie,
+                onBackClick: (newSelectedMovie)=>{
+                    this.setSelectedMovie(newSelectedMovie);
+                }
+            }, void 0, false, {
+                fileName: "src/components/main-view/main-view.jsx",
+                lineNumber: 92,
+                columnNumber: 17
+            }, this) : movies.map((movie1)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieCard.MovieCard, {
                     movie: movie1,
                     onMovieClick: (movie)=>{
                         this.setSelectedMovie(movie);
                     }
                 }, movie1._id, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 92,
-                    columnNumber: 17
+                    lineNumber: 95,
+                    columnNumber: 19
                 }, this)
             )
         }, void 0, false, {
