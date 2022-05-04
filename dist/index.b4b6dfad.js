@@ -25205,8 +25205,8 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             children: movies.map((movie)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieCard.MovieCard, {
                     movie: movie,
-                    onClick: ()=>{
-                        this.state.selectedMovie = movie;
+                    onMovieClick: (newSelectedMovie)=>{
+                        this.state.selectedMovie = newSelectedMovie;
                     }
                 }, movie._id, false, {
                     fileName: "src/components/main-view/main-view.jsx",
