@@ -25180,9 +25180,13 @@ class MainView extends _reactDefault.default.Component {
                     "ImagePath": "logans-run.png",
                     "Featured": true
                 }
-            ],
-            selectedMovie: null
+            ]
         };
+    }
+    setSelectedMovie(newSelectedMovie) {
+        this.setState({
+            selectedMovie: newSelectedMovie
+        });
     }
     render() {
         const { movies , selectedMovie  } = this.state;
@@ -25190,7 +25194,7 @@ class MainView extends _reactDefault.default.Component {
             movie: selectedMovie
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 79,
+            lineNumber: 85,
             columnNumber: 35
         }, this);
         if (movies.length === 0) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -25198,7 +25202,7 @@ class MainView extends _reactDefault.default.Component {
             children: "The list is empty!"
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 81,
+            lineNumber: 87,
             columnNumber: 41
         }, this);
         return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -25206,19 +25210,17 @@ class MainView extends _reactDefault.default.Component {
             children: movies.map((movie)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieCard.MovieCard, {
                     movie: movie,
                     onMovieClick: (newSelectedMovie)=>{
-                        this.setState({
-                            selectedMovie: newSelectedMovie
-                        });
+                        this.setSelectedMovie(movie);
                     }
                 }, movie._id, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 86,
+                    lineNumber: 92,
                     columnNumber: 17
                 }, this)
             )
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 84,
+            lineNumber: 90,
             columnNumber: 13
         }, this);
     }
