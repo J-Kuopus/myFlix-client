@@ -40,7 +40,7 @@ class MainView extends React.Component {
 
         /*if (selectedMovie) return <MovieView movie={selectedMovie} />;*/ // Returns MovieView of selected movie
 
-        if (movies.length === 0) return <div className="main-view">The list is empty!</div>; // Display message if no movies are present
+        if (movies.length === 0) return <div className="main-view" />; // Display message if no movies are present
 
         return (
             <div className="main-view">
