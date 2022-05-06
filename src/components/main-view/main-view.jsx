@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 // Imports MovieCard component
 import { MovieCard } from '../movie-card/movie-card';
