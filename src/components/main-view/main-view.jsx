@@ -17,6 +17,18 @@ class MainView extends React.Component {
         };
     }
 
+    componentDidMount(){
+      axios.get('https://powerful-coast-48240.herokuapp.com/movies')
+      .then(response => {
+        this.setState({
+          movies: response.data
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    }
+
     setSelectedMovie(newSelectedMovie) {
       this.setState({
         selectedMovie: newSelectedMovie
