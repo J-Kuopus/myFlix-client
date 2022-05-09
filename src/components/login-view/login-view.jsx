@@ -9,7 +9,7 @@ export function LoginView(props) {
         e.preventDefault();
         console.log(username, password);
         // Send a request to the server for authentication
-        // then call props.onLoggenIn(username)
+        // then call props.onLoggedIn(username)
         props.onLoggedIn(username);
     };
 
