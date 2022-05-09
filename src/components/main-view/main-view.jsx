@@ -4,6 +4,9 @@ import axios from 'axios';
 // Imports LoginView component
 import { LoginView } from '../login-view/login-view';
 
+// Imports RegistrationView component
+import { RegistrationView } from '../registration-view/registration-view';
+
 // Imports MovieCard component
 import { MovieCard } from '../movie-card/movie-card';
 
