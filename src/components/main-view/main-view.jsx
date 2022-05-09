@@ -52,6 +52,10 @@ class MainView extends React.Component {
     render() {
         const { movies, selectedMovie } = this.state; // Deconstructed variables
 
+        /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are 
+        passed as a prop to the LoginView */
+        if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+
         /*if (selectedMovie) return <MovieView movie={selectedMovie} />;*/ // Returns MovieView of selected movie
 
         if (movies.length === 0) return <div className="main-view" />; // Display message if no movies are present
