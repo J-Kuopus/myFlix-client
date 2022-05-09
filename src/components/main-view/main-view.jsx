@@ -57,6 +57,8 @@ class MainView extends React.Component {
         // Before the movies have been loaded
         if (movies.length === 0) return <div className="main-view" />; 
 
+        /* If the state of 'selectedMovie' is not null, that selected movie will be returned, otherwise, all 
+        movies will be returned */
         return (
             <div className="main-view">
               {selectedMovie
