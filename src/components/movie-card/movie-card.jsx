@@ -9,3 +9,10 @@ export class MovieCard extends React.Component {
             onMovieClick(movie); }}>{movie.Title}</div>;
     }
 }
+
+MovieCard.propTypes = {
+    movie: PropTypes.shape({
+        Title: PropTypes.string
+    }).isRequired,
+    onMovieClick: PropTypes.func.isRequired
+};
