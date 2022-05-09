@@ -1,6 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 
+// Imports LoginView component
+import { LoginView } from '../login-view/login-view';
+
 // Imports MovieCard component
 import { MovieCard } from '../movie-card/movie-card';
 
