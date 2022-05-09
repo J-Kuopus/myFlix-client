@@ -46,6 +46,13 @@ class MainView extends React.Component {
       });
     }
 
+    // When a user sucessfully registers account
+      onRegistration(register) {
+      this.setState({
+        register
+      });
+    }
+
     // When a user successfully logs in, this function updates the 'user' property in state to that particular user
       onLoggedIn(user) {
       this.setState({
