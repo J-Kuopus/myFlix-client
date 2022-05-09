@@ -37,6 +37,10 @@ export class MovieView extends React.Component {
                     <span className="label">Bio: </span>
                     <span className="value">{movie.Director.Bio}</span>
                 </div>
+                <div className="director-birth">
+                    <span className="label">Birth: </span>
+                    <span className="value">{movie.Director.Birth}</span>
+                </div>
                 <button onClick={() => { onBackClick(null); }}>Back</button>
             </div>
         );
