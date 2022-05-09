@@ -34,16 +34,14 @@ class MainView extends React.Component {
       });
     }
     /* When a movie is clicked, this function is invoked and updates the state of the 'selectedMovie--property to that movie*/
-
-    setSelectedMovie(newSelectedMovie) {
-      this.setState({
+      setSelectedMovie(newSelectedMovie) {
+        this.setState({
         selectedMovie: newSelectedMovie
       });
     }
 
     // When a user successfully logs in, this function updates the 'user' property in state to that particular user
-    
-    onLoggedIn(user) {
+      onLoggedIn(user) {
       this.setState({
         user
       });
@@ -56,9 +54,8 @@ class MainView extends React.Component {
         passed as a prop to the LoginView */
         if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
-        /*if (selectedMovie) return <MovieView movie={selectedMovie} />;*/ // Returns MovieView of selected movie
-
-        if (movies.length === 0) return <div className="main-view" />; // Display message if no movies are present
+        // Before the movies have been loaded
+        if (movies.length === 0) return <div className="main-view" />; 
 
         return (
             <div className="main-view">
