@@ -25142,16 +25142,12 @@ class MainView extends _reactDefault.default.Component {
         });
     }
     render() {
-        const { movies , selectedMovie , user: user1 , register: register1  } = this.state; // Deconstructed variables
+        const { movies , selectedMovie , user: user1 , register  } = this.state; // Deconstructed variables
         // If user isn't registered, return RegistrationView
-        if (!register1) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_registrationView.RegistrationView, {
-            onRegistration: (register)=>this.onRegistration(register)
-        }, void 0, false, {
-            fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 69,
-            columnNumber: 15
-        }, this);
-        /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are 
+        /*if (!register) 
+      
+      return (<RegistrationView onRegistration={(register) => 
+        this.onRegistration(register)} />);*/ /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are 
       passed as a prop to the LoginView */ if (!user1) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_loginView.LoginView, {
             onLoggedIn: (user)=>this.onLoggedIn(user)
         }, void 0, false, {
@@ -29990,7 +29986,7 @@ MovieView.propTypes = {
         Director: _propTypesDefault.default.shape({
             Name: _propTypesDefault.default.string.isRequired,
             Bio: _propTypesDefault.default.string.isRequired,
-            Birth: _propTypesDefault.default.number.isRequired
+            Birth: _propTypesDefault.default.string.isRequired
         })
     }).isRequired
 };
