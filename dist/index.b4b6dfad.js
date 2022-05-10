@@ -28654,13 +28654,6 @@ function LoginView(props) {
 }
 _s(LoginView, "3ov/oLyrzOSxGWZTRNwIKc62Kqo=");
 _c = LoginView;
-LoginView.propTypes = {
-    user: _propTypesDefault.default.shape({
-        username: _propTypesDefault.default.string.isRequired,
-        password: _propTypesDefault.default.string.isRequired
-    }),
-    onLoggedIn: _propTypesDefault.default.func.isRequired
-};
 var _c;
 $RefreshReg$(_c, "LoginView");
 
