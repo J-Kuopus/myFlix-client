@@ -25149,15 +25149,15 @@ class MainView extends _reactDefault.default.Component {
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
             lineNumber: 67,
-            columnNumber: 32
+            columnNumber: 30
         }, this);
         /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are 
-        passed as a prop to the LoginView */ if (!user1) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_loginView.LoginView, {
+      passed as a prop to the LoginView */ if (!user1) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_loginView.LoginView, {
             onLoggedIn: (user)=>this.onLoggedIn(user)
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
             lineNumber: 72,
-            columnNumber: 27
+            columnNumber: 25
         }, this);
         // Before the movies have been loaded
         if (movies.length === 0) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -25165,10 +25165,10 @@ class MainView extends _reactDefault.default.Component {
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
             lineNumber: 75,
-            columnNumber: 41
+            columnNumber: 39
         }, this);
         /* If the state of 'selectedMovie' is not null, that selected movie will be returned, otherwise, all 
-        movies will be returned */ return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+      movies will be returned */ return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
             className: "main-view",
             children: selectedMovie ? /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieView.MovieView, {
                 movie: selectedMovie,
@@ -25178,7 +25178,7 @@ class MainView extends _reactDefault.default.Component {
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
                 lineNumber: 82,
-                columnNumber: 17
+                columnNumber: 15
             }, this) : movies.map((movie1)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieCard.MovieCard, {
                     movie: movie1,
                     onMovieClick: (movie)=>{
@@ -25186,14 +25186,14 @@ class MainView extends _reactDefault.default.Component {
                     }
                 }, movie1._id, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 85,
-                    columnNumber: 19
+                    lineNumber: 86,
+                    columnNumber: 15
                 }, this)
             )
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
             lineNumber: 80,
-            columnNumber: 13
+            columnNumber: 9
         }, this);
     }
 }
