@@ -25142,33 +25142,29 @@ class MainView extends _reactDefault.default.Component {
         });
     }
     render() {
-        const { movies , selectedMovie , user: user1 , register: register1  } = this.state; // Deconstructed variables
+        const { movies , selectedMovie , user: user1 , register  } = this.state; // Deconstructed variables
         // If user isn't registered, return RegistrationView
-        if (!register1) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_registrationView.RegistrationView, {
-            onRegistration: (register)=>this.onRegistration(register)
-        }, void 0, false, {
-            fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 67,
-            columnNumber: 32
-        }, this);
-        /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are 
-        passed as a prop to the LoginView */ if (!user1) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_loginView.LoginView, {
+        /*if (!register) 
+      
+      return (<RegistrationView onRegistration={(register) => 
+        this.onRegistration(register)} />);*/ /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are 
+      passed as a prop to the LoginView */ if (!user1) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_loginView.LoginView, {
             onLoggedIn: (user)=>this.onLoggedIn(user)
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 72,
-            columnNumber: 27
+            lineNumber: 76,
+            columnNumber: 14
         }, this);
         // Before the movies have been loaded
         if (movies.length === 0) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
             className: "main-view"
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 75,
-            columnNumber: 41
+            lineNumber: 81,
+            columnNumber: 14
         }, this);
         /* If the state of 'selectedMovie' is not null, that selected movie will be returned, otherwise, all 
-        movies will be returned */ return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+      movies will be returned */ return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
             className: "main-view",
             children: selectedMovie ? /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieView.MovieView, {
                 movie: selectedMovie,
@@ -25177,8 +25173,8 @@ class MainView extends _reactDefault.default.Component {
                 }
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 82,
-                columnNumber: 17
+                lineNumber: 88,
+                columnNumber: 15
             }, this) : movies.map((movie1)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieCard.MovieCard, {
                     movie: movie1,
                     onMovieClick: (movie)=>{
@@ -25186,14 +25182,14 @@ class MainView extends _reactDefault.default.Component {
                     }
                 }, movie1._id, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 85,
-                    columnNumber: 19
+                    lineNumber: 92,
+                    columnNumber: 15
                 }, this)
             )
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 80,
-            columnNumber: 13
+            lineNumber: 86,
+            columnNumber: 9
         }, this);
     }
 }
@@ -28654,13 +28650,6 @@ function LoginView(props) {
 }
 _s(LoginView, "3ov/oLyrzOSxGWZTRNwIKc62Kqo=");
 _c = LoginView;
-LoginView.propTypes = {
-    user: _propTypesDefault.default.shape({
-        username: _propTypesDefault.default.string.isRequired,
-        password: _propTypesDefault.default.string.isRequired
-    }),
-    onLoggedIn: _propTypesDefault.default.func.isRequired
-};
 var _c;
 $RefreshReg$(_c, "LoginView");
 
@@ -29997,7 +29986,7 @@ MovieView.propTypes = {
         Director: _propTypesDefault.default.shape({
             Name: _propTypesDefault.default.string.isRequired,
             Bio: _propTypesDefault.default.string.isRequired,
-            Birth: _propTypesDefault.default.number.isRequired
+            Birth: _propTypesDefault.default.string.isRequired
         })
     }).isRequired
 };
