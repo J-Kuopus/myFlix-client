@@ -25148,24 +25148,24 @@ class MainView extends _reactDefault.default.Component {
             onRegistration: (register)=>this.onRegistration(register)
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 67,
-            columnNumber: 30
+            lineNumber: 69,
+            columnNumber: 15
         }, this);
         /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are 
       passed as a prop to the LoginView */ if (!user1) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_loginView.LoginView, {
             onLoggedIn: (user)=>this.onLoggedIn(user)
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 72,
-            columnNumber: 25
+            lineNumber: 76,
+            columnNumber: 14
         }, this);
         // Before the movies have been loaded
         if (movies.length === 0) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
             className: "main-view"
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 75,
-            columnNumber: 39
+            lineNumber: 81,
+            columnNumber: 14
         }, this);
         /* If the state of 'selectedMovie' is not null, that selected movie will be returned, otherwise, all 
       movies will be returned */ return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -25177,7 +25177,7 @@ class MainView extends _reactDefault.default.Component {
                 }
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 82,
+                lineNumber: 88,
                 columnNumber: 15
             }, this) : movies.map((movie1)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieCard.MovieCard, {
                     movie: movie1,
@@ -25186,13 +25186,13 @@ class MainView extends _reactDefault.default.Component {
                     }
                 }, movie1._id, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 86,
+                    lineNumber: 92,
                     columnNumber: 15
                 }, this)
             )
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 80,
+            lineNumber: 86,
             columnNumber: 9
         }, this);
     }
