@@ -31376,7 +31376,8 @@ class MovieCard extends _reactDefault.default.Component {
             children: [
                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_cardDefault.default.Img, {
                     variant: "top",
-                    src: movie.ImagePath
+                    src: movie.ImagePath,
+                    onClick: ()=>onMovieClick(movie)
                 }, void 0, false, {
                     fileName: "src/components/movie-card/movie-card.jsx",
                     lineNumber: 14,
