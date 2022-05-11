@@ -25180,6 +25180,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             children: selectedMovie ? /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_rowDefault.default, {
                 children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_colDefault.default, {
+                    md: 8,
                     children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieView.MovieView, {
                         movie: selectedMovie,
                         onBackClick: (newSelectedMovie)=>{

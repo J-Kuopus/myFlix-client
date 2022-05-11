@@ -89,7 +89,7 @@ class MainView extends React.Component {
           {selectedMovie
             ? (
                 <Row>
-                  <Col>
+                  <Col md={8}>
                     <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => {
                       this.setSelectedMovie(newSelectedMovie); }}
                     />
