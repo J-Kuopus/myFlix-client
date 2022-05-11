@@ -25179,6 +25179,7 @@ class MainView extends _reactDefault.default.Component {
       movies will be returned */ return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
             className: "main-view",
             children: selectedMovie ? /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_rowDefault.default, {
+                className: "justify-content-md-center",
                 children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_colDefault.default, {
                     md: 8,
                     children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieView.MovieView, {
