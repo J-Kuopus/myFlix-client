@@ -25176,56 +25176,42 @@ class MainView extends _reactDefault.default.Component {
             columnNumber: 14
         }, this);
         /* If the state of 'selectedMovie' is not null, that selected movie will be returned, otherwise, all 
-      movies will be returned */ return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-            className: "main-view",
-            children: selectedMovie ? /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_rowDefault.default, {
-                className: "justify-content-md-center",
-                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_colDefault.default, {
-                    md: 8,
-                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieView.MovieView, {
-                        movie: selectedMovie,
-                        onBackClick: (newSelectedMovie)=>{
-                            this.setSelectedMovie(newSelectedMovie);
-                        }
-                    }, void 0, false, {
-                        fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 93,
-                        columnNumber: 19
-                    }, this)
+      movies will be returned */ return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_rowDefault.default, {
+            className: "main-view justify-content-md-center",
+            children: selectedMovie ? /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_colDefault.default, {
+                md: 8,
+                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieView.MovieView, {
+                    movie: selectedMovie,
+                    onBackClick: (newSelectedMovie)=>{
+                        this.setSelectedMovie(newSelectedMovie);
+                    }
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
                     lineNumber: 92,
-                    columnNumber: 17
+                    columnNumber: 19
                 }, this)
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
                 lineNumber: 91,
                 columnNumber: 15
-            }, this) : /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_rowDefault.default, {
-                className: "justify-content-md-center",
-                children: movies.map((movie1)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_colDefault.default, {
-                        md: 3,
-                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieCard.MovieCard, {
-                            movie: movie1,
-                            onMovieClick: (movie)=>{
-                                this.setSelectedMovie(movie);
-                            }
-                        }, movie1._id, false, {
-                            fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 103,
-                            columnNumber: 21
-                        }, this)
-                    }, void 0, false, {
+            }, this) : movies.map((movie1)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_colDefault.default, {
+                    md: 3,
+                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieCard.MovieCard, {
+                        movie: movie1,
+                        onMovieClick: (movie)=>{
+                            this.setSelectedMovie(movie);
+                        }
+                    }, movie1._id, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 102,
+                        lineNumber: 99,
                         columnNumber: 19
                     }, this)
-                )
-            }, void 0, false, {
-                fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 100,
-                columnNumber: 15
-            }, this)
+                }, void 0, false, {
+                    fileName: "src/components/main-view/main-view.jsx",
+                    lineNumber: 98,
+                    columnNumber: 15
+                }, this)
+            )
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
             lineNumber: 88,
