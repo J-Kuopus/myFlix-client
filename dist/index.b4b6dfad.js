@@ -28589,14 +28589,20 @@ function LoginView(props) {
         // then call props.onLoggedIn(username)
         props.onLoggedIn(username);
     };
-    return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("form", {
+    return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default, {
         children: [
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("label", {
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default.Group, {
+                controlId: "formUsername",
                 children: [
-                    "Username:",
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default.Label, {
+                        children: "Username:"
+                    }, void 0, false, {
+                        fileName: "src/components/login-view/login-view.jsx",
+                        lineNumber: 24,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default.Control, {
                         type: "text",
-                        value: username,
                         onChange: (e)=>setUsername(e.target.value)
                     }, void 0, false, {
                         fileName: "src/components/login-view/login-view.jsx",
@@ -28609,37 +28615,35 @@ function LoginView(props) {
                 lineNumber: 23,
                 columnNumber: 13
             }, this),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("label", {
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default.Group, {
+                controlId: "formPassword",
                 children: [
-                    "Password:",
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
-                        type: "password",
-                        value: password,
-                        onChange: (e)=>setPassword(e.target.value)
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default.Label, {
+                        children: "Password:"
                     }, void 0, false, {
                         fileName: "src/components/login-view/login-view.jsx",
                         lineNumber: 29,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default.Control, {
+                        type: "password",
+                        onChange: (e)=>setPassword(e.target.value)
+                    }, void 0, false, {
+                        fileName: "src/components/login-view/login-view.jsx",
+                        lineNumber: 30,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 27,
+                lineNumber: 28,
                 columnNumber: 13
             }, this),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_buttonDefault.default, {
+                variant: "primary",
                 type: "submit",
                 onClick: handleSubmit,
                 children: "Submit"
-            }, void 0, false, {
-                fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 31,
-                columnNumber: 13
-            }, this),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
-                type: "button",
-                onClick: handleSubmit,
-                children: "Register"
             }, void 0, false, {
                 fileName: "src/components/login-view/login-view.jsx",
                 lineNumber: 32,
