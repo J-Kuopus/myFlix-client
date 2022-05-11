@@ -97,7 +97,7 @@ class MainView extends React.Component {
               </Row>
               )
             : (
-              <Row>
+              <Row className="justify-content-md-center">
                 {movies.map(movie => (
                   <MovieCard key={movie._id} movie={movie} onMovieClick={ (movie) => { // Display MovieCard data when movie is clicked
                     this.setSelectedMovie(movie); }}
