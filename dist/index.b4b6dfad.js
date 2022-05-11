@@ -28650,6 +28650,9 @@ function LoginView(props) {
 }
 _s(LoginView, "3ov/oLyrzOSxGWZTRNwIKc62Kqo=");
 _c = LoginView;
+LoginView.propTypes = {
+    onLoggedIn: _propTypesDefault.default.func.isRequired
+};
 var _c;
 $RefreshReg$(_c, "LoginView");
 
