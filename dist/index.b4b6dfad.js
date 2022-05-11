@@ -1025,6 +1025,7 @@ class MyFlixApplication extends _reactDefault.default.Component {
         return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_containerDefault.default, {
             children: [
                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Navbar, {
+                    fixed: "top",
                     bg: "dark",
                     variant: "dark",
                     children: [
