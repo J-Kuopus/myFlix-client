@@ -4,6 +4,10 @@
 
 
 
+.movie-view {
+  line-height: 30px;
+}
+
 .label {
   font-weight: bold;
 }
