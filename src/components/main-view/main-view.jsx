@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import Row from 'react-bootstrap/Row';
 
 import './main-view.scss';
 
