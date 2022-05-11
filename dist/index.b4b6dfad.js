@@ -1013,12 +1013,12 @@ var _reactDom = require("react-dom");
 var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
 var _container = require("react-bootstrap/Container");
 var _containerDefault = parcelHelpers.interopDefault(_container);
+var _reactBootstrap = require("react-bootstrap");
 // Imports MainView component
 var _mainView = require("./components/main-view/main-view");
 var _mainViewDefault = parcelHelpers.interopDefault(_mainView);
 // Import statement to indicate that you need to bundle './index.scss'
 var _indexScss = require("./index.scss");
-var _reactBootstrap = require("react-bootstrap");
 // Main component 
 class MyFlixApplication extends _reactDefault.default.Component {
     render() {
