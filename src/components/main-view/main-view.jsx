@@ -8,9 +8,6 @@ import './main-view.scss';
 // Imports LoginView component
 import { LoginView } from '../login-view/login-view';
 
-// Imports RegistrationView component
-import { RegistrationView } from '../registration-view/registration-view';
-
 // Imports MovieCard component
 import { MovieCard } from '../movie-card/movie-card';
 
@@ -48,13 +45,6 @@ class MainView extends React.Component {
       });
     }
 
-    // When a user sucessfully registers account
-    onRegistration(register) {
-      this.setState({
-        register
-      });
-    }
-
     // When a user successfully logs in, this function updates the 'user' property in state to that particular user
     onLoggedIn(user) {
       this.setState({
@@ -63,19 +53,11 @@ class MainView extends React.Component {
     }
 
     render() {
-      const { movies, selectedMovie, user, register } = this.state; // Deconstructed variables
-
-      // If user isn't registered, return RegistrationView
-      /*if (!register) 
-      
-      return (<RegistrationView onRegistration={(register) => 
-        this.onRegistration(register)} />);*/
+      const { movies, selectedMovie, user } = this.state; // Deconstructed variables
 
       /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are 
       passed as a prop to the LoginView */
-      if (!user) 
-      
-      return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+      if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
       // Before the movies have been loaded
       if (movies.length === 0) 
