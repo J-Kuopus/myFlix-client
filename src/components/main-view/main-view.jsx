@@ -88,20 +88,24 @@ class MainView extends React.Component {
         <div className="main-view">
           {selectedMovie
             ? (
-                <Row className="justify-content-md-center">
-                  <Col md={8}>
-                    <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => {
-                      this.setSelectedMovie(newSelectedMovie); }}
-                    />
-                  </Col>
-                </Row>
-             )
-            : movies.map(movie => (
-              <MovieCard key={movie._id} movie={movie} onMovieClick={ (movie) => { // Display MovieCard data when movie is clicked
-                this.setSelectedMovie(movie) }}
-              />
-            ))
-          }
+              <Row className="justify-content-md-center">
+                <Col md={8}>
+                  <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => {
+                    this.setSelectedMovie(newSelectedMovie); }}
+                  />
+                </Col>
+              </Row>
+              )
+            : (
+              <Row>
+                {movies.map(movie => (
+                  <MovieCard key={movie._id} movie={movie} onMovieClick={ (movie) => { // Display MovieCard data when movie is clicked
+                    this.setSelectedMovie(movie); }}
+                  />
+                ))}
+              </Row>
+              )
+              }
         </div>
       );
     }

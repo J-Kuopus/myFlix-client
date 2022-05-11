@@ -25190,28 +25190,34 @@ class MainView extends _reactDefault.default.Component {
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
                         lineNumber: 93,
-                        columnNumber: 21
+                        columnNumber: 19
                     }, this)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
                     lineNumber: 92,
-                    columnNumber: 19
+                    columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
                 lineNumber: 91,
-                columnNumber: 17
-            }, this) : movies.map((movie1)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieCard.MovieCard, {
-                    movie: movie1,
-                    onMovieClick: (movie)=>{
-                        this.setSelectedMovie(movie);
-                    }
-                }, movie1._id, false, {
-                    fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 100,
-                    columnNumber: 15
-                }, this)
-            )
+                columnNumber: 15
+            }, this) : /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_rowDefault.default, {
+                children: movies.map((movie1)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieCard.MovieCard, {
+                        movie: movie1,
+                        onMovieClick: (movie)=>{
+                            this.setSelectedMovie(movie);
+                        }
+                    }, movie1._id, false, {
+                        fileName: "src/components/main-view/main-view.jsx",
+                        lineNumber: 102,
+                        columnNumber: 19
+                    }, this)
+                )
+            }, void 0, false, {
+                fileName: "src/components/main-view/main-view.jsx",
+                lineNumber: 100,
+                columnNumber: 15
+            }, this)
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
             lineNumber: 88,
