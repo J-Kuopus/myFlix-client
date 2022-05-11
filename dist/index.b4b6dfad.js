@@ -25203,12 +25203,18 @@ class MainView extends _reactDefault.default.Component {
                 columnNumber: 15
             }, this) : /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_rowDefault.default, {
                 className: "justify-content-md-center",
-                children: movies.map((movie1)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieCard.MovieCard, {
-                        movie: movie1,
-                        onMovieClick: (movie)=>{
-                            this.setSelectedMovie(movie);
-                        }
-                    }, movie1._id, false, {
+                children: movies.map((movie1)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_colDefault.default, {
+                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieCard.MovieCard, {
+                            movie: movie1,
+                            onMovieClick: (movie)=>{
+                                this.setSelectedMovie(movie);
+                            }
+                        }, movie1._id, false, {
+                            fileName: "src/components/main-view/main-view.jsx",
+                            lineNumber: 103,
+                            columnNumber: 21
+                        }, this)
+                    }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
                         lineNumber: 102,
                         columnNumber: 19
