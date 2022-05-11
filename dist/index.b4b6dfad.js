@@ -1011,6 +1011,8 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactDom = require("react-dom");
 var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
+var _container = require("react-bootstrap/Container");
+var _containerDefault = parcelHelpers.interopDefault(_container);
 // Imports MainView component
 var _mainView = require("./components/main-view/main-view");
 var _mainViewDefault = parcelHelpers.interopDefault(_mainView);
@@ -1019,9 +1021,15 @@ var _indexScss = require("./index.scss");
 // Main component 
 class MyFlixApplication extends _reactDefault.default.Component {
     render() {
-        return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_mainViewDefault.default, {}, void 0, false, {
+        return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_containerDefault.default, {
+            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_mainViewDefault.default, {}, void 0, false, {
+                fileName: "src/index.jsx",
+                lineNumber: 16,
+                columnNumber: 17
+            }, this)
+        }, void 0, false, {
             fileName: "src/index.jsx",
-            lineNumber: 14,
+            lineNumber: 15,
             columnNumber: 13
         }, this);
     }
@@ -1036,7 +1044,7 @@ _reactDomDefault.default.render(/*#__PURE__*/ _reactDefault.default.createElemen
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom":"j6uA9","./components/main-view/main-view":"4gflv","./index.scss":"lJZlQ","@parcel/transformer-js/src/esmodule-helpers.js":"h1Kx6","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom":"j6uA9","./components/main-view/main-view":"4gflv","./index.scss":"lJZlQ","@parcel/transformer-js/src/esmodule-helpers.js":"h1Kx6","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko","react-bootstrap/Container":"hEdsw"}],"iTorj":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/react-jsx-dev-runtime.development.js');
 
@@ -31889,6 +31897,31 @@ MovieView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","./movie-view.scss":"jnlR5","@parcel/transformer-js/src/esmodule-helpers.js":"h1Kx6","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko"}],"jnlR5":[function() {},{}],"lJZlQ":[function() {},{}]},["bCcsh","5phmu","d8Dch"], "d8Dch", "parcelRequireaec4")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","./movie-view.scss":"jnlR5","@parcel/transformer-js/src/esmodule-helpers.js":"h1Kx6","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko"}],"jnlR5":[function() {},{}],"lJZlQ":[function() {},{}],"hEdsw":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _themeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+const defaultProps = {
+    fluid: false
+};
+const Container = /*#__PURE__*/ _react.forwardRef(({ bsPrefix , fluid , // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as: Component = 'div' , className , ...props }, ref)=>{
+    const prefix = _themeProvider.useBootstrapPrefix(bsPrefix, 'container');
+    const suffix = typeof fluid === 'string' ? `-${fluid}` : '-fluid';
+    return /*#__PURE__*/ _jsxRuntime.jsx(Component, {
+        ref: ref,
+        ...props,
+        className: _classnamesDefault.default(className, fluid ? `${prefix}${suffix}` : prefix)
+    });
+});
+Container.displayName = 'Container';
+Container.defaultProps = defaultProps;
+exports.default = Container;
+
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"h1Kx6"}]},["bCcsh","5phmu","d8Dch"], "d8Dch", "parcelRequireaec4")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
