@@ -25176,15 +25176,21 @@ class MainView extends _reactDefault.default.Component {
         /* If the state of 'selectedMovie' is not null, that selected movie will be returned, otherwise, all 
       movies will be returned */ return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
             className: "main-view",
-            children: selectedMovie ? /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieView.MovieView, {
-                movie: selectedMovie,
-                onBackClick: (newSelectedMovie)=>{
-                    this.setSelectedMovie(newSelectedMovie);
-                }
+            children: selectedMovie ? /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_rowDefault.default, {
+                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieView.MovieView, {
+                    movie: selectedMovie,
+                    onBackClick: (newSelectedMovie)=>{
+                        this.setSelectedMovie(newSelectedMovie);
+                    }
+                }, void 0, false, {
+                    fileName: "src/components/main-view/main-view.jsx",
+                    lineNumber: 91,
+                    columnNumber: 19
+                }, this)
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 89,
-                columnNumber: 15
+                lineNumber: 90,
+                columnNumber: 17
             }, this) : movies.map((movie1)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieCard.MovieCard, {
                     movie: movie1,
                     onMovieClick: (movie)=>{
@@ -25192,7 +25198,7 @@ class MainView extends _reactDefault.default.Component {
                     }
                 }, movie1._id, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 93,
+                    lineNumber: 97,
                     columnNumber: 15
                 }, this)
             )
