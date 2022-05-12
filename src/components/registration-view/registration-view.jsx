@@ -50,10 +50,15 @@ export function RegistrationView(props) {
                 required 
             />
             </Form.Group>
-            <label>
-                Birthday:
-                <input type="date" value={birthday} onChange={e => setBirthday(e.target.value)} />
-            </label>
+
+            <Form.Group>
+            <Form.Label>Birthday: </Form.Label>
+            <Form.Control 
+                type="date" 
+                value={birthday} 
+                onChange={e => setBirthday(e.target.value)} 
+            />
+            </Form.Group>
             <button type="submit" onClick={handleSubmit}>Submit</button>
         </Form>
     );
