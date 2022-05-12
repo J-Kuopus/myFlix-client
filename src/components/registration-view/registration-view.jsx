@@ -27,6 +27,7 @@ export function RegistrationView(props) {
                 type="text" 
                 value={username} 
                 onChange={e => setUsername(e.target.value)}
+                required
             />
             </Form.Group>
 
