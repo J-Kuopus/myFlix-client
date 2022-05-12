@@ -45,6 +45,7 @@ export function RegistrationView(props) {
                             value={password} 
                             onChange={e => setPassword(e.target.value)}
                             required
+                            placeholder="Enter a password"
                         />
                         </Form.Group>
 
@@ -55,6 +56,7 @@ export function RegistrationView(props) {
                             value={email} 
                             onChange={e => setEmail(e.target.value)}
                             required 
+                            placeholder="Enter your email address"
                         />
                         </Form.Group>
 
@@ -64,6 +66,7 @@ export function RegistrationView(props) {
                             type="date" 
                             value={birthday} 
                             onChange={e => setBirthday(e.target.value)} 
+                            placeholder="Enter your birthdate (optional)"
                         />
                         </Form.Group>
                         <Button 
