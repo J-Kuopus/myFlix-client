@@ -32027,6 +32027,7 @@ class MainView extends _reactDefault.default.Component {
                 lineNumber: 72,
                 columnNumber: 15
             }, this) : movies.map((movie1)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
+                    className: "movie-card-col",
                     children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieCard.MovieCard, {
                         movie: movie1,
                         onMovieClick: (movie)=>{
