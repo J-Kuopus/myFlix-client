@@ -32010,8 +32010,10 @@ class MainView extends _reactDefault.default.Component {
         /* If the state of 'selectedMovie' is not null, that selected movie will be returned, otherwise, all 
       movies will be returned */ return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Row, {
             className: "main-view justify-content-md-center",
+            xs: 1,
+            md: 3,
+            lg: 4,
             children: selectedMovie ? /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
-                md: 8,
                 children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieView.MovieView, {
                     movie: selectedMovie,
                     onBackClick: (newSelectedMovie)=>{
@@ -32027,7 +32029,6 @@ class MainView extends _reactDefault.default.Component {
                 lineNumber: 72,
                 columnNumber: 15
             }, this) : movies.map((movie1)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
-                    md: 3,
                     children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieCard.MovieCard, {
                         movie: movie1,
                         onMovieClick: (movie)=>{
