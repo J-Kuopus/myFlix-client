@@ -2,7 +2,15 @@
 
 
 
+.movie-card {
+  height: 100%;
+}
 
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 .movie-view {
   line-height: 30px;

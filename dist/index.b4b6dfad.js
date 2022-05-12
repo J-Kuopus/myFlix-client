@@ -35719,10 +35719,12 @@ class MovieCard extends _reactDefault.default.Component {
     render() {
         const { movie , onMovieClick  } = this.props; // Extracts MovieCard data
         return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card, {
+            className: "movie-card",
             onClick: ()=>onMovieClick(movie)
             ,
             children: [
                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Img, {
+                    className: "card-image",
                     variant: "top",
                     src: movie.ImagePath
                 }, void 0, false, {
