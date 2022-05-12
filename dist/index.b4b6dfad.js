@@ -35451,7 +35451,7 @@ function LoginView(props) {
                     children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card, {
                         children: [
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Header, {
-                                children: "Welcome to myFlix! Please enter your username and password to enter."
+                                children: "Please enter your username and password to enter."
                             }, void 0, false, {
                                 fileName: "src/components/login-view/login-view.jsx",
                                 lineNumber: 26,
