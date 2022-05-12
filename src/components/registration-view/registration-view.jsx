@@ -20,7 +20,7 @@ export function RegistrationView(props) {
     };
 
     return (
-        <form>
+        <Form>
             <label>
                 Username:
                 <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
@@ -38,7 +38,7 @@ export function RegistrationView(props) {
                 <input type="date" value={birthday} onChange={e => setBirthday(e.target.value)} />
             </label>
             <button type="submit" onClick={handleSubmit}>Submit</button>
-        </form>
+        </Form>
     );
 }
 
