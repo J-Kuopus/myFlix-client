@@ -35446,7 +35446,9 @@ function LoginView(props) {
     };
     return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Container, {
         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Row, {
+            className: "justify-content-center",
             children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
+                lg: 5,
                 children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.CardGroup, {
                     children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card, {
                         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Body, {
