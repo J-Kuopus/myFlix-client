@@ -23,6 +23,7 @@ export function LoginView(props) {
             <Col>
             <CardGroup>
                 <Card>
+                    <Card.Header>Welcome to myFlix! Please enter your username and password to enter.</Card.Header>
                     <Form>
                         <Form.Group controlId="formUsername">
                             <Form.Label>Username:</Form.Label>
