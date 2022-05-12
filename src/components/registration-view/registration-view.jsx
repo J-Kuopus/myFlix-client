@@ -26,13 +26,19 @@ export function RegistrationView(props) {
             <Form.Control
                 type="text" 
                 value={username} 
-                onChange={e => setUsername(e.target.value)} 
+                onChange={e => setUsername(e.target.value)}
             />
             </Form.Group>
-            <label>
-                Password:
-                <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
-            </label>
+
+            <Form.Group>
+            <Form.Label>Password: </Form.Label>
+            <Form.Control 
+                type="password" 
+                value={password} 
+                onChange={e => setPassword(e.target.value)}
+                required
+            />
+            </Form.Group>
             <label>
                 Email:
                 <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
