@@ -21,10 +21,14 @@ export function RegistrationView(props) {
 
     return (
         <Form>
-            <label>
-                Username:
-                <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
-            </label>
+            <Form.Group>
+            <Form.Label>Username: </Form.Label>
+            <Form.Control
+                type="text" 
+                value={username} 
+                onChange={e => setUsername(e.target.value)} 
+            />
+            </Form.Group>
             <label>
                 Password:
                 <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
