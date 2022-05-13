@@ -8,7 +8,7 @@ import  MainView  from './components/main-view/main-view';
 // Import statement to indicate that you need to bundle './index.scss'
 import './index.scss';
 
-import logo from '../img/retro-video-logo.png';
+import image from '../img/rv-logo.png';
 
 // Main component 
 class MyFlixApplication extends React.Component {
@@ -19,7 +19,7 @@ class MyFlixApplication extends React.Component {
                     <Container>
                         <Navbar.Brand href="#home">
                             <img
-                                src={logo}
+                                src={image}
                                 width="300"
                                 className="navbar-logo d-inline-block align-top"
                                 alt="Retro Video logo"

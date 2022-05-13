@@ -1017,8 +1017,8 @@ var _mainView = require("./components/main-view/main-view");
 var _mainViewDefault = parcelHelpers.interopDefault(_mainView);
 // Import statement to indicate that you need to bundle './index.scss'
 var _indexScss = require("./index.scss");
-var _retroVideoLogoPng = require("../img/retro-video-logo.png");
-var _retroVideoLogoPngDefault = parcelHelpers.interopDefault(_retroVideoLogoPng);
+var _rvLogoPng = require("../img/rv-logo.png");
+var _rvLogoPngDefault = parcelHelpers.interopDefault(_rvLogoPng);
 // Main component 
 class MyFlixApplication extends _reactDefault.default.Component {
     render() {
@@ -1034,7 +1034,7 @@ class MyFlixApplication extends _reactDefault.default.Component {
                             children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Navbar.Brand, {
                                 href: "#home",
                                 children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("img", {
-                                    src: _retroVideoLogoPngDefault.default,
+                                    src: _rvLogoPngDefault.default,
                                     width: "300",
                                     className: "navbar-logo d-inline-block align-top",
                                     alt: "Retro Video logo"
@@ -1128,7 +1128,7 @@ _reactDomDefault.default.render(/*#__PURE__*/ _reactDefault.default.createElemen
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom":"j6uA9","react-bootstrap":"3AD9A","./components/main-view/main-view":"4gflv","./index.scss":"lJZlQ","../img/retro-video-logo.png":"8VokE","@parcel/transformer-js/src/esmodule-helpers.js":"h1Kx6","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom":"j6uA9","react-bootstrap":"3AD9A","./components/main-view/main-view":"4gflv","./index.scss":"lJZlQ","../img/rv-logo.png":"dIRMk","@parcel/transformer-js/src/esmodule-helpers.js":"h1Kx6","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko"}],"iTorj":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/react-jsx-dev-runtime.development.js');
 
@@ -36089,8 +36089,8 @@ MovieView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","react-bootstrap":"3AD9A","./movie-view.scss":"jnlR5","@parcel/transformer-js/src/esmodule-helpers.js":"h1Kx6","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko"}],"jnlR5":[function() {},{}],"lJZlQ":[function() {},{}],"8VokE":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('byUka') + "retro-video-logo.e2f630ea.png" + "?" + Date.now();
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","react-bootstrap":"3AD9A","./movie-view.scss":"jnlR5","@parcel/transformer-js/src/esmodule-helpers.js":"h1Kx6","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko"}],"jnlR5":[function() {},{}],"lJZlQ":[function() {},{}],"dIRMk":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('byUka') + "rv-logo.c8c00829.png" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"d2061"}],"d2061":[function(require,module,exports) {
 "use strict";
