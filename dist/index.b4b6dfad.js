@@ -1061,7 +1061,6 @@ class MyFlixApplication extends _reactDefault.default.Component {
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Navbar.Collapse, {
-                            id: "basic-navbar-nav",
                             children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Nav, {
                                 className: "me-auto",
                                 children: [

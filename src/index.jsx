@@ -27,7 +27,7 @@ class MyFlixApplication extends React.Component {
                         </Navbar.Brand>
                     </Container>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
+                    <Navbar.Collapse>
                         <Nav className="me-auto">
                             <Nav.Link href="#login">Login</Nav.Link>
                             <Nav.Link href="#update-profile">Update Profile</Nav.Link>
