@@ -30,7 +30,7 @@ class MyFlixApplication extends React.Component {
                     <Navbar.Collapse>
                         <Nav className="me-auto">
                             <Nav.Link href="#login">Login</Nav.Link>
-                            <Nav.Link href="#update-profile">Update Profile</Nav.Link>
+                            <Nav.Link href="#update-profile">Profile</Nav.Link>
                             <Nav.Link href="#logout">Logout</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>

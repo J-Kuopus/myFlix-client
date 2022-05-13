@@ -1074,7 +1074,7 @@ class MyFlixApplication extends _reactDefault.default.Component {
                                     }, this),
                                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Nav.Link, {
                                         href: "#update-profile",
-                                        children: "Update Profile"
+                                        children: "Profile"
                                     }, void 0, false, {
                                         fileName: "src/index.jsx",
                                         lineNumber: 33,
