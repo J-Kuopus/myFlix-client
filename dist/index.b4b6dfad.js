@@ -1027,9 +1027,15 @@ class MyFlixApplication extends _reactDefault.default.Component {
                     bg: "dark",
                     variant: "dark",
                     children: [
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Navbar.Brand, {
-                            href: "#home",
-                            children: "Retro Video"
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Container, {
+                            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Navbar.Brand, {
+                                href: "#home",
+                                children: "Retro Video"
+                            }, void 0, false, {
+                                fileName: "src/index.jsx",
+                                lineNumber: 18,
+                                columnNumber: 21
+                            }, this)
                         }, void 0, false, {
                             fileName: "src/index.jsx",
                             lineNumber: 17,
@@ -1039,7 +1045,7 @@ class MyFlixApplication extends _reactDefault.default.Component {
                             "aria-controls": "basic-navbar-nav"
                         }, void 0, false, {
                             fileName: "src/index.jsx",
-                            lineNumber: 18,
+                            lineNumber: 22,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Navbar.Collapse, {
@@ -1052,7 +1058,7 @@ class MyFlixApplication extends _reactDefault.default.Component {
                                         children: "Login"
                                     }, void 0, false, {
                                         fileName: "src/index.jsx",
-                                        lineNumber: 21,
+                                        lineNumber: 25,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Nav.Link, {
@@ -1060,7 +1066,7 @@ class MyFlixApplication extends _reactDefault.default.Component {
                                         children: "Update Profile"
                                     }, void 0, false, {
                                         fileName: "src/index.jsx",
-                                        lineNumber: 22,
+                                        lineNumber: 26,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Nav.Link, {
@@ -1068,18 +1074,18 @@ class MyFlixApplication extends _reactDefault.default.Component {
                                         children: "Logout"
                                     }, void 0, false, {
                                         fileName: "src/index.jsx",
-                                        lineNumber: 23,
+                                        lineNumber: 27,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/index.jsx",
-                                lineNumber: 20,
+                                lineNumber: 24,
                                 columnNumber: 25
                             }, this)
                         }, void 0, false, {
                             fileName: "src/index.jsx",
-                            lineNumber: 19,
+                            lineNumber: 23,
                             columnNumber: 21
                         }, this)
                     ]
@@ -1090,7 +1096,7 @@ class MyFlixApplication extends _reactDefault.default.Component {
                 }, this),
                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_mainViewDefault.default, {}, void 0, false, {
                     fileName: "src/index.jsx",
-                    lineNumber: 27,
+                    lineNumber: 31,
                     columnNumber: 17
                 }, this)
             ]
