@@ -11,6 +11,7 @@ export class MovieView extends React.Component {
 
         return (
             <Container className="movie-view">
+                <Row>
                 <div className="movie-poster">
                     <img src={movie.ImagePath} />
                 </div>
@@ -53,6 +54,7 @@ export class MovieView extends React.Component {
                 <div className="movie-button-div">
                     <button className="movie-button" onClick={() => { onBackClick(null); }}>Back</button>
                 </div>
+                </Row>
             </Container>
         );
     }
