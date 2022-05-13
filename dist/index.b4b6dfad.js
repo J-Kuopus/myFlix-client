@@ -35814,7 +35814,7 @@ class MovieView extends _reactDefault.default.Component {
                     lineNumber: 14,
                     columnNumber: 17
                 }, this),
-                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Row, {
                     className: "movie-title",
                     children: [
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
