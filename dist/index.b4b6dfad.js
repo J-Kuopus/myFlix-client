@@ -1035,7 +1035,7 @@ class MyFlixApplication extends _reactDefault.default.Component {
                                 href: "#home",
                                 children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("img", {
                                     src: _retroVideoLogoPngDefault.default,
-                                    width: "250",
+                                    width: "300",
                                     className: "navbar-logo d-inline-block align-top",
                                     alt: "Retro Video logo"
                                 }, void 0, false, {
