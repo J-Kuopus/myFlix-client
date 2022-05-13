@@ -1,11 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400&display=swap');
 
-$font-stack: 'Kanit', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+$main-font: 'Kanit', sans-serif;
+$navbar-logo: 'Permanent Marker', sans-serif;
 
 body {
     padding-top: 100px;
     background-color: #c9c4c3 !important;
-    font-family: $font-stack !important;
+    font-family: $main-font !important;
     font-weight: 300 !important;
     font-size: 20 !important;
+}
+
+.navbar {
+    font-family: $navbar-logo;
+    font-size: 24;
+}
+
+.navbar-brand {
+    font-family: $navbar-logo;
+    font-size: 26 !important;
 }

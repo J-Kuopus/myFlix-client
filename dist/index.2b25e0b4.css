@@ -1,4 +1,5 @@
 @import "https://fonts.googleapis.com/css2?family=Kanit:wght@300;400&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap";
 .movie-card-col {
   padding: 20px;
 }
@@ -29,6 +30,16 @@ body {
   font-family: Kanit, sans-serif !important;
   font-size: 20px !important;
   font-weight: 300 !important;
+}
+
+.navbar {
+  font-family: Permanent Marker, sans-serif;
+  font-size: 24px;
+}
+
+.navbar-brand {
+  font-family: Permanent Marker, sans-serif;
+  font-size: 26px !important;
 }
 
 /*# sourceMappingURL=index.2b25e0b4.css.map */
