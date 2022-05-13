@@ -1029,7 +1029,7 @@ class MyFlixApplication extends _reactDefault.default.Component {
                     children: [
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Navbar.Brand, {
                             href: "#home",
-                            children: "myFlix"
+                            children: "Retro Video"
                         }, void 0, false, {
                             fileName: "src/index.jsx",
                             lineNumber: 17,
@@ -35454,7 +35454,7 @@ function LoginView(props) {
                         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Body, {
                             children: [
                                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Title, {
-                                    children: "Welcome to myFlix!"
+                                    children: "Welcome to Retro Video!"
                                 }, void 0, false, {
                                     fileName: "src/components/login-view/login-view.jsx",
                                     lineNumber: 27,
