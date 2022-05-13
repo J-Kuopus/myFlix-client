@@ -24,7 +24,7 @@ export function LoginView(props) {
             <CardGroup>
                 <Card>
                     <Card.Body>
-                    <Card.Title>Welcome to myFlix!</Card.Title>
+                    <Card.Title>Welcome to Retro Video!</Card.Title>
                     <Card.Header>Please enter your username and password to enter.</Card.Header>
                     <Form>
                         <Form.Group controlId="formUsername">
