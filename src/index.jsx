@@ -15,9 +15,13 @@ class MyFlixApplication extends React.Component {
             <Container>
                 <Navbar fixed="top" bg="dark" variant="dark">
                     <Container>
-                    <Navbar.Brand href="#home">
-                        Retro Video
-                    </Navbar.Brand>
+                        <Navbar.Brand href="#home">
+                            <img
+                                src="../img/retro-video-logo.png"
+                                className="navbar-logo d-inline-block align-top"
+                                alt="Retro Video logo"
+                            />
+                        </Navbar.Brand>
                     </Container>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
