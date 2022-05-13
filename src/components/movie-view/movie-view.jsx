@@ -53,7 +53,7 @@ export class MovieView extends React.Component {
                 <div className="movie-button-div">
                     <button className="movie-button" onClick={() => { onBackClick(null); }}>Back</button>
                 </div>
-        </div>
+            </div>
         );
     }
 }
