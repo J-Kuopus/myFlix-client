@@ -1,4 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400&display=swap');
+
+$font-stack: 'Kanit', sans-serif;
+
 body {
     padding-top: 100px;
     background-color: #c9c4c3 !important;
+    font-family: $font-stack !important;
+    font-size: 20 !important;
 }
