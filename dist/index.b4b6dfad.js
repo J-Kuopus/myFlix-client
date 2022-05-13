@@ -35880,19 +35880,25 @@ class MovieView extends _reactDefault.default.Component {
             className: "movie-view",
             children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Row, {
                 children: [
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                        className: "movie-poster",
-                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("img", {
-                            src: movie.ImagePath
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
+                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                            className: "movie-poster",
+                            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("img", {
+                                src: movie.ImagePath
+                            }, void 0, false, {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 17,
+                                columnNumber: 29
+                            }, this)
                         }, void 0, false, {
                             fileName: "src/components/movie-view/movie-view.jsx",
                             lineNumber: 16,
-                            columnNumber: 21
+                            columnNumber: 25
                         }, this)
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
                         lineNumber: 15,
-                        columnNumber: 17
+                        columnNumber: 21
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
                         className: "movie-title",
@@ -35902,7 +35908,7 @@ class MovieView extends _reactDefault.default.Component {
                                 children: " Title: "
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 19,
+                                lineNumber: 21,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
@@ -35910,13 +35916,13 @@ class MovieView extends _reactDefault.default.Component {
                                 children: movie.Title
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 20,
+                                lineNumber: 22,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 18,
+                        lineNumber: 20,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -35927,7 +35933,7 @@ class MovieView extends _reactDefault.default.Component {
                                 children: "Description: "
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 23,
+                                lineNumber: 25,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
@@ -35935,13 +35941,13 @@ class MovieView extends _reactDefault.default.Component {
                                 children: movie.Description
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 24,
+                                lineNumber: 26,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 22,
+                        lineNumber: 24,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -35952,7 +35958,7 @@ class MovieView extends _reactDefault.default.Component {
                                 children: "Released: "
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 27,
+                                lineNumber: 29,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
@@ -35960,13 +35966,13 @@ class MovieView extends _reactDefault.default.Component {
                                 children: movie.Released
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 28,
+                                lineNumber: 30,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 26,
+                        lineNumber: 28,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -35977,7 +35983,7 @@ class MovieView extends _reactDefault.default.Component {
                                 children: "Genre: "
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 31,
+                                lineNumber: 33,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
@@ -35985,13 +35991,13 @@ class MovieView extends _reactDefault.default.Component {
                                 children: movie.Genre.Name
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 32,
+                                lineNumber: 34,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 30,
+                        lineNumber: 32,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -36002,7 +36008,7 @@ class MovieView extends _reactDefault.default.Component {
                                 children: "Description: "
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 35,
+                                lineNumber: 37,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
@@ -36010,13 +36016,13 @@ class MovieView extends _reactDefault.default.Component {
                                 children: movie.Genre.Description
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 36,
+                                lineNumber: 38,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 34,
+                        lineNumber: 36,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -36027,7 +36033,7 @@ class MovieView extends _reactDefault.default.Component {
                                 children: "Director: "
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 39,
+                                lineNumber: 41,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
@@ -36035,13 +36041,13 @@ class MovieView extends _reactDefault.default.Component {
                                 children: movie.Director.Name
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 40,
+                                lineNumber: 42,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 38,
+                        lineNumber: 40,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -36052,7 +36058,7 @@ class MovieView extends _reactDefault.default.Component {
                                 children: "Bio: "
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 43,
+                                lineNumber: 45,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
@@ -36060,13 +36066,13 @@ class MovieView extends _reactDefault.default.Component {
                                 children: movie.Director.Bio
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 44,
+                                lineNumber: 46,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 42,
+                        lineNumber: 44,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -36077,7 +36083,7 @@ class MovieView extends _reactDefault.default.Component {
                                 children: "Birth: "
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 47,
+                                lineNumber: 49,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
@@ -36085,13 +36091,13 @@ class MovieView extends _reactDefault.default.Component {
                                 children: movie.Director.Birth
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 48,
+                                lineNumber: 50,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 46,
+                        lineNumber: 48,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -36102,7 +36108,7 @@ class MovieView extends _reactDefault.default.Component {
                                 children: "Death: "
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 51,
+                                lineNumber: 53,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
@@ -36110,13 +36116,13 @@ class MovieView extends _reactDefault.default.Component {
                                 children: movie.Director.Death
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 52,
+                                lineNumber: 54,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 50,
+                        lineNumber: 52,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -36129,12 +36135,12 @@ class MovieView extends _reactDefault.default.Component {
                             children: "Back"
                         }, void 0, false, {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 55,
+                            lineNumber: 57,
                             columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 54,
+                        lineNumber: 56,
                         columnNumber: 17
                     }, this)
                 ]

@@ -12,9 +12,11 @@ export class MovieView extends React.Component {
         return (
             <Container className="movie-view">
                 <Row>
-                <div className="movie-poster">
-                    <img src={movie.ImagePath} />
-                </div>
+                    <Col>
+                        <div className="movie-poster">
+                            <img src={movie.ImagePath} />
+                        </div>
+                    </Col>
                 <div className="movie-title">
                     <span className="label"> Title: </span>
                     <span className="value">{movie.Title}</span>
