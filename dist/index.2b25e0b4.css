@@ -1,5 +1,5 @@
-@import "https://fonts.googleapis.com/css2?family=Kanit:wght@300;400&display=swap";
 @import "https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Montserrat&display=swap";
 .movie-card-col {
   padding: 20px;
 }
@@ -27,7 +27,7 @@
 body {
   padding-top: 100px;
   background-color: #c9c4c3 !important;
-  font-family: Kanit, sans-serif !important;
+  font-family: Montserrat, sans-serif !important;
   font-size: 20px !important;
   font-weight: 300 !important;
 }
