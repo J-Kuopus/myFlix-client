@@ -15,9 +15,9 @@ class MyFlixApplication extends React.Component {
     render() {
         return (
             <Container>
-                <Navbar fixed="top" bg="dark" variant="dark" expand="lg">
+                <Navbar className="navbar" fixed="top" bg="dark" variant="dark" expand="lg">
                     <Container>
-                        <Navbar.Brand href="#home">
+                        <Navbar.Brand className="navbar-brand" href="#home">
                             <img
                                 src={image}
                                 width="60"

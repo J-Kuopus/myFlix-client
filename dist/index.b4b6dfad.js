@@ -1025,6 +1025,7 @@ class MyFlixApplication extends _reactDefault.default.Component {
         return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Container, {
             children: [
                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Navbar, {
+                    className: "navbar",
                     fixed: "top",
                     bg: "dark",
                     variant: "dark",
@@ -1032,6 +1033,7 @@ class MyFlixApplication extends _reactDefault.default.Component {
                     children: [
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Container, {
                             children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Navbar.Brand, {
+                                className: "navbar-brand",
                                 href: "#home",
                                 children: [
                                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("img", {
