@@ -20,10 +20,11 @@ class MyFlixApplication extends React.Component {
                         <Navbar.Brand href="#home">
                             <img
                                 src={image}
-                                width="300"
+                                width="60"
                                 className="navbar-logo d-inline-block align-top"
                                 alt="Retro Video logo"
-                            />
+                            />{' '}
+                            Retro Video
                         </Navbar.Brand>
                     </Container>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
