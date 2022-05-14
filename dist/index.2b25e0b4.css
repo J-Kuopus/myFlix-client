@@ -1,15 +1,51 @@
+@import "https://fonts.googleapis.com/css2?family=Montserrat&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap";
+.movie-card-col {
+  padding: 20px;
+}
 
 
 
+.movie-card {
+  height: 100%;
+}
 
+.movie-card:hover {
+  opacity: .6;
+  cursor: pointer;
+}
 
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
+.movie-view {
+  line-height: 30px;
+}
 
+.label {
+  font-weight: bold;
+}
 
+body {
+  padding-top: 100px;
+  background-color: #c9c4c3 !important;
+  font-family: Montserrat, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 300 !important;
+}
 
+.navbar {
+  padding: 10px;
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+}
 
-.my-flix {
-  color: #4682b4;
+.navbar-brand {
+  font-family: Permanent Marker, sans-serif;
+  font-size: 27px !important;
 }
 
 /*# sourceMappingURL=index.2b25e0b4.css.map */

@@ -1,6 +1,7 @@
 // Implements useState Hook
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { Form, Button, Card, CardGroup, Container, Col, Row } from 'react-bootstrap';
 
 import './login-view.scss';
 
@@ -17,18 +18,51 @@ export function LoginView(props) {
     };
 
     return (
-        <form>
-            <label>
-                Username:
-                <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
-            </label>
-            <label>
-                Password:
-                <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
-            </label>
-            <button type="submit" onClick={handleSubmit}>Submit</button>
-            <button type="button" onClick={handleSubmit}>Register</button>
-        </form>
+        <Container>
+            <Row className="justify-content-center">
+            <Col lg={5}>
+            <CardGroup>
+                <Card className="login-card">
+                    <Card.Body>
+                    <Card.Title>Welcome to Retro Video!</Card.Title>
+                    <Card.Header>Please enter your username and password to enter.</Card.Header>
+                    <Form>
+                        <Form.Group controlId="formUsername">
+                            <Form.Label>Username:</Form.Label>
+                            <Form.Control 
+                                type ="text" 
+                                onChange={e => setUsername(e.target.value)} 
+                            />
+                        </Form.Group>
+                                
+                        <Form.Group controlId="formPassword">
+                            <Form.Label>Password:</Form.Label>
+                                <Form.Control 
+                                    type="password" 
+                                    onChange={ e => setPassword(e.target.value)} 
+                                />
+                        </Form.Group>
+                        <Button 
+                            variant="danger" 
+                            type="submit" 
+                            onClick={handleSubmit}>Submit
+                        </Button>
+                    </Form>
+                    </Card.Body>
+                    <Card.Footer>
+                        <Card.Text>Don't have an account? You can register here.</Card.Text>
+                        <Button 
+                            href="#"
+                            variant="outline-secondary"
+                            size="sm">
+                            Register
+                        </Button>
+                    </Card.Footer>
+                </Card>
+            </CardGroup>
+            </Col>
+            </Row>
+        </Container>
     );
 }
 

@@ -1,5 +1,25 @@
-$color: steelblue;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-.my-flix {
-    color: $color;
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+$main-font: 'Montserrat', sans-serif;
+$navbar-logo: 'Permanent Marker', sans-serif;
+
+body {
+    padding-top: 100px;
+    background-color: #c9c4c3 !important;
+    font-family: $main-font !important;
+    font-weight: 300 !important;
+    font-size: 16 !important;
+}
+
+.navbar {
+    font-family: $main-font;
+    font-size: 18;
+    padding: 10px;
+}
+
+.navbar-brand {
+    font-family: $navbar-logo;
+    font-size: 27 !important;
 }

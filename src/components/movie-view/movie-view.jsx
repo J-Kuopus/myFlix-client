@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Button, Card, CardGroup, Container, Col, Row } from 'react-bootstrap';
 
 import './movie-view.scss';
 
@@ -21,6 +22,10 @@ export class MovieView extends React.Component {
                     <span className="label">Description: </span>
                     <span className="value">{movie.Description}</span>
                 </div>
+                <div className="release-year">
+                    <span className="label">Released: </span>
+                    <span className="value">{movie.Released}</span>
+                </div>
                 <div className="movie-genre">
                     <span className="label">Genre: </span>
                     <span className="value">{movie.Genre.Name}</span>
@@ -41,8 +46,16 @@ export class MovieView extends React.Component {
                     <span className="label">Birth: </span>
                     <span className="value">{movie.Director.Birth}</span>
                 </div>
+                <div className="director-death">
+                    <span className="label">Death: </span>
+                    <span className="value">{movie.Director.Death}</span>
+                </div>
                 <div className="movie-button-div">
-                    <button className="movie-button" onClick={() => { onBackClick(null); }}>Back</button>
+                    <Button
+                        variant="danger" 
+                        className="movie-button" 
+                        onClick={() => { onBackClick(null); }}>Back
+                    </Button>
                 </div>
             </div>
         );
@@ -53,6 +66,7 @@ MovieView.propTypes = {
     movie: PropTypes.shape({
         Title: PropTypes.string.isRequired,
         Description: PropTypes.string.isRequired,
+        Released: PropTypes.string.isRequired,
         ImagePath: PropTypes.string.isRequired,
         Genre: PropTypes.shape({
             Name: PropTypes.string.isRequired,
@@ -61,7 +75,8 @@ MovieView.propTypes = {
         Director: PropTypes.shape({
             Name: PropTypes.string.isRequired,
             Bio: PropTypes.string.isRequired,
-            Birth: PropTypes.string.isRequired
+            Birth: PropTypes.string.isRequired,
+            Death: PropTypes.string.isRequired
         }),
     }).isRequired,
 };
