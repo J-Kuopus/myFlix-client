@@ -1,6 +1,11 @@
 .movie-card {
     height: 100%;
+    &:hover {
+        opacity: 0.6;
+    }
 }
+
+
 
 .card-image {
     width: 100%;
