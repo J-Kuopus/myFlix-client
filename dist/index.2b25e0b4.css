@@ -12,6 +12,7 @@
 
 .movie-card:hover {
   opacity: .6;
+  cursor: pointer;
 }
 
 .card-image {
