@@ -35566,14 +35566,21 @@ function LoginView(props) {
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Footer, {
                                 children: [
-                                    "Don't have an account? You can register here.",
-                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Button, {
-                                        href: "#",
-                                        variant: "outline-secondary",
-                                        children: "Register"
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Text, {
+                                        children: "Don't have an account? You can register here."
                                     }, void 0, false, {
                                         fileName: "src/components/login-view/login-view.jsx",
                                         lineNumber: 53,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Button, {
+                                        href: "#",
+                                        variant: "outline-secondary",
+                                        size: "sm",
+                                        children: "Register"
+                                    }, void 0, false, {
+                                        fileName: "src/components/login-view/login-view.jsx",
+                                        lineNumber: 54,
                                         columnNumber: 25
                                     }, this)
                                 ]
