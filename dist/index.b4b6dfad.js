@@ -36047,7 +36047,8 @@ class MovieView extends _reactDefault.default.Component {
                 }, this),
                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
                     className: "movie-button-div",
-                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
+                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Button, {
+                        variant: "danger",
                         className: "movie-button",
                         onClick: ()=>{
                             onBackClick(null);

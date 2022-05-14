@@ -51,7 +51,11 @@ export class MovieView extends React.Component {
                     <span className="value">{movie.Director.Death}</span>
                 </div>
                 <div className="movie-button-div">
-                    <button className="movie-button" onClick={() => { onBackClick(null); }}>Back</button>
+                    <Button
+                        variant="danger" 
+                        className="movie-button" 
+                        onClick={() => { onBackClick(null); }}>Back
+                    </Button>
                 </div>
             </div>
         
