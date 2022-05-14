@@ -32030,7 +32030,7 @@ class MainView extends _reactDefault.default.Component {
         }, this);
         /* If the state of 'selectedMovie' is not null, that selected movie will be returned, otherwise, all 
       movies will be returned */ return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Row, {
-            className: "main-view",
+            className: "main-view justify-content-md-center",
             xs: 1,
             md: 3,
             lg: 4,
