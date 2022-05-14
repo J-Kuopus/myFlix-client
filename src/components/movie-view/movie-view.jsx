@@ -58,7 +58,6 @@ export class MovieView extends React.Component {
                     </Button>
                 </div>
             </div>
-        
         );
     }
 }
