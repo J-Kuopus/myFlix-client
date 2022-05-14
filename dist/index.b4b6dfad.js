@@ -35541,7 +35541,7 @@ function LoginView(props) {
                                             columnNumber: 25
                                         }, this),
                                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Button, {
-                                            variant: "primary",
+                                            variant: "danger",
                                             type: "submit",
                                             onClick: handleSubmit,
                                             children: "Submit"
