@@ -49,6 +49,13 @@ export function LoginView(props) {
                         </Button>
                     </Form>
                     </Card.Body>
+                    <Card.Footer>Don't have an account? You can register here.
+                        <Button 
+                            href="#"
+                            variant="outline-secondary">
+                            Register
+                        </Button>
+                    </Card.Footer>
                 </Card>
             </CardGroup>
             </Col>
