@@ -22,7 +22,7 @@ export function LoginView(props) {
             <Row className="justify-content-center">
             <Col lg={5}>
             <CardGroup>
-                <Card>
+                <Card className="login-card">
                     <Card.Body>
                     <Card.Title>Welcome to Retro Video!</Card.Title>
                     <Card.Header>Please enter your username and password to enter.</Card.Header>
