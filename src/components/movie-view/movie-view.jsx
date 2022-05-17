@@ -31,11 +31,13 @@ export class MovieView extends React.Component {
                             src={movie.ImagePath}
                         />
                     </Col>
+                    <div>
                     <Button 
                         className="movie-button" 
                         variant="danger" 
                         onClick={() => { onBackClick(null); }}>Back
                     </Button>
+                    </div>
                 </Row>
             </Container>
         );
