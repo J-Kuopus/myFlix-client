@@ -36013,7 +36013,7 @@ class MovieView extends _reactDefault.default.Component {
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
                         md: 4,
                         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("img", {
-                            className: "d-block",
+                            className: "movie-poster d-block",
                             src: movie.ImagePath
                         }, void 0, false, {
                             fileName: "src/components/movie-view/movie-view.jsx",
