@@ -10,33 +10,33 @@ export class MovieView extends React.Component {
         const { movie, onBackClick } = this.props;
 
         return (
-            <Container>
-            <Row className="movie-view justify-content-md-center">
-                <Col md={8}>   
-                    <ListGroup>
-                        <ListGroup.Item className="movie-title">{movie.Title}</ListGroup.Item>
-                        <ListGroup.Item className="movie-genre">
-                            <span className="label">Genre: </span>{movie.Genre.Name}</ListGroup.Item>
-                        <ListGroup.Item className="movie-director">
-                            <span className="label">Director: </span>{movie.Director.Name}</ListGroup.Item>
-                        <ListGroup.Item className="release-year">
-                            <span className="label">Released: </span>{movie.Released}</ListGroup.Item>
-                    </ListGroup>  
-                    <div><span className="label">Summary: </span>{movie.Description}</div>  
-                </Col>
-    
-                <Col md={4}> 
-                    <img 
-                        className="d-block" 
-                        src={movie.ImagePath}
-                    />
-                </Col>
-                <Button 
-                    className="movie-button" 
-                    variant="danger" 
-                    onClick={() => { onBackClick(null); }}>Back
-                </Button>
-            </Row>
+            <Container className="movie-view justify-content-md-center">
+                <Row>
+                    <Col md={8}>   
+                        <ListGroup>
+                            <ListGroup.Item className="movie-title">{movie.Title}</ListGroup.Item>
+                            <ListGroup.Item className="movie-genre">
+                                <span className="label">Genre: </span>{movie.Genre.Name}</ListGroup.Item>
+                            <ListGroup.Item className="movie-director">
+                                <span className="label">Director: </span>{movie.Director.Name}</ListGroup.Item>
+                            <ListGroup.Item className="release-year">
+                                <span className="label">Released: </span>{movie.Released}</ListGroup.Item>
+                        </ListGroup>  
+                        <div><span className="label">Summary: </span>{movie.Description}</div>  
+                    </Col>
+        
+                    <Col md={4}> 
+                        <img 
+                            className="d-block" 
+                            src={movie.ImagePath}
+                        />
+                    </Col>
+                    <Button 
+                        className="movie-button" 
+                        variant="danger" 
+                        onClick={() => { onBackClick(null); }}>Back
+                    </Button>
+                </Row>
             </Container>
         );
     }
