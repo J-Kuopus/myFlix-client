@@ -35911,7 +35911,7 @@ class MovieView extends _reactDefault.default.Component {
     render() {
         const { movie , onBackClick  } = this.props;
         return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Container, {
-            className: "movie-view justify-content-md-center",
+            className: "movie-view",
             children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Row, {
                 children: [
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
