@@ -35915,7 +35915,7 @@ class MovieView extends _reactDefault.default.Component {
             children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Row, {
                 children: [
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
-                        md: 8,
+                        md: 9,
                         children: [
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.ListGroup, {
                                 children: [
@@ -36011,7 +36011,7 @@ class MovieView extends _reactDefault.default.Component {
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
-                        md: 4,
+                        md: 3,
                         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("img", {
                             className: "movie-poster d-block",
                             src: movie.ImagePath

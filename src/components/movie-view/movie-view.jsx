@@ -12,7 +12,7 @@ export class MovieView extends React.Component {
         return (
             <Container className="movie-view">
                 <Row>
-                    <Col md={8}>   
+                    <Col md={9}>   
                         <ListGroup>
                             <ListGroup.Item className="movie-title">{movie.Title}</ListGroup.Item>
                             <ListGroup.Item className="movie-genre">
@@ -25,7 +25,7 @@ export class MovieView extends React.Component {
                         <div><span className="label">Summary: </span>{movie.Description}</div>  
                     </Col>
         
-                    <Col md={4}> 
+                    <Col md={3}> 
                         <img 
                             className="movie-poster d-block" 
                             src={movie.ImagePath}
