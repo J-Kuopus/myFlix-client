@@ -10,7 +10,7 @@ export class MovieView extends React.Component {
         const { movie, onBackClick } = this.props;
 
         return (
-            <Container className="movie-view">
+            <Container className="movie-view d-flex justify-content-md-center">
                 <Row>
                     <Col md={9}>   
                         <ListGroup>
