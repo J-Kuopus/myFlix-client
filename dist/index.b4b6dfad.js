@@ -35911,11 +35911,12 @@ class MovieView extends _reactDefault.default.Component {
     render() {
         const { movie , onBackClick  } = this.props;
         return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Container, {
-            className: "movie-view d-flex justify-content-md-center",
+            className: "movie-view d-flex position-absolute top-50 start-50 translate-middle",
             children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Row, {
+                sm: 1,
+                md: 2,
                 children: [
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
-                        md: 9,
                         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.ListGroup, {
                             children: [
                                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.ListGroup.Item, {
@@ -36009,18 +36010,17 @@ class MovieView extends _reactDefault.default.Component {
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
-                        md: 3,
                         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("img", {
                             className: "movie-poster d-block",
                             src: movie.ImagePath
                         }, void 0, false, {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 29,
+                            lineNumber: 28,
                             columnNumber: 25
                         }, this)
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 28,
+                        lineNumber: 27,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -36033,12 +36033,12 @@ class MovieView extends _reactDefault.default.Component {
                             children: "Back"
                         }, void 0, false, {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 35,
+                            lineNumber: 34,
                             columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 34,
+                        lineNumber: 33,
                         columnNumber: 21
                     }, this)
                 ]

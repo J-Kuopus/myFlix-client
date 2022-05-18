@@ -10,9 +10,9 @@ export class MovieView extends React.Component {
         const { movie, onBackClick } = this.props;
 
         return (
-            <Container className="movie-view d-flex justify-content-md-center">
-                <Row>
-                    <Col md={9}>   
+            <Container className="movie-view d-flex position-absolute top-50 start-50 translate-middle">
+                <Row sm={1} md={2}>
+                    <Col>   
                         <ListGroup>
                             <ListGroup.Item className="movie-title">{movie.Title}</ListGroup.Item>
                             <ListGroup.Item className="movie-genre">
@@ -24,8 +24,7 @@ export class MovieView extends React.Component {
                             <ListGroup.Item><span className="label">Summary: </span>{movie.Description}</ListGroup.Item> 
                         </ListGroup> 
                     </Col>
-        
-                    <Col md={3}> 
+                    <Col>
                         <img 
                             className="movie-poster d-block" 
                             src={movie.ImagePath}
