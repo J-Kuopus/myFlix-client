@@ -36023,7 +36023,6 @@ class MovieView extends _reactDefault.default.Component {
                         xl: "4",
                         lg: "6",
                         md: "4",
-                        sm: "2",
                         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
                             className: "img-wrapper",
                             children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("img", {

@@ -26,7 +26,7 @@ export class MovieView extends React.Component {
                         </ListGroup>
                     </div> 
                     </Col>
-                    <Col xxl="4" xl="4" lg="6" md="4" sm="2">
+                    <Col xxl="4" xl="4" lg="6" md="4">
                     <div className="img-wrapper">
                         <img 
                             className="movie-poster d-block" 
