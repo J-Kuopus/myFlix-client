@@ -39,10 +39,6 @@
   max-width: 25rem !important;
 }
 
-.img-wrapper, .movie-info {
-  padding-left: 50px;
-}
-
 body {
   padding-top: 100px;
   background-color: #c9c4c3 !important;
