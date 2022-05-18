@@ -21,8 +21,8 @@ export class MovieView extends React.Component {
                                 <span className="label">Director: </span>{movie.Director.Name}</ListGroup.Item>
                             <ListGroup.Item className="release-year">
                                 <span className="label">Released: </span>{movie.Released}</ListGroup.Item>
-                        </ListGroup>  
-                        <div><span className="label">Summary: </span>{movie.Description}</div>  
+                            <ListGroup.Item><span className="label">Summary: </span>{movie.Description}</ListGroup.Item> 
+                        </ListGroup> 
                     </Col>
         
                     <Col md={3}> 
