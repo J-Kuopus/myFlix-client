@@ -25,10 +25,12 @@ export class MovieView extends React.Component {
                         </ListGroup> 
                     </Col>
                     <Col>
+                    <div className="img-wrapper">
                         <img 
                             className="movie-poster d-block" 
                             src={movie.ImagePath}
                         />
+                    </div>
                     </Col>
                     <div>
                     <Button 
