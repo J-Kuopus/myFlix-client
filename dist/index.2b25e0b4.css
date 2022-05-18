@@ -39,7 +39,7 @@
   max-width: 25rem !important;
 }
 
-.img-wrapper {
+.img-wrapper, .movie-info {
   padding-left: 50px;
 }
 
