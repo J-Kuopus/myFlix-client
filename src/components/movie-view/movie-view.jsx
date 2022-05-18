@@ -12,7 +12,7 @@ export class MovieView extends React.Component {
         return (
             <Container className="movie-view d-flex position-absolute top-50 start-50 translate-middle">
                 <Row>
-                    <Col md="8">
+                    <Col xxl="8" xl="8" lg="6" md="4">
                     <div className="movie-info">
                         <ListGroup>
                             <ListGroup.Item className="movie-title">{movie.Title}</ListGroup.Item>
@@ -26,7 +26,7 @@ export class MovieView extends React.Component {
                         </ListGroup>
                     </div> 
                     </Col>
-                    <Col md="4">
+                    <Col xxl="4" xl="4" lg="6" md="4" sm="2">
                     <div className="img-wrapper">
                         <img 
                             className="movie-poster d-block" 
