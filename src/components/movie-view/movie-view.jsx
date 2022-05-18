@@ -12,7 +12,8 @@ export class MovieView extends React.Component {
         return (
             <Container className="movie-view d-flex position-absolute top-50 start-50 translate-middle">
                 <Row sm={1} md={2}>
-                    <Col>   
+                    <Col>
+                    <div className="movie-info">
                         <ListGroup>
                             <ListGroup.Item className="movie-title">{movie.Title}</ListGroup.Item>
                             <ListGroup.Item className="movie-genre">
@@ -22,7 +23,8 @@ export class MovieView extends React.Component {
                             <ListGroup.Item className="release-year">
                                 <span className="label">Released: </span>{movie.Released}</ListGroup.Item>
                             <ListGroup.Item><span className="label">Summary: </span>{movie.Description}</ListGroup.Item> 
-                        </ListGroup> 
+                        </ListGroup>
+                    </div> 
                     </Col>
                     <Col>
                     <div className="img-wrapper">
