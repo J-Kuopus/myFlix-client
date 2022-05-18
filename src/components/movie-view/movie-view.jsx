@@ -34,12 +34,12 @@ export class MovieView extends React.Component {
                         />
                     </div>
                     </Col>
-                    <div>
-                    <Button 
-                        className="movie-button" 
-                        variant="danger" 
-                        onClick={() => { onBackClick(null); }}>Back
-                    </Button>
+                    <div className="btn-wrapper">
+                        <Button 
+                            className="movie-button" 
+                            variant="danger" 
+                            onClick={() => { onBackClick(null); }}>Back
+                        </Button>
                     </div>
                 </Row>
             </Container>

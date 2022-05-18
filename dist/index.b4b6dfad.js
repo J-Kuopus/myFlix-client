@@ -36038,6 +36038,7 @@ class MovieView extends _reactDefault.default.Component {
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                        className: "btn-wrapper",
                         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Button, {
                             className: "movie-button",
                             variant: "danger",
@@ -36048,7 +36049,7 @@ class MovieView extends _reactDefault.default.Component {
                         }, void 0, false, {
                             fileName: "src/components/movie-view/movie-view.jsx",
                             lineNumber: 38,
-                            columnNumber: 21
+                            columnNumber: 25
                         }, this)
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
