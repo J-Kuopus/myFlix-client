@@ -39,6 +39,12 @@
   max-width: 25rem !important;
 }
 
+@media (max-width: 768px) {
+  .movie-view {
+    padding-top: 200px;
+  }
+}
+
 body {
   padding-top: 100px;
   background-color: #c9c4c3 !important;

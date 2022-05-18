@@ -15,3 +15,10 @@
     max-width: 25rem !important;
     height: auto;
 }
+
+@media all and (max-width: 768px) {
+    .movie-view {
+    padding-top: 200px;
+    }
+}
+
