@@ -1,15 +1,12 @@
 import React from 'react';
 import axios from 'axios';
 import { Row, Col } from 'react-bootstrap';
-
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './main-view.scss';
-
 // Imports LoginView component
 import { LoginView } from '../login-view/login-view';
-
 // Imports MovieCard component
 import { MovieCard } from '../movie-card/movie-card';
-
 // Imports MovieView component
 import { MovieView } from '../movie-view/movie-view';
 
