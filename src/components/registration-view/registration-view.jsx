@@ -13,7 +13,6 @@ export function RegistrationView(props) {
     const [ birthday, setBirthday ] = useState('');
      // Declare hook for each input
     const [values, setValues] = useState ({
-        nameErr: '',
         usernameErr: '',
         passwordErr: '',
         emailErr: '',
