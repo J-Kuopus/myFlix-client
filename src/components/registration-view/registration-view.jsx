@@ -57,13 +57,23 @@ export function RegistrationView(props) {
         if(isReq) {
             //Send a request to the server for authentication
           axios.post('https://powerful-coast-48240.herokuapp.com/users', {
+            Name: name,
             Username: username,
-            Password: password
+            Password: password,
+            Email: email,
+            Birthday: birthday
           })
-          .then(() => {
-            console.log(username, password);
-            props.onRegistration(username);
-          })
+          .then(response => {
+            const data = response.data;
+            console.log(data);
+            alert('Registration successful, please login!');
+            window.open('/', '_self'); // '_self is needed so the page will open in current tab
+            })
+            .catch(response => {
+                console.error(response);
+                alert('Unable to register');
+            });
+        }
     };
 
     return (
