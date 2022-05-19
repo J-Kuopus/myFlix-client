@@ -86,6 +86,7 @@ export function RegistrationView(props) {
                             onChange={e => setUsername(e.target.value)}
                             placeholder="Enter a username"
                         />
+                        {values.usernameErr && <p>{values.usernameErr}</p>} {/* Displays validation error */}
                         </Form.Group>
 
                         <Form.Group>
@@ -95,7 +96,7 @@ export function RegistrationView(props) {
                             value={password} 
                             onChange={e => setPassword(e.target.value)}
                             placeholder="Enter a password"
-                        />
+                        />{values.passwordErr && <p>{values.passwordErr}</p>}
                         </Form.Group>
 
                         <Form.Group>
@@ -106,6 +107,7 @@ export function RegistrationView(props) {
                             onChange={e => setEmail(e.target.value)}
                             placeholder="Enter your email address"
                         />
+                        {values.emailErr && <p>{values.emailErr}</p>}
                         </Form.Group>
 
                         <Form.Group>
