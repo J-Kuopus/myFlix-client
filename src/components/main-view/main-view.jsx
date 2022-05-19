@@ -26,6 +26,7 @@ class MainView extends React.Component {
     }
 
     componentDidMount() {
+      // Persists authorization so user doesn't have to login again after refreshing page
       let accessToken = localStorage.getItem('token');
       if (accessToken !== null) {
         this.setState({
@@ -34,7 +35,7 @@ class MainView extends React.Component {
         this.getMovies(accessToken);
       }
     }
-    
+
     /* When a movie is clicked, this function is invoked and updates the state of the 
     'selectedMovie'--property to that movie*/
     setSelectedMovie(newSelectedMovie) {
