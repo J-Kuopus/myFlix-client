@@ -90,6 +90,7 @@ class MainView extends React.Component {
       /* If the state of 'selectedMovie' is not null, that selected movie will be returned, otherwise, all 
       movies will be returned */
       return (
+        <Router>
         <Row className="main-view justify-content-md-center" xs={1} md={3} lg={4}>
           {selectedMovie
             ? (
@@ -109,6 +110,7 @@ class MainView extends React.Component {
           }
           <button onClick={() => { this.onLoggedOut() }}>Logout</button>
         </Row>
+        </Router>
         );
     }
 }
