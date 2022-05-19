@@ -22,22 +22,33 @@ export function RegistrationView(props) {
      // Validate user inputs
     const validate = () => {
         let isReq = true;
-        if(!username){
-            setUsernameErr('Username Required');
-            isReq = false;
-        }else if(username.length < 2){
-            setUsernameErr('Username must be at least 2 characters long');
+        if(name) {
+            setValues({...values, nameErr: 'Name is required'});
             isReq = false;
         }
-        if(!password){
-            setPasswordErr('Password Required');
+        if(!username) {
+            setValues({...values, usernameErr: 'Username Required'});
             isReq = false;
-        }else if(password.length < 6){
-            setPasswordErr('Password must be at least 6 characters long');
+        } else if (username) {
+            setValues({...values, usernameErr: 'Username must be at least 5 characters long'});
             isReq = false;
         }
+        if (!password) {
+            setValues({...values, passwordErr: 'Password Required'});
+            isReq = false;
+        } else if(password.length < 6){
+            setValues({...values, passwordErr: 'Password must be at least 6 characters long'});
+            isReq = false;
+        }
+        if (!email) {
+            setValues({...values, emailErr: 'Email Requried'});
+            isReq = false;
+        } else if(email.indexOf('@') === -1) {
+            setValues({...values, emailErr: 'Email is invalid'});
+            isReq = false
+        }
+
         return isReq;
-        
     }
 
     const handleSubmit = (e) => {
