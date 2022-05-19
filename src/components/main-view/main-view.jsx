@@ -56,6 +56,14 @@ class MainView extends React.Component {
      this.getMovies(authData.token);
    }
 
+   onLoggedOut() {
+     localStorage.removeItem('token');
+     localStorage.removeItem('user');
+     this.setState({
+       user: null
+     });
+   }
+
    // GETS list of movies once the user is logged in
    getMovies(token) {
      axios.get('https://powerful-coast-48240.herokuapp.com/movies', {
