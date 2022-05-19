@@ -21,6 +21,23 @@ class MainView extends React.Component {
         };
     }
 
+    // GETS list of movies once the user is logged in
+   getMovies(token) {
+    axios.get('https://powerful-coast-48240.herokuapp.com/movies', {
+      headers: { Authorization:`Bearer ${token}`}
+    })
+    .then(response => {
+      // Assign the result to the state
+      this.setState({
+        movies: response.data
+      });
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
+
     componentDidMount() {
       // Persists authorization so user doesn't have to login again after refreshing page
       let accessToken = localStorage.getItem('token');
@@ -57,22 +74,6 @@ class MainView extends React.Component {
      localStorage.removeItem('user');
      this.setState({
        user: null
-     });
-   }
-
-   // GETS list of movies once the user is logged in
-   getMovies(token) {
-     axios.get('https://powerful-coast-48240.herokuapp.com/movies', {
-       headers: { Authorization:`Bearer ${token}`}
-     })
-     .then(response => {
-       // Assign the result to the state
-       this.setState({
-         movies: response.data
-       });
-     })
-     .catch(function (error) {
-       console.log(error);
      });
    }
 
