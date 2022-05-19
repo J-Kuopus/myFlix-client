@@ -14,6 +14,27 @@ export function RegistrationView(props) {
      const [ usernameErr, setUsernameErr ] = useState('');
      const [ passwordErr, setPasswordErr ] = useState('');
 
+     // Validate user inputs
+    const validate = () => {
+        let isReq = true;
+        if(!username){
+            setUsernameErr('Username Required');
+            isReq = false;
+        }else if(username.length < 2){
+            setUsernameErr('Username must be at least 2 characters long');
+            isReq = false;
+        }
+        if(!password){
+            setPasswordErr('Password Required');
+            isReq = false;
+        }else if(password.length < 6){
+            setPasswordErr('Password must be at least 6 characters long');
+            isReq = false;
+        }
+        return isReq;
+        
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(username, password);
