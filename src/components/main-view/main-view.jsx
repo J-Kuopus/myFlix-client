@@ -56,6 +56,7 @@ class MainView extends React.Component {
      this.getMovies(authData.token);
    }
 
+   // GETS list of movies once the user is logged in
    getMovies(token) {
      axios.get('https://powerful-coast-48240.herokuapp.com/movies', {
        headers: { Authorization:`Bearer ${token}`}
