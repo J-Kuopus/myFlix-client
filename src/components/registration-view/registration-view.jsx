@@ -22,10 +22,6 @@ export function RegistrationView(props) {
      // Validate user inputs
     const validate = () => {
         let isReq = true;
-        if(name) {
-            setValues({...values, nameErr: 'Name is required'});
-            isReq = false;
-        }
         if(!username) {
             setValues({...values, usernameErr: 'Username Required'});
             isReq = false;
@@ -57,7 +53,6 @@ export function RegistrationView(props) {
         if(isReq) {
             //Send a request to the server for authentication
           axios.post('https://powerful-coast-48240.herokuapp.com/users', {
-            Name: name,
             Username: username,
             Password: password,
             Email: email,
