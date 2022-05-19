@@ -56,7 +56,7 @@ export function RegistrationView(props) {
         const isReq = validate();
         if(isReq) {
             //Send a request to the server for authentication
-          axios.post('https://powerful-coast-48240.herokuapp.com/login', {
+          axios.post('https://powerful-coast-48240.herokuapp.com/users', {
             Username: username,
             Password: password
           })
