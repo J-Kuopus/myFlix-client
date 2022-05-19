@@ -110,6 +110,7 @@ class MainView extends React.Component {
               </Col>
               ))
           }
+          <button onClick={() => { this.onLoggedOut() }}>Logout</button>
         </Row>
         );
     }
