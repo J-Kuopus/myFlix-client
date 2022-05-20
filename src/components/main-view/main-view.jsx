@@ -8,6 +8,7 @@ import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { RegistrationView } from '../registration-view/registration-view';
+import { DirectorView } from '../director-view/director-view';
 
 class MainView extends React.Component {
 
@@ -96,6 +97,13 @@ class MainView extends React.Component {
                     <MovieView movie={movies.find(m => m._id === match.params.movieId)} />
                   </Col>
           }} />
+          <Route path="/directors/:name" render={({ match  }) =>{
+            return <Col>
+                    <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director} />
+                </Col>
+            }
+          } />
+          
           <button onClick={() => { this.onLoggedOut() }}>Logout</button>
         </Row>
       </Router>
