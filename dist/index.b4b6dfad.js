@@ -32156,11 +32156,12 @@ class MainView extends _reactDefault.default.Component {
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
                         path: "/movies/:movieId",
-                        render: ({ match  })=>{
+                        render: ({ match , history  })=>{
                             return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
                                 children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieView.MovieView, {
                                     movie: movies.find((m)=>m._id === match.params.movieId
-                                    )
+                                    ),
+                                    onBackClick: ()=>history.goBack()
                                 }, void 0, false, void 0, void 0)
                             }, void 0, false, void 0, void 0);
                         }
