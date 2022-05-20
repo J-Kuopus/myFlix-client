@@ -7,12 +7,14 @@ import './movie-card.scss';
 
 export class MovieCard extends React.Component {
     render() {
-        const { movie, onMovieClick } = this.props; // Extracts MovieCard data
+        const { movie } = this.props; // Extracts MovieCard data
         
         return (
-        <Card className="movie-card" onClick={() => onMovieClick(movie) }>
+        <Link to={`/movies/${movie._id}`}>
+        <Card className="movie-card">
             <Card.Img className="card-image" variant="top" src={movie.ImagePath} />
         </Card>
+        </Link>
         );
     }
 }
