@@ -99,6 +99,7 @@ class MainView extends React.Component {
                   </Col>
           }} />
           <Route path="/directors/:name" render={({ match  }) =>{
+            if (movies.length === 0) return <div className="main-view" />;
             return <Col>
                     <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director} />
                 </Col>
