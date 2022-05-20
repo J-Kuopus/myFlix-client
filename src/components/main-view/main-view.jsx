@@ -105,10 +105,10 @@ class MainView extends React.Component {
                 </Col>
             }
           } />
-           <Route path="/genres/:name" render={({ match  }) =>{
+           <Route path="/genres/:name" render={({ match, history  }) =>{
              if (movies.length === 0) return <div className="main-view" />;
             return <Col>
-                    <GenreView genre={movies.find(m => m.Genre.Name === match.params.name).Genre} />
+                    <GenreView genre={movies.find(m => m.Genre.Name === match.params.name).Genre} onBackClick={() => history.goBack()} />
                 </Col>
             }
           } />
