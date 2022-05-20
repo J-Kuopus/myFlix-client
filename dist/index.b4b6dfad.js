@@ -32123,6 +32123,23 @@ class MainView extends _reactDefault.default.Component {
                             fileName: "src/components/main-view/main-view.jsx",
                             lineNumber: 104,
                             columnNumber: 12
+                        }, this),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
+                            path: `/users/${user1}`,
+                            render: ({ match , history  })=>{
+                                if (!user1) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Redirect, {
+                                    to: "/"
+                                }, void 0, false, void 0, void 0);
+                                return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_profileView.ProfileView, {
+                                    movies: movies,
+                                    user: user1,
+                                    onBackClick: ()=>history.goBack()
+                                }, void 0, false, void 0, void 0);
+                            }
+                        }, void 0, false, {
+                            fileName: "src/components/main-view/main-view.jsx",
+                            lineNumber: 111,
+                            columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
