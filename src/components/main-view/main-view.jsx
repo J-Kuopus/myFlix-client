@@ -78,6 +78,7 @@ class MainView extends React.Component {
     movies will be returned */
     return (
       <Router>
+        <NavbarView user={user} />
         <Row className="main-view justify-content-md-center" xs={1} md={3} lg={4}>
           <Route exact path="/" render={() => {
             return movies.map(m => (
