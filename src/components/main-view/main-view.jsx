@@ -98,14 +98,14 @@ class MainView extends React.Component {
             if (movies.length === 0) return <div className="main-view" />;
             return <Col>
                     <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director} onBackClick={() => history.goBack()} />
-                </Col>
+                  </Col>
             }
           } />
            <Route path="/genres/:name" render={({ match, history  }) =>{
              if (movies.length === 0) return <div className="main-view" />;
             return <Col>
                     <GenreView genre={movies.find(m => m.Genre.Name === match.params.name).Genre} onBackClick={() => history.goBack()} />
-                </Col>
+                  </Col>
             }
           } />
           <Route path={`/users/${user}`} render={( { match, history } ) => {
