@@ -32172,14 +32172,15 @@ class MainView extends _reactDefault.default.Component {
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
                         path: "/directors/:name",
-                        render: ({ match  })=>{
+                        render: ({ match , history  })=>{
                             if (movies.length === 0) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
                                 className: "main-view"
                             }, void 0, false, void 0, void 0);
                             return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
                                 children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_directorView.DirectorView, {
                                     director: movies.find((m)=>m.Director.Name === match.params.name
-                                    ).Director
+                                    ).Director,
+                                    onBackClick: ()=>history.goBack()
                                 }, void 0, false, void 0, void 0)
                             }, void 0, false, void 0, void 0);
                         }
