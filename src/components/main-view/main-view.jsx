@@ -66,21 +66,19 @@ class MainView extends React.Component {
 
   render() {
     const { movies, user } = this.state; // Deconstructed variables
-      
-    /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are 
-    passed as a prop to the LoginView */
-    if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
-    // Before the movies have been loaded
-    if (movies.length === 0) return <div className="main-view" />; 
-
-    /* If the state of 'selectedMovie' is not null, that selected movie will be returned, otherwise, all 
-    movies will be returned */
     return (
       <Router>
         <NavbarView user={user} />
         <Row className="main-view justify-content-md-center" xs={1} md={3} lg={4}>
           <Route exact path="/" render={() => {
+            /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are 
+            passed as a prop to the LoginView */
+            if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+
+            // Before the movies have been loaded
+            if (movies.length === 0) return <div className="main-view" />;   
+
             return movies.map(m => (
               <Col className="movie-card-col" key={m._id}>
                 <MovieCard movie={m} />
