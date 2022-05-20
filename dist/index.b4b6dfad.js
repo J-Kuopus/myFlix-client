@@ -32036,8 +32036,12 @@ class MainView extends _reactDefault.default.Component {
                             path: "/",
                             render: ()=>{
                                 /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are 
-            passed as a prop to the LoginView */ if (!user1) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_loginView.LoginView, {
-                                    onLoggedIn: (user)=>this.onLoggedIn(user)
+            passed as a prop to the LoginView */ if (!user1) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
+                                    lg: 12,
+                                    md: 12,
+                                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_loginView.LoginView, {
+                                        onLoggedIn: (user)=>this.onLoggedIn(user)
+                                    }, void 0, false, void 0, void 0)
                                 }, void 0, false, void 0, void 0);
                                 // Before the movies have been loaded
                                 if (movies.length === 0) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
