@@ -15,27 +15,6 @@ class MyFlixApplication extends React.Component {
     render() {
         return (
             <Container>
-                <Navbar className="navbar" fixed="top" bg="dark" variant="dark" expand="lg">
-                    <Container>
-                        <Navbar.Brand className="navbar-brand" href="#home">
-                            <img
-                                src={image}
-                                width="70"
-                                className="navbar-logo d-inline-block align-top"
-                                alt="Retro Video logo"
-                            />{' '}
-                            Retro Video
-                        </Navbar.Brand>
-                    </Container>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse>
-                        <Nav className="me-auto">
-                            <Nav.Link href="#login">Login</Nav.Link>
-                            <Nav.Link href="#update-profile">Profile</Nav.Link>
-                            <Nav.Link href="#logout">Logout</Nav.Link>
-                        </Nav>
-                    </Navbar.Collapse>
-                </Navbar>
                 <MainView />
             </Container>
         );

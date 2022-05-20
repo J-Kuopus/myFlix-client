@@ -1023,101 +1023,12 @@ var _rvLogoPngDefault = parcelHelpers.interopDefault(_rvLogoPng);
 class MyFlixApplication extends _reactDefault.default.Component {
     render() {
         return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Container, {
-            children: [
-                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Navbar, {
-                    className: "navbar",
-                    fixed: "top",
-                    bg: "dark",
-                    variant: "dark",
-                    expand: "lg",
-                    children: [
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Container, {
-                            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Navbar.Brand, {
-                                className: "navbar-brand",
-                                href: "#home",
-                                children: [
-                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("img", {
-                                        src: _rvLogoPngDefault.default,
-                                        width: "70",
-                                        className: "navbar-logo d-inline-block align-top",
-                                        alt: "Retro Video logo"
-                                    }, void 0, false, {
-                                        fileName: "src/index.jsx",
-                                        lineNumber: 21,
-                                        columnNumber: 29
-                                    }, this),
-                                    ' ',
-                                    "Retro Video"
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/index.jsx",
-                                lineNumber: 20,
-                                columnNumber: 25
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "src/index.jsx",
-                            lineNumber: 19,
-                            columnNumber: 21
-                        }, this),
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Navbar.Toggle, {
-                            "aria-controls": "basic-navbar-nav"
-                        }, void 0, false, {
-                            fileName: "src/index.jsx",
-                            lineNumber: 30,
-                            columnNumber: 21
-                        }, this),
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Navbar.Collapse, {
-                            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Nav, {
-                                className: "me-auto",
-                                children: [
-                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Nav.Link, {
-                                        href: "#login",
-                                        children: "Login"
-                                    }, void 0, false, {
-                                        fileName: "src/index.jsx",
-                                        lineNumber: 33,
-                                        columnNumber: 29
-                                    }, this),
-                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Nav.Link, {
-                                        href: "#update-profile",
-                                        children: "Profile"
-                                    }, void 0, false, {
-                                        fileName: "src/index.jsx",
-                                        lineNumber: 34,
-                                        columnNumber: 29
-                                    }, this),
-                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Nav.Link, {
-                                        href: "#logout",
-                                        children: "Logout"
-                                    }, void 0, false, {
-                                        fileName: "src/index.jsx",
-                                        lineNumber: 35,
-                                        columnNumber: 29
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/index.jsx",
-                                lineNumber: 32,
-                                columnNumber: 25
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "src/index.jsx",
-                            lineNumber: 31,
-                            columnNumber: 21
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/index.jsx",
-                    lineNumber: 18,
-                    columnNumber: 17
-                }, this),
-                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_mainViewDefault.default, {}, void 0, false, {
-                    fileName: "src/index.jsx",
-                    lineNumber: 39,
-                    columnNumber: 17
-                }, this)
-            ]
-        }, void 0, true, {
+            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_mainViewDefault.default, {}, void 0, false, {
+                fileName: "src/index.jsx",
+                lineNumber: 18,
+                columnNumber: 17
+            }, this)
+        }, void 0, false, {
             fileName: "src/index.jsx",
             lineNumber: 17,
             columnNumber: 13
