@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 
 import './navbar.scss';
-import image from '../img/rv-logo.png';
+import image from '../../../img/rv-logo.png';
 
 export function NavbarView() {
     let user = localStorage.getItem('user');
