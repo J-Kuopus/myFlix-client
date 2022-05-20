@@ -32192,6 +32192,9 @@ class MainView extends _reactDefault.default.Component {
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
                         path: "/genres/:name",
                         render: ({ match  })=>{
+                            if (movies.length === 0) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                                className: "main-view"
+                            }, void 0, false, void 0, void 0);
                             return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
                                 children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_genreView.GenreView, {
                                     genre: movies.find((m)=>m.Genre.Name === match.params.name
@@ -32211,7 +32214,7 @@ class MainView extends _reactDefault.default.Component {
                         children: "Logout"
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 115,
+                        lineNumber: 116,
                         columnNumber: 11
                     }, this)
                 ]

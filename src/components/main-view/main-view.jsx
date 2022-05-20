@@ -106,6 +106,7 @@ class MainView extends React.Component {
             }
           } />
            <Route path="/genres/:name" render={({ match  }) =>{
+             if (movies.length === 0) return <div className="main-view" />;
             return <Col>
                     <GenreView genre={movies.find(m => m.Genre.Name === match.params.name).Genre} />
                 </Col>
