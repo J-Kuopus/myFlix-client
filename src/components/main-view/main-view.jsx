@@ -64,14 +64,6 @@ class MainView extends React.Component {
     this.getMovies(authData.token);
   }
 
-  onLoggedOut() {
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
-    this.setState({
-      user: null
-    });
-  }
-
   render() {
     const { movies, user } = this.state; // Deconstructed variables
       
@@ -113,8 +105,6 @@ class MainView extends React.Component {
                 </Col>
             }
           } />
-          
-          <button onClick={() => { this.onLoggedOut() }}>Logout</button>
         </Row>
       </Router>
     );
