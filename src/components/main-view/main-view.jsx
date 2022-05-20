@@ -85,6 +85,10 @@ class MainView extends React.Component {
               </Col> 
             ))
           }} />
+          <Route path="/register" render={() => {
+            if (user) return <Redirect to="/" />
+            return <RegistrationView /> 
+          }} />
           <Route path="/movies/:movieId" render={({ match, history }) => {
             return <Col>
                     <MovieView movie={movies.find(m => m._id === match.params.movieId)} onBackClick={() => history.goBack()}/>
