@@ -32092,12 +32092,6 @@ class MainView extends _reactDefault.default.Component {
             this.getMovies(accessToken);
         }
     }
-    /* When a movie is clicked, this function is invoked and updates the state of the 
-    'selectedMovie'--property to that movie*/ setSelectedMovie(newSelectedMovie) {
-        this.setState({
-            selectedMovie: newSelectedMovie
-        });
-    }
     // When a user successfully logs in, this function updates the 'user' property in state to that particular user
     onLoggedIn(authData) {
         console.log(authData);
@@ -32116,25 +32110,25 @@ class MainView extends _reactDefault.default.Component {
         });
     }
     render() {
-        const { movies , selectedMovie , user: user1  } = this.state; // Deconstructed variables
+        const { movies , user: user1  } = this.state; // Deconstructed variables
         /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are 
-      passed as a prop to the LoginView */ if (!user1) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_loginView.LoginView, {
+    passed as a prop to the LoginView */ if (!user1) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_loginView.LoginView, {
             onLoggedIn: (user)=>this.onLoggedIn(user)
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 85,
-            columnNumber: 25
+            lineNumber: 77,
+            columnNumber: 23
         }, this);
         // Before the movies have been loaded
         if (movies.length === 0) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
             className: "main-view"
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 88,
-            columnNumber: 39
+            lineNumber: 80,
+            columnNumber: 37
         }, this);
         /* If the state of 'selectedMovie' is not null, that selected movie will be returned, otherwise, all 
-      movies will be returned */ return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.BrowserRouter, {
+    movies will be returned */ return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.BrowserRouter, {
             children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Row, {
                 className: "main-view justify-content-md-center",
                 xs: 1,
@@ -32155,7 +32149,7 @@ class MainView extends _reactDefault.default.Component {
                         }
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 95,
+                        lineNumber: 87,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -32170,7 +32164,7 @@ class MainView extends _reactDefault.default.Component {
                         }
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 102,
+                        lineNumber: 94,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
@@ -32180,19 +32174,19 @@ class MainView extends _reactDefault.default.Component {
                         children: "Logout"
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 107,
+                        lineNumber: 99,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 94,
+                lineNumber: 86,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 93,
-            columnNumber: 9
+            lineNumber: 85,
+            columnNumber: 7
         }, this);
     }
 }
