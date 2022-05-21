@@ -4,7 +4,7 @@ import { Form, FormGroup, FormControl, Container, Card, Row, Col } from 'react-b
 import PropTypes, { string } from "prop-types";
 
 // Displays user info
-export class UserDetailsView extends React.Component {
+class UserDetailsView extends React.Component {
     constructor() {
         super();
     }
@@ -14,7 +14,7 @@ export class UserDetailsView extends React.Component {
             headers: { Authorization:`Bearer ${token}`},
         })
         .then((response) => {
-            this.props.setUserData(responde.data);
+            this.props.setUserData(response.data);
         })
         .catch((e) => console.log(e))
     }
@@ -86,6 +86,8 @@ export class UserDetailsView extends React.Component {
         );
     }
 }
+
+export default UserDetailsView;
 
 UserDetailsView.propTypes = {
     setUserData: PropTypes.func.isRequired,

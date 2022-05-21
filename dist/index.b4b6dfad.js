@@ -38840,6 +38840,7 @@ var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _reactBootstrap = require("react-bootstrap");
 var _profileViewScss = require("./profile-view.scss");
 var _userDetailsView = require("./user-details-view");
+var _userDetailsViewDefault = parcelHelpers.interopDefault(_userDetailsView);
 class ProfileView extends _reactDefault.default.Component {
     constructor(){
         super();
@@ -38974,7 +38975,7 @@ class ProfileView extends _reactDefault.default.Component {
                                     ,
                                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Container, {
                                         children: [
-                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_userDetailsView.UserDetailsView, {}, void 0, false, {
+                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_userDetailsViewDefault.default, {}, void 0, false, {
                                                 fileName: "src/components/profile-view/profile-view.jsx",
                                                 lineNumber: 153,
                                                 columnNumber: 47
@@ -39151,9 +39152,6 @@ $parcel$ReactRefreshHelpers$6b7f.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-// Displays user info
-parcelHelpers.export(exports, "UserDetailsView", ()=>UserDetailsView
-);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
@@ -39162,6 +39160,7 @@ var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _reactBootstrap = require("react-bootstrap");
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+// Displays user info
 class UserDetailsView extends _reactDefault.default.Component {
     constructor(){
         super();
@@ -39173,7 +39172,7 @@ class UserDetailsView extends _reactDefault.default.Component {
                 Authorization: `Bearer ${token}`
             }
         }).then((response)=>{
-            this.props.setUserData(responde.data);
+            this.props.setUserData(response.data);
         }).catch((e)=>console.log(e)
         );
     }
@@ -39349,6 +39348,7 @@ class UserDetailsView extends _reactDefault.default.Component {
         }, this);
     }
 }
+exports.default = UserDetailsView;
 UserDetailsView.propTypes = {
     setUserData: _propTypesDefault.default.func.isRequired,
     userData: _propTypesDefault.default.shape({
