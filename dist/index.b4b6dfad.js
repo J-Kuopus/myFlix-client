@@ -38015,11 +38015,18 @@ function LoginView(props) {
                                         lineNumber: 96,
                                         columnNumber: 25
                                     }, this),
-                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Button, {
-                                        href: "#",
-                                        variant: "outline-secondary",
-                                        size: "sm",
-                                        children: "Register"
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
+                                        to: '/register',
+                                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Button, {
+                                            variant: "outline-secondary",
+                                            size: "sm",
+                                            type: "submit",
+                                            children: "Register"
+                                        }, void 0, false, {
+                                            fileName: "src/components/login-view/login-view.jsx",
+                                            lineNumber: 98,
+                                            columnNumber: 25
+                                        }, this)
                                     }, void 0, false, {
                                         fileName: "src/components/login-view/login-view.jsx",
                                         lineNumber: 97,

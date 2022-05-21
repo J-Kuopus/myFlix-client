@@ -94,12 +94,14 @@ export function LoginView(props) {
                     </Card.Body>
                     <Card.Footer>
                         <Card.Text>Don't have an account? You can register here.</Card.Text>
+                        <Link to={'/register'}>
                         <Button 
-                            href="#"
                             variant="outline-secondary"
-                            size="sm">
+                            size="sm"
+                            type="submit">
                             Register
                         </Button>
+                        </Link>
                     </Card.Footer>
                 </Card>
             </CardGroup>
