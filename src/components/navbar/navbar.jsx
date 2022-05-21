@@ -44,8 +44,8 @@ export function NavbarView() {
                     {isAuth() && (
                     <Navbar.Collapse>
                         <Nav className="me-auto">
-                            <Nav.Link href="/">Hello, {user}</Nav.Link>
-                            <Nav.Link href="#">Profile</Nav.Link>
+                            <Nav.Link to={`/users/${user}`}>Hello, {user}</Nav.Link>
+                            <Nav.Link to={`/users/${user}`}>Profile</Nav.Link>
                             <Nav.Link onClick={() => { 
                                 onLoggedOut(); 
                             }}>Logout

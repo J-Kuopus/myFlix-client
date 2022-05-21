@@ -38857,7 +38857,7 @@ function NavbarView() {
                         className: "me-auto",
                         children: [
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Nav.Link, {
-                                href: "/",
+                                to: `/users/${user}`,
                                 children: [
                                     "Hello, ",
                                     user
@@ -38868,7 +38868,7 @@ function NavbarView() {
                                 columnNumber: 29
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Nav.Link, {
-                                href: "#",
+                                to: `/users/${user}`,
                                 children: "Profile"
                             }, void 0, false, {
                                 fileName: "src/components/navbar/navbar.jsx",
