@@ -32195,8 +32195,7 @@ class MainView extends _reactDefault.default.Component {
                                 return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_profileView.ProfileView, {
                                     history: history,
                                     movies: movies,
-                                    user: user1 === match.params.username,
-                                    onBackClick: ()=>history.goBack()
+                                    user: user1 === match.params.username
                                 }, void 0, false, void 0, void 0);
                             }
                         }, void 0, false, {
