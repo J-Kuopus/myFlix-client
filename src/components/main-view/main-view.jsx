@@ -78,10 +78,11 @@ class MainView extends React.Component {
             
             /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are 
             passed as a prop to the LoginView */
-            if (!user) return 
+            if (!user) return (
               <Col className="login-view" xxl={6} xl={6} lg={7} md={8} sm={12}>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
-              </Col>;
+              </Col>
+              );
 
             // Before the movies have been loaded
             if (movies.length === 0) return <div className="main-view" />;   
@@ -147,7 +148,7 @@ class MainView extends React.Component {
             }
           } />
 
-          
+          {/* Route for link on main-view to profile-view */}
           <Route path={`/users/${user}`} 
                  render={( { history } ) => {
             if (!user) return <Redirect to="/" />
@@ -157,16 +158,6 @@ class MainView extends React.Component {
                                 onBackClick={() => history.goBack()} />
           }} />
 
-          
-          {/* Route for link on main-view to profile-view */}
-          <Route path={`/users/${user}`} 
-                 render={({ history }) => {
-            if (!user) return <Redirect to="/" />
-            
-            return <Col>
-                      <ProfileView user={user} onBackClick={() => history.goBack()} />
-                   </Col>
-          }} />
         
         
         </Row>
