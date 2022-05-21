@@ -24,5 +24,66 @@ export class UserDetailsView extends React.Component {
         this.getUser(accessToken);
     }
 
+    render() {
+        let { userData } = this.props;
+        console.log(userData);
+        return (
+            <Container>
+                <div>Hello, {userData.username}</div>
+                <Card.Title>View and update your details</Card.Title>
+                <Container>
+                    <Col>
+                    <FormGroup>
+                        <Form.Label>Username</Form.Label>
+                        <Container>
+                            <FormControl
+                              type="text"
+                              name="username"
+                              placeholder={userData.username}
+                              disabled
+                              />
+                        </Container>
+                    </FormGroup>
 
+                    <FormGroup>
+                        <Form.Label>Password</Form.Label>
+                        <Container>
+                            <FormControl
+                              type="text"
+                              name="password"
+                              placeholder={userData.password}
+                              disabled
+                            />
+                        </Container>
+                    </FormGroup>
+
+                    <FormGroup>
+                        <Form.Label>Email</Form.Label>
+                        <Container>
+                            <FormControl
+                              type="email"
+                              name="email"
+                              placeholder={userData.email}
+                              disabled
+                            />
+                        </Container>
+                    </FormGroup>
+
+                    <FormGroup>
+                        <Form.Label>Birth date</Form.Label>
+                        <Container>
+                            <FormControl
+                              type="text"
+                              name="birthday"
+                              placeholder={userData.birthday}
+                              disabled
+                            />
+                        </Container>
+                    </FormGroup>
+                    </Col>
+                </Container>
+            </Container>
+        );
+    }
 }
+
