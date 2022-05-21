@@ -5,7 +5,7 @@
 }
 
 @media (max-width: 615px) {
-  .login-view {
+  .login-view, .registration-view {
     padding-top: 50px;
   }
 }
