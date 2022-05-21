@@ -38850,6 +38850,10 @@ class ProfileView extends _reactDefault.default.Component {
         const accessToken = localStorage.getItem('token');
         this.getUser(accessToken);
     }
+    onLoggedOut = ()=>{
+        localStorage.clear();
+        window.open('/', '_self');
+    };
 }
 
   $parcel$ReactRefreshHelpers$3c12.postlude(module);

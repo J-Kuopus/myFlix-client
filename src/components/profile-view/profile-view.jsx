@@ -42,4 +42,9 @@ export class ProfileView extends React.Component {
         const accessToken = localStorage.getItem('token');
         this.getUser(accessToken);
     }
+
+    onLoggedOut = () => {
+        localStorage.clear();
+        window.open('/', '_self');
+    };
 }
