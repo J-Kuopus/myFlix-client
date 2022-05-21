@@ -38739,14 +38739,14 @@ function RegistrationView(props) {
                                     }, this),
                                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
                                         children: [
-                                            "Already registered ",
+                                            "Already registered? ",
                                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
                                                 to: '/',
-                                                children: "sign in"
+                                                children: "Sign in"
                                             }, void 0, false, {
                                                 fileName: "src/components/registration-view/registration-view.jsx",
                                                 lineNumber: 129,
-                                                columnNumber: 47
+                                                columnNumber: 48
                                             }, this),
                                             " here"
                                         ]

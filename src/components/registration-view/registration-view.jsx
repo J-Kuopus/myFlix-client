@@ -126,7 +126,7 @@ export function RegistrationView(props) {
                             onClick={handleSubmit}>Submit
                         </Button>
                         <p></p>
-                        <p>Already registered <Link to={'/'}>sign in</Link> here</p>
+                        <p>Already registered? <Link to={'/'}>Sign in</Link> here</p>
                     </Form>
                 </Card>
             </CardGroup>
