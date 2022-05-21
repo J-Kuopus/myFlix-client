@@ -38846,6 +38846,10 @@ class ProfileView extends _reactDefault.default.Component {
         }).catch((e)=>console.log(e)
         );
     }
+    componentDidMount() {
+        const accessToken = localStorage.getItem('token');
+        this.getUser(accessToken);
+    }
 }
 
   $parcel$ReactRefreshHelpers$3c12.postlude(module);
