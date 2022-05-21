@@ -97,7 +97,6 @@ class MainView extends React.Component {
              if (!user) return <Col className="login-view" xxl={6} xl={6} lg={7} md={8} sm={12}>
                                   <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                                </Col>;
-            // Before the movies have been loaded
             if (movies.length === 0) return <div className="main-view" />;  
             return <Col>
                     <MovieView movie={movies.find(m => m._id === match.params.movieId)} onBackClick={() => history.goBack()}/>
