@@ -4,7 +4,7 @@ import axios from 'axios';
 import PropTypes from 'prop-types';
 import { Card, Form, FormControl, Container, Col, Row, Button } from 'react-bootstrap';
 import './profile-view.scss';
-import { UserDetailsView } from './user-details-view';
+import  UserDetailsView from './user-details-view';
 
 export class ProfileView extends React.Component {
     constructor() {
