@@ -39176,6 +39176,10 @@ class UserDetailsView extends _reactDefault.default.Component {
         }).catch((e)=>console.log(e)
         );
     }
+    componentDidMount() {
+        const accessToken = localStorage.getItem('token');
+        this.getUser(accessToken);
+    }
 }
 
   $parcel$ReactRefreshHelpers$6b7f.postlude(module);
