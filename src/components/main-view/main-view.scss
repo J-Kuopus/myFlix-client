@@ -1,3 +1,9 @@
 .movie-card-col {
     padding: 20px;
 }
+
+@media all and (max-width: 615px) {
+    .login-view {
+        padding-top: 50px;
+    }
+}
