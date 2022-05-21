@@ -4,7 +4,7 @@ import axios from 'axios';
 import PropTypes from 'prop-types';
 import { Card, Form, FormControl, Container, Col, Row, Button } from 'react-bootstrap';
 import './profile-view.scss';
-import UserDetailsView from './user-details-view';
+import { UserDetailsView } from './user-details-view';
 
 export class ProfileView extends React.Component {
     constructor() {
@@ -146,8 +146,62 @@ export class ProfileView extends React.Component {
                         <Col>
                             <Card>
                                 <Card.Body>
-                                    <Form>
-
+                                    <Form className="update-form">
+                                          onSubmit={(e) => 
+                                          this.editProfile(e, this.username, this.password, this.email, this.birthday)}
+                                          <Container>
+                                              <UserDetailsView />
+                                              <Container>
+                                                  <div>
+                                                      <FormControl
+                                                        type="text"
+                                                        name="username"
+                                                        placeholder="insert your new username here"
+                                                        onChange={this.setUsername}
+                                                        required
+                                                      />
+                                                      <Form.Text className="text-muted">
+                                                          Your username must be at least 5 characters long
+                                                      </Form.Text>
+                                                  </div>
+                                                  <div>
+                                                      <FormControl
+                                                        type="text"
+                                                        name="password"
+                                                        placeholder="insert your new password here"
+                                                        onChange={(e) => this.setPassword(e.target.value)}
+                                                        required
+                                                      />
+                                                      <Form.Text className="text-muted">
+                                                          Your password must be at least 8 characters long
+                                                      </Form.Text>
+                                                  </div>
+                                                  <div>
+                                                      <FormControl
+                                                        type="email"
+                                                        name="email"
+                                                        placeholder="insert your new email here"
+                                                        onChange={(e) => this.setEmail(e.target.value)}
+                                                        required/>
+                                                  </div>
+                                                  <div>
+                                                      <FormControl
+                                                        type="date"
+                                                        name="birthday"
+                                                        placeholder="insert your birthday here"
+                                                        onChange={(e) => this.setBirthday(e.target.value)}
+                                                      />
+                                                  </div>
+                                              </Container>
+                                          </Container>
+                                          <Container>
+                                            <Button
+                                                variant="danger"
+                                                type="submit"
+                                                onClick={this.editProfile}
+                                                >
+                                            </Button>
+                                          </Container>
                                     </Form>
                                 </Card.Body>
                             </Card>
