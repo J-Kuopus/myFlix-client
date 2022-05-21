@@ -77,6 +77,7 @@ export function RegistrationView(props) {
             <Col>
             <CardGroup>
                 <Card>
+                    <Card.Body>
                     <Card.Title>Register a new account</Card.Title>
                     <Card.Header>Please enter the following information:</Card.Header>
                     <Form>
@@ -126,9 +127,11 @@ export function RegistrationView(props) {
                             type="submit" 
                             onClick={handleSubmit}>Submit
                         </Button>
-                        <p></p>
-                        <p>Already registered? <Link to={'/'}>Sign in</Link> here</p>
                     </Form>
+                    </Card.Body>
+                    <Card.Footer>
+                        <Card.Text>Already registered? <Link to={'/'}>Sign in</Link> here</Card.Text>
+                    </Card.Footer>
                 </Card>
             </CardGroup>
             </Col>
