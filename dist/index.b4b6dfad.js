@@ -38854,6 +38854,33 @@ class ProfileView extends _reactDefault.default.Component {
         localStorage.clear();
         window.open('/', '_self');
     };
+    editProfile = (e)=>{
+        e.preventDefault();
+        const user = localStorage.getItem('user');
+        const token = localStorage.getItem('token');
+        let newUser = this.state.username;
+        console.log(newUser);
+        _axiosDefault.default.put('https://powerful-coast-48240.herokuapp.com/users/${user}', {
+            username: this.state.username,
+            password: this.state.password,
+            email: this.state.email,
+            birthday: this.state.birthday
+        }, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then((response)=>{
+            this.setState({
+                username: response.data.username,
+                password: response.data.password,
+                email: response.data.email,
+                birthday: response.data.birthday
+            });
+            localStorage.setItem('user', this.state.username);
+            alert('Profile successfully updated!');
+            window.open(`/users/${newUser}`, '_self');
+        });
+    };
 }
 
   $parcel$ReactRefreshHelpers$3c12.postlude(module);
