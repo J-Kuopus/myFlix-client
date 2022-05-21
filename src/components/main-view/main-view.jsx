@@ -132,6 +132,14 @@ class MainView extends React.Component {
                                 user={user}
                                 onBackClick={() => history.goBack()} />
           }} />
+
+          {/* Route for link on main-view to profile-view */}
+          <Route path={`/users/${user}`} render={({ history }) => {
+            if (!user) return <Redirect to="/" />
+            return <Col>
+                      <ProfileView user={user} onBackClick={() => history.goBack()} />
+                    </Col>
+          }} />
         </Row>
       </Router>
     );
