@@ -39143,7 +39143,7 @@ ProfileView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"cHIiW","axios":"jo6P5","prop-types":"7wKI2","react-bootstrap":"3AD9A","./profile-view.scss":"eyKYH","@parcel/transformer-js/src/esmodule-helpers.js":"h1Kx6","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko","./user-details-view":"aD2jf"}],"eyKYH":[function() {},{}],"aD2jf":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"cHIiW","axios":"jo6P5","prop-types":"7wKI2","react-bootstrap":"3AD9A","./profile-view.scss":"eyKYH","./user-details-view":"aD2jf","@parcel/transformer-js/src/esmodule-helpers.js":"h1Kx6","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko"}],"eyKYH":[function() {},{}],"aD2jf":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$6b7f = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -39365,7 +39365,7 @@ UserDetailsView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","axios":"jo6P5","react-bootstrap":"3AD9A","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"h1Kx6","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko","react/jsx-dev-runtime":"iTorj"}],"bNPgg":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","axios":"jo6P5","react-bootstrap":"3AD9A","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"h1Kx6","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko"}],"bNPgg":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$8fd2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -39382,6 +39382,7 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactDom = require("react-dom");
 var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
 var _reactBootstrap = require("react-bootstrap");
+var _reactRouterDom = require("react-router-dom");
 var _navbarScss = require("./navbar.scss");
 var _rvLogoPng = require("../../../img/rv-logo.png");
 var _rvLogoPngDefault = parcelHelpers.interopDefault(_rvLogoPng);
@@ -39416,7 +39417,7 @@ function NavbarView() {
                                 alt: "Retro Video logo"
                             }, void 0, false, {
                                 fileName: "src/components/navbar/navbar.jsx",
-                                lineNumber: 33,
+                                lineNumber: 34,
                                 columnNumber: 29
                             }, this),
                             ' ',
@@ -39424,19 +39425,19 @@ function NavbarView() {
                         ]
                     }, void 0, true, {
                         fileName: "src/components/navbar/navbar.jsx",
-                        lineNumber: 32,
+                        lineNumber: 33,
                         columnNumber: 25
                     }, this)
                 }, void 0, false, {
                     fileName: "src/components/navbar/navbar.jsx",
-                    lineNumber: 31,
+                    lineNumber: 32,
                     columnNumber: 21
                 }, this),
                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Navbar.Toggle, {
                     "aria-controls": "basic-navbar-nav"
                 }, void 0, false, {
                     fileName: "src/components/navbar/navbar.jsx",
-                    lineNumber: 42,
+                    lineNumber: 43,
                     columnNumber: 21
                 }, this),
                 isAuth() && /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Navbar.Collapse, {
@@ -39451,7 +39452,7 @@ function NavbarView() {
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/navbar/navbar.jsx",
-                                lineNumber: 47,
+                                lineNumber: 48,
                                 columnNumber: 29
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Nav.Link, {
@@ -39459,7 +39460,7 @@ function NavbarView() {
                                 children: "Profile"
                             }, void 0, false, {
                                 fileName: "src/components/navbar/navbar.jsx",
-                                lineNumber: 48,
+                                lineNumber: 49,
                                 columnNumber: 29
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Nav.Link, {
@@ -39469,29 +39470,29 @@ function NavbarView() {
                                 children: "Logout"
                             }, void 0, false, {
                                 fileName: "src/components/navbar/navbar.jsx",
-                                lineNumber: 49,
+                                lineNumber: 50,
                                 columnNumber: 29
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/navbar/navbar.jsx",
-                        lineNumber: 46,
+                        lineNumber: 47,
                         columnNumber: 25
                     }, this)
                 }, void 0, false, {
                     fileName: "src/components/navbar/navbar.jsx",
-                    lineNumber: 45,
+                    lineNumber: 46,
                     columnNumber: 21
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/components/navbar/navbar.jsx",
-            lineNumber: 30,
+            lineNumber: 31,
             columnNumber: 17
         }, this)
     }, void 0, false, {
         fileName: "src/components/navbar/navbar.jsx",
-        lineNumber: 29,
+        lineNumber: 30,
         columnNumber: 13
     }, this);
 }
@@ -39504,7 +39505,7 @@ $RefreshReg$(_c, "NavbarView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom":"j6uA9","react-bootstrap":"3AD9A","./navbar.scss":"8wkoA","../../../img/rv-logo.png":"dIRMk","@parcel/transformer-js/src/esmodule-helpers.js":"h1Kx6","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko"}],"8wkoA":[function() {},{}],"dIRMk":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom":"j6uA9","react-bootstrap":"3AD9A","./navbar.scss":"8wkoA","../../../img/rv-logo.png":"dIRMk","@parcel/transformer-js/src/esmodule-helpers.js":"h1Kx6","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko","react-router-dom":"cHIiW"}],"8wkoA":[function() {},{}],"dIRMk":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('byUka') + "rv-logo.c8c00829.png" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"d2061"}],"d2061":[function(require,module,exports) {
