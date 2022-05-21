@@ -74,6 +74,7 @@ export class ProfileView extends React.Component {
             alert('Profile successfully updated!');
             window.open(`/users/${newUser}`, '_self');
         });
+    };
 
         deleteProfile() {
             const username = localStorage.getItem('user');
@@ -89,8 +90,31 @@ export class ProfileView extends React.Component {
                 localStorage.removeItem('token');
             })
             .catch((e) => console.log(e));
-        }
+        };
 
+        setUsername(e) {
+            this.setState({
+                username: e.target.value,
+            });
+        };
+
+        setPassword(value) {
+            this.setState({
+                password: value,
+            });
+        };
+
+        setEmail(value) {
+            this.setState({
+                email: value,
+            });
+        };
+
+        setBirthday(value) {
+            this.setState({
+                birthday: value,
+            });
+        };
 
     }
 }
