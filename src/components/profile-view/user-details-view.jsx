@@ -9,8 +9,8 @@ class UserDetailsView extends React.Component {
         super();
     }
     getUser(token) {
-        let user= localStorage.getItem('user');
-        axios.get('https://powerful-coast-48240.herokuapp.com/users/${user}', {
+        let user = localStorage.getItem('user');
+        axios.get('https://powerful-coast-48240.herokuapp.com/users/:Username', {
             headers: { Authorization:`Bearer ${token}`},
         })
         .then((response) => {
