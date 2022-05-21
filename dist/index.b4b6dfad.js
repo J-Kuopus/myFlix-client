@@ -38827,6 +38827,25 @@ class ProfileView extends _reactDefault.default.Component {
         this.removeFav = this.removeFav.bind(this);
         this.setUsername = this.setUsername.bind(this);
     }
+    //GETS user information
+    getUser(token) {
+        let user = localStorage.getItem('user');
+        _axiosDefault.default.get('https://powerful-coast-48240.herokuapp.com/users/${user}', {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then((response)=>{
+            // Assigns result to the state
+            this.setState({
+                username: response.data.username,
+                password: response.data.password,
+                email: response.data.email,
+                birthday: response.data.birthday,
+                favoriteMovies: response.data.favoriteMovies
+            });
+        }).catch((e)=>console.log(e)
+        );
+    }
 }
 
   $parcel$ReactRefreshHelpers$3c12.postlude(module);
