@@ -156,4 +156,13 @@ export class ProfileView extends React.Component {
             )
         }
 
-    }
+}
+
+ProfileView.propTypes = {
+    movies: PropTypes.arrayOf(
+        PropTypes.shape({
+            Title: PropTypes.string.isRequired,
+            ImagePath: PropTypes.string.isRequired,
+        })
+    ).isRequired,
+};

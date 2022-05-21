@@ -38973,6 +38973,12 @@ class ProfileView extends _reactDefault.default.Component {
         }, this);
     }
 }
+ProfileView.propTypes = {
+    movies: _propTypesDefault.default.arrayOf(_propTypesDefault.default.shape({
+        Title: _propTypesDefault.default.string.isRequired,
+        ImagePath: _propTypesDefault.default.string.isRequired
+    })).isRequired
+};
 
   $parcel$ReactRefreshHelpers$3c12.postlude(module);
 } finally {
