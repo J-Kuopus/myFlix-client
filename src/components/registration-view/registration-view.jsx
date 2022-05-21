@@ -77,7 +77,8 @@ export function RegistrationView(props) {
             <Col>
             <CardGroup>
                 <Card>
-                    <Card.Title>Please register</Card.Title>
+                    <Card.Title>Register a new account</Card.Title>
+                    <Card.Header>Please enter the following information:</Card.Header>
                     <Form>
                         <Form.Group>
                         <Form.Label>Username: </Form.Label>
