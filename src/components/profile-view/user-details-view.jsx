@@ -87,3 +87,13 @@ export class UserDetailsView extends React.Component {
     }
 }
 
+UserDetailsView.propTypes = {
+    setUserData: PropTypes.func.isRequired,
+    userData: PropTypes.shape({
+        username: PropTypes.string.isRequired,
+        password: PropTypes.string.isRequired,
+        email: PropTypes.string.isRequired,
+        birthday: PropTypes.string.isRequired,
+        favoriteMovies: PropTypes.arrayOf(string),
+    }).isRequired,
+};

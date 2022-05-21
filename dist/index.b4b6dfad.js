@@ -39349,6 +39349,16 @@ class UserDetailsView extends _reactDefault.default.Component {
         }, this);
     }
 }
+UserDetailsView.propTypes = {
+    setUserData: _propTypesDefault.default.func.isRequired,
+    userData: _propTypesDefault.default.shape({
+        username: _propTypesDefault.default.string.isRequired,
+        password: _propTypesDefault.default.string.isRequired,
+        email: _propTypesDefault.default.string.isRequired,
+        birthday: _propTypesDefault.default.string.isRequired,
+        favoriteMovies: _propTypesDefault.default.arrayOf(_propTypes.string)
+    }).isRequired
+};
 
   $parcel$ReactRefreshHelpers$6b7f.postlude(module);
 } finally {
