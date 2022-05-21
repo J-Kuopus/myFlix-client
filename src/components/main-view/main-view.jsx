@@ -90,7 +90,9 @@ class MainView extends React.Component {
 
           <Route path="/register" render={() => {
             if (user) return <Redirect to="/" />
-            return <RegistrationView /> 
+            return <Col className="registration-view">
+                      <RegistrationView />
+                   </Col> 
           }} />
 
           <Route path="/movies/:movieId" render={({ match, history }) => {
