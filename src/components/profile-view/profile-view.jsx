@@ -116,5 +116,22 @@ export class ProfileView extends React.Component {
             });
         };
 
+        removeFav() {
+            const user = localStorage.getItem('user');
+            const token = localStorage.getItem('token');
+            const id = this.state.favoriteMovies;
+            axios.delete('https://powerful-coast-48240.herokuapp.com/users/${user}/favoriteMovies/${id}',
+
+            { headers: { Authorization:`Bearer ${token}`}},
+            {}
+            )
+            .then((response) => {
+                console.log(response);
+                alert('Movie was deleted from favorites!');
+                window.open(`/movies/${id}`, '_self');
+            })
+            .catch((err) => console.log(err));
+        }
+
     }
 }
