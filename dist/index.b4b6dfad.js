@@ -39096,7 +39096,7 @@ function NavbarView() {
                         className: "me-auto",
                         children: [
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Nav.Link, {
-                                to: `/users/${user}`,
+                                to: '/',
                                 children: [
                                     "Hello, ",
                                     user
