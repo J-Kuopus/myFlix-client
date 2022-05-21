@@ -87,22 +87,34 @@ class MainView extends React.Component {
               </Col> 
             ))
           }} />
+
           <Route path="/register" render={() => {
             if (user) return <Redirect to="/" />
             return <RegistrationView /> 
           }} />
+
           <Route path="/movies/:movieId" render={({ match, history }) => {
+             if (!user) return <Col className="login-view" xxl={6} xl={6} lg={7} md={8} sm={12}>
+                                  <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+                               </Col>;
+            // Before the movies have been loaded
+            if (movies.length === 0) return <div className="main-view" />;  
             return <Col>
                     <MovieView movie={movies.find(m => m._id === match.params.movieId)} onBackClick={() => history.goBack()}/>
                   </Col>
           }} />
-          <Route path="/directors/:name" render={({ match, history  }) =>{
+
+          <Route path="/directors/:name" render={({ match, history }) =>{
+            if (!user) return <Col className="login-view" xxl={6} xl={6} lg={7} md={8} sm={12}>
+                                  <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+                               </Col>;
             if (movies.length === 0) return <div className="main-view" />;
             return <Col>
                     <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director} onBackClick={() => history.goBack()} />
                   </Col>
             }
           } />
+
            <Route path="/genres/:name" render={({ match, history  }) =>{
              if (movies.length === 0) return <div className="main-view" />;
             return <Col>
@@ -110,6 +122,7 @@ class MainView extends React.Component {
                   </Col>
             }
           } />
+
           <Route path={`/users/${user}`} render={( { match, history } ) => {
             if (!user) return <Redirect to="/" />
             return <ProfileView movies={movies}

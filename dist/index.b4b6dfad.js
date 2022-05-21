@@ -32074,12 +32074,27 @@ class MainView extends _reactDefault.default.Component {
                             }
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 90,
+                            lineNumber: 91,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
                             path: "/movies/:movieId",
                             render: ({ match , history  })=>{
+                                if (!user1) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
+                                    className: "login-view",
+                                    xxl: 6,
+                                    xl: 6,
+                                    lg: 7,
+                                    md: 8,
+                                    sm: 12,
+                                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_loginView.LoginView, {
+                                        onLoggedIn: (user)=>this.onLoggedIn(user)
+                                    }, void 0, false, void 0, void 0)
+                                }, void 0, false, void 0, void 0);
+                                // Before the movies have been loaded
+                                if (movies.length === 0) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                                    className: "main-view"
+                                }, void 0, false, void 0, void 0);
                                 return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
                                     children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieView.MovieView, {
                                         movie: movies.find((m)=>m._id === match.params.movieId
@@ -32090,12 +32105,23 @@ class MainView extends _reactDefault.default.Component {
                             }
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 94,
+                            lineNumber: 96,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
                             path: "/directors/:name",
                             render: ({ match , history  })=>{
+                                if (!user1) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
+                                    className: "login-view",
+                                    xxl: 6,
+                                    xl: 6,
+                                    lg: 7,
+                                    md: 8,
+                                    sm: 12,
+                                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_loginView.LoginView, {
+                                        onLoggedIn: (user)=>this.onLoggedIn(user)
+                                    }, void 0, false, void 0, void 0)
+                                }, void 0, false, void 0, void 0);
                                 if (movies.length === 0) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
                                     className: "main-view"
                                 }, void 0, false, void 0, void 0);
@@ -32109,7 +32135,7 @@ class MainView extends _reactDefault.default.Component {
                             }
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 99,
+                            lineNumber: 107,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -32128,7 +32154,7 @@ class MainView extends _reactDefault.default.Component {
                             }
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 106,
+                            lineNumber: 118,
                             columnNumber: 12
                         }, this),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -32145,7 +32171,7 @@ class MainView extends _reactDefault.default.Component {
                             }
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 113,
+                            lineNumber: 126,
                             columnNumber: 11
                         }, this)
                     ]
