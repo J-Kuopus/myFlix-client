@@ -126,7 +126,7 @@ class MainView extends React.Component {
             }
           } />
 
-          <Route path={`/users/${user}`} render={( { match, history } ) => {
+          <Route path={`/users/${user}`} render={( { history } ) => {
             if (!user) return <Redirect to="/" />
             return <ProfileView movies={movies}
                                 user={user}
