@@ -75,6 +75,22 @@ export class ProfileView extends React.Component {
             window.open(`/users/${newUser}`, '_self');
         });
 
+        deleteProfile() {
+            const username = localStorage.getItem('user');
+            const token = localStorage.getItem('token');
+            axios.delete('https://powerful-coast-48240.herokuapp.com/users/${username}',
+            
+            { headers: { Authorization:`Bearer ${token}`}}
+            )
+            .then((response) => {
+                console.log(response);
+                alert('Profile was deleted');
+                localStorage.removeItem('user');
+                localStorage.removeItem('token');
+            })
+            .catch((e) => console.log(e));
+        }
+
 
     }
 }
