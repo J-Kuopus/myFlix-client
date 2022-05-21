@@ -133,5 +133,27 @@ export class ProfileView extends React.Component {
             .catch((err) => console.log(err));
         }
 
+        render() {
+            const { movies } = this.props;
+            const { favoriteMovies, username } = this.state;
+            if(!username) {
+                return null;
+            }
+            return (
+                <Container>
+                    <Row>
+                        <Col>
+                            <Card>
+                                <Card.Body>
+                                    <Form>
+
+                                    </Form>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    </Row>
+                </Container>
+            )
+        }
+
     }
-}
