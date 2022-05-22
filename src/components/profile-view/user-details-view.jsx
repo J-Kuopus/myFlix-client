@@ -16,7 +16,7 @@ class UserDetailsView extends React.Component {
         .then((response) => {
             this.props.setUserData(response.data);
         })
-        .catch((e) => console.log(e))
+        .catch((err) => console.log(err))
     }
 
     componentDidMount() {

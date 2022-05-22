@@ -36,7 +36,7 @@ export class ProfileView extends React.Component {
                 favoriteMovies: response.data.favoriteMovies,
             });
         })
-        .catch((e) => console.log(e));
+        .catch((err) => console.log(err));
     }
 
     componentDidMount() {

@@ -38870,7 +38870,7 @@ class ProfileView extends _reactDefault.default.Component {
                 birthday: response.data.birthday,
                 favoriteMovies: response.data.favoriteMovies
             });
-        }).catch((e)=>console.log(e)
+        }).catch((err)=>console.log(err)
         );
     }
     componentDidMount() {
@@ -39173,7 +39173,7 @@ class UserDetailsView extends _reactDefault.default.Component {
             }
         }).then((response)=>{
             this.props.setUserData(response.data);
-        }).catch((e)=>console.log(e)
+        }).catch((err)=>console.log(err)
         );
     }
     componentDidMount() {
