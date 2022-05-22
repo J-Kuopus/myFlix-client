@@ -39046,20 +39046,38 @@ class GenreView extends _reactDefault.default.Component {
                     children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card, {
                         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Body, {
                             children: [
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Header, {
+                                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Button, {
+                                        variant: "danger",
+                                        type: "submit",
+                                        onClick: ()=>{
+                                            onBackClick();
+                                        },
+                                        children: "Back"
+                                    }, void 0, false, {
+                                        fileName: "src/components/genre-view/genre-view.jsx",
+                                        lineNumber: 17,
+                                        columnNumber: 37
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "src/components/genre-view/genre-view.jsx",
+                                    lineNumber: 16,
+                                    columnNumber: 33
+                                }, this),
                                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Title, {
                                     children: [
                                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
                                             children: genre.Name
                                         }, void 0, false, {
                                             fileName: "src/components/genre-view/genre-view.jsx",
-                                            lineNumber: 16,
+                                            lineNumber: 25,
                                             columnNumber: 49
                                         }, this),
                                         " Genre"
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/genre-view/genre-view.jsx",
-                                    lineNumber: 16,
+                                    lineNumber: 25,
                                     columnNumber: 37
                                 }, this),
                                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Text, {
@@ -39068,66 +39086,46 @@ class GenreView extends _reactDefault.default.Component {
                                         children: "Description: "
                                     }, void 0, false, {
                                         fileName: "src/components/genre-view/genre-view.jsx",
-                                        lineNumber: 17,
+                                        lineNumber: 26,
                                         columnNumber: 48
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "src/components/genre-view/genre-view.jsx",
-                                    lineNumber: 17,
+                                    lineNumber: 26,
                                     columnNumber: 37
                                 }, this),
                                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Text, {
                                     children: genre.Description
                                 }, void 0, false, {
                                     fileName: "src/components/genre-view/genre-view.jsx",
-                                    lineNumber: 18,
+                                    lineNumber: 27,
                                     columnNumber: 37
                                 }, this),
                                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Footer, {
-                                    children: [
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
+                                            to: '/',
                                             children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Button, {
-                                                variant: "danger",
                                                 type: "submit",
-                                                onClick: ()=>{
-                                                    onBackClick();
-                                                },
-                                                children: "Back"
+                                                children: "Back to movies"
                                             }, void 0, false, {
                                                 fileName: "src/components/genre-view/genre-view.jsx",
-                                                lineNumber: 21,
-                                                columnNumber: 33
+                                                lineNumber: 31,
+                                                columnNumber: 37
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "src/components/genre-view/genre-view.jsx",
-                                            lineNumber: 20,
-                                            columnNumber: 37
-                                        }, this),
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                                            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
-                                                to: '/',
-                                                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Button, {
-                                                    type: "submit",
-                                                    children: "Back to movies"
-                                                }, void 0, false, {
-                                                    fileName: "src/components/genre-view/genre-view.jsx",
-                                                    lineNumber: 31,
-                                                    columnNumber: 37
-                                                }, this)
-                                            }, void 0, false, {
-                                                fileName: "src/components/genre-view/genre-view.jsx",
-                                                lineNumber: 30,
-                                                columnNumber: 33
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "src/components/genre-view/genre-view.jsx",
-                                            lineNumber: 29,
+                                            lineNumber: 30,
                                             columnNumber: 33
                                         }, this)
-                                    ]
-                                }, void 0, true, {
+                                    }, void 0, false, {
+                                        fileName: "src/components/genre-view/genre-view.jsx",
+                                        lineNumber: 29,
+                                        columnNumber: 33
+                                    }, this)
+                                }, void 0, false, {
                                     fileName: "src/components/genre-view/genre-view.jsx",
-                                    lineNumber: 19,
+                                    lineNumber: 28,
                                     columnNumber: 33
                                 }, this)
                             ]

@@ -13,19 +13,19 @@ export class GenreView extends React.Component {
                     <Col>
                         <Card>
                             <Card.Body>
+                                <Card.Header>
+                                    <Button
+                                        variant="danger"
+                                        type="submit"
+                                        onClick={() => {
+                                            onBackClick();
+                                        }}>Back
+                                    </Button>  
+                                </Card.Header>
                                     <Card.Title><span>{genre.Name}</span> Genre</Card.Title>
                                     <Card.Text><span className="label">Description: </span></Card.Text>
                                     <Card.Text>{genre.Description}</Card.Text>
                                 <Card.Footer>
-                                    <div>
-                                <Button
-                                    variant="danger"
-                                    type="submit"
-                                    onClick={() => {
-                                        onBackClick();
-                                    }}>Back
-                                </Button>
-                                </div>
                                 <div>
                                 <Link to={'/'}>
                                     <Button
