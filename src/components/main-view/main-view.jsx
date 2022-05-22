@@ -127,7 +127,7 @@ class MainView extends React.Component {
             
             if (movies.length === 0) return <div className="main-view" />;
             
-            return <Col>
+            return <Col className="director-view" xxl={6} xl={6} lg={7} md={8} sm={12}>
                     <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director} onBackClick={() => history.goBack()} />
                   </Col>
             }

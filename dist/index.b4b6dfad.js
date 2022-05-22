@@ -32133,6 +32133,12 @@ class MainView extends _reactDefault.default.Component {
                                     className: "main-view"
                                 }, void 0, false, void 0, void 0);
                                 return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
+                                    className: "director-view",
+                                    xxl: 6,
+                                    xl: 6,
+                                    lg: 7,
+                                    md: 8,
+                                    sm: 12,
                                     children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_directorView.DirectorView, {
                                         director: movies.find((m)=>m.Director.Name === match.params.name
                                         ).Director,
