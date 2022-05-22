@@ -28,9 +28,7 @@ export class GenreView extends React.Component {
                                 <Card.Footer>
                                 <div>
                                 <Link to={'/'}>
-                                    <Button
-                                        type="submit">Back to movies
-                                    </Button>
+                                    Back to Main
                                 </Link>
                                 </div>
                                 </Card.Footer>

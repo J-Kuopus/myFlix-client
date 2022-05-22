@@ -39105,14 +39105,7 @@ class GenreView extends _reactDefault.default.Component {
                                     children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
                                         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
                                             to: '/',
-                                            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Button, {
-                                                type: "submit",
-                                                children: "Back to movies"
-                                            }, void 0, false, {
-                                                fileName: "src/components/genre-view/genre-view.jsx",
-                                                lineNumber: 31,
-                                                columnNumber: 37
-                                            }, this)
+                                            children: "Back to Main"
                                         }, void 0, false, {
                                             fileName: "src/components/genre-view/genre-view.jsx",
                                             lineNumber: 30,
