@@ -4,8 +4,12 @@
   padding: 20px;
 }
 
+.genre-view, .director-view {
+  padding-top: 50px;
+}
+
 @media (max-width: 615px) {
-  .login-view, .registration-view, .genre-view, .director-view {
+  .login-view, .registration-view {
     padding-top: 50px;
   }
 }
