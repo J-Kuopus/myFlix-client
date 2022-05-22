@@ -38857,7 +38857,7 @@ class ProfileView extends _reactDefault.default.Component {
     //GETS user information
     getUser(token) {
         let user = localStorage.getItem('user');
-        _axiosDefault.default.get('https://powerful-coast-48240.herokuapp.com/users/:Username', {
+        _axiosDefault.default.get(`https://powerful-coast-48240.herokuapp.com/users/${user}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
