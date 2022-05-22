@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Card, Container, Col } from 'react-bootstrap';
+import { Button, Card, Container, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 export class GenreView extends React.Component {
@@ -8,14 +8,11 @@ export class GenreView extends React.Component {
         const { genre, movie, onBackClick } = this.props;
 
         return (
-            <Container>
             <Card>
                 <Card.Body>
-                    <Container className="genre-view">
                         <Card.Title><span>{genre.Name}</span> Genre</Card.Title>
                         <Card.Text>Description: </Card.Text>
                         <Card.Text>{genre.Description}</Card.Text>
-                    </Container>
                     <Card.Footer>
                     <Button
                         variant="danger"
@@ -32,7 +29,6 @@ export class GenreView extends React.Component {
                     </Card.Footer>
                 </Card.Body>
             </Card>
-            </Container>
         );
     }
 }
