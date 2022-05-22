@@ -38851,26 +38851,20 @@ class GenreView extends _reactDefault.default.Component {
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Container, {
                         className: "genre-view",
                         children: [
-                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Text, {
                                 children: [
-                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Text, {
-                                        children: "Title: "
-                                    }, void 0, false, {
-                                        fileName: "src/components/genre-view/genre-view.jsx",
-                                        lineNumber: 15,
-                                        columnNumber: 25
-                                    }, this),
+                                    "Title: ",
                                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
                                         children: genre.Name
                                     }, void 0, false, {
                                         fileName: "src/components/genre-view/genre-view.jsx",
-                                        lineNumber: 16,
-                                        columnNumber: 25
+                                        lineNumber: 15,
+                                        columnNumber: 43
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/genre-view/genre-view.jsx",
-                                lineNumber: 14,
+                                lineNumber: 15,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
@@ -38879,20 +38873,20 @@ class GenreView extends _reactDefault.default.Component {
                                         children: "Description: "
                                     }, void 0, false, {
                                         fileName: "src/components/genre-view/genre-view.jsx",
-                                        lineNumber: 19,
+                                        lineNumber: 18,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
                                         children: genre.Description
                                     }, void 0, false, {
                                         fileName: "src/components/genre-view/genre-view.jsx",
-                                        lineNumber: 20,
+                                        lineNumber: 19,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/genre-view/genre-view.jsx",
-                                lineNumber: 18,
+                                lineNumber: 17,
                                 columnNumber: 25
                             }, this)
                         ]
@@ -38912,7 +38906,7 @@ class GenreView extends _reactDefault.default.Component {
                                 children: "Back"
                             }, void 0, false, {
                                 fileName: "src/components/genre-view/genre-view.jsx",
-                                lineNumber: 24,
+                                lineNumber: 23,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
@@ -38922,18 +38916,18 @@ class GenreView extends _reactDefault.default.Component {
                                     children: "Back to movies"
                                 }, void 0, false, {
                                     fileName: "src/components/genre-view/genre-view.jsx",
-                                    lineNumber: 32,
+                                    lineNumber: 31,
                                     columnNumber: 25
                                 }, this)
                             }, void 0, false, {
                                 fileName: "src/components/genre-view/genre-view.jsx",
-                                lineNumber: 31,
+                                lineNumber: 30,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/genre-view/genre-view.jsx",
-                        lineNumber: 23,
+                        lineNumber: 22,
                         columnNumber: 21
                     }, this)
                 ]
