@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Card, CardGroup, Container, Col, Row, ListGroup } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import './movie-view.scss';
 
@@ -17,7 +18,7 @@ export class MovieView extends React.Component {
                         <ListGroup>
                             <ListGroup.Item className="movie-title">{movie.Title}</ListGroup.Item>
                             <ListGroup.Item className="movie-genre">
-                                <span className="label">Genre: </span>{movie.Genre.Name}</ListGroup.Item>
+                                <span className="label">Genre: </span><Link to={`/genres/${movie.Genre.Name}`}>{movie.Genre.Name}</Link></ListGroup.Item>
                             <ListGroup.Item className="movie-director">
                                 <span className="label">Director: </span>{movie.Director.Name}</ListGroup.Item>
                             <ListGroup.Item className="release-year">
