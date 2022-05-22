@@ -121,7 +121,7 @@ export class ProfileView extends React.Component {
             const user = localStorage.getItem('user');
             const token = localStorage.getItem('token');
             const id = this.state.favoriteMovies;
-            axios.delete('https://powerful-coast-48240.herokuapp.com/users/${user}/favoriteMovies/:movieId',
+            axios.delete(`https://powerful-coast-48240.herokuapp.com/users/${user}/favoriteMovies/${id}`,
 
             { headers: { Authorization:`Bearer ${token}`}},
             {}
