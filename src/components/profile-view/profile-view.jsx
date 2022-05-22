@@ -55,7 +55,7 @@ export class ProfileView extends React.Component {
         const token = localStorage.getItem('token');
         let newUser = this.state.username;
         console.log(newUser);
-        axios.put('https://powerful-coast-48240.herokuapp.com/users/:Username',
+        axios.put(`https://powerful-coast-48240.herokuapp.com/users/${user}`,
         {
             username: this.state.username,
             password: this.state.password,
@@ -80,7 +80,7 @@ export class ProfileView extends React.Component {
         deleteProfile() {
             const username = localStorage.getItem('user');
             const token = localStorage.getItem('token');
-            axios.delete('https://powerful-coast-48240.herokuapp.com/users/:Username',
+            axios.delete(`https://powerful-coast-48240.herokuapp.com/users/${username}`,
             
             { headers: { Authorization:`Bearer ${token}`}}
             )

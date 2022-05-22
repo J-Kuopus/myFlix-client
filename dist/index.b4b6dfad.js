@@ -38887,7 +38887,7 @@ class ProfileView extends _reactDefault.default.Component {
         const token = localStorage.getItem('token');
         let newUser = this.state.username;
         console.log(newUser);
-        _axiosDefault.default.put('https://powerful-coast-48240.herokuapp.com/users/:Username', {
+        _axiosDefault.default.put(`https://powerful-coast-48240.herokuapp.com/users/${user}`, {
             username: this.state.username,
             password: this.state.password,
             email: this.state.email,
@@ -38911,7 +38911,7 @@ class ProfileView extends _reactDefault.default.Component {
     deleteProfile() {
         const username = localStorage.getItem('user');
         const token = localStorage.getItem('token');
-        _axiosDefault.default.delete('https://powerful-coast-48240.herokuapp.com/users/:Username', {
+        _axiosDefault.default.delete(`https://powerful-coast-48240.herokuapp.com/users/${username}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
