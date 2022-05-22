@@ -38973,18 +38973,23 @@ class DirectorView extends _reactDefault.default.Component {
                         lineNumber: 23,
                         columnNumber: 21
                     }, this),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {}, void 0, false, {
+                        fileName: "src/components/director-view/director-view.jsx",
+                        lineNumber: 30,
+                        columnNumber: 21
+                    }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Container, {
                         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
                             to: '/',
-                            children: "Back to movies"
+                            children: "Back to Main"
                         }, void 0, false, {
                             fileName: "src/components/director-view/director-view.jsx",
-                            lineNumber: 31,
+                            lineNumber: 32,
                             columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "src/components/director-view/director-view.jsx",
-                        lineNumber: 30,
+                        lineNumber: 31,
                         columnNumber: 21
                     }, this)
                 ]

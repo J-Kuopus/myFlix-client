@@ -27,9 +27,10 @@ export class DirectorView extends React.Component {
                     <Card.Text><span className="label">Birthyear: </span>{director.Birth}</Card.Text>
                     <Card.Text><span className="label">Deathyear: </span>{director.Death}</Card.Text>
                     </Container>
+                    <p></p>
                     <Container>
                     <Link to={'/'}>
-                        Back to movies
+                        Back to Main
                     </Link>
                     </Container>
                 </Card.Body>
