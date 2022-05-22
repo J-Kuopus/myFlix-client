@@ -38875,59 +38875,67 @@ class DirectorView extends _reactDefault.default.Component {
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Text, {
-                        children: "Name: "
-                    }, void 0, false, {
+                        children: [
+                            "Name: ",
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
+                                children: director.Name
+                            }, void 0, false, {
+                                fileName: "src/components/director-view/director-view.jsx",
+                                lineNumber: 14,
+                                columnNumber: 38
+                            }, this)
+                        ]
+                    }, void 0, true, {
                         fileName: "src/components/director-view/director-view.jsx",
                         lineNumber: 14,
                         columnNumber: 21
                     }, this),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
-                        children: director.Name
-                    }, void 0, false, {
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Text, {
+                        children: [
+                            "Bio:  ",
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
+                                children: director.Bio
+                            }, void 0, false, {
+                                fileName: "src/components/director-view/director-view.jsx",
+                                lineNumber: 15,
+                                columnNumber: 38
+                            }, this)
+                        ]
+                    }, void 0, true, {
                         fileName: "src/components/director-view/director-view.jsx",
                         lineNumber: 15,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Text, {
-                        children: "Bio: "
-                    }, void 0, false, {
+                        children: [
+                            "Birthyear: ",
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
+                                children: director.Birth
+                            }, void 0, false, {
+                                fileName: "src/components/director-view/director-view.jsx",
+                                lineNumber: 16,
+                                columnNumber: 43
+                            }, this)
+                        ]
+                    }, void 0, true, {
                         fileName: "src/components/director-view/director-view.jsx",
                         lineNumber: 16,
                         columnNumber: 21
                     }, this),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
-                        children: director.Bio
-                    }, void 0, false, {
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Text, {
+                        children: [
+                            "Deathyear: ",
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
+                                children: director.Death
+                            }, void 0, false, {
+                                fileName: "src/components/director-view/director-view.jsx",
+                                lineNumber: 17,
+                                columnNumber: 43
+                            }, this)
+                        ]
+                    }, void 0, true, {
                         fileName: "src/components/director-view/director-view.jsx",
                         lineNumber: 17,
-                        columnNumber: 21
-                    }, this),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Text, {
-                        children: "Birthyear: "
-                    }, void 0, false, {
-                        fileName: "src/components/director-view/director-view.jsx",
-                        lineNumber: 18,
-                        columnNumber: 21
-                    }, this),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
-                        children: director.Birth
-                    }, void 0, false, {
-                        fileName: "src/components/director-view/director-view.jsx",
-                        lineNumber: 19,
-                        columnNumber: 21
-                    }, this),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Text, {
-                        children: "Deathyear: "
-                    }, void 0, false, {
-                        fileName: "src/components/director-view/director-view.jsx",
-                        lineNumber: 20,
-                        columnNumber: 21
-                    }, this),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
-                        children: director.Death
-                    }, void 0, false, {
-                        fileName: "src/components/director-view/director-view.jsx",
-                        lineNumber: 21,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Footer, {
@@ -38941,7 +38949,7 @@ class DirectorView extends _reactDefault.default.Component {
                                 children: "Back"
                             }, void 0, false, {
                                 fileName: "src/components/director-view/director-view.jsx",
-                                lineNumber: 23,
+                                lineNumber: 19,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
@@ -38951,18 +38959,18 @@ class DirectorView extends _reactDefault.default.Component {
                                     children: "Back to movies"
                                 }, void 0, false, {
                                     fileName: "src/components/director-view/director-view.jsx",
-                                    lineNumber: 31,
+                                    lineNumber: 27,
                                     columnNumber: 25
                                 }, this)
                             }, void 0, false, {
                                 fileName: "src/components/director-view/director-view.jsx",
-                                lineNumber: 30,
+                                lineNumber: 26,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/director-view/director-view.jsx",
-                        lineNumber: 22,
+                        lineNumber: 18,
                         columnNumber: 21
                     }, this)
                 ]
