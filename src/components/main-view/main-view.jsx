@@ -149,8 +149,8 @@ class MainView extends React.Component {
           } />
 
           {/* Route for link on main-view to profile-view */}
-          <Route path={'/users/:Username'} 
-                 render={( { history, match } ) => {
+          <Route path={`/users/${user}`} 
+                 render={( { history } ) => {
 
             if (!user) return <Col className="login-view" xxl={6} xl={6} lg={7} md={8} sm={12}>
                                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
@@ -161,11 +161,11 @@ class MainView extends React.Component {
             
             return <ProfileView history={history}
                                 movies={movies}
-                                user={user === match.params.username}
+                                user={user}
+                                onBackClick={() => history.goBack()}
                     />
           }} />
-
-        
+  
         
         </Row>
       </Router>
