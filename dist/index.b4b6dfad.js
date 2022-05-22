@@ -38839,14 +38839,97 @@ class GenreView extends _reactDefault.default.Component {
         const { genre , movie , onBackClick  } = this.props;
         return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card, {
             children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Body, {
-                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Container, {
-                    className: "genre-view"
-                }, void 0, false, {
-                    fileName: "src/components/genre-view/genre-view.jsx",
-                    lineNumber: 13,
-                    columnNumber: 21
-                }, this)
-            }, void 0, false, {
+                children: [
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Container, {
+                        className: "genre-view",
+                        children: [
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
+                                children: [
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Text, {
+                                        children: "Title: "
+                                    }, void 0, false, {
+                                        fileName: "src/components/genre-view/genre-view.jsx",
+                                        lineNumber: 15,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
+                                        children: genre.Name
+                                    }, void 0, false, {
+                                        fileName: "src/components/genre-view/genre-view.jsx",
+                                        lineNumber: 16,
+                                        columnNumber: 25
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/genre-view/genre-view.jsx",
+                                lineNumber: 14,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
+                                children: [
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Text, {
+                                        children: "Description: "
+                                    }, void 0, false, {
+                                        fileName: "src/components/genre-view/genre-view.jsx",
+                                        lineNumber: 19,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
+                                        children: genre.Description
+                                    }, void 0, false, {
+                                        fileName: "src/components/genre-view/genre-view.jsx",
+                                        lineNumber: 20,
+                                        columnNumber: 25
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/genre-view/genre-view.jsx",
+                                lineNumber: 18,
+                                columnNumber: 25
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/genre-view/genre-view.jsx",
+                        lineNumber: 13,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Container, {
+                        children: [
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Button, {
+                                variant: "danger",
+                                type: "submit",
+                                onClick: ()=>{
+                                    onBackClick();
+                                },
+                                children: "Back"
+                            }, void 0, false, {
+                                fileName: "src/components/genre-view/genre-view.jsx",
+                                lineNumber: 24,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
+                                to: '/',
+                                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Button, {
+                                    type: "submit",
+                                    children: "Back to movies"
+                                }, void 0, false, {
+                                    fileName: "src/components/genre-view/genre-view.jsx",
+                                    lineNumber: 32,
+                                    columnNumber: 25
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "src/components/genre-view/genre-view.jsx",
+                                lineNumber: 31,
+                                columnNumber: 21
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/genre-view/genre-view.jsx",
+                        lineNumber: 23,
+                        columnNumber: 21
+                    }, this)
+                ]
+            }, void 0, true, {
                 fileName: "src/components/genre-view/genre-view.jsx",
                 lineNumber: 12,
                 columnNumber: 17

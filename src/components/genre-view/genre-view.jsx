@@ -11,10 +11,31 @@ export class GenreView extends React.Component {
             <Card>
                 <Card.Body>
                     <Container className="genre-view">
-
+                        <Col>
+                        <Card.Text>Title: </Card.Text>
+                        <span>{genre.Name}</span>
+                        </Col>
+                        <Col>
+                        <Card.Text>Description: </Card.Text>
+                        <span>{genre.Description}</span>
+                        </Col>
+                    </Container>
+                    <Container>
+                    <Button
+                        variant="danger"
+                        type="submit"
+                        onClick={() => {
+                            onBackClick();
+                        }}>Back
+                    </Button>
+                    <Link to={'/'}>
+                        <Button
+                            type="submit">Back to movies
+                        </Button>
+                    </Link>
                     </Container>
                 </Card.Body>
             </Card>
-        )
+        );
     }
 }
