@@ -38941,6 +38941,13 @@ class GenreView extends _reactDefault.default.Component {
         }, this);
     }
 }
+GenreView.propTypes = {
+    genre: _propTypesDefault.default.shape({
+        Name: _propTypesDefault.default.string.isRequired,
+        Description: _propTypesDefault.default.string.isRequired
+    }).isRequired,
+    onBackClick: _propTypesDefault.default.func.isRequired
+};
 
   $parcel$ReactRefreshHelpers$377f.postlude(module);
 } finally {
