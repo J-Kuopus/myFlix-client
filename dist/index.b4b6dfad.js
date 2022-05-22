@@ -38947,7 +38947,7 @@ class ProfileView extends _reactDefault.default.Component {
         const user = localStorage.getItem('user');
         const token = localStorage.getItem('token');
         const id = this.state.favoriteMovies;
-        _axiosDefault.default.delete('https://powerful-coast-48240.herokuapp.com/users/${user}/favoriteMovies/${id}', {
+        _axiosDefault.default.delete('https://powerful-coast-48240.herokuapp.com/users/${user}/favoriteMovies/:movieId', {
             headers: {
                 Authorization: `Bearer ${token}`
             }
