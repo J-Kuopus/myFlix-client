@@ -8,27 +8,33 @@ export class GenreView extends React.Component {
         const { genre, movie, onBackClick } = this.props;
 
         return (
-            <Card>
-                <Card.Body>
-                        <Card.Title><span>{genre.Name}</span> Genre</Card.Title>
-                        <Card.Text>Description: </Card.Text>
-                        <Card.Text>{genre.Description}</Card.Text>
-                    <Card.Footer>
-                    <Button
-                        variant="danger"
-                        type="submit"
-                        onClick={() => {
-                            onBackClick();
-                        }}>Back
-                    </Button>
-                    <Link to={'/'}>
-                        <Button
-                            type="submit">Back to movies
-                        </Button>
-                    </Link>
-                    </Card.Footer>
-                </Card.Body>
-            </Card>
+            <Container>
+                <Row>
+                    <Col>
+                        <Card>
+                            <Card.Body>
+                                    <Card.Title><span>{genre.Name}</span> Genre</Card.Title>
+                                    <Card.Text>Description: </Card.Text>
+                                    <Card.Text>{genre.Description}</Card.Text>
+                                <Card.Footer>
+                                <Button
+                                    variant="danger"
+                                    type="submit"
+                                    onClick={() => {
+                                        onBackClick();
+                                    }}>Back
+                                </Button>
+                                <Link to={'/'}>
+                                    <Button
+                                        type="submit">Back to movies
+                                    </Button>
+                                </Link>
+                                </Card.Footer>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                </Row>
+            </Container>
         );
     }
 }
