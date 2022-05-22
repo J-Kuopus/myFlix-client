@@ -28,13 +28,9 @@ export class DirectorView extends React.Component {
                     <Card.Text><span className="label">Deathyear: </span>{director.Death}</Card.Text>
                     </Container>
                     <Container>
-                        <Card.Footer>
                     <Link to={'/'}>
-                        <Button
-                            type="submit">Back to movies
-                        </Button>
+                        Back to movies
                     </Link>
-                    </Card.Footer>
                     </Container>
                 </Card.Body>
             </Card>
