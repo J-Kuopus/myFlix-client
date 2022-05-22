@@ -38878,6 +38878,7 @@ class DirectorView extends _reactDefault.default.Component {
                         children: [
                             "Name: ",
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
+                                className: "label",
                                 children: director.Name
                             }, void 0, false, {
                                 fileName: "src/components/director-view/director-view.jsx",
@@ -38894,6 +38895,7 @@ class DirectorView extends _reactDefault.default.Component {
                         children: [
                             "Bio:  ",
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
+                                className: "label",
                                 children: director.Bio
                             }, void 0, false, {
                                 fileName: "src/components/director-view/director-view.jsx",
@@ -38910,6 +38912,7 @@ class DirectorView extends _reactDefault.default.Component {
                         children: [
                             "Birthyear: ",
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
+                                className: "label",
                                 children: director.Birth
                             }, void 0, false, {
                                 fileName: "src/components/director-view/director-view.jsx",
@@ -38926,6 +38929,7 @@ class DirectorView extends _reactDefault.default.Component {
                         children: [
                             "Deathyear: ",
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
+                                className: "label",
                                 children: director.Death
                             }, void 0, false, {
                                 fileName: "src/components/director-view/director-view.jsx",
