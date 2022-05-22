@@ -10,12 +10,15 @@ export class DirectorView extends React.Component {
         return (
             <Card>
                 <Card.Body>
+                    <Container>
                     <Card.Title>Director Info</Card.Title>
                     <Card.Text><span className="label">Name: </span>{director.Name}</Card.Text>
                     <Card.Text><span className="label">Bio:  </span>{director.Bio}</Card.Text>
                     <Card.Text><span className="label">Birthyear: </span>{director.Birth}</Card.Text>
                     <Card.Text><span className="label">Deathyear: </span>{director.Death}</Card.Text>
-                    <Card.Footer>
+                    </Container>
+                    <Container>
+                        <Card.Footer>
                     <Button
                         variant="danger"
                         type="submit"
@@ -29,6 +32,7 @@ export class DirectorView extends React.Component {
                         </Button>
                     </Link>
                     </Card.Footer>
+                    </Container>
                 </Card.Body>
             </Card>
         )
