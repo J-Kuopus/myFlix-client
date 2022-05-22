@@ -38874,7 +38874,7 @@ class GenreView extends _reactDefault.default.Component {
                                 lineNumber: 15,
                                 columnNumber: 25
                             }, this),
-                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Text, {
                                 children: genre.Description
                             }, void 0, false, {
                                 fileName: "src/components/genre-view/genre-view.jsx",
