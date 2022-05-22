@@ -10,6 +10,16 @@ export class DirectorView extends React.Component {
         return (
             <Card>
                 <Card.Body>
+                    <Card.Header>
+                        <Button
+                            variant="danger"
+                            type="submit"
+                            onClick={() => {
+                                onBackClick();
+                            }}>Back
+                        </Button>
+                    </Card.Header>
+                    <p></p>
                     <Container>
                     <Card.Title>Director Info</Card.Title>
                     <Card.Text><span className="label">Name: </span>{director.Name}</Card.Text>
@@ -19,13 +29,6 @@ export class DirectorView extends React.Component {
                     </Container>
                     <Container>
                         <Card.Footer>
-                    <Button
-                        variant="danger"
-                        type="submit"
-                        onClick={() => {
-                            onBackClick();
-                        }}>Back
-                    </Button>
                     <Link to={'/'}>
                         <Button
                             type="submit">Back to movies
