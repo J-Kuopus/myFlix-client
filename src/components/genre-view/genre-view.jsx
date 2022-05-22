@@ -22,6 +22,7 @@ export class GenreView extends React.Component {
                                         }}>Back
                                     </Button>  
                                 </Card.Header>
+                                <p></p>
                                     <Card.Title><span>{genre.Name}</span> Genre</Card.Title>
                                     <Card.Text><span className="label">Description: </span></Card.Text>
                                     <Card.Text>{genre.Description}</Card.Text>
