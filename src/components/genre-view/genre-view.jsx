@@ -15,7 +15,7 @@ export class GenreView extends React.Component {
                         <Card.Text>Description: </Card.Text>
                         <span>{genre.Description}</span>
                     </Container>
-                    <Container>
+                    <Card.Footer>
                     <Button
                         variant="danger"
                         type="submit"
@@ -28,7 +28,7 @@ export class GenreView extends React.Component {
                             type="submit">Back to movies
                         </Button>
                     </Link>
-                    </Container>
+                    </Card.Footer>
                 </Card.Body>
             </Card>
         );
