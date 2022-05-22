@@ -45,7 +45,7 @@ export function NavbarView() {
                     <Navbar.Collapse>
                         <Nav className="me-auto">
                             <Nav.Link to={'/'}>Hello, {user}</Nav.Link>
-                            <Nav.Link as={Link} to={'/users/:Username'}>Profile</Nav.Link>
+                            <Nav.Link as={Link} to={`/users/${user}`}>Profile</Nav.Link>
                             <Nav.Link onClick={() => { 
                                 onLoggedOut(); 
                             }}>Logout

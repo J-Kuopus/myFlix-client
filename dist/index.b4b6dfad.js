@@ -39167,7 +39167,7 @@ class UserDetailsView extends _reactDefault.default.Component {
     }
     getUser(token) {
         let user = localStorage.getItem('user');
-        _axiosDefault.default.get('https://powerful-coast-48240.herokuapp.com/users/:Username', {
+        _axiosDefault.default.get(`https://powerful-coast-48240.herokuapp.com/users/${user}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -39456,7 +39456,7 @@ function NavbarView() {
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Nav.Link, {
                                 as: _reactRouterDom.Link,
-                                to: '/users/:Username',
+                                to: `/users/${user}`,
                                 children: "Profile"
                             }, void 0, false, {
                                 fileName: "src/components/navbar/navbar.jsx",
