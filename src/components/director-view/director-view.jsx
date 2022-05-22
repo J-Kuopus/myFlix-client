@@ -10,6 +10,7 @@ export class DirectorView extends React.Component {
         return (
             <Card>
                 <Card.Body>
+                    <Card.Title>Director Info</Card.Title>
                     <Card.Text>Name: </Card.Text>
                     <span>{director.Name}</span>
                     <Card.Text>Bio: </Card.Text>
