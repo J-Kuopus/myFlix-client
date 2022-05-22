@@ -39070,31 +39070,43 @@ class GenreView extends _reactDefault.default.Component {
                                 }, this),
                                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Footer, {
                                     children: [
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Button, {
-                                            variant: "danger",
-                                            type: "submit",
-                                            onClick: ()=>{
-                                                onBackClick();
-                                            },
-                                            children: "Back"
-                                        }, void 0, false, {
-                                            fileName: "src/components/genre-view/genre-view.jsx",
-                                            lineNumber: 20,
-                                            columnNumber: 33
-                                        }, this),
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
-                                            to: '/',
+                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
                                             children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Button, {
+                                                variant: "danger",
                                                 type: "submit",
-                                                children: "Back to movies"
+                                                onClick: ()=>{
+                                                    onBackClick();
+                                                },
+                                                children: "Back"
                                             }, void 0, false, {
                                                 fileName: "src/components/genre-view/genre-view.jsx",
-                                                lineNumber: 28,
-                                                columnNumber: 37
+                                                lineNumber: 21,
+                                                columnNumber: 33
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "src/components/genre-view/genre-view.jsx",
-                                            lineNumber: 27,
+                                            lineNumber: 20,
+                                            columnNumber: 37
+                                        }, this),
+                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                                            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
+                                                to: '/',
+                                                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Button, {
+                                                    type: "submit",
+                                                    children: "Back to movies"
+                                                }, void 0, false, {
+                                                    fileName: "src/components/genre-view/genre-view.jsx",
+                                                    lineNumber: 31,
+                                                    columnNumber: 37
+                                                }, this)
+                                            }, void 0, false, {
+                                                fileName: "src/components/genre-view/genre-view.jsx",
+                                                lineNumber: 30,
+                                                columnNumber: 33
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "src/components/genre-view/genre-view.jsx",
+                                            lineNumber: 29,
                                             columnNumber: 33
                                         }, this)
                                     ]

@@ -17,6 +17,7 @@ export class GenreView extends React.Component {
                                     <Card.Header><span className="label">Description: </span></Card.Header>
                                     <Card.Text>{genre.Description}</Card.Text>
                                 <Card.Footer>
+                                    <div>
                                 <Button
                                     variant="danger"
                                     type="submit"
@@ -24,11 +25,14 @@ export class GenreView extends React.Component {
                                         onBackClick();
                                     }}>Back
                                 </Button>
+                                </div>
+                                <div>
                                 <Link to={'/'}>
                                     <Button
                                         type="submit">Back to movies
                                     </Button>
                                 </Link>
+                                </div>
                                 </Card.Footer>
                             </Card.Body>
                         </Card>
