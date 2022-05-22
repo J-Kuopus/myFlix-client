@@ -39101,25 +39101,13 @@ class GenreView extends _reactDefault.default.Component {
                                     lineNumber: 27,
                                     columnNumber: 37
                                 }, this),
-                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Footer, {
-                                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
-                                            to: '/',
-                                            children: "Back to Main"
-                                        }, void 0, false, {
-                                            fileName: "src/components/genre-view/genre-view.jsx",
-                                            lineNumber: 30,
-                                            columnNumber: 33
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "src/components/genre-view/genre-view.jsx",
-                                        lineNumber: 29,
-                                        columnNumber: 33
-                                    }, this)
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
+                                    to: '/',
+                                    children: "Back to Main"
                                 }, void 0, false, {
                                     fileName: "src/components/genre-view/genre-view.jsx",
                                     lineNumber: 28,
-                                    columnNumber: 33
+                                    columnNumber: 37
                                 }, this)
                             ]
                         }, void 0, true, {
