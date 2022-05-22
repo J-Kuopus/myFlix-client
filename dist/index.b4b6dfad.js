@@ -38344,7 +38344,14 @@ class MovieView extends _reactDefault.default.Component {
                                                 lineNumber: 23,
                                                 columnNumber: 33
                                             }, this),
-                                            movie.Director.Name
+                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
+                                                to: `/directors/${movie.Director.Name}`,
+                                                children: movie.Director.Name
+                                            }, void 0, false, {
+                                                fileName: "src/components/movie-view/movie-view.jsx",
+                                                lineNumber: 23,
+                                                columnNumber: 74
+                                            }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/components/movie-view/movie-view.jsx",

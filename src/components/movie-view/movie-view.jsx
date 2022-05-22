@@ -20,7 +20,7 @@ export class MovieView extends React.Component {
                             <ListGroup.Item className="movie-genre">
                                 <span className="label">Genre: </span><Link to={`/genres/${movie.Genre.Name}`}>{movie.Genre.Name}</Link></ListGroup.Item>
                             <ListGroup.Item className="movie-director">
-                                <span className="label">Director: </span>{movie.Director.Name}</ListGroup.Item>
+                                <span className="label">Director: </span><Link to={`/directors/${movie.Director.Name}`}>{movie.Director.Name}</Link></ListGroup.Item>
                             <ListGroup.Item className="release-year">
                                 <span className="label">Released: </span>{movie.Released}</ListGroup.Item>
                             <ListGroup.Item><span className="label">Summary: </span>{movie.Description}</ListGroup.Item> 
