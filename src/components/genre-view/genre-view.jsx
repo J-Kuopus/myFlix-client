@@ -8,6 +8,7 @@ export class GenreView extends React.Component {
         const { genre, movie, onBackClick } = this.props;
 
         return (
+            <Container>
             <Card>
                 <Card.Body>
                     <Container className="genre-view">
@@ -31,6 +32,7 @@ export class GenreView extends React.Component {
                     </Card.Footer>
                 </Card.Body>
             </Card>
+            </Container>
         );
     }
 }
