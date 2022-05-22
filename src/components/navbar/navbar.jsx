@@ -30,7 +30,7 @@ export function NavbarView() {
             <Container>
                 <Navbar className="navbar" fixed="top" bg="dark" variant="dark" expand="lg">
                     <Container>
-                        <Navbar.Brand className="navbar-brand" href="/">
+                        <Navbar.Brand as={Link}  to={'/'} className="navbar-brand">
                             <img
                                 src={image}
                                 width="70"

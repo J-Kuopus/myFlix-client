@@ -39407,8 +39407,9 @@ function NavbarView() {
             children: [
                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Container, {
                     children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Navbar.Brand, {
+                        as: _reactRouterDom.Link,
+                        to: '/',
                         className: "navbar-brand",
-                        href: "/",
                         children: [
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("img", {
                                 src: _rvLogoPngDefault.default,
