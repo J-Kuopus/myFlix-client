@@ -38876,15 +38876,15 @@ class DirectorView extends _reactDefault.default.Component {
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Text, {
                         children: [
-                            "Name: ",
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
                                 className: "label",
-                                children: director.Name
+                                children: "Name: "
                             }, void 0, false, {
                                 fileName: "src/components/director-view/director-view.jsx",
                                 lineNumber: 14,
-                                columnNumber: 38
-                            }, this)
+                                columnNumber: 32
+                            }, this),
+                            director.Name
                         ]
                     }, void 0, true, {
                         fileName: "src/components/director-view/director-view.jsx",
@@ -38893,15 +38893,15 @@ class DirectorView extends _reactDefault.default.Component {
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Text, {
                         children: [
-                            "Bio:  ",
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
                                 className: "label",
-                                children: director.Bio
+                                children: "Bio:  "
                             }, void 0, false, {
                                 fileName: "src/components/director-view/director-view.jsx",
                                 lineNumber: 15,
-                                columnNumber: 38
-                            }, this)
+                                columnNumber: 32
+                            }, this),
+                            director.Bio
                         ]
                     }, void 0, true, {
                         fileName: "src/components/director-view/director-view.jsx",
@@ -38910,15 +38910,15 @@ class DirectorView extends _reactDefault.default.Component {
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Text, {
                         children: [
-                            "Birthyear: ",
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
                                 className: "label",
-                                children: director.Birth
+                                children: "Birthyear: "
                             }, void 0, false, {
                                 fileName: "src/components/director-view/director-view.jsx",
                                 lineNumber: 16,
-                                columnNumber: 43
-                            }, this)
+                                columnNumber: 32
+                            }, this),
+                            director.Birth
                         ]
                     }, void 0, true, {
                         fileName: "src/components/director-view/director-view.jsx",
@@ -38927,15 +38927,15 @@ class DirectorView extends _reactDefault.default.Component {
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Text, {
                         children: [
-                            "Deathyear: ",
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
                                 className: "label",
-                                children: director.Death
+                                children: "Deathyear: "
                             }, void 0, false, {
                                 fileName: "src/components/director-view/director-view.jsx",
                                 lineNumber: 17,
-                                columnNumber: 43
-                            }, this)
+                                columnNumber: 32
+                            }, this),
+                            director.Death
                         ]
                     }, void 0, true, {
                         fileName: "src/components/director-view/director-view.jsx",

@@ -11,10 +11,10 @@ export class DirectorView extends React.Component {
             <Card>
                 <Card.Body>
                     <Card.Title>Director Info</Card.Title>
-                    <Card.Text>Name: <span className="label">{director.Name}</span></Card.Text>
-                    <Card.Text>Bio:  <span className="label">{director.Bio}</span></Card.Text>
-                    <Card.Text>Birthyear: <span className="label">{director.Birth}</span></Card.Text>
-                    <Card.Text>Deathyear: <span className="label">{director.Death}</span></Card.Text>
+                    <Card.Text><span className="label">Name: </span>{director.Name}</Card.Text>
+                    <Card.Text><span className="label">Bio:  </span>{director.Bio}</Card.Text>
+                    <Card.Text><span className="label">Birthyear: </span>{director.Birth}</Card.Text>
+                    <Card.Text><span className="label">Deathyear: </span>{director.Death}</Card.Text>
                     <Card.Footer>
                     <Button
                         variant="danger"
