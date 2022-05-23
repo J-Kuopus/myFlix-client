@@ -32189,8 +32189,8 @@ class MainView extends _reactDefault.default.Component {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
-                            path: `/users/${user1}`,
-                            render: ({ history  })=>{
+                            path: '/users/:Username',
+                            render: ({ history , match  })=>{
                                 if (!user1) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
                                     className: "login-view",
                                     xxl: 6,
@@ -32208,7 +32208,7 @@ class MainView extends _reactDefault.default.Component {
                                 return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_profileView.ProfileView, {
                                     history: history,
                                     movies: movies,
-                                    user: user1,
+                                    user: user1 === match.params.Username,
                                     onBackClick: ()=>history.goBack()
                                 }, void 0, false, void 0, void 0);
                             }
