@@ -39194,7 +39194,7 @@ class ProfileView extends _reactDefault.default.Component {
     //GETS user information
     getUser(token) {
         let user = localStorage.getItem('user');
-        _axiosDefault.default.get(`https://powerful-coast-48240.herokuapp.com/users/${user}`, {
+        _axiosDefault.default.get('https://powerful-coast-48240.herokuapp.com/users/:Username', {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -39224,7 +39224,7 @@ class ProfileView extends _reactDefault.default.Component {
         const token = localStorage.getItem('token');
         let newUser = this.state.username;
         console.log(newUser);
-        _axiosDefault.default.put(`https://powerful-coast-48240.herokuapp.com/users/${user}`, {
+        _axiosDefault.default.put('https://powerful-coast-48240.herokuapp.com/users/:Username', {
             username: this.state.username,
             password: this.state.password,
             email: this.state.email,
@@ -39248,7 +39248,7 @@ class ProfileView extends _reactDefault.default.Component {
     deleteProfile() {
         const username = localStorage.getItem('user');
         const token = localStorage.getItem('token');
-        _axiosDefault.default.delete(`https://powerful-coast-48240.herokuapp.com/users/${username}`, {
+        _axiosDefault.default.delete('https://powerful-coast-48240.herokuapp.com/users/:Username', {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -39284,7 +39284,7 @@ class ProfileView extends _reactDefault.default.Component {
         const user = localStorage.getItem('user');
         const token = localStorage.getItem('token');
         const id = this.state.favoriteMovies;
-        _axiosDefault.default.delete(`https://powerful-coast-48240.herokuapp.com/users/${user}/favoriteMovies/${id}`, {
+        _axiosDefault.default.delete('https://powerful-coast-48240.herokuapp.com/users/:Username/favoriteMovies/:MovieId', {
             headers: {
                 Authorization: `Bearer ${token}`
             }

@@ -23,7 +23,7 @@ export class ProfileView extends React.Component {
     //GETS user information
     getUser(token) {
         let user = localStorage.getItem('user');
-        axios.get(`https://powerful-coast-48240.herokuapp.com/users/${user}`, {
+        axios.get('https://powerful-coast-48240.herokuapp.com/users/:Username', {
             headers: { Authorization:`Bearer ${token}`},
         })
         .then((response) => {
@@ -55,7 +55,7 @@ export class ProfileView extends React.Component {
         const token = localStorage.getItem('token');
         let newUser = this.state.username;
         console.log(newUser);
-        axios.put(`https://powerful-coast-48240.herokuapp.com/users/${user}`,
+        axios.put('https://powerful-coast-48240.herokuapp.com/users/:Username',
         {
             username: this.state.username,
             password: this.state.password,
@@ -80,7 +80,7 @@ export class ProfileView extends React.Component {
         deleteProfile() {
             const username = localStorage.getItem('user');
             const token = localStorage.getItem('token');
-            axios.delete(`https://powerful-coast-48240.herokuapp.com/users/${username}`,
+            axios.delete('https://powerful-coast-48240.herokuapp.com/users/:Username',
             
             { headers: { Authorization:`Bearer ${token}`}}
             )
@@ -121,7 +121,7 @@ export class ProfileView extends React.Component {
             const user = localStorage.getItem('user');
             const token = localStorage.getItem('token');
             const id = this.state.favoriteMovies;
-            axios.delete(`https://powerful-coast-48240.herokuapp.com/users/${user}/favoriteMovies/${id}`,
+            axios.delete('https://powerful-coast-48240.herokuapp.com/users/:Username/favoriteMovies/:MovieId',
 
             { headers: { Authorization:`Bearer ${token}`}},
             {}
