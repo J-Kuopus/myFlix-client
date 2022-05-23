@@ -39504,7 +39504,7 @@ class UserDetailsView extends _reactDefault.default.Component {
     }
     getUser(token) {
         let user = localStorage.getItem('user');
-        _axiosDefault.default.get(`https://powerful-coast-48240.herokuapp.com/users/${user}`, {
+        _axiosDefault.default.get('https://powerful-coast-48240.herokuapp.com/users/:Username', {
             headers: {
                 Authorization: `Bearer ${token}`
             }
