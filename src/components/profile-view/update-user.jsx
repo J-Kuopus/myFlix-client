@@ -34,7 +34,7 @@ function UpdateUser({ handleSubmit, handleUpdate }) {
             <Form.Group>
                 <Form.Label>Birthdate:</Form.Label>
                 <Form.Control type="date"
-                              name="birthdate"
+                              name="birthday"
                               defaultValue={user.Birthday}
                               onChange={e => handleUpdate(e)} />
             </Form.Group>
