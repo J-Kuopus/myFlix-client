@@ -10,11 +10,11 @@ export class ProfileView extends React.Component {
     constructor() {
         super();
         this.state = {
-            username: null,
-            password: null,
-            email: null,
-            birthday: null,
-            favoriteMovies: [],
+            Username: null,
+            Password: null,
+            Email: null,
+            Birthday: null,
+            FavoriteMovies: [],
         };
         this.removeFav = this.removeFav.bind(this);
         this.setUsername = this.setUsername.bind(this);
@@ -22,18 +22,18 @@ export class ProfileView extends React.Component {
 
     //GETS user information
     getUser(token) {
-        let user = localStorage.getItem('user');
+        localStorage.getItem('user');
         axios.get('https://powerful-coast-48240.herokuapp.com/users/:Username', {
             headers: { Authorization:`Bearer ${token}`},
         })
         .then((response) => {
             // Assigns result to the state
             this.setState({
-                username: response.data.username,
-                password: response.data.password,
-                email: response.data.email,
-                birthday: response.data.birthday,
-                favoriteMovies: response.data.favoriteMovies,
+                Username: response.data.Username,
+                Password: response.data.Password,
+                Email: response.data.Email,
+                Birthday: response.data.Birthday,
+                FavoriteMovies: response.data.FavoriteMovies,
             });
         })
         .catch((err) => console.log(err));
@@ -51,27 +51,27 @@ export class ProfileView extends React.Component {
 
     editProfile = (e) => {
         e.preventDefault();
-        const user = localStorage.getItem('user');
-        const token = localStorage.getItem('token');
-        let newUser = this.state.username;
+        localStorage.getItem('user');
+        localStorage.getItem('token');
+        let newUser = this.state.Username;
         console.log(newUser);
         axios.put('https://powerful-coast-48240.herokuapp.com/users/:Username',
         {
-            username: this.state.username,
-            password: this.state.password,
-            email: this.state.email,
-            birthday: this.state.birthday
+            Username: this.state.Username,
+            Password: this.state.Password,
+            Email: this.state.Email,
+            Birthday: this.state.Birthday
         },
         { headers: { Authorization:`Bearer ${token}`}}
         )
         .then((response) => {
             this.setState({
-                username: response.data.username,
-                password: response.data.password,
-                email: response.data.email,
-                birthday: response.data.birthday,
+                Username: response.data.Username,
+                Password: response.data.Password,
+                Email: response.data.Email,
+                Birthday: response.data.Birthday,
             });
-            localStorage.setItem('user', this.state.username);
+            localStorage.setItem('user', this.state.Username);
             alert('Profile successfully updated!');
             window.open(`/users/${newUser}`, '_self');
         });
@@ -95,33 +95,33 @@ export class ProfileView extends React.Component {
 
         setUsername(e) {
             this.setState({
-                username: e.target.value,
+                Username: e.target.value,
             });
         };
 
         setPassword(value) {
             this.setState({
-                password: value,
+                Password: value,
             });
         };
 
         setEmail(value) {
             this.setState({
-                email: value,
+                Email: value,
             });
         };
 
         setBirthday(value) {
             this.setState({
-                birthday: value,
+                Birthday: value,
             });
         };
 
         removeFav() {
             const user = localStorage.getItem('user');
             const token = localStorage.getItem('token');
-            const id = this.state.favoriteMovies;
-            axios.delete('https://powerful-coast-48240.herokuapp.com/users/:Username/favoriteMovies/:MovieId',
+            const id = this.state.FavoriteMovies;
+            axios.delete('https://powerful-coast-48240.herokuapp.com/users/:Username/favoriteMovies/:MovieID',
 
             { headers: { Authorization:`Bearer ${token}`}},
             {}
@@ -148,7 +148,7 @@ export class ProfileView extends React.Component {
                                 <Card.Body>
                                     <Form className="update-form">
                                           onSubmit={(e) => 
-                                          this.editProfile(e, this.username, this.password, this.email, this.birthday)}
+                                          this.editProfile(e, this.Username, this.Password, this.Email, this.Birthday)}
                                           <Container>
                                               <UserDetailsView />
                                               <Container>
@@ -199,7 +199,7 @@ export class ProfileView extends React.Component {
                                                 variant="danger"
                                                 type="submit"
                                                 onClick={this.editProfile}
-                                                >
+                                                >Update profile info
                                             </Button>
                                           </Container>
                                     </Form>

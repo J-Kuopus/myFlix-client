@@ -39182,18 +39182,18 @@ class ProfileView extends _reactDefault.default.Component {
     constructor(){
         super();
         this.state = {
-            username: null,
-            password: null,
-            email: null,
-            birthday: null,
-            favoriteMovies: []
+            Username: null,
+            Password: null,
+            Email: null,
+            Birthday: null,
+            FavoriteMovies: []
         };
         this.removeFav = this.removeFav.bind(this);
         this.setUsername = this.setUsername.bind(this);
     }
     //GETS user information
     getUser(token) {
-        let user = localStorage.getItem('user');
+        localStorage.getItem('user');
         _axiosDefault.default.get('https://powerful-coast-48240.herokuapp.com/users/:Username', {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -39201,11 +39201,11 @@ class ProfileView extends _reactDefault.default.Component {
         }).then((response)=>{
             // Assigns result to the state
             this.setState({
-                username: response.data.username,
-                password: response.data.password,
-                email: response.data.email,
-                birthday: response.data.birthday,
-                favoriteMovies: response.data.favoriteMovies
+                Username: response.data.Username,
+                Password: response.data.Password,
+                Email: response.data.Email,
+                Birthday: response.data.Birthday,
+                FavoriteMovies: response.data.FavoriteMovies
             });
         }).catch((err)=>console.log(err)
         );
@@ -39220,27 +39220,27 @@ class ProfileView extends _reactDefault.default.Component {
     };
     editProfile = (e)=>{
         e.preventDefault();
-        const user = localStorage.getItem('user');
-        const token = localStorage.getItem('token');
-        let newUser = this.state.username;
+        localStorage.getItem('user');
+        localStorage.getItem('token');
+        let newUser = this.state.Username;
         console.log(newUser);
         _axiosDefault.default.put('https://powerful-coast-48240.herokuapp.com/users/:Username', {
-            username: this.state.username,
-            password: this.state.password,
-            email: this.state.email,
-            birthday: this.state.birthday
+            Username: this.state.Username,
+            Password: this.state.Password,
+            Email: this.state.Email,
+            Birthday: this.state.Birthday
         }, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
         }).then((response)=>{
             this.setState({
-                username: response.data.username,
-                password: response.data.password,
-                email: response.data.email,
-                birthday: response.data.birthday
+                Username: response.data.Username,
+                Password: response.data.Password,
+                Email: response.data.Email,
+                Birthday: response.data.Birthday
             });
-            localStorage.setItem('user', this.state.username);
+            localStorage.setItem('user', this.state.Username);
             alert('Profile successfully updated!');
             window.open(`/users/${newUser}`, '_self');
         });
@@ -39262,29 +39262,29 @@ class ProfileView extends _reactDefault.default.Component {
     }
     setUsername(e) {
         this.setState({
-            username: e.target.value
+            Username: e.target.value
         });
     }
     setPassword(value) {
         this.setState({
-            password: value
+            Password: value
         });
     }
     setEmail(value) {
         this.setState({
-            email: value
+            Email: value
         });
     }
     setBirthday(value) {
         this.setState({
-            birthday: value
+            Birthday: value
         });
     }
     removeFav() {
         const user = localStorage.getItem('user');
         const token = localStorage.getItem('token');
-        const id = this.state.favoriteMovies;
-        _axiosDefault.default.delete('https://powerful-coast-48240.herokuapp.com/users/:Username/favoriteMovies/:MovieId', {
+        const id = this.state.FavoriteMovies;
+        _axiosDefault.default.delete('https://powerful-coast-48240.herokuapp.com/users/:Username/favoriteMovies/:MovieID', {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -39308,7 +39308,7 @@ class ProfileView extends _reactDefault.default.Component {
                                 className: "update-form",
                                 children: [
                                     "onSubmit=",
-                                    (e)=>this.editProfile(e, this.username, this.password, this.email, this.birthday)
+                                    (e)=>this.editProfile(e, this.Username, this.Password, this.Email, this.Birthday)
                                     ,
                                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Container, {
                                         children: [
@@ -39424,7 +39424,8 @@ class ProfileView extends _reactDefault.default.Component {
                                         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Button, {
                                             variant: "danger",
                                             type: "submit",
-                                            onClick: this.editProfile
+                                            onClick: this.editProfile,
+                                            children: "Update profile info"
                                         }, void 0, false, {
                                             fileName: "src/components/profile-view/profile-view.jsx",
                                             lineNumber: 198,
@@ -39503,7 +39504,7 @@ class UserDetailsView extends _reactDefault.default.Component {
         super();
     }
     getUser(token) {
-        let user = localStorage.getItem('user');
+        localStorage.getItem('user');
         _axiosDefault.default.get('https://powerful-coast-48240.herokuapp.com/users/:Username', {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -39525,7 +39526,7 @@ class UserDetailsView extends _reactDefault.default.Component {
                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
                     children: [
                         "Hello, ",
-                        userData.username
+                        userData.Username
                     ]
                 }, void 0, true, {
                     fileName: "src/components/profile-view/user-details-view.jsx",
@@ -39555,7 +39556,7 @@ class UserDetailsView extends _reactDefault.default.Component {
                                         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.FormControl, {
                                             type: "text",
                                             name: "username",
-                                            placeholder: userData.username,
+                                            placeholder: userData.Username,
                                             disabled: true
                                         }, void 0, false, {
                                             fileName: "src/components/profile-view/user-details-view.jsx",
@@ -39586,7 +39587,7 @@ class UserDetailsView extends _reactDefault.default.Component {
                                         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.FormControl, {
                                             type: "text",
                                             name: "password",
-                                            placeholder: userData.password,
+                                            placeholder: userData.Password,
                                             disabled: true
                                         }, void 0, false, {
                                             fileName: "src/components/profile-view/user-details-view.jsx",
@@ -39617,7 +39618,7 @@ class UserDetailsView extends _reactDefault.default.Component {
                                         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.FormControl, {
                                             type: "email",
                                             name: "email",
-                                            placeholder: userData.email,
+                                            placeholder: userData.Email,
                                             disabled: true
                                         }, void 0, false, {
                                             fileName: "src/components/profile-view/user-details-view.jsx",
@@ -39648,7 +39649,7 @@ class UserDetailsView extends _reactDefault.default.Component {
                                         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.FormControl, {
                                             type: "text",
                                             name: "birthday",
-                                            placeholder: userData.birthday,
+                                            placeholder: userData.Birthday,
                                             disabled: true
                                         }, void 0, false, {
                                             fileName: "src/components/profile-view/user-details-view.jsx",
@@ -39689,11 +39690,11 @@ exports.default = UserDetailsView;
 UserDetailsView.propTypes = {
     setUserData: _propTypesDefault.default.func.isRequired,
     userData: _propTypesDefault.default.shape({
-        username: _propTypesDefault.default.string.isRequired,
-        password: _propTypesDefault.default.string.isRequired,
-        email: _propTypesDefault.default.string.isRequired,
-        birthday: _propTypesDefault.default.string.isRequired,
-        favoriteMovies: _propTypesDefault.default.arrayOf(_propTypes.string)
+        Username: _propTypesDefault.default.string.isRequired,
+        Password: _propTypesDefault.default.string.isRequired,
+        Email: _propTypesDefault.default.string.isRequired,
+        Birthday: _propTypesDefault.default.string.isRequired,
+        FavoriteMovies: _propTypesDefault.default.arrayOf(_propTypes.string)
     }).isRequired
 };
 
