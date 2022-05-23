@@ -151,7 +151,7 @@ class MainView extends React.Component {
           } />
 
           {/* Route for link on main-view to profile-view */}
-          <Route path={'/users/:Username'} 
+          <Route path={'/users/:username'} 
                  render={( { history, match } ) => {
 
             if (!user) return <Col className="login-view" xxl={6} xl={6} lg={7} md={8} sm={12}>
