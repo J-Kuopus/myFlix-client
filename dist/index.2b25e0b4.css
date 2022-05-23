@@ -4,6 +4,16 @@
   padding: 20px;
 }
 
+.genre-view, .director-view {
+  padding-top: 50px;
+}
+
+@media (max-width: 615px) {
+  .login-view, .registration-view {
+    padding-top: 50px;
+  }
+}
+
 
 
 .movie-card {
@@ -28,6 +38,34 @@
 .label {
   font-weight: bold;
 }
+
+.movie-title {
+  font-size: larger;
+  font-weight: bold;
+}
+
+.movie-poster {
+  height: auto;
+  max-width: 25rem !important;
+}
+
+@media (max-width: 768px) {
+  .movie-view {
+    padding-top: 320px;
+  }
+}
+
+@media (max-width: 615px) {
+  .movie-view {
+    padding-top: 400px;
+  }
+}
+
+
+
+
+
+
 
 body {
   padding-top: 100px;

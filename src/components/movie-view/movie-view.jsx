@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Card, CardGroup, Container, Col, Row } from 'react-bootstrap';
+import { Button, Card, CardGroup, Container, Col, Row, ListGroup } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import './movie-view.scss';
 
@@ -10,54 +11,39 @@ export class MovieView extends React.Component {
         const { movie, onBackClick } = this.props;
 
         return (
-            <div className="movie-view">
-                <div className="movie-poster">
-                    <img src={movie.ImagePath} />
-                </div>
-                <div className="movie-title">
-                    <span className="label"> Title: </span>
-                    <span className="value">{movie.Title}</span>
-                </div>
-                <div className="movie-description">
-                    <span className="label">Description: </span>
-                    <span className="value">{movie.Description}</span>
-                </div>
-                <div className="release-year">
-                    <span className="label">Released: </span>
-                    <span className="value">{movie.Released}</span>
-                </div>
-                <div className="movie-genre">
-                    <span className="label">Genre: </span>
-                    <span className="value">{movie.Genre.Name}</span>
-                </div>
-                <div className="genre-description">
-                    <span className="label">Description: </span>
-                    <span className="value">{movie.Genre.Description}</span>
-                </div>
-                <div className="movie-director">
-                    <span className="label">Director: </span>
-                    <span className="value">{movie.Director.Name}</span>
-                </div>
-                <div className="director-bio">
-                    <span className="label">Bio: </span>
-                    <span className="value">{movie.Director.Bio}</span>
-                </div>
-                <div className="director-birth">
-                    <span className="label">Birth: </span>
-                    <span className="value">{movie.Director.Birth}</span>
-                </div>
-                <div className="director-death">
-                    <span className="label">Death: </span>
-                    <span className="value">{movie.Director.Death}</span>
-                </div>
-                <div className="movie-button-div">
-                    <Button
-                        variant="danger" 
-                        className="movie-button" 
-                        onClick={() => { onBackClick(null); }}>Back
-                    </Button>
-                </div>
-            </div>
+            <Container className="movie-view d-flex position-absolute top-50 start-50 translate-middle">
+                <Row>
+                    <Col xxl="8" xl="8" lg="6" md="4">
+                    <div className="movie-info">
+                        <ListGroup>
+                            <ListGroup.Item className="movie-title">{movie.Title}</ListGroup.Item>
+                            <ListGroup.Item className="movie-genre">
+                                <span className="label">Genre: </span><Link to={`/genres/${movie.Genre.Name}`}>{movie.Genre.Name}</Link></ListGroup.Item>
+                            <ListGroup.Item className="movie-director">
+                                <span className="label">Director: </span><Link to={`/directors/${movie.Director.Name}`}>{movie.Director.Name}</Link></ListGroup.Item>
+                            <ListGroup.Item className="release-year">
+                                <span className="label">Released: </span>{movie.Released}</ListGroup.Item>
+                            <ListGroup.Item><span className="label">Summary: </span>{movie.Description}</ListGroup.Item> 
+                        </ListGroup>
+                    </div> 
+                    </Col>
+                    <Col xxl="4" xl="4" lg="6" md="4">
+                    <div className="img-wrapper">
+                        <img 
+                            className="movie-poster d-block" 
+                            src={movie.ImagePath}
+                        />
+                    </div>
+                    </Col>
+                    <div className="btn-wrapper">
+                        <Button 
+                            className="movie-button" 
+                            variant="danger" 
+                            onClick={() => { onBackClick(null); }}>Back
+                        </Button>
+                    </div>
+                </Row>
+            </Container>
         );
     }
 }
