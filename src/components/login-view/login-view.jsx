@@ -63,7 +63,7 @@ export function LoginView(props) {
                     <Card.Body>
                     <Card.Title>Welcome to Retro Video!</Card.Title>
                     <Card.Header>Please enter your username and password to enter.</Card.Header>
-                    <Form>
+                    <Form noValidate>
                         <Form.Group controlId="formUsername">
                             <Form.Label>Username:</Form.Label>
                             <Form.Control 
