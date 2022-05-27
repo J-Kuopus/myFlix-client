@@ -39225,97 +39225,129 @@ class ProfileView extends _reactDefault.default.Component {
                             }, void 0, false, {
                                 fileName: "src/components/profile-view/profile-view.jsx",
                                 lineNumber: 51,
-                                columnNumber: 17
+                                columnNumber: 21
                             }, this)
                         }, void 0, false, {
                             fileName: "src/components/profile-view/profile-view.jsx",
                             lineNumber: 50,
-                            columnNumber: 15
+                            columnNumber: 19
                         }, this),
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Text, {
-                            children: [
-                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
-                                    className: "label",
-                                    children: "Username: "
-                                }, void 0, false, {
-                                    fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 59,
-                                    columnNumber: 28
-                                }, this),
-                                username
-                            ]
-                        }, void 0, true, {
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {}, void 0, false, {
                             fileName: "src/components/profile-view/profile-view.jsx",
                             lineNumber: 59,
-                            columnNumber: 17
+                            columnNumber: 19
                         }, this),
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Text, {
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Container, {
                             children: [
-                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
-                                    className: "label",
-                                    children: "Password: "
-                                }, void 0, false, {
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Text, {
+                                    children: [
+                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
+                                            className: "label",
+                                            children: "Username: "
+                                        }, void 0, false, {
+                                            fileName: "src/components/profile-view/profile-view.jsx",
+                                            lineNumber: 61,
+                                            columnNumber: 28
+                                        }, this),
+                                        username
+                                    ]
+                                }, void 0, true, {
                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 60,
-                                    columnNumber: 28
+                                    lineNumber: 61,
+                                    columnNumber: 17
                                 }, this),
-                                password
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Text, {
+                                    children: [
+                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
+                                            className: "label",
+                                            children: "Password: "
+                                        }, void 0, false, {
+                                            fileName: "src/components/profile-view/profile-view.jsx",
+                                            lineNumber: 62,
+                                            columnNumber: 28
+                                        }, this),
+                                        password
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/components/profile-view/profile-view.jsx",
+                                    lineNumber: 62,
+                                    columnNumber: 17
+                                }, this),
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Text, {
+                                    children: [
+                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
+                                            className: "label",
+                                            children: "Email: "
+                                        }, void 0, false, {
+                                            fileName: "src/components/profile-view/profile-view.jsx",
+                                            lineNumber: 63,
+                                            columnNumber: 28
+                                        }, this),
+                                        email
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/components/profile-view/profile-view.jsx",
+                                    lineNumber: 63,
+                                    columnNumber: 17
+                                }, this),
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Text, {
+                                    children: [
+                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
+                                            className: "label",
+                                            children: "Birthday: "
+                                        }, void 0, false, {
+                                            fileName: "src/components/profile-view/profile-view.jsx",
+                                            lineNumber: 64,
+                                            columnNumber: 28
+                                        }, this),
+                                        birthday
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/components/profile-view/profile-view.jsx",
+                                    lineNumber: 64,
+                                    columnNumber: 17
+                                }, this),
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Text, {
+                                    children: [
+                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
+                                            className: "label",
+                                            children: "Favorite Movies: "
+                                        }, void 0, false, {
+                                            fileName: "src/components/profile-view/profile-view.jsx",
+                                            lineNumber: 65,
+                                            columnNumber: 28
+                                        }, this),
+                                        favoriteMovies
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/components/profile-view/profile-view.jsx",
+                                    lineNumber: 65,
+                                    columnNumber: 17
+                                }, this)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/profile-view/profile-view.jsx",
                             lineNumber: 60,
                             columnNumber: 17
                         }, this),
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Text, {
-                            children: [
-                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
-                                    className: "label",
-                                    children: "Email: "
-                                }, void 0, false, {
-                                    fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 61,
-                                    columnNumber: 28
-                                }, this),
-                                email
-                            ]
-                        }, void 0, true, {
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {}, void 0, false, {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 61,
+                            lineNumber: 67,
                             columnNumber: 17
                         }, this),
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Text, {
-                            children: [
-                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
-                                    className: "label",
-                                    children: "Birthday: "
-                                }, void 0, false, {
-                                    fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 62,
-                                    columnNumber: 28
-                                }, this),
-                                birthday
-                            ]
-                        }, void 0, true, {
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Container, {
+                            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
+                                to: '/',
+                                children: "Back to Main"
+                            }, void 0, false, {
+                                fileName: "src/components/profile-view/profile-view.jsx",
+                                lineNumber: 69,
+                                columnNumber: 21
+                            }, this)
+                        }, void 0, false, {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 62,
-                            columnNumber: 17
-                        }, this),
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Text, {
-                            children: [
-                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
-                                    className: "label",
-                                    children: "Favorite Movies: "
-                                }, void 0, false, {
-                                    fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 63,
-                                    columnNumber: 28
-                                }, this),
-                                favoriteMovies
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 63,
-                            columnNumber: 17
+                            lineNumber: 68,
+                            columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {

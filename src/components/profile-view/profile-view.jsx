@@ -47,20 +47,29 @@ export class ProfileView extends React.Component {
         <Container>
             <Card>
               <Card.Body>
-              <Card.Header>
-                <Button
-                  variant="danger"
-                  type="submit"
-                  onClick={() => {
-                    onBackClick();
-                  }}>Back
-                </Button>
-                </Card.Header>
+                  <Card.Header>
+                    <Button
+                      variant="danger"
+                      type="submit"
+                      onClick={() => {
+                        onBackClick();
+                      }}>Back
+                    </Button>
+                  </Card.Header>
+                  <p></p>
+                <Container>
                 <Card.Text><span className="label">Username: </span>{username}</Card.Text>
                 <Card.Text><span className="label">Password: </span>{password}</Card.Text>
                 <Card.Text><span className="label">Email: </span>{email}</Card.Text>
                 <Card.Text><span className="label">Birthday: </span>{birthday}</Card.Text>
                 <Card.Text><span className="label">Favorite Movies: </span>{favoriteMovies}</Card.Text>
+                </Container>
+                <p></p>
+                    <Container>
+                    <Link to={'/'}>
+                        Back to Main
+                    </Link>
+                    </Container>
                 </Card.Body>
             </Card>
         </Container>
