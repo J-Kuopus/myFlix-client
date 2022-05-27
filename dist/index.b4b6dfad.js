@@ -38463,7 +38463,7 @@ class MovieView extends _reactDefault.default.Component {
                             onClick: ()=>{
                                 onBackClick(null);
                             },
-                            children: "Back"
+                            children: "Back to Main"
                         }, void 0, false, {
                             fileName: "src/components/movie-view/movie-view.jsx",
                             lineNumber: 39,
