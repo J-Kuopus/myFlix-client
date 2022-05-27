@@ -39386,10 +39386,11 @@ class ProfileView extends _reactDefault.default.Component {
 }
 ProfileView.propTypes = {
     user: _propTypesDefault.default.shape({
-        Username: _propTypesDefault.default.string.isRequired,
-        Password: _propTypesDefault.default.string.isRequired,
-        Email: _propTypesDefault.default.string.isRequired,
-        Birthday: _propTypesDefault.default.string.isRequired
+        username: _propTypesDefault.default.string.isRequired,
+        password: _propTypesDefault.default.string.isRequired,
+        email: _propTypesDefault.default.string.isRequired,
+        birthday: _propTypesDefault.default.string.isRequired,
+        favoriteMovies: _propTypesDefault.default.arrayOf(_propTypes.string)
     }).isRequired,
     onBackClick: _propTypesDefault.default.func.isRequired
 };

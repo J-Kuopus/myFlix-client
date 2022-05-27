@@ -3,7 +3,7 @@ import { Form, Button, Card, CardGroup, Container, Col, Row } from 'react-bootst
 import { Link } from 'react-router-dom';
 import './profile-view.scss';
 import axios from 'axios';
-import PropTypes from 'prop-types';
+import PropTypes, { string } from 'prop-types';
 
 export class ProfileView extends React.Component {
     constructor() {
@@ -42,7 +42,7 @@ export class ProfileView extends React.Component {
 
       render() {
           const { username, password, email, birthday, favoriteMovies } = this.state;
-          const { onBackClick } = this.props;
+          const {  onBackClick } = this.props;
     
       return (
         <Container>
@@ -82,10 +82,11 @@ export class ProfileView extends React.Component {
 
 ProfileView.propTypes = {
   user: PropTypes.shape({
-      Username: PropTypes.string.isRequired,
-      Password: PropTypes.string.isRequired,
-      Email: PropTypes.string.isRequired,
-      Birthday: PropTypes.string.isRequired,
+      username: PropTypes.string.isRequired,
+      password: PropTypes.string.isRequired,
+      email: PropTypes.string.isRequired,
+      birthday: PropTypes.string.isRequired,
+      favoriteMovies: PropTypes.arrayOf(string),
   }).isRequired,
   onBackClick: PropTypes.func.isRequired,
 };
