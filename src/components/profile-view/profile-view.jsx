@@ -46,6 +46,7 @@ export class ProfileView extends React.Component {
       return (
         <Container>
             <Card>
+              <Card.Body>
               <Card.Header>
                 <Button
                   variant="danger"
@@ -60,6 +61,7 @@ export class ProfileView extends React.Component {
                 <Card.Text>Email: {email}</Card.Text>
                 <Card.Text>Birthday: {birthday}</Card.Text>
                 <Card.Text>Favorite Movies: {favoriteMovies}</Card.Text>
+                </Card.Body>
             </Card>
         </Container>
         );
