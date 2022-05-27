@@ -43,6 +43,7 @@ export class ProfileView extends React.Component {
       render() {
           const { username, password, email, birthday, favoriteMovies } = this.state;
           const {  onBackClick } = this.props;
+          let { user } = this.props;
     
       return (
         <Container>
@@ -60,11 +61,11 @@ export class ProfileView extends React.Component {
                   <p></p>
                 <Container>
                   <Card.Title>Profile Info</Card.Title>
-                <Card.Text><span className="label">Username: </span>{username}</Card.Text>
-                <Card.Text><span className="label">Password: </span>{password}</Card.Text>
-                <Card.Text><span className="label">Email: </span>{email}</Card.Text>
-                <Card.Text><span className="label">Birthday: </span>{birthday}</Card.Text>
-                <Card.Text><span className="label">Favorite Movies: </span>{favoriteMovies}</Card.Text>
+                <Card.Text><span className="label">Username: </span>{user.username}</Card.Text>
+                <Card.Text><span className="label">Password: </span>{user.password}</Card.Text>
+                <Card.Text><span className="label">Email: </span>{user.email}</Card.Text>
+                <Card.Text><span className="label">Birthday: </span>{user.birthday}</Card.Text>
+                <Card.Text><span className="label">Favorite Movies: </span>{user.favoriteMovies}</Card.Text>
                 </Container>
                 <p></p>
                     <Container>
