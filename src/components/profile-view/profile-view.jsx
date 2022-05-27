@@ -54,13 +54,13 @@ export class ProfileView extends React.Component {
                   onClick={() => {
                     onBackClick();
                   }}>Back
-                </Button>  
+                </Button>
                 </Card.Header>
-                <Card.Text>Username: {username}</Card.Text>
-                <Card.Text>Password: {password}</Card.Text>
-                <Card.Text>Email: {email}</Card.Text>
-                <Card.Text>Birthday: {birthday}</Card.Text>
-                <Card.Text>Favorite Movies: {favoriteMovies}</Card.Text>
+                <Card.Text><span className="label">Username: </span>{username}</Card.Text>
+                <Card.Text><span className="label">Password: </span>{password}</Card.Text>
+                <Card.Text><span className="label">Email: </span>{email}</Card.Text>
+                <Card.Text><span className="label">Birthday: </span>{birthday}</Card.Text>
+                <Card.Text><span className="label">Favorite Movies: </span>{favoriteMovies}</Card.Text>
                 </Card.Body>
             </Card>
         </Container>
