@@ -1,6 +1,6 @@
 # myFlix-client
 
-This is the front end of an API I created for getting and displaying movies to a user. The user can register an account and login to see details about the movies (images, director, genre, etc.). They can also view and update their profile information (username, password, email, birthdate) as well as create a list of favorite movies. The movie API can be found here: https://github.com/J-Kuopus/myFlix-app
+This is the front end of an API created for getting and displaying movies to a user. The user can register an account and login to see details about the movies (images, director, genre, etc.). They can also view and update their profile information (username, password, email, birthdate) as well as create a list of favorite movies. The movie API can be found here: https://github.com/J-Kuopus/myFlix-app
 
 ##Dependencies
 
