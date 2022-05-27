@@ -41,10 +41,20 @@ export class ProfileView extends React.Component {
 
       render() {
           const { username, password, email, birthday, favoriteMovies } = this.state;
+          const { onBackClick } = this.props;
     
       return (
         <Container>
             <Card>
+              <Card.Header>
+                <Button
+                  variant="danger"
+                  type="submit"
+                  onClick={() => {
+                    onBackClick();
+                  }}>Back
+                </Button>  
+                </Card.Header>
                 <Card.Text>Username: {username}</Card.Text>
                 <Card.Text>Password: {password}</Card.Text>
                 <Card.Text>Email: {email}</Card.Text>
