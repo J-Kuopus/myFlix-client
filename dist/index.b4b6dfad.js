@@ -38541,11 +38541,9 @@ function RegistrationView(props) {
     const [email, setEmail] = _react.useState('');
     const [birthday, setBirthday] = _react.useState('');
     // Declare hook for each input
-    const [values, setValues] = _react.useState({
-        usernameErr: '',
-        passwordErr: '',
-        emailErr: ''
-    });
+    const [usernameErr, setUsernameErr] = _react.useState('');
+    const [passwordErr, setPasswordErr] = _react.useState('');
+    const [emailErr, setEmailErr] = _react.useState('');
     // Validate user inputs
     const validate = ()=>{
         let isReq = true;
@@ -38833,7 +38831,7 @@ function RegistrationView(props) {
         columnNumber: 9
     }, this);
 }
-_s(RegistrationView, "Ulei6hLspNuNqtv+GL1nxH9kqhs=");
+_s(RegistrationView, "VTVSucXaCTwsDmOfAE7orUHIaco=");
 _c = RegistrationView;
 RegistrationView.propTypes = {
     register: _propTypesDefault.default.shape({
