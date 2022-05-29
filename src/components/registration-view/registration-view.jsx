@@ -12,35 +12,35 @@ export function RegistrationView(props) {
     const [ password, setPassword ] = useState('');
     const [ email, setEmail ] = useState('');
     const [ birthday, setBirthday ] = useState('');
-     // Declare hook for each input
-    const [values, setValues] = useState ({
-        usernameErr: '',
-        passwordErr: '',
-        emailErr: '',
-    });
+    
+    // Declare hook for each input
+    const [ usernameErr, setUsernameErr ] = useState('');
+    const [ passwordErr, setPasswordErr ] = useState('');
+    const [ emailErr, setEmailErr ] = useState('');
+
 
      // Validate user inputs
     const validate = () => {
         let isReq = true;
         if(!username) {
-            setValues({...values, usernameErr: 'Username Required'});
+            setUsernameErr('Username is required');
             isReq = false;
-        } else if (username) {
-            setValues({...values, usernameErr: 'Username must be at least 5 characters long'});
+        } else if (username.length < 5) {
+            setUsernameErr('Username must be at least 5 characters long')
             isReq = false;
         }
         if (!password) {
-            setValues({...values, passwordErr: 'Password Required'});
+            setPasswordErr('Password is required, must be at least 6 characters long');
             isReq = false;
         } else if(password.length < 6){
-            setValues({...values, passwordErr: 'Password must be at least 6 characters long'});
+            setPasswordErr('Password must be at least 6 characters long');
             isReq = false;
         }
         if (!email) {
-            setValues({...values, emailErr: 'Email Requried'});
+           setEmailErr('Please enter email address');
             isReq = false;
         } else if(email.indexOf('@') === -1) {
-            setValues({...values, emailErr: 'Email is invalid'});
+            setEmail('Email must be a valid email address');
             isReq = false
         }
 
@@ -53,10 +53,10 @@ export function RegistrationView(props) {
         if(isReq) {
             //Send a request to the server for authentication
           axios.post('https://powerful-coast-48240.herokuapp.com/users', {
-            Username: username,
-            Password: password,
-            Email: email,
-            Birthday: birthday
+            username: username,
+            password: password,
+            email: email,
+            birthday: birthday
           })
           .then(response => {
             const data = response.data;
@@ -81,28 +81,28 @@ export function RegistrationView(props) {
                     <Card.Title>Register a new account</Card.Title>
                     <Card.Header>Please enter the following information:</Card.Header>
                     <Form>
-                        <Form.Group>
+                        <Form.Group controlId="formBasicUsername">
                         <Form.Label>Username: </Form.Label>
                         <Form.Control
                             type="text" 
                             value={username} 
                             onChange={e => setUsername(e.target.value)}
-                            placeholder="Enter a username"
+                            placeholder="Must be at least 5 characters long"
                         />
-                        {values.usernameErr && <p>{values.usernameErr}</p>} {/* Displays validation error */}
+                        {usernameErr && <p>{usernameErr}</p>} {/* Displays validation error */}
                         </Form.Group>
 
-                        <Form.Group>
+                        <Form.Group controlId="formBasicPassword">
                         <Form.Label>Password: </Form.Label>
                         <Form.Control 
                             type="password" 
                             value={password} 
                             onChange={e => setPassword(e.target.value)}
-                            placeholder="Enter a password"
-                        />{values.passwordErr && <p>{values.passwordErr}</p>}
+                            placeholder="Must be at least 6 characters long"
+                        />{passwordErr && <p>{passwordErr}</p>}
                         </Form.Group>
 
-                        <Form.Group>
+                        <Form.Group controlId="formBasicEmail">
                         <Form.Label>Email: </Form.Label>
                         <Form.Control 
                             type="email" 
@@ -110,10 +110,13 @@ export function RegistrationView(props) {
                             onChange={e => setEmail(e.target.value)}
                             placeholder="Enter your email address"
                         />
-                        {values.emailErr && <p>{values.emailErr}</p>}
+                        {emailErr && <p>{emailErr}</p>}
+                        <Form.Text className="muted">
+                            We'll never share your email with anyone else.
+                        </Form.Text>
                         </Form.Group>
 
-                        <Form.Group>
+                        <Form.Group controlId="formBasicBirthdate">
                         <Form.Label>Birthday: </Form.Label>
                         <Form.Control 
                             type="date" 
@@ -142,8 +145,8 @@ export function RegistrationView(props) {
 
 RegistrationView.propTypes = {
     register: PropTypes.shape({
-        Username: PropTypes.string.isRequired,
-        Password: PropTypes.string.isRequired,
-        Email: PropTypes.string.isRequired
+        username: PropTypes.string.isRequired,
+        password: PropTypes.string.isRequired,
+        email: PropTypes.string.isRequired
     }),
 };

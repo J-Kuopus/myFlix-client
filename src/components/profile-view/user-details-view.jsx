@@ -9,8 +9,8 @@ class UserDetailsView extends React.Component {
         super();
     }
     getUser(token) {
-        let user = localStorage.getItem('user');
-        axios.get(`https://powerful-coast-48240.herokuapp.com/users/${user}`, {
+        localStorage.getItem('user');
+        axios.get('https://powerful-coast-48240.herokuapp.com/users/:Username', {
             headers: { Authorization:`Bearer ${token}`},
         })
         .then((response) => {
@@ -29,7 +29,7 @@ class UserDetailsView extends React.Component {
         console.log(userData);
         return (
             <Container>
-                <div>Hello, {userData.username}</div>
+                <div>Hello, {userData.Username}</div>
                 <Card.Title>View and update your details</Card.Title>
                 <Container>
                     <Col>
@@ -39,7 +39,7 @@ class UserDetailsView extends React.Component {
                             <FormControl
                               type="text"
                               name="username"
-                              placeholder={userData.username}
+                              placeholder={userData.Username}
                               disabled
                               />
                         </Container>
@@ -51,7 +51,7 @@ class UserDetailsView extends React.Component {
                             <FormControl
                               type="text"
                               name="password"
-                              placeholder={userData.password}
+                              placeholder={userData.Password}
                               disabled
                             />
                         </Container>
@@ -63,7 +63,7 @@ class UserDetailsView extends React.Component {
                             <FormControl
                               type="email"
                               name="email"
-                              placeholder={userData.email}
+                              placeholder={userData.Email}
                               disabled
                             />
                         </Container>
@@ -75,7 +75,7 @@ class UserDetailsView extends React.Component {
                             <FormControl
                               type="text"
                               name="birthday"
-                              placeholder={userData.birthday}
+                              placeholder={userData.Birthday}
                               disabled
                             />
                         </Container>
@@ -92,10 +92,10 @@ export default UserDetailsView;
 UserDetailsView.propTypes = {
     setUserData: PropTypes.func.isRequired,
     userData: PropTypes.shape({
-        username: PropTypes.string.isRequired,
-        password: PropTypes.string.isRequired,
-        email: PropTypes.string.isRequired,
-        birthday: PropTypes.string.isRequired,
-        favoriteMovies: PropTypes.arrayOf(string),
+        Username: PropTypes.string.isRequired,
+        Password: PropTypes.string.isRequired,
+        Email: PropTypes.string.isRequired,
+        Birthday: PropTypes.string.isRequired,
+        FavoriteMovies: PropTypes.arrayOf(string),
     }).isRequired,
 };

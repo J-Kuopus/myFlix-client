@@ -20,7 +20,7 @@ export function LoginView(props) {
         if(!username){
             setUsernameErr('Username Required');
             isReq = false;
-        }else if(username.length < 2){
+        }else if(username.length < 5){
             setUsernameErr('Username must be at least 5 characters long');
             isReq = false;
         }
@@ -30,10 +30,8 @@ export function LoginView(props) {
         }else if(password.length < 6){
             setPasswordErr('Password must be at least 6 characters long');
             isReq = false;
-        }
-        return isReq;
-        
-    }
+        }else if (username) return isReq;  
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -63,7 +61,7 @@ export function LoginView(props) {
                     <Card.Body>
                     <Card.Title>Welcome to Retro Video!</Card.Title>
                     <Card.Header>Please enter your username and password to enter.</Card.Header>
-                    <Form>
+                    <Form noValidate>
                         <Form.Group controlId="formUsername">
                             <Form.Label>Username:</Form.Label>
                             <Form.Control 
