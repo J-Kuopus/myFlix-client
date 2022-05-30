@@ -51,12 +51,12 @@ export function ProfileView(props) {
                 <Card.Text><span className="label">Password: </span>******</Card.Text>
                 <Card.Text><span className="label">Email: </span>{user.Email}</Card.Text>
                 <Card.Text><span className="label">Birthday: </span>{user.Birthday}</Card.Text>
-                <Card.Text><span className="label">Favorite Movies: </span></Card.Text>
-                <FavoriteMoviesView 
+                <Card.Text><span className="label">Favorite Movies: </span>{user.FavoriteMovies}</Card.Text>
+                {/* <FavoriteMoviesView 
                   movies={movies} 
                   favoriteMovies={favoriteMovies} 
                   currentUser={currentUser} 
-                  token={token}/>
+                  token={token}/> */}
                 </Container>
                 <p></p>
                     <Container>
