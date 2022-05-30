@@ -73,15 +73,3 @@ export function ProfileView(props) {
         </Container>
         );
   };
-
-/* ProfileView.propTypes = {
-  user: PropTypes.shape({
-      username: PropTypes.string.isRequired,
-      password: PropTypes.string.isRequired,
-      email: PropTypes.string.isRequired,
-      birthday: PropTypes.string.isRequired,
-      favoriteMovies: PropTypes.arrayOf(string),
-  }).isRequired,
-  onBackClick: PropTypes.func.isRequired,
-};
- */
