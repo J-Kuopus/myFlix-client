@@ -6,6 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel src/index.html"
   },
+  "alias": { "process": false },
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -20,6 +21,7 @@
   "devDependencies": {
     "@babel/core": "^7.18.2",
     "@babel/plugin-proposal-class-properties": "^7.17.12",
+    "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
     "@parcel/transformer-sass": "^2.5.0",
     "buffer": "^6.0.3",
