@@ -44951,6 +44951,7 @@ var _reactRouterDom = require("react-router-dom");
 require("./profile-view.scss");
 var _axios = _interopRequireDefault(require("axios"));
 var _propTypes = _interopRequireWildcard(require("prop-types"));
+var _favoriteMovies = require("./favorite-movies");
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
         "default": obj
@@ -45055,7 +45056,7 @@ function ProfileView(props) {
                 Authorization: "Bearer ".concat(token)
             }
         }).then(function() {
-            alert("The account ".concat(user.Username, " was successfully deleted."));
+            alert("The profile ".concat(user.Username, " was successfully deleted."));
             localStorage.clear();
             window.open('/register', '_self');
         })["catch"](function(error) {
@@ -45078,7 +45079,12 @@ function ProfileView(props) {
         className: "label"
     }, "Birthday: "), user.Birthday), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
         className: "label"
-    }, "Favorite Movies: "), user.FavoriteMovies)), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.Link, {
+    }, "Favorite Movies: ")), /*#__PURE__*/ _react["default"].createElement(_favoriteMovies.FavoriteMoviesView, {
+        movies: movies,
+        favoriteMovies: favoriteMovies,
+        currentUser: currentUser,
+        token: token
+    })), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.Link, {
         to: '/'
     }, "Back to Main")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
         variant: "primary",
@@ -45094,7 +45100,120 @@ $RefreshReg$(_c, "ProfileView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","./profile-view.scss":"eyKYH","axios":"jo6P5","prop-types":"7wKI2","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko"}],"eyKYH":[function() {},{}],"bNPgg":[function(require,module,exports) {
+},{"react":"21dqq","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","./profile-view.scss":"eyKYH","axios":"jo6P5","prop-types":"7wKI2","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko","./favorite-movies":"dTTQH"}],"eyKYH":[function() {},{}],"dTTQH":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$8767 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$8767.prelude(module);
+
+try {
+"use strict";
+function _typeof(obj1) {
+    return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(obj) {
+        return typeof obj;
+    } : function(obj) {
+        return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    }, _typeof(obj1);
+}
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.FavoriteMoviesView = FavoriteMoviesView;
+var _react = _interopRequireWildcard(require("react"));
+var _propTypes = _interopRequireDefault(require("prop-types"));
+var _axios = _interopRequireDefault(require("axios"));
+var _reactBootstrap = require("react-bootstrap");
+var _reactRouterDom = require("react-router-dom");
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        "default": obj
+    };
+}
+function _getRequireWildcardCache(nodeInterop1) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) {
+        return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop1);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") return {
+        "default": obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {};
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj["default"] = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+function FavoriteMoviesView(props) {
+    var movies = props.movies, favoriteMovies = props.favoriteMovies, currentUser = props.currentUser, token = props.token;
+    var favoriteMoviesId = favoriteMovies.map(function(m) {
+        return m._id;
+    });
+    var favoriteMoviesList = movies.filter(function(m) {
+        return favoriteMoviesId.includes(m._id);
+    });
+    var handleMovieDelete1 = function handleMovieDelete(movieId) {
+        _axios["default"]["delete"]("https://powerful-coast-48240.herokuapp.com/users/".concat(currentUser, "/movies/").concat(movieId), {
+            headers: {
+                Authorization: "Bearer ".concat(token)
+            }
+        }).then(function() {
+            alert("The movie was removed from favorites list.");
+            window.open('/users/:Username', '_self');
+        })["catch"](function(error) {
+            return console.error(error);
+        });
+        return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, favoriteMoviesList.length === 0 ? /*#__PURE__*/ _react["default"].createElement("p", null, "You have no favorite movies yet.") : favoriteMoviesList.map(function(movie) {
+            return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, {
+                xs: 10,
+                sm: 8,
+                md: 6,
+                lg: 4
+            }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, {
+                id: "movie-card"
+            }, /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.Link, {
+                to: "/movies/".concat(movie._id)
+            }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Img, {
+                variant: "top",
+                src: movie.ImagePath
+            })), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, movie.Title), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, movie.Description), /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.Link, {
+                to: "/movies/".concat(movie._id)
+            }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
+                className: "button",
+                variant: "outline-primary",
+                size: "sm"
+            }, "Open")), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
+                className: "button ml-2",
+                variant: "outline-primary",
+                size: "sm",
+                onClick: function onClick() {
+                    handleMovieDelete(movie._id);
+                }
+            }, "Remove"))));
+        }));
+    };
+}
+_c = FavoriteMoviesView;
+var _c;
+$RefreshReg$(_c, "FavoriteMoviesView");
+
+  $parcel$ReactRefreshHelpers$8767.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","prop-types":"7wKI2","axios":"jo6P5","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko"}],"bNPgg":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$8fd2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

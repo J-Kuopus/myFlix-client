@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import './profile-view.scss';
 import axios from 'axios';
 import PropTypes, { string } from 'prop-types';
+import { FavoriteMoviesView } from './favorite-movies';
 
 export function ProfileView(props) {
   const [ user, setUser ] = useState(props.user);
@@ -32,7 +33,7 @@ export function ProfileView(props) {
       headers: { Authorization: `Bearer ${token}`}
     })
     .then(() => {
-      alert(`The account ${user.Username} was successfully deleted.`)
+      alert(`The profile ${user.Username} was successfully deleted.`)
       localStorage.clear();
       window.open('/register', '_self');
     }).
@@ -59,7 +60,12 @@ export function ProfileView(props) {
                 <Card.Text><span className="label">Password: </span>******</Card.Text>
                 <Card.Text><span className="label">Email: </span>{user.Email}</Card.Text>
                 <Card.Text><span className="label">Birthday: </span>{user.Birthday}</Card.Text>
-                <Card.Text><span className="label">Favorite Movies: </span>{user.FavoriteMovies}</Card.Text>
+                <Card.Text><span className="label">Favorite Movies: </span></Card.Text>
+                <FavoriteMoviesView 
+                  movies={movies} 
+                  favoriteMovies={favoriteMovies} 
+                  currentUser={currentUser} 
+                  token={token}/>
                 </Container>
                 <p></p>
                     <Container>
