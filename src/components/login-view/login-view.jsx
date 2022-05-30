@@ -30,7 +30,7 @@ export function LoginView(props) {
         }else if(password.length < 6){
             setPasswordErr('Password must be at least 6 characters long');
             isReq = false;
-        }else if (username) return isReq;  
+        } return isReq;  
     };
 
     const handleSubmit = (e) => {
