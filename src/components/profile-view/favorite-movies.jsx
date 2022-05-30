@@ -31,7 +31,7 @@ const handleMovieDelete = (movieId) => {
           ) : (
             favoriteMoviesList.map((movie) => {
               return (
-              <Col xs={10} sm={8} md={6} lg={4} >
+              <Col>
                 <Card id="movie-card">
                   <Link to={`/movies/${movie._id}`}>
                     <Card.Img variant="top" src={movie.ImagePath} />
