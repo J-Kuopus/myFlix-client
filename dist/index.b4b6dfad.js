@@ -43987,7 +43987,8 @@ function LoginView(props) {
         } else if (password.length < 6) {
             setPasswordErr('Password must be at least 6 characters long');
             isReq = false;
-        } else if (username) return isReq;
+        }
+        return isReq;
     };
     var handleSubmit = function handleSubmit(e) {
         e.preventDefault();
@@ -44543,10 +44544,10 @@ function RegistrationView(props) {
         var isReq = validate();
         if (isReq) //Send a request to the server for authentication
         _axios["default"].post('https://powerful-coast-48240.herokuapp.com/users', {
-            username: username,
-            password: password,
-            email: email,
-            birthday: birthday
+            Username: username,
+            Password: password,
+            Email: email,
+            Birthday: birthday
         }).then(function(response) {
             var data = response.data;
             console.log(data);
@@ -44608,9 +44609,10 @@ function RegistrationView(props) {
 _c = RegistrationView;
 RegistrationView.propTypes = {
     register: _propTypes["default"].shape({
-        username: _propTypes["default"].string.isRequired,
-        password: _propTypes["default"].string.isRequired,
-        email: _propTypes["default"].string.isRequired
+        Username: _propTypes["default"].string.isRequired,
+        Password: _propTypes["default"].string.isRequired,
+        Email: _propTypes["default"].string.isRequired,
+        Birthday: _propTypes["default"].string
     })
 };
 var _c;
