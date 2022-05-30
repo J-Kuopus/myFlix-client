@@ -5,6 +5,7 @@ import './profile-view.scss';
 import axios from 'axios';
 import PropTypes, { string } from 'prop-types';
 import { FavoriteMoviesView } from './favorite-movies';
+import { UpdateUserView } from './update-user';
 
 export function ProfileView(props) {
   const [ user, setUser ] = useState(props.user);
@@ -75,7 +76,8 @@ export function ProfileView(props) {
                     </Container>
                 </Card.Body>
             </Card>
-            <Button variant="primary" onClick={handleDelete}>Delete profile</Button>
+            <UpdateUserView user={user}/>
+            <Button variant="secondary" onClick={handleDelete}>Delete profile</Button>
         </Container>
         );
   };

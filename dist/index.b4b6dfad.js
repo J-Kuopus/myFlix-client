@@ -44952,6 +44952,7 @@ require("./profile-view.scss");
 var _axios = _interopRequireDefault(require("axios"));
 var _propTypes = _interopRequireWildcard(require("prop-types"));
 var _favoriteMovies = require("./favorite-movies");
+var _updateUser = require("./update-user");
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
         "default": obj
@@ -45086,8 +45087,10 @@ function ProfileView(props) {
         token: token
     })), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.Link, {
         to: '/'
-    }, "Back to Main")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
-        variant: "primary",
+    }, "Back to Main")))), /*#__PURE__*/ _react["default"].createElement(_updateUser.UpdateUserView, {
+        user: user
+    }), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
+        variant: "secondary",
         onClick: handleDelete
     }, "Delete profile"));
 }
@@ -45100,7 +45103,7 @@ $RefreshReg$(_c, "ProfileView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","./profile-view.scss":"eyKYH","axios":"jo6P5","prop-types":"7wKI2","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko","./favorite-movies":"dTTQH"}],"eyKYH":[function() {},{}],"dTTQH":[function(require,module,exports) {
+},{"react":"21dqq","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","./profile-view.scss":"eyKYH","axios":"jo6P5","prop-types":"7wKI2","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko","./favorite-movies":"dTTQH","./update-user":"2SBwg"}],"eyKYH":[function() {},{}],"dTTQH":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$8767 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -45213,7 +45216,267 @@ $RefreshReg$(_c, "FavoriteMoviesView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","prop-types":"7wKI2","axios":"jo6P5","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko"}],"bNPgg":[function(require,module,exports) {
+},{"react":"21dqq","prop-types":"7wKI2","axios":"jo6P5","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko"}],"2SBwg":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$95d1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$95d1.prelude(module);
+
+try {
+"use strict";
+function _typeof(obj1) {
+    return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(obj) {
+        return typeof obj;
+    } : function(obj) {
+        return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    }, _typeof(obj1);
+}
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.UpdateUserView = UpdateUserView;
+var _react = _interopRequireWildcard(require("react"));
+var _propTypes = _interopRequireDefault(require("prop-types"));
+var _reactBootstrap = require("react-bootstrap");
+var _axios = _interopRequireDefault(require("axios"));
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        "default": obj
+    };
+}
+function _getRequireWildcardCache(nodeInterop1) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) {
+        return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop1);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") return {
+        "default": obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {};
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj["default"] = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+function ownKeys(object, enumerableOnly) {
+    var keys = Object.keys(object);
+    if (Object.getOwnPropertySymbols) {
+        var symbols = Object.getOwnPropertySymbols(object);
+        enumerableOnly && (symbols = symbols.filter(function(sym) {
+            return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+        })), keys.push.apply(keys, symbols);
+    }
+    return keys;
+}
+function _objectSpread(target) {
+    for(var i = 1; i < arguments.length; i++){
+        var source = null != arguments[i] ? arguments[i] : {};
+        i % 2 ? ownKeys(Object(source), !0).forEach(function(key) {
+            _defineProperty(target, key, source[key]);
+        }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function(key) {
+            Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+        });
+    }
+    return target;
+}
+function _defineProperty(obj, key, value) {
+    if (key in obj) Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+    });
+    else obj[key] = value;
+    return obj;
+}
+function _slicedToArray(arr, i) {
+    return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+}
+function _nonIterableRest() {
+    throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+function _unsupportedIterableToArray(o, minLen) {
+    if (!o) return;
+    if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+    var n = Object.prototype.toString.call(o).slice(8, -1);
+    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Map" || n === "Set") return Array.from(o);
+    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+function _arrayLikeToArray(arr, len) {
+    if (len == null || len > arr.length) len = arr.length;
+    for(var i = 0, arr2 = new Array(len); i < len; i++)arr2[i] = arr[i];
+    return arr2;
+}
+function _iterableToArrayLimit(arr, i) {
+    var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
+    if (_i == null) return;
+    var _arr = [];
+    var _n = true;
+    var _d = false;
+    var _s, _e;
+    try {
+        for(_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true){
+            _arr.push(_s.value);
+            if (i && _arr.length === i) break;
+        }
+    } catch (err) {
+        _d = true;
+        _e = err;
+    } finally{
+        try {
+            if (!_n && _i["return"] != null) _i["return"]();
+        } finally{
+            if (_d) throw _e;
+        }
+    }
+    return _arr;
+}
+function _arrayWithHoles(arr) {
+    if (Array.isArray(arr)) return arr;
+}
+function UpdateUserView(props) {
+    var user = props.user;
+    var _useState = (0, _react.useState)(''), _useState2 = _slicedToArray(_useState, 2), username = _useState2[0], setUsername = _useState2[1];
+    var _useState3 = (0, _react.useState)(''), _useState4 = _slicedToArray(_useState3, 2), password = _useState4[0], setPassword = _useState4[1];
+    var _useState5 = (0, _react.useState)(''), _useState6 = _slicedToArray(_useState5, 2), email = _useState6[0], setEmail = _useState6[1];
+    var _useState7 = (0, _react.useState)(''), _useState8 = _slicedToArray(_useState7, 2), birthday = _useState8[0], setBirthday = _useState8[1];
+    var _useState9 = (0, _react.useState)({
+        usernameErr: '',
+        passwordErr: '',
+        emailErr: ''
+    }), _useState10 = _slicedToArray(_useState9, 2), values = _useState10[0], setValues = _useState10[1]; // validate user inputs
+    var validate = function validate() {
+        var isReq = true;
+        if (!username) {
+            setValues(_objectSpread(_objectSpread({}, values), {}, {
+                usernameErr: 'Username required'
+            }));
+            isReq = false;
+        } else if (username.length < 2) {
+            setValues(_objectSpread(_objectSpread({}, values), {}, {
+                usernameErr: 'Username must be at least 5 characters long'
+            }));
+            isReq = false;
+        }
+        if (!password) {
+            setValues(_objectSpread(_objectSpread({}, values), {}, {
+                passwordErr: 'Password required'
+            }));
+            isReq = false;
+        } else if (password.length < 6) {
+            setValues(_objectSpread(_objectSpread({}, values), {}, {
+                passwordErr: 'Password must be at least 6 characters long'
+            }));
+            isReq = false;
+        }
+        if (!email) {
+            setValues(_objectSpread(_objectSpread({}, values), {}, {
+                emailErr: 'Email required'
+            }));
+            isReq = false;
+        } else if (email.indexOf('@') === -1) {
+            setValues(_objectSpread(_objectSpread({}, values), {}, {
+                emailErr: 'Enter valid email address'
+            }));
+            isReq = false;
+        }
+        return isReq;
+    };
+    var handleSubmit = function handleSubmit(e) {
+        e.preventDefault();
+        var isReq = validate();
+        if (isReq) {
+            var token = localStorage.getItem('token');
+            _axios["default"].put("https://powerful-coast-48240.herokuapp.com/users/".concat(user.Username), {
+                Username: username,
+                Password: password,
+                Email: email,
+                Birthday: birthday
+            }, {
+                headers: {
+                    Authorization: "Bearer ".concat(token)
+                }
+            }).then(function(response) {
+                console.log(response.data);
+                alert('Profile was successfully updated!');
+                window.open('/users/:Username', '_self');
+            })["catch"](function(error) {
+                console.error(error);
+                alert('Unable to update profile.');
+            });
+        }
+    };
+    return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, null, "Edit profile info"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+        controlId: "formUsername"
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Username:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
+        type: "text",
+        value: username,
+        onChange: function onChange(e) {
+            return setUsername(e.target.value);
+        },
+        placeholder: "Username",
+        required: true
+    }), values.usernameErr && /*#__PURE__*/ _react["default"].createElement("p", null, values.usernameErr)), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+        controlId: "formPassword"
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Password:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
+        type: "password",
+        value: password,
+        onChange: function onChange(e) {
+            return setPassword(e.target.value);
+        },
+        placeholder: "Password",
+        required: true
+    }), values.passwordErr && /*#__PURE__*/ _react["default"].createElement("p", null, values.passwordErr)), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+        controlId: "formEmail"
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Password:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
+        type: "text",
+        value: email,
+        onChange: function onChange(e) {
+            return setEmail(e.target.value);
+        },
+        placeholder: "your@mail.com",
+        required: true
+    }), values.emailErr && /*#__PURE__*/ _react["default"].createElement("p", null, values.emailErr)), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+        controlId: "formBirthday"
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Password:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
+        type: "text",
+        value: birthday,
+        onChange: function onChange(e) {
+            return setBirthday(e.target.value);
+        },
+        placeholder: "YYYY-MM-DD"
+    })), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+        controlId: "formBirthday",
+        className: "mt-3"
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
+        variant: "primary",
+        type: "submit",
+        onClick: handleSubmit
+    }, "Edit profile"))))));
+}
+_c = UpdateUserView;
+var _c;
+$RefreshReg$(_c, "UpdateUserView");
+
+  $parcel$ReactRefreshHelpers$95d1.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","react-bootstrap":"3AD9A","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko","prop-types":"7wKI2","axios":"jo6P5"}],"bNPgg":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$8fd2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
