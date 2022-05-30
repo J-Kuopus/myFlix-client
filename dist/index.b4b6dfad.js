@@ -45099,12 +45099,7 @@ function ProfileView(props) {
         className: "label"
     }, "Birthday: "), user.Birthday), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
         className: "label"
-    }, "Favorite Movies: ")), /*#__PURE__*/ _react["default"].createElement(_favoriteMovies.FavoriteMoviesView, {
-        movies: movies,
-        favoriteMovies: favoriteMovies,
-        currentUser: currentUser,
-        token: token
-    })), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.Link, {
+    }, "Favorite Movies: "), user.FavoriteMovies)), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.Link, {
         to: '/'
     }, "Back to Main")))), /*#__PURE__*/ _react["default"].createElement(_updateUser.UpdateUserView, {
         user: user
@@ -45197,12 +45192,7 @@ function FavoriteMoviesView(props) {
             return console.error(error);
         });
         return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, favoriteMoviesList.length === 0 ? /*#__PURE__*/ _react["default"].createElement("p", null, "You have no favorite movies yet.") : favoriteMoviesList.map(function(movie) {
-            return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, {
-                xs: 10,
-                sm: 8,
-                md: 6,
-                lg: 4
-            }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, {
+            return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, {
                 id: "movie-card"
             }, /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.Link, {
                 to: "/movies/".concat(movie._id)
@@ -45460,23 +45450,22 @@ function UpdateUserView(props) {
         required: true
     }), values.passwordErr && /*#__PURE__*/ _react["default"].createElement("p", null, values.passwordErr)), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
         controlId: "formEmail"
-    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Password:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Email:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
         type: "text",
         value: email,
         onChange: function onChange(e) {
             return setEmail(e.target.value);
         },
-        placeholder: "your@mail.com",
+        placeholder: "Email",
         required: true
     }), values.emailErr && /*#__PURE__*/ _react["default"].createElement("p", null, values.emailErr)), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
         controlId: "formBirthday"
-    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Password:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
-        type: "text",
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Birthday:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
+        type: "date",
         value: birthday,
         onChange: function onChange(e) {
             return setBirthday(e.target.value);
-        },
-        placeholder: "YYYY-MM-DD"
+        }
     })), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
         controlId: "formBirthday",
         className: "mt-3"
