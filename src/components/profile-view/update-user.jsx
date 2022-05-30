@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Col, Container, Form, Row } from 'react-bootstrap';
+import { Button, Col, Container, Form, Row, Card, CardGroup } from 'react-bootstrap';
 import axios from 'axios';
 
 
@@ -71,9 +71,8 @@ export function UpdateUserView(props) {
 
   return (
     <Container>
-      <Row>Edit profile info</Row>
-      <Row>
-        <Col>
+      <Card>
+          <Card.Text>Edit profile info</Card.Text>
           <Form>
             <Form.Group controlId="formUsername">
               <Form.Label>Username:</Form.Label>
@@ -101,8 +100,7 @@ export function UpdateUserView(props) {
                 <Button  variant="primary" type="submit" onClick={handleSubmit}>Edit profile</Button>
               </Form.Group>
           </Form>
-        </Col>
-      </Row>
+      </Card>
     </Container>
   )
 }
