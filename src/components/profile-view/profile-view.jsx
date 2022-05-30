@@ -27,6 +27,18 @@ export function ProfileView(props) {
     getUser();
   }, [])
 
+  const handleDelete = () => {
+    axios.delete(`https://powerful-coast-48240.herokuapp.com/users/${currentUser}`, {
+      headers: { Authorization: `Bearer ${token}`}
+    })
+    .then(() => {
+      alert(`The account ${user.Username} was successfully deleted.`)
+      localStorage.clear();
+      window.open('/register', '_self');
+    }).
+    catch(error => console.error(error))
+  }
+
       return (
         <Container>
             <Card>
@@ -57,6 +69,7 @@ export function ProfileView(props) {
                     </Container>
                 </Card.Body>
             </Card>
+            <Button variant="primary" onClick={handleDelete}>Delete profile</Button>
         </Container>
         );
   };

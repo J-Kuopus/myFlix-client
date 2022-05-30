@@ -45049,6 +45049,19 @@ function ProfileView(props) {
     (0, _react.useEffect)(function() {
         getUser();
     }, []);
+    var handleDelete = function handleDelete() {
+        _axios["default"]["delete"]("https://powerful-coast-48240.herokuapp.com/users/".concat(currentUser), {
+            headers: {
+                Authorization: "Bearer ".concat(token)
+            }
+        }).then(function() {
+            alert("The account ".concat(user.Username, " was successfully deleted."));
+            localStorage.clear();
+            window.open('/register', '_self');
+        })["catch"](function(error) {
+            return console.error(error);
+        });
+    };
     return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Header, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
         variant: "danger",
         type: "submit",
@@ -45067,7 +45080,10 @@ function ProfileView(props) {
         className: "label"
     }, "Favorite Movies: "), user.FavoriteMovies)), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.Link, {
         to: '/'
-    }, "Back to Main")))));
+    }, "Back to Main")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
+        variant: "primary",
+        onClick: handleDelete
+    }, "Delete profile"));
 }
 _c = ProfileView;
 var _c;
