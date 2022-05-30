@@ -38352,9 +38352,9 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
                         }));
                     }
                 }), /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.Route, {
-                    path: "/users/".concat(user1),
+                    path: '/users/:Username',
                     render: function render(_ref4) {
-                        var history = _ref4.history;
+                        var history = _ref4.history, match = _ref4.match;
                         if (!user1) return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, {
                             className: "login-view",
                             xxl: 6,
@@ -38379,7 +38379,7 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
                             sm: 12
                         }, /*#__PURE__*/ _react["default"].createElement(_profileView.ProfileView, {
                             movies: movies,
-                            user: user1,
+                            user: user1 === match.params.Username,
                             onBackClick: function onBackClick() {
                                 return history.goBack();
                             }
@@ -44944,13 +44944,18 @@ function _typeof(obj1) {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.ProfileView = void 0;
-var _react = _interopRequireDefault(require("react"));
+exports.ProfileView = ProfileView;
+var _react = _interopRequireWildcard(require("react"));
 var _reactBootstrap = require("react-bootstrap");
 var _reactRouterDom = require("react-router-dom");
 require("./profile-view.scss");
 var _axios = _interopRequireDefault(require("axios"));
 var _propTypes = _interopRequireWildcard(require("prop-types"));
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        "default": obj
+    };
+}
 function _getRequireWildcardCache(nodeInterop1) {
     if (typeof WeakMap !== "function") return null;
     var cacheBabelInterop = new WeakMap();
@@ -44977,177 +44982,96 @@ function _interopRequireWildcard(obj, nodeInterop) {
     if (cache) cache.set(obj, newObj);
     return newObj;
 }
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        "default": obj
-    };
+function _slicedToArray(arr, i) {
+    return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
 }
-function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) throw new TypeError("Cannot call a class as a function");
+function _nonIterableRest() {
+    throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
-function _defineProperties(target, props) {
-    for(var i = 0; i < props.length; i++){
-        var descriptor = props[i];
-        descriptor.enumerable = descriptor.enumerable || false;
-        descriptor.configurable = true;
-        if ("value" in descriptor) descriptor.writable = true;
-        Object.defineProperty(target, descriptor.key, descriptor);
-    }
+function _unsupportedIterableToArray(o, minLen) {
+    if (!o) return;
+    if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+    var n = Object.prototype.toString.call(o).slice(8, -1);
+    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Map" || n === "Set") return Array.from(o);
+    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
 }
-function _createClass(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties(Constructor, staticProps);
-    Object.defineProperty(Constructor, "prototype", {
-        writable: false
-    });
-    return Constructor;
+function _arrayLikeToArray(arr, len) {
+    if (len == null || len > arr.length) len = arr.length;
+    for(var i = 0, arr2 = new Array(len); i < len; i++)arr2[i] = arr[i];
+    return arr2;
 }
-function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) throw new TypeError("Super expression must either be null or a function");
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-        constructor: {
-            value: subClass,
-            writable: true,
-            configurable: true
-        }
-    });
-    Object.defineProperty(subClass, "prototype", {
-        writable: false
-    });
-    if (superClass) _setPrototypeOf(subClass, superClass);
-}
-function _setPrototypeOf(o1, p1) {
-    _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) {
-        o.__proto__ = p;
-        return o;
-    };
-    return _setPrototypeOf(o1, p1);
-}
-function _createSuper(Derived) {
-    var hasNativeReflectConstruct = _isNativeReflectConstruct();
-    return function _createSuperInternal() {
-        var Super = _getPrototypeOf(Derived), result;
-        if (hasNativeReflectConstruct) {
-            var NewTarget = _getPrototypeOf(this).constructor;
-            result = Reflect.construct(Super, arguments, NewTarget);
-        } else result = Super.apply(this, arguments);
-        return _possibleConstructorReturn(this, result);
-    };
-}
-function _possibleConstructorReturn(self, call) {
-    if (call && (_typeof(call) === "object" || typeof call === "function")) return call;
-    else if (call !== void 0) throw new TypeError("Derived constructors may only return object or undefined");
-    return _assertThisInitialized(self);
-}
-function _assertThisInitialized(self) {
-    if (self === void 0) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    return self;
-}
-function _isNativeReflectConstruct() {
-    if (typeof Reflect === "undefined" || !Reflect.construct) return false;
-    if (Reflect.construct.sham) return false;
-    if (typeof Proxy === "function") return true;
+function _iterableToArrayLimit(arr, i) {
+    var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
+    if (_i == null) return;
+    var _arr = [];
+    var _n = true;
+    var _d = false;
+    var _s, _e;
     try {
-        Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function() {}));
-        return true;
-    } catch (e) {
-        return false;
-    }
-}
-function _getPrototypeOf(o2) {
-    _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) {
-        return o.__proto__ || Object.getPrototypeOf(o);
-    };
-    return _getPrototypeOf(o2);
-}
-var ProfileView = /*#__PURE__*/ function(_React$Component) {
-    _inherits(ProfileView1, _React$Component);
-    var _super = _createSuper(ProfileView1);
-    function ProfileView1() {
-        var _this;
-        _classCallCheck(this, ProfileView1);
-        _this = _super.call(this);
-        _this.state = {
-            username: null,
-            password: null,
-            email: null,
-            birthday: null,
-            favoriteMovies: []
-        };
-        return _this;
-    }
-    _createClass(ProfileView1, [
-        {
-            key: "getUser",
-            value: function getUser(token) {
-                var _this2 = this;
-                var user = localStorage.getItem("user");
-                _axios["default"].get("https://powerful-coast-48240.herokuapp.com/users/".concat(user), {
-                    headers: {
-                        Authorization: "Bearer ".concat(token)
-                    }
-                }).then(function(response) {
-                    //assign the result to the state
-                    _this2.setState({
-                        username: response.data.username,
-                        password: response.data.password,
-                        email: response.data.email,
-                        birthday: response.data.birthday,
-                        favoriteMovies: response.data.favoriteMovies
-                    });
-                })["catch"](function(e) {
-                    return console.log(e);
-                });
-            }
-        },
-        {
-            key: "componentDidMount",
-            value: function componentDidMount() {
-                var accessToken = localStorage.getItem("token");
-                this.getUser(accessToken);
-            }
-        },
-        {
-            key: "render",
-            value: function render() {
-                var _this$state = this.state, username = _this$state.username, password = _this$state.password, email = _this$state.email, birthday = _this$state.birthday, favoriteMovies = _this$state.favoriteMovies;
-                var onBackClick = this.props.onBackClick;
-                var user = this.props.user;
-                return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Header, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
-                    variant: "danger",
-                    type: "submit",
-                    onClick: function onClick() {
-                        onBackClick();
-                    }
-                }, "Back")), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, "Profile Info"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
-                    className: "label"
-                }, "Username: "), user.username), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
-                    className: "label"
-                }, "Password: "), user.password), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
-                    className: "label"
-                }, "Email: "), user.email), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
-                    className: "label"
-                }, "Birthday: "), user.birthday), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
-                    className: "label"
-                }, "Favorite Movies: "), user.favoriteMovies)), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.Link, {
-                    to: '/'
-                }, "Back to Main")))));
-            }
+        for(_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true){
+            _arr.push(_s.value);
+            if (i && _arr.length === i) break;
         }
-    ]);
-    return ProfileView1;
-}(_react["default"].Component);
-exports.ProfileView = ProfileView;
-ProfileView.propTypes = {
-    user: _propTypes["default"].shape({
-        username: _propTypes["default"].string.isRequired,
-        password: _propTypes["default"].string.isRequired,
-        email: _propTypes["default"].string.isRequired,
-        birthday: _propTypes["default"].string.isRequired,
-        favoriteMovies: _propTypes["default"].arrayOf(_propTypes.string)
-    }).isRequired,
-    onBackClick: _propTypes["default"].func.isRequired
-};
+    } catch (err) {
+        _d = true;
+        _e = err;
+    } finally{
+        try {
+            if (!_n && _i["return"] != null) _i["return"]();
+        } finally{
+            if (_d) throw _e;
+        }
+    }
+    return _arr;
+}
+function _arrayWithHoles(arr) {
+    if (Array.isArray(arr)) return arr;
+}
+function ProfileView(props) {
+    var _useState = (0, _react.useState)(props.user), _useState2 = _slicedToArray(_useState, 2), user = _useState2[0], setUser = _useState2[1];
+    var _useState3 = (0, _react.useState)(props.movies), _useState4 = _slicedToArray(_useState3, 2), movies = _useState4[0], setMovies = _useState4[1];
+    var _useState5 = (0, _react.useState)([]), _useState6 = _slicedToArray(_useState5, 2), favoriteMovies = _useState6[0], setFavoriteMovies = _useState6[1];
+    var currentUser = localStorage.getItem('user');
+    var token = localStorage.getItem('token');
+    var getUser = function getUser() {
+        _axios["default"].get("https://powerful-coast-48240.herokuapp.com/users/".concat(currentUser), {
+            headers: {
+                Authorization: "Bearer ".concat(token)
+            }
+        }).then(function(response) {
+            setUser(response.data);
+            setFavoriteMovies(response.data.FavoriteMovies);
+        })["catch"](function(error) {
+            return console.error(error);
+        });
+    };
+    (0, _react.useEffect)(function() {
+        getUser();
+    }, []);
+    return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Header, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
+        variant: "danger",
+        type: "submit",
+        onClick: function onClick() {
+            onBackClick();
+        }
+    }, "Back")), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, "Profile Info"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
+        className: "label"
+    }, "Username: "), user.Username), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
+        className: "label"
+    }, "Password: "), "******"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
+        className: "label"
+    }, "Email: "), user.Email), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
+        className: "label"
+    }, "Birthday: "), user.Birthday), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
+        className: "label"
+    }, "Favorite Movies: "), user.FavoriteMovies)), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.Link, {
+        to: '/'
+    }, "Back to Main")))));
+}
+_c = ProfileView;
+var _c;
+$RefreshReg$(_c, "ProfileView");
 
   $parcel$ReactRefreshHelpers$3c12.postlude(module);
 } finally {

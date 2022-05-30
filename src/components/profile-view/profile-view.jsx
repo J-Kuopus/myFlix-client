@@ -1,50 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, Button, Card, CardGroup, Container, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './profile-view.scss';
 import axios from 'axios';
 import PropTypes, { string } from 'prop-types';
 
-export class ProfileView extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            username: null,
-            password: null,
-            email: null,
-            birthday: null,
-            favoriteMovies: [],
-        };
-    };
+export function ProfileView(props) {
+  const [ user, setUser ] = useState(props.user);
+  const [ movies, setMovies ] = useState(props.movies);
+  const [ favoriteMovies, setFavoriteMovies ] = useState([]);
+  const currentUser = localStorage.getItem('user');
+  const token = localStorage.getItem('token');
 
-    getUser(token) {
-        let user = localStorage.getItem("user");
-        axios.get(`https://powerful-coast-48240.herokuapp.com/users/${user}`, {
-            headers: { Authorization: `Bearer ${token}` },
-          })
-          .then((response) => {
-            //assign the result to the state
-            this.setState({
-              username: response.data.username,
-              password: response.data.password,
-              email: response.data.email,
-              birthday: response.data.birthday,
-              favoriteMovies: response.data.favoriteMovies,
-            });
-          })
-          .catch((e) => console.log(e));
-      }
+  const getUser = () => {
+    axios.get(`https://powerful-coast-48240.herokuapp.com/users/${currentUser}`, {
+      headers: { Authorization: `Bearer ${token}`}
+    })
+    .then(response => {
+      setUser(response.data);
+      setFavoriteMovies(response.data.FavoriteMovies)
+    })
+    .catch(error => console.error(error))
+  }
 
-      componentDidMount() {
-        const accessToken = localStorage.getItem("token");
-        this.getUser(accessToken);
-      };
+  useEffect(() => {
+    getUser();
+  }, [])
 
-      render() {
-          const { username, password, email, birthday, favoriteMovies } = this.state;
-          const {  onBackClick } = this.props;
-          let { user } = this.props;
-    
       return (
         <Container>
             <Card>
@@ -61,11 +43,11 @@ export class ProfileView extends React.Component {
                   <p></p>
                 <Container>
                   <Card.Title>Profile Info</Card.Title>
-                <Card.Text><span className="label">Username: </span>{user.username}</Card.Text>
-                <Card.Text><span className="label">Password: </span>{user.password}</Card.Text>
-                <Card.Text><span className="label">Email: </span>{user.email}</Card.Text>
-                <Card.Text><span className="label">Birthday: </span>{user.birthday}</Card.Text>
-                <Card.Text><span className="label">Favorite Movies: </span>{user.favoriteMovies}</Card.Text>
+                <Card.Text><span className="label">Username: </span>{user.Username}</Card.Text>
+                <Card.Text><span className="label">Password: </span>******</Card.Text>
+                <Card.Text><span className="label">Email: </span>{user.Email}</Card.Text>
+                <Card.Text><span className="label">Birthday: </span>{user.Birthday}</Card.Text>
+                <Card.Text><span className="label">Favorite Movies: </span>{user.FavoriteMovies}</Card.Text>
                 </Container>
                 <p></p>
                     <Container>
@@ -77,11 +59,9 @@ export class ProfileView extends React.Component {
             </Card>
         </Container>
         );
-    };
+  };
 
-}
-
-ProfileView.propTypes = {
+/* ProfileView.propTypes = {
   user: PropTypes.shape({
       username: PropTypes.string.isRequired,
       password: PropTypes.string.isRequired,
@@ -91,4 +71,4 @@ ProfileView.propTypes = {
   }).isRequired,
   onBackClick: PropTypes.func.isRequired,
 };
-
+ */
