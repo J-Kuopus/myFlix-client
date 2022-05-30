@@ -2,10 +2,26 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Card, CardGroup, Container, Col, Row, ListGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 import './movie-view.scss';
 
 export class MovieView extends React.Component {
+
+    addToFavoriteList(movieId) {
+        const currentUser = localStorage.getItem('user');
+        const token = localStorage.getItem('token');
+        axios.put(`https://powerful-coast-48240.herokuapp.com/users/${currentUser}/movies/${movieId}`, 
+        {},
+        {
+          headers: { Authorization: `Bearer ${token}`}
+        })
+        .then((response) => {
+          console.log(response.data)
+          alert(`The movie was added to your favorites.`)
+        }).
+        catch(error => console.error(error))
+      }
 
     render() {
         const { movie, onBackClick } = this.props;
@@ -25,6 +41,7 @@ export class MovieView extends React.Component {
                                 <span className="label">Released: </span>{movie.Released}</ListGroup.Item>
                             <ListGroup.Item><span className="label">Summary: </span>{movie.Description}</ListGroup.Item> 
                         </ListGroup>
+                        <Button  variant="primary" size="sm" onClick={() => this.addToFavoriteList(movie._id) }>Add to favorites</Button>
                     </div> 
                     </Col>
                     <Col xxl="4" xl="4" lg="6" md="4">
