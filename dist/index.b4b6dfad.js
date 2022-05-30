@@ -45101,9 +45101,9 @@ function ProfileView(props) {
         className: "label"
     }, "Favorite Movies: "), user.FavoriteMovies)), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.Link, {
         to: '/'
-    }, "Back to Main")))), /*#__PURE__*/ _react["default"].createElement(_updateUser.UpdateUserView, {
+    }, "Back to Main")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_updateUser.UpdateUserView, {
         user: user
-    }), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
+    })), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
         variant: "secondary",
         onClick: handleDelete
     }, "Delete profile"));
@@ -45428,7 +45428,7 @@ function UpdateUserView(props) {
             });
         }
     };
-    return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, null, "Edit profile info"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+    return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, "Edit profile info"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
         controlId: "formUsername"
     }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Username:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
         type: "text",
@@ -45473,7 +45473,7 @@ function UpdateUserView(props) {
         variant: "primary",
         type: "submit",
         onClick: handleSubmit
-    }, "Edit profile"))))));
+    }, "Edit profile")))));
 }
 _c = UpdateUserView;
 var _c;

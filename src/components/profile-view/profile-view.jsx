@@ -66,7 +66,9 @@ export function ProfileView(props) {
                     </Container>
                 </Card.Body>
             </Card>
+            <Card>
             <UpdateUserView user={user}/>
+            </Card>
             <Button variant="secondary" onClick={handleDelete}>Delete profile</Button>
         </Container>
         );
