@@ -44230,6 +44230,7 @@ var _react = _interopRequireDefault(require("react"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
 var _reactBootstrap = require("react-bootstrap");
 var _reactRouterDom = require("react-router-dom");
+var _axios = _interopRequireDefault(require("axios"));
 require("./movie-view.scss");
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -44323,8 +44324,26 @@ var MovieView = /*#__PURE__*/ function(_React$Component) {
     }
     _createClass(MovieView1, [
         {
+            key: "addToFavoriteList",
+            value: function addToFavoriteList(movieId) {
+                var currentUser = localStorage.getItem('user');
+                var token = localStorage.getItem('token');
+                _axios["default"].put("https://powerful-coast-48240.herokuapp.com/users/".concat(currentUser, "/movies/").concat(movieId), {}, {
+                    headers: {
+                        Authorization: "Bearer ".concat(token)
+                    }
+                }).then(function(response) {
+                    console.log(response.data);
+                    alert("The movie was added to your favorites.");
+                })["catch"](function(error) {
+                    return console.error(error);
+                });
+            }
+        },
+        {
             key: "render",
             value: function render() {
+                var _this = this;
                 var _this$props = this.props, movie = _this$props.movie, onBackClick = _this$props.onBackClick;
                 return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, {
                     className: "movie-view d-flex position-absolute top-50 start-50 translate-middle"
@@ -44355,7 +44374,13 @@ var MovieView = /*#__PURE__*/ function(_React$Component) {
                     className: "label"
                 }, "Released: "), movie.Released), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.ListGroup.Item, null, /*#__PURE__*/ _react["default"].createElement("span", {
                     className: "label"
-                }, "Summary: "), movie.Description)))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, {
+                }, "Summary: "), movie.Description)), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
+                    variant: "primary",
+                    size: "sm",
+                    onClick: function onClick() {
+                        return _this.addToFavoriteList(movie._id);
+                    }
+                }, "Add to favorites"))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, {
                     xxl: "4",
                     xl: "4",
                     lg: "6",
@@ -44404,7 +44429,7 @@ MovieView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","prop-types":"7wKI2","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","./movie-view.scss":"jnlR5","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko"}],"jnlR5":[function() {},{}],"3U8r7":[function(require,module,exports) {
+},{"react":"21dqq","prop-types":"7wKI2","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","./movie-view.scss":"jnlR5","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko","axios":"jo6P5"}],"jnlR5":[function() {},{}],"3U8r7":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$789c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -45064,13 +45089,7 @@ function ProfileView(props) {
             return console.error(error);
         });
     };
-    return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Header, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
-        variant: "danger",
-        type: "submit",
-        onClick: function onClick() {
-            onBackClick();
-        }
-    }, "Back")), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, "Profile Info"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
+    return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, "Profile Info"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
         className: "label"
     }, "Username: "), user.Username), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
         className: "label"

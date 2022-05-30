@@ -45,16 +45,6 @@ export function ProfileView(props) {
         <Container>
             <Card>
               <Card.Body>
-                  <Card.Header>
-                    <Button
-                      variant="danger"
-                      type="submit"
-                      onClick={() => {
-                        onBackClick();
-                      }}>Back
-                    </Button>
-                  </Card.Header>
-                  <p></p>
                 <Container>
                   <Card.Title>Profile Info</Card.Title>
                 <Card.Text><span className="label">Username: </span>{user.Username}</Card.Text>
