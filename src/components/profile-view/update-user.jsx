@@ -22,7 +22,7 @@ export function UpdateUserView(props) {
     if (!username) {
       setValues({...values, usernameErr: 'Username required'});
       isReq = false;
-    } else if (username.length < 2) {
+    } else if (username.length < 5) {
       setValues({...values, usernameErr: 'Username must be at least 5 characters long'});
       isReq= false;
     }
