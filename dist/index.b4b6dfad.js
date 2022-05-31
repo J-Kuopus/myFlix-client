@@ -45116,9 +45116,7 @@ function ProfileView(props) {
         className: "label"
     }, "Birthday: "), user.Birthday), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
         className: "label"
-    }, "Favorite Movies: ")), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /* favoriteMoviesList.length === 0 ? (
-     <p>You have no favorite movies yet.</p>
-     ) : ( */ favoriteMoviesList.map(function(movie) {
+    }, "Favorite Movies: ")), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, favoriteMoviesList.map(function(movie) {
         return /*#__PURE__*/ _react["default"].createElement("div", {
             key: movie._id
         }, /*#__PURE__*/ _react["default"].createElement("img", {

@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import './profile-view.scss';
 import axios from 'axios';
 import PropTypes, { string } from 'prop-types';
-import { FavoriteMoviesView } from './favorite-movies';
-import { UpdateUserView } from './update-user';
+/* import { FavoriteMoviesView } from './favorite-movies';
+import { UpdateUserView } from './update-user' */;
 
 export function ProfileView(props) {
   const [ user, setUser ] = useState(props.user);
@@ -14,6 +14,7 @@ export function ProfileView(props) {
   const currentUser = localStorage.getItem('user');
   const token = localStorage.getItem('token');
 
+  // GETS user info
   const getUser = () => {
     axios.get(`https://powerful-coast-48240.herokuapp.com/users/${currentUser}`, {
       headers: { Authorization: `Bearer ${token}`}
@@ -29,6 +30,7 @@ export function ProfileView(props) {
     getUser();
   }, [])
 
+  //DELETES user profile
   const handleDelete = () => {
     axios.delete(`https://powerful-coast-48240.herokuapp.com/users/${currentUser}`, {
       headers: { Authorization: `Bearer ${token}`}
@@ -41,24 +43,55 @@ export function ProfileView(props) {
     catch(error => console.error(error))
   }
 
+  const favoriteMoviesId = favoriteMovies.map(m => m._id)
+  
+  const favoriteMoviesList = movies.filter(m => {
+    return favoriteMoviesId.includes(m._id)
+  })
+
+  //DELETES movie from favorites list
+  const handleMovieDelete = (movieId) => {
+    axios.delete(`https://powerful-coast-48240.herokuapp.com/users/${currentUser}/movies/${movieId}`, {
+      headers: { Authorization: `Bearer ${token}`}
+    })
+    .then(() => {
+      alert(`The movie was removed from favorites list.`)
+      window.open('/users/:Username', '_self');
+    }).
+    catch(error => console.error(error))
+  }
+
+
       return (
         <Container>
             <Card>
               <Card.Body>
                 <Container>
                   <Card.Title>Profile Info</Card.Title>
-                <Card.Text><span className="label">Username: </span>{user.Username}</Card.Text>
-                <Card.Text><span className="label">Password: </span>******</Card.Text>
-                <Card.Text><span className="label">Email: </span>{user.Email}</Card.Text>
-                <Card.Text><span className="label">Birthday: </span>{user.Birthday}</Card.Text>
-                <Card.Text><span className="label">Favorite Movies: </span>{user.FavoriteMovies}</Card.Text>
-                {/* <FavoriteMoviesView 
-                  movies={movies} 
-                  favoriteMovies={favoriteMovies} 
-                  currentUser={currentUser} 
-                  token={token}/> */}
-                </Container>
-                <p></p>
+                    <Card.Text><span className="label">Username: </span>{user.Username}</Card.Text>
+                    <Card.Text><span className="label">Password: </span>******</Card.Text>
+                    <Card.Text><span className="label">Email: </span>{user.Email}</Card.Text>
+                    <Card.Text><span className="label">Birthday: </span>{user.Birthday}</Card.Text>
+                    <Card.Text><span className="label">Favorite Movies: </span></Card.Text>
+                    <Container>
+                        {favoriteMoviesList.map((movie) => {
+                                return (
+                                  <div key={movie._id}>
+                                    <img src={movie.ImagePath} />
+                                    <Link to={`/movies/${movie._id}`} >
+                                    <h4>{movie.Title}</h4>
+                                    </Link>
+                                    <button variant="secondary"
+                                            onClick={()=> {handleMovieDelete(movie._id)}}>
+                                    </button>
+                                  </div>
+                                )
+                              }
+                            )
+                          }
+                    </Container>
+                    </Container>
+                  <p></p>
                     <Container>
                     <Link to={'/'}>
                         Back to Main
@@ -67,7 +100,7 @@ export function ProfileView(props) {
                 </Card.Body>
             </Card>
             <Card>
-            <UpdateUserView user={user}/>
+            {/* <UpdateUserView user={user}/> */}
             </Card>
             <Button variant="secondary" onClick={handleDelete}>Delete profile</Button>
         </Container>
