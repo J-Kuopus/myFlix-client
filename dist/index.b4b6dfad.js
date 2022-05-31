@@ -45058,6 +45058,15 @@ function ProfileView(props) {
     var _useState = (0, _react.useState)(props.user), _useState2 = _slicedToArray(_useState, 2), user = _useState2[0], setUser = _useState2[1];
     var _useState3 = (0, _react.useState)(props.movies), _useState4 = _slicedToArray(_useState3, 2), movies = _useState4[0], setMovies = _useState4[1];
     var _useState5 = (0, _react.useState)([]), _useState6 = _slicedToArray(_useState5, 2), favoriteMovies = _useState6[0], setFavoriteMovies = _useState6[1];
+    var _useState7 = (0, _react.useState)(''), _useState8 = _slicedToArray(_useState7, 2), username = _useState8[0], setUsername = _useState8[1];
+    var _useState9 = (0, _react.useState)(''), _useState10 = _slicedToArray(_useState9, 2), password = _useState10[0], setPassword = _useState10[1];
+    var _useState11 = (0, _react.useState)(''), _useState12 = _slicedToArray(_useState11, 2), email = _useState12[0], setEmail = _useState12[1];
+    var _useState13 = (0, _react.useState)(''), _useState14 = _slicedToArray(_useState13, 2), birthday = _useState14[0], setBirthday = _useState14[1];
+    var _useState15 = (0, _react.useState)({
+        usernameErr: '',
+        passwordErr: '',
+        emailErr: ''
+    }), _useState16 = _slicedToArray(_useState15, 2), values = _useState16[0], setValues = _useState16[1];
     var currentUser = localStorage.getItem('user');
     var token = localStorage.getItem('token'); // GETS user info
     var getUser = function getUser() {
@@ -45087,6 +45096,30 @@ function ProfileView(props) {
         })["catch"](function(error) {
             return console.error(error);
         });
+    }; //UPDATES user profile
+    var handleSubmit = function handleSubmit(e) {
+        e.preventDefault();
+        var isReq = validate();
+        if (isReq) {
+            var _token = localStorage.getItem('token');
+            _axios["default"].put("https://powerful-coast-48240.herokuapp.com/users/".concat(user.Username), {
+                Username: username,
+                Password: password,
+                Email: email,
+                Birthday: birthday
+            }, {
+                headers: {
+                    Authorization: "Bearer ".concat(_token)
+                }
+            }).then(function(response) {
+                console.log(response.data);
+                alert('Profile was successfully updated!');
+                window.open('/users/:Username', '_self');
+            })["catch"](function(error) {
+                console.error(error);
+                alert('Unable to update profile.');
+            });
+        }
     };
     var favoriteMoviesId = favoriteMovies.map(function(m) {
         return m._id;
@@ -45131,7 +45164,52 @@ function ProfileView(props) {
         }));
     }))), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.Link, {
         to: '/'
-    }, "Back to Main")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
+    }, "Back to Main")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, "Edit profile info"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+        controlId: "formUsername"
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Username:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
+        type: "text",
+        value: username,
+        onChange: function onChange(e) {
+            return setUsername(e.target.value);
+        },
+        placeholder: "Username",
+        required: true
+    }), values.usernameErr && /*#__PURE__*/ _react["default"].createElement("p", null, values.usernameErr)), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+        controlId: "formPassword"
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Password:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
+        type: "password",
+        value: password,
+        onChange: function onChange(e) {
+            return setPassword(e.target.value);
+        },
+        placeholder: "Password",
+        required: true
+    }), values.passwordErr && /*#__PURE__*/ _react["default"].createElement("p", null, values.passwordErr)), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+        controlId: "formEmail"
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Email:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
+        type: "text",
+        value: email,
+        onChange: function onChange(e) {
+            return setEmail(e.target.value);
+        },
+        placeholder: "Email",
+        required: true
+    }), values.emailErr && /*#__PURE__*/ _react["default"].createElement("p", null, values.emailErr)), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+        controlId: "formBirthday"
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Birthday:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
+        type: "date",
+        value: birthday,
+        onChange: function onChange(e) {
+            return setBirthday(e.target.value);
+        }
+    })), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+        controlId: "formBirthday",
+        className: "mt-3"
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
+        variant: "primary",
+        type: "submit",
+        onClick: handleSubmit
+    }, "Edit profile")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
         variant: "secondary",
         onClick: handleDelete
     }, "Delete profile"));
