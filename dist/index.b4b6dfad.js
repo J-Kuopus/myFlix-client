@@ -45102,7 +45102,7 @@ function ProfileView(props) {
         var isReq = validate();
         if (isReq) {
             var _token = localStorage.getItem('token');
-            _axios["default"].put("https://powerful-coast-48240.herokuapp.com/users/".concat(user.Username), {
+            _axios["default"].put("https://powerful-coast-48240.herokuapp.com/users/".concat(currentUser), {
                 Username: username,
                 Password: password,
                 Email: email,
