@@ -194,5 +194,5 @@ export function ProfileView(props) {
             </Card>
             <Button variant="secondary" onClick={handleDelete}>Delete profile</Button>
         </Container>
-        );
+      );
   };
