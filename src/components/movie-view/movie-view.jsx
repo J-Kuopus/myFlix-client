@@ -8,6 +8,7 @@ import './movie-view.scss';
 
 export class MovieView extends React.Component {
 
+    // PUTS movie on favorite list
     addToFavoriteList(movieId) {
         const currentUser = localStorage.getItem('user');
         const token = localStorage.getItem('token');
