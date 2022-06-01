@@ -13,6 +13,7 @@ export function ProfileView(props) {
   const [ favoriteMovies, setFavoriteMovies ] = useState([]);
   const [ username, setUsername] = useState('');
   const [ password, setPassword] = useState('');
+  const [ email, setEmail ] = useState('');
   const [ birthday, setBirthday] = useState('');
   const [ values, setValues] = useState({
     usernameErr: '',
