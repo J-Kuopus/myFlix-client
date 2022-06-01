@@ -38054,6 +38054,7 @@ var _movieView = require("../movie-view/movie-view");
 var _registrationView = require("../registration-view/registration-view");
 var _directorView = require("../director-view/director-view");
 var _genreView = require("../genre-view/genre-view");
+var _profileView = require("../profile-view/profile-view");
 var _navbar = require("../navbar/navbar");
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -38376,7 +38377,7 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
                             lg: 7,
                             md: 8,
                             sm: 12
-                        }, /*#__PURE__*/ _react["default"].createElement(ProfileView, {
+                        }, /*#__PURE__*/ _react["default"].createElement(_profileView.ProfileView, {
                             movies: movies,
                             user: user1 === match.params.Username,
                             onBackClick: function onBackClick() {
@@ -38398,7 +38399,7 @@ exports["default"] = _default;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","axios":"jo6P5","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","./main-view.scss":"eBaMl","../login-view/login-view":"9YtA0","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","../registration-view/registration-view":"3U8r7","../director-view/director-view":"9tpci","../genre-view/genre-view":"4tuA0","../navbar/navbar":"bNPgg","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko"}],"jo6P5":[function(require,module,exports) {
+},{"react":"21dqq","axios":"jo6P5","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","./main-view.scss":"eBaMl","../login-view/login-view":"9YtA0","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","../registration-view/registration-view":"3U8r7","../director-view/director-view":"9tpci","../genre-view/genre-view":"4tuA0","../navbar/navbar":"bNPgg","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko","../profile-view/profile-view":"2vVqf"}],"jo6P5":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"63MyY"}],"63MyY":[function(require,module,exports) {
@@ -45059,6 +45060,365 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"lJZlQ":[function() {},{}]},["bCcsh","5phmu","d8Dch"], "d8Dch", "parcelRequireaec4")
+},{}],"2vVqf":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$3c12 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$3c12.prelude(module);
+
+try {
+"use strict";
+function _typeof(obj1) {
+    return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(obj) {
+        return typeof obj;
+    } : function(obj) {
+        return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    }, _typeof(obj1);
+}
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.ProfileView = ProfileView;
+var _react = _interopRequireWildcard(require("react"));
+var _reactBootstrap = require("react-bootstrap");
+var _reactRouterDom = require("react-router-dom");
+require("./profile-view.scss");
+var _axios = _interopRequireDefault(require("axios"));
+var _propTypes = _interopRequireWildcard(require("prop-types"));
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        "default": obj
+    };
+}
+function _getRequireWildcardCache(nodeInterop1) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) {
+        return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop1);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") return {
+        "default": obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {};
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj["default"] = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+function ownKeys(object, enumerableOnly) {
+    var keys = Object.keys(object);
+    if (Object.getOwnPropertySymbols) {
+        var symbols = Object.getOwnPropertySymbols(object);
+        enumerableOnly && (symbols = symbols.filter(function(sym) {
+            return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+        })), keys.push.apply(keys, symbols);
+    }
+    return keys;
+}
+function _objectSpread(target) {
+    for(var i = 1; i < arguments.length; i++){
+        var source = null != arguments[i] ? arguments[i] : {};
+        i % 2 ? ownKeys(Object(source), !0).forEach(function(key) {
+            _defineProperty(target, key, source[key]);
+        }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function(key) {
+            Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+        });
+    }
+    return target;
+}
+function _defineProperty(obj, key, value) {
+    if (key in obj) Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+    });
+    else obj[key] = value;
+    return obj;
+}
+function _slicedToArray(arr, i) {
+    return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+}
+function _nonIterableRest() {
+    throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+function _unsupportedIterableToArray(o, minLen) {
+    if (!o) return;
+    if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+    var n = Object.prototype.toString.call(o).slice(8, -1);
+    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Map" || n === "Set") return Array.from(o);
+    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+function _arrayLikeToArray(arr, len) {
+    if (len == null || len > arr.length) len = arr.length;
+    for(var i = 0, arr2 = new Array(len); i < len; i++)arr2[i] = arr[i];
+    return arr2;
+}
+function _iterableToArrayLimit(arr, i) {
+    var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
+    if (_i == null) return;
+    var _arr = [];
+    var _n = true;
+    var _d = false;
+    var _s, _e;
+    try {
+        for(_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true){
+            _arr.push(_s.value);
+            if (i && _arr.length === i) break;
+        }
+    } catch (err) {
+        _d = true;
+        _e = err;
+    } finally{
+        try {
+            if (!_n && _i["return"] != null) _i["return"]();
+        } finally{
+            if (_d) throw _e;
+        }
+    }
+    return _arr;
+}
+function _arrayWithHoles(arr) {
+    if (Array.isArray(arr)) return arr;
+} /* import { FavoriteMoviesView } from './favorite-movies';
+import { UpdateUserView } from './update-user' */ 
+function ProfileView(props) {
+    var _useState = (0, _react.useState)(props.user), _useState2 = _slicedToArray(_useState, 2), user = _useState2[0], setUser = _useState2[1];
+    var _useState3 = (0, _react.useState)(props.movies), _useState4 = _slicedToArray(_useState3, 2), movies = _useState4[0], setMovies = _useState4[1];
+    var _useState5 = (0, _react.useState)([]), _useState6 = _slicedToArray(_useState5, 2), favoriteMovies = _useState6[0], setFavoriteMovies = _useState6[1];
+    var _useState7 = (0, _react.useState)(''), _useState8 = _slicedToArray(_useState7, 2), username = _useState8[0], setUsername = _useState8[1];
+    var _useState9 = (0, _react.useState)(''), _useState10 = _slicedToArray(_useState9, 2), password = _useState10[0], setPassword = _useState10[1];
+    var _useState11 = (0, _react.useState)(''), _useState12 = _slicedToArray(_useState11, 2), email = _useState12[0], setEmail = _useState12[1];
+    var _useState13 = (0, _react.useState)(''), _useState14 = _slicedToArray(_useState13, 2), birthday = _useState14[0], setBirthday = _useState14[1];
+    var _useState15 = (0, _react.useState)({
+        usernameErr: '',
+        passwordErr: '',
+        emailErr: ''
+    }), _useState16 = _slicedToArray(_useState15, 2), values = _useState16[0], setValues = _useState16[1];
+    var currentUser = localStorage.getItem('user');
+    var token = localStorage.getItem('token'); // GETS user info
+    var getUser = function getUser() {
+        _axios["default"].get("https://powerful-coast-48240.herokuapp.com/users/".concat(currentUser), {
+            headers: {
+                Authorization: "Bearer ".concat(token)
+            }
+        }).then(function(response) {
+            setUser(response.data);
+            setFavoriteMovies(response.data.FavoriteMovies);
+        })["catch"](function(error) {
+            return console.error(error);
+        });
+    };
+    (0, _react.useEffect)(function() {
+        getUser();
+    }, []); //DELETES user profile
+    var handleDelete = function handleDelete() {
+        _axios["default"]["delete"]("https://powerful-coast-48240.herokuapp.com/users/".concat(currentUser), {
+            headers: {
+                Authorization: "Bearer ".concat(token)
+            }
+        }).then(function() {
+            alert("The profile ".concat(user.Username, " was successfully deleted."));
+            localStorage.clear();
+            window.open('/register', '_self');
+        })["catch"](function(error) {
+            return console.error(error);
+        });
+    }; // Validates user inputs (for updating profile)
+    var validate = function validate() {
+        var isReq = true;
+        if (!username) {
+            setValues(_objectSpread(_objectSpread({}, values), {}, {
+                usernameErr: 'Username required'
+            }));
+            isReq = false;
+        } else if (username.length < 5) {
+            setValues(_objectSpread(_objectSpread({}, values), {}, {
+                usernameErr: 'Username must be at least 5 characters long'
+            }));
+            isReq = false;
+        }
+        if (!password) {
+            setValues(_objectSpread(_objectSpread({}, values), {}, {
+                passwordErr: 'Password required'
+            }));
+            isReq = false;
+        } else if (password.length < 6) {
+            setValues(_objectSpread(_objectSpread({}, values), {}, {
+                passwordErr: 'Password must be at least 6 characters long'
+            }));
+            isReq = false;
+        }
+        if (!email) {
+            setValues(_objectSpread(_objectSpread({}, values), {}, {
+                emailErr: 'Email required'
+            }));
+            isReq = false;
+        } else if (email.indexOf('@') === -1) {
+            setValues(_objectSpread(_objectSpread({}, values), {}, {
+                emailErr: 'Enter valid email address'
+            }));
+            isReq = false;
+        }
+        return isReq;
+    }; // Updates user profile
+    /*   const handleUpdate = () => {
+  
+      const isValid = validate();
+      if (isValid) {
+        axios.put(`https://powerful-coast-48240.herokuapp.com/users/${currentUser}`, {
+          Username: username,
+          Password: password,
+          Email: email,
+          Birthday: birthday
+        }, {
+          headers: { Authorization: `Bearer ${token}`}
+        })
+        .then(() => {
+          alert(`The profile ${user.Username} was successfully updated.`)
+          window.open('/profile', '_self');
+        })
+        .catch(error => console.error(error))
+      }
+    } */ // UPDATES user profile
+    var handleSubmit = function handleSubmit(e) {
+        e.preventDefault();
+        var isReq = validate();
+        if (isReq) {
+            var _token = localStorage.getItem('token');
+            _axios["default"].put("https://powerful-coast-48240.herokuapp.com/users/".concat(currentUser), {
+                Username: username,
+                Password: password,
+                Email: email,
+                Birthday: birthday
+            }, {
+                headers: {
+                    Authorization: "Bearer ".concat(_token)
+                }
+            }).then(function(response) {
+                console.log(response.data);
+                alert('Profile was successfully updated!');
+                window.open('/users/:Username', '_self');
+            })["catch"](function(error) {
+                console.error(error);
+                alert('Unable to update profile.');
+            });
+        }
+    };
+    var favoriteMoviesId = favoriteMovies.map(function(m) {
+        return m._id;
+    });
+    var favoriteMoviesList = movies.filter(function(m) {
+        return favoriteMoviesId.includes(m._id);
+    }); //DELETES movie from favorites list
+    var handleMovieDelete = function handleMovieDelete(movieId) {
+        _axios["default"]["delete"]("https://powerful-coast-48240.herokuapp.com/users/".concat(currentUser, "/movies/").concat(movieId), {
+            headers: {
+                Authorization: "Bearer ".concat(token)
+            }
+        }).then(function() {
+            alert("The movie was removed from favorites list.");
+            window.open('/users/:Username', '_self');
+        })["catch"](function(error) {
+            return console.error(error);
+        });
+    };
+    return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, "Profile Info"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
+        className: "label"
+    }, "Username: "), user.Username), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
+        className: "label"
+    }, "Password: "), "******"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
+        className: "label"
+    }, "Email: "), user.Email), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
+        className: "label"
+    }, "Birthday: "), user.Birthday), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
+        className: "label"
+    }, "Favorite Movies: ")), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, favoriteMoviesList.map(function(movie) {
+        return /*#__PURE__*/ _react["default"].createElement("div", {
+            key: movie._id
+        }, /*#__PURE__*/ _react["default"].createElement("img", {
+            src: movie.ImagePath
+        }), /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.Link, {
+            to: "/movies/".concat(movie._id)
+        }, /*#__PURE__*/ _react["default"].createElement("h4", null, movie.Title)), /*#__PURE__*/ _react["default"].createElement("button", {
+            variant: "secondary",
+            onClick: function onClick() {
+                handleMovieDelete(movie._id);
+            }
+        }));
+    }))), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.Link, {
+        to: '/'
+    }, "Back to Main")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, "Edit profile info"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+        controlId: "formUsername"
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Username:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
+        type: "text",
+        value: username,
+        onChange: function onChange(e) {
+            return setUsername(e.target.value);
+        },
+        placeholder: "Username",
+        required: true
+    }), values.usernameErr && /*#__PURE__*/ _react["default"].createElement("p", null, values.usernameErr)), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+        controlId: "formPassword"
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Password:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
+        type: "password",
+        value: password,
+        onChange: function onChange(e) {
+            return setPassword(e.target.value);
+        },
+        placeholder: "Password",
+        required: true
+    }), values.passwordErr && /*#__PURE__*/ _react["default"].createElement("p", null, values.passwordErr)), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+        controlId: "formEmail"
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Email:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
+        type: "text",
+        value: email,
+        onChange: function onChange(e) {
+            return setEmail(e.target.value);
+        },
+        placeholder: "Email",
+        required: true
+    }), values.emailErr && /*#__PURE__*/ _react["default"].createElement("p", null, values.emailErr)), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+        controlId: "formBirthday"
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Birthday:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
+        type: "date",
+        value: birthday,
+        onChange: function onChange(e) {
+            return setBirthday(e.target.value);
+        }
+    })), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+        controlId: "formBirthday",
+        className: "mt-3"
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
+        variant: "primary",
+        type: "submit",
+        onClick: handleSubmit
+    }, "Edit profile"))))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
+        variant: "secondary",
+        onClick: handleDelete
+    }, "Delete profile"));
+}
+_c = ProfileView;
+var _c;
+$RefreshReg$(_c, "ProfileView");
+
+  $parcel$ReactRefreshHelpers$3c12.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","./profile-view.scss":"eyKYH","axios":"jo6P5","prop-types":"7wKI2","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko"}],"eyKYH":[function() {},{}],"lJZlQ":[function() {},{}]},["bCcsh","5phmu","d8Dch"], "d8Dch", "parcelRequireaec4")
 
 //# sourceMappingURL=index.b4b6dfad.js.map

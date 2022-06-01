@@ -81,12 +81,33 @@ export function ProfileView(props) {
     return isReq;
   }
 
+  // Updates user profile
+/*   const handleUpdate = () => {
+
+    const isValid = validate();
+    if (isValid) {
+      axios.put(`https://powerful-coast-48240.herokuapp.com/users/${currentUser}`, {
+        Username: username,
+        Password: password,
+        Email: email,
+        Birthday: birthday
+      }, {
+        headers: { Authorization: `Bearer ${token}`}
+      })
+      .then(() => {
+        alert(`The profile ${user.Username} was successfully updated.`)
+        window.open('/profile', '_self');
+      })
+      .catch(error => console.error(error))
+    }
+  } */
+
   // UPDATES user profile
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("here")
+    
 
-    /*const isReq = validate();
+    const isReq = validate();
 
  
     if (isReq) {
@@ -108,7 +129,7 @@ export function ProfileView(props) {
       .catch(error => {
         console.error(error);
         alert('Unable to update profile.');
-      }); */
+      }); 
     }
   };
 

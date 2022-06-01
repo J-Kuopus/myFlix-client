@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+/*import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Col, Container, Form, Row, Card, CardGroup } from 'react-bootstrap';
 import axios from 'axios';
@@ -77,19 +77,19 @@ export function UpdateUserView(props) {
             <Form.Group controlId="formUsername">
               <Form.Label>Username:</Form.Label>
               <Form.Control type="text" value={username} onChange={e => setUsername(e.target.value)} placeholder="Username" required/>
-              {/* display validation error */}
+              
               {values.usernameErr && <p>{values.usernameErr}</p>}
               </Form.Group>
               <Form.Group controlId="formPassword">
                 <Form.Label>Password:</Form.Label>
                 <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" required />
-                {/* display validation error */}
+                
                 {values.passwordErr && <p>{values.passwordErr}</p>}
               </Form.Group>
               <Form.Group controlId="formEmail">
                 <Form.Label>Email:</Form.Label>
                 <Form.Control type="text" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" required />
-                {/* display validation error */}
+                
                 {values.emailErr && <p>{values.emailErr}</p>}
               </Form.Group>
               <Form.Group controlId="formBirthday">
@@ -103,4 +103,4 @@ export function UpdateUserView(props) {
       </Card>
     </Container>
   )
-}
+}*/
