@@ -114,18 +114,6 @@ export function ProfileView(props) {
     return favoriteMoviesId.includes(m._id)
   })
 
-  //DELETES movie from favorites list
-  const handleMovieDelete = (movieId) => {
-    axios.delete(`https://powerful-coast-48240.herokuapp.com/users/${currentUser}/movies/${movieId}`, {
-      headers: { Authorization: `Bearer ${token}`}
-    })
-    .then(() => {
-      alert(`The movie was removed from favorites list.`)
-      window.open('/users/:Username', '_self');
-    }).
-    catch(error => console.error(error))
-  }
-
     return (
         <Container>
             <Card>
@@ -146,7 +134,7 @@ export function ProfileView(props) {
                                     <h4>{movie.Title}</h4>
                                     </Link>
                                     <button variant="secondary"
-                                            onClick={()=> {handleMovieDelete(movie._id)}}>
+                                            onClick={()=> {removeFromFavorites(movie._id)}}>
                                     </button>
                                   </div>
                                 )
