@@ -15,11 +15,12 @@ export function ProfileView(props) {
   const [ password, setPassword] = useState('');
   const [ email, setEmail ] = useState('');
   const [ birthday, setBirthday] = useState('');
-  const [ values, setValues] = useState({
-    usernameErr: '',
-    passwordErr: '',
-    emailErr: '',
-  });
+
+   // Declare hook for each input
+   const [ usernameErr, setUsernameErr ] = useState('');
+   const [ passwordErr, setPasswordErr ] = useState('');
+   const [ emailErr, setEmailErr ] = useState('');
+  
   const currentUser = localStorage.getItem('user');
   const token = localStorage.getItem('token');
 
@@ -52,32 +53,33 @@ export function ProfileView(props) {
     catch(error => console.error(error))
   }
 
-  // Validates user inputs (for updating profile)
-  const validate =() => {
-    let isReq = true;
-    if (!username) {
-      setValues({...values, usernameErr: 'Username required'});
-      isReq = false;
-    } else if (username.length < 5) {
-      setValues({...values, usernameErr: 'Username must be at least 5 characters long'});
-      isReq= false;
+      // Validate user inputs
+      const validate = () => {
+        let isReq = true;
+        if(!username) {
+            setUsernameErr('Username is required');
+            isReq = false;
+        } else if (username.length < 5) {
+            setUsernameErr('Username must be at least 5 characters long')
+            isReq = false;
+        }
+        if (!password) {
+            setPasswordErr('Password is required, must be at least 6 characters long');
+            isReq = false;
+        } else if(password.length < 6){
+            setPasswordErr('Password must be at least 6 characters long');
+            isReq = false;
+        }
+        if (!email) {
+           setEmailErr('Please enter email address');
+            isReq = false;
+        } else if(email.indexOf('@') === -1) {
+            setEmail('Email must be a valid email address');
+            isReq = false
+        }
+
+        return isReq;
     }
-    if (!password) {
-      setValues({...values, passwordErr: 'Password required'});
-      isReq = false;
-    } else if (password.length < 6) {
-      setValues({...values, passwordErr: 'Password must be at least 6 characters long'});
-      isReq= false;
-    }
-    if (!email) {
-      setValues({...values, emailErr: 'Email required'});
-      isReq = false;
-    } else if (email.indexOf('@') === -1) {
-      setValues({...values, emailErr: 'Enter valid email address'});
-      isReq = false;
-    }
-    return isReq;
-  }
 
   // UPDATES user profile
   const handleSubmit = (e) => {
@@ -169,19 +171,19 @@ export function ProfileView(props) {
                     <Form.Label>Username:</Form.Label>
                     <Form.Control type="text" value={username} onChange={e => setUsername(e.target.value)} placeholder="Username" required/>
                     {/* display validation error */}
-                    {values.usernameErr && <p>{values.usernameErr}</p>}
+                    {usernameErr && <p>{usernameErr}</p>} {/* Displays validation error */}
                     </Form.Group>
                     <Form.Group controlId="formPassword">
                       <Form.Label>Password:</Form.Label>
                       <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" required />
                       {/* display validation error */}
-                      {values.passwordErr && <p>{values.passwordErr}</p>}
+                      {passwordErr && <p>{passwordErr}</p>}
                     </Form.Group>
                     <Form.Group controlId="formEmail">
                       <Form.Label>Email:</Form.Label>
                       <Form.Control type="text" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" required />
                       {/* display validation error */}
-                      {values.emailErr && <p>{values.emailErr}</p>}
+                      {emailErr && <p>{emailErr}</p>}
                     </Form.Group>
                     <Form.Group controlId="formBirthday">
                       <Form.Label>Birthday:</Form.Label>

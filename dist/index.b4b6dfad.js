@@ -38399,7 +38399,7 @@ exports["default"] = _default;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","axios":"jo6P5","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","./main-view.scss":"eBaMl","../login-view/login-view":"9YtA0","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","../registration-view/registration-view":"3U8r7","../director-view/director-view":"9tpci","../genre-view/genre-view":"4tuA0","../profile-view/profile-view":"2vVqf","../navbar/navbar":"bNPgg","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko"}],"jo6P5":[function(require,module,exports) {
+},{"react":"21dqq","axios":"jo6P5","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","./main-view.scss":"eBaMl","../login-view/login-view":"9YtA0","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","../registration-view/registration-view":"3U8r7","../director-view/director-view":"9tpci","../genre-view/genre-view":"4tuA0","../navbar/navbar":"bNPgg","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko","../profile-view/profile-view":"2vVqf"}],"jo6P5":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"63MyY"}],"63MyY":[function(require,module,exports) {
@@ -44000,8 +44000,9 @@ function LoginView(props) {
         }).then(function(response) {
             var data = response.data;
             props.onLoggedIn(data);
-        })["catch"](function(e) {
-            console.log('No such user.');
+        })["catch"](function(response) {
+            console.error(response);
+            alert('Unable to login');
         });
     };
     return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, {
@@ -44951,7 +44952,116 @@ GenreView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","prop-types":"7wKI2","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko"}],"2vVqf":[function(require,module,exports) {
+},{"react":"21dqq","prop-types":"7wKI2","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko"}],"bNPgg":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$8fd2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$8fd2.prelude(module);
+
+try {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.NavbarView = NavbarView;
+var _react = _interopRequireDefault(require("react"));
+var _reactBootstrap = require("react-bootstrap");
+var _reactRouterDom = require("react-router-dom");
+require("./navbar.scss");
+var _rvLogo = _interopRequireDefault(require("../../../img/rv-logo.png"));
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        "default": obj
+    };
+}
+function NavbarView() {
+    var user = localStorage.getItem('user');
+    var onLoggedOut = function onLoggedOut() {
+        localStorage.clear();
+        window.open('/', '_self');
+    };
+    var isAuth = function isAuth() {
+        if (typeof window == 'undefined') return false;
+        if (localStorage.getItem('token')) return localStorage.getItem('token');
+        else return false;
+    };
+    return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Navbar, {
+        className: "navbar",
+        fixed: "top",
+        bg: "dark",
+        variant: "dark",
+        expand: "lg"
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Navbar.Brand, {
+        as: _reactRouterDom.Link,
+        to: '/',
+        className: "navbar-brand"
+    }, /*#__PURE__*/ _react["default"].createElement("img", {
+        src: _rvLogo["default"],
+        width: "70",
+        className: "navbar-logo d-inline-block align-top",
+        alt: "Retro Video logo"
+    }), ' ', "Retro Video")), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Navbar.Toggle, {
+        "aria-controls": "basic-navbar-nav"
+    }), isAuth() && /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Navbar.Collapse, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Nav, {
+        className: "me-auto"
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Nav.Link, {
+        to: '/'
+    }, "Hello, ", user), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Nav.Link, {
+        as: _reactRouterDom.Link,
+        to: "/users/".concat(user)
+    }, "Profile"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Nav.Link, {
+        onClick: function onClick() {
+            onLoggedOut();
+        }
+    }, "Logout")))));
+}
+_c = NavbarView;
+var _c;
+$RefreshReg$(_c, "NavbarView");
+
+  $parcel$ReactRefreshHelpers$8fd2.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","./navbar.scss":"8wkoA","../../../img/rv-logo.png":"dIRMk","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko"}],"8wkoA":[function() {},{}],"dIRMk":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('byUka') + "rv-logo.c8c00829.png" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"d2061"}],"d2061":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ('' + err.stack).match(/(https?|file|ftp|(chrome|moz)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return '/';
+}
+function getBaseURL(url) {
+    return ('' + url).replace(/^((?:https?|file|ftp|(chrome|moz)-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ('' + url).match(/(https?|file|ftp|(chrome|moz)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error('Origin not found');
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"2vVqf":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$3c12 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -45061,12 +45171,10 @@ function ProfileView(props) {
     var _useState7 = (0, _react.useState)(''), _useState8 = _slicedToArray(_useState7, 2), username = _useState8[0], setUsername = _useState8[1];
     var _useState9 = (0, _react.useState)(''), _useState10 = _slicedToArray(_useState9, 2), password = _useState10[0], setPassword = _useState10[1];
     var _useState11 = (0, _react.useState)(''), _useState12 = _slicedToArray(_useState11, 2), email = _useState12[0], setEmail = _useState12[1];
-    var _useState13 = (0, _react.useState)(''), _useState14 = _slicedToArray(_useState13, 2), birthday = _useState14[0], setBirthday = _useState14[1];
-    var _useState15 = (0, _react.useState)({
-        usernameErr: '',
-        passwordErr: '',
-        emailErr: ''
-    }), _useState16 = _slicedToArray(_useState15, 2), values = _useState16[0], setValues = _useState16[1];
+    var _useState13 = (0, _react.useState)(''), _useState14 = _slicedToArray(_useState13, 2), birthday = _useState14[0], setBirthday = _useState14[1]; // Declare hook for each input
+    var _useState15 = (0, _react.useState)(''), _useState16 = _slicedToArray(_useState15, 2), usernameErr = _useState16[0], setUsernameErr = _useState16[1];
+    var _useState17 = (0, _react.useState)(''), _useState18 = _slicedToArray(_useState17, 2), passwordErr = _useState18[0], setPasswordErr = _useState18[1];
+    var _useState19 = (0, _react.useState)(''), _useState20 = _slicedToArray(_useState19, 2), emailErr = _useState20[0], setEmailErr = _useState20[1];
     var currentUser = localStorage.getItem('user');
     var token = localStorage.getItem('token'); // GETS user info
     var getUser = function getUser() {
@@ -45096,7 +45204,32 @@ function ProfileView(props) {
         })["catch"](function(error) {
             return console.error(error);
         });
-    }; //UPDATES user profile
+    }; // Validate user inputs
+    var validate = function validate() {
+        var isReq = true;
+        if (!username) {
+            setUsernameErr('Username is required');
+            isReq = false;
+        } else if (username.length < 5) {
+            setUsernameErr('Username must be at least 5 characters long');
+            isReq = false;
+        }
+        if (!password) {
+            setPasswordErr('Password is required, must be at least 6 characters long');
+            isReq = false;
+        } else if (password.length < 6) {
+            setPasswordErr('Password must be at least 6 characters long');
+            isReq = false;
+        }
+        if (!email) {
+            setEmailErr('Please enter email address');
+            isReq = false;
+        } else if (email.indexOf('@') === -1) {
+            setEmail('Email must be a valid email address');
+            isReq = false;
+        }
+        return isReq;
+    }; // UPDATES user profile
     var handleSubmit = function handleSubmit(e) {
         e.preventDefault();
         var isReq = validate();
@@ -45164,7 +45297,7 @@ function ProfileView(props) {
         }));
     }))), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.Link, {
         to: '/'
-    }, "Back to Main")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, "Edit profile info"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+    }, "Back to Main")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, "Edit profile info"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
         controlId: "formUsername"
     }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Username:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
         type: "text",
@@ -45174,7 +45307,7 @@ function ProfileView(props) {
         },
         placeholder: "Username",
         required: true
-    }), values.usernameErr && /*#__PURE__*/ _react["default"].createElement("p", null, values.usernameErr)), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+    }), usernameErr && /*#__PURE__*/ _react["default"].createElement("p", null, usernameErr), " "), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
         controlId: "formPassword"
     }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Password:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
         type: "password",
@@ -45184,7 +45317,7 @@ function ProfileView(props) {
         },
         placeholder: "Password",
         required: true
-    }), values.passwordErr && /*#__PURE__*/ _react["default"].createElement("p", null, values.passwordErr)), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+    }), passwordErr && /*#__PURE__*/ _react["default"].createElement("p", null, passwordErr)), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
         controlId: "formEmail"
     }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Email:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
         type: "text",
@@ -45194,7 +45327,7 @@ function ProfileView(props) {
         },
         placeholder: "Email",
         required: true
-    }), values.emailErr && /*#__PURE__*/ _react["default"].createElement("p", null, values.emailErr)), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+    }), emailErr && /*#__PURE__*/ _react["default"].createElement("p", null, emailErr)), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
         controlId: "formBirthday"
     }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Birthday:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
         type: "date",
@@ -45209,7 +45342,7 @@ function ProfileView(props) {
         variant: "primary",
         type: "submit",
         onClick: handleSubmit
-    }, "Edit profile")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
+    }, "Edit profile"))))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
         variant: "secondary",
         onClick: handleDelete
     }, "Delete profile"));
@@ -45223,115 +45356,6 @@ $RefreshReg$(_c, "ProfileView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","./profile-view.scss":"eyKYH","axios":"jo6P5","prop-types":"7wKI2","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko"}],"eyKYH":[function() {},{}],"bNPgg":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$8fd2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$8fd2.prelude(module);
-
-try {
-"use strict";
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.NavbarView = NavbarView;
-var _react = _interopRequireDefault(require("react"));
-var _reactBootstrap = require("react-bootstrap");
-var _reactRouterDom = require("react-router-dom");
-require("./navbar.scss");
-var _rvLogo = _interopRequireDefault(require("../../../img/rv-logo.png"));
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        "default": obj
-    };
-}
-function NavbarView() {
-    var user = localStorage.getItem('user');
-    var onLoggedOut = function onLoggedOut() {
-        localStorage.clear();
-        window.open('/', '_self');
-    };
-    var isAuth = function isAuth() {
-        if (typeof window == 'undefined') return false;
-        if (localStorage.getItem('token')) return localStorage.getItem('token');
-        else return false;
-    };
-    return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Navbar, {
-        className: "navbar",
-        fixed: "top",
-        bg: "dark",
-        variant: "dark",
-        expand: "lg"
-    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Navbar.Brand, {
-        as: _reactRouterDom.Link,
-        to: '/',
-        className: "navbar-brand"
-    }, /*#__PURE__*/ _react["default"].createElement("img", {
-        src: _rvLogo["default"],
-        width: "70",
-        className: "navbar-logo d-inline-block align-top",
-        alt: "Retro Video logo"
-    }), ' ', "Retro Video")), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Navbar.Toggle, {
-        "aria-controls": "basic-navbar-nav"
-    }), isAuth() && /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Navbar.Collapse, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Nav, {
-        className: "me-auto"
-    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Nav.Link, {
-        to: '/'
-    }, "Hello, ", user), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Nav.Link, {
-        as: _reactRouterDom.Link,
-        to: "/users/".concat(user)
-    }, "Profile"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Nav.Link, {
-        onClick: function onClick() {
-            onLoggedOut();
-        }
-    }, "Logout")))));
-}
-_c = NavbarView;
-var _c;
-$RefreshReg$(_c, "NavbarView");
-
-  $parcel$ReactRefreshHelpers$8fd2.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react":"21dqq","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","./navbar.scss":"8wkoA","../../../img/rv-logo.png":"dIRMk","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko"}],"8wkoA":[function() {},{}],"dIRMk":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('byUka') + "rv-logo.c8c00829.png" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"d2061"}],"d2061":[function(require,module,exports) {
-"use strict";
-var bundleURL = {};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ('' + err.stack).match(/(https?|file|ftp|(chrome|moz)-extension):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return '/';
-}
-function getBaseURL(url) {
-    return ('' + url).replace(/^((?:https?|file|ftp|(chrome|moz)-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ('' + url).match(/(https?|file|ftp|(chrome|moz)-extension):\/\/[^/]+/);
-    if (!matches) throw new Error('Origin not found');
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"lJZlQ":[function() {},{}]},["bCcsh","5phmu","d8Dch"], "d8Dch", "parcelRequireaec4")
+},{"react":"21dqq","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","./profile-view.scss":"eyKYH","axios":"jo6P5","prop-types":"7wKI2","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko"}],"eyKYH":[function() {},{}],"lJZlQ":[function() {},{}]},["bCcsh","5phmu","d8Dch"], "d8Dch", "parcelRequireaec4")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
