@@ -53,30 +53,30 @@ export function ProfileView(props) {
     catch(error => console.error(error))
   }
 
-      // Validate user inputs
-      const validate = () => {
-        let isReq = true;
-        if(!username) {
-            setUsernameErr('Username is required');
-            isReq = false;
-        } else if (username.length < 5) {
-            setUsernameErr('Username must be at least 5 characters long')
-            isReq = false;
-        }
-        if (!password) {
-            setPasswordErr('Password is required, must be at least 6 characters long');
-            isReq = false;
-        } else if(password.length < 6){
-            setPasswordErr('Password must be at least 6 characters long');
-            isReq = false;
-        }
-        if (!email) {
-           setEmailErr('Please enter email address');
-            isReq = false;
-        } else if(email.indexOf('@') === -1) {
-            setEmail('Email must be a valid email address');
-            isReq = false
-        }
+  // Validate user inputs
+    const validate = () => {
+      let isReq = true;
+      if(!username) {
+          setUsernameErr('Username is required');
+          isReq = false;
+      } else if (username.length < 5) {
+          setUsernameErr('Username must be at least 5 characters long')
+          isReq = false;
+      }
+      if (!password) {
+          setPasswordErr('Password is required, must be at least 6 characters long');
+          isReq = false;
+      } else if(password.length < 6){
+          setPasswordErr('Password must be at least 6 characters long');
+          isReq = false;
+      }
+      if (!email) {
+        setEmailErr('Please enter email address');
+          isReq = false;
+      } else if(email.indexOf('@') === -1) {
+          setEmail('Email must be a valid email address');
+          isReq = false
+      }
 
         return isReq;
     }

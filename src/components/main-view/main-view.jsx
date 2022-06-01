@@ -74,7 +74,8 @@ class MainView extends React.Component {
       })
       alert(`The movie was added to your favorites.`)
       })
-      .catch(error => console.error(error))
+      .catch(error => 
+        console.error(error))
       }
 
         //DELETES movie from favorites list
