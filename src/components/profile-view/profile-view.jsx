@@ -52,6 +52,8 @@ export function ProfileView(props) {
     catch(error => console.error(error))
   }
 
+
+
   // Validates user inputs (for updating profile)
   const validate =() => {
     let isReq = true;
@@ -82,7 +84,11 @@ export function ProfileView(props) {
   // UPDATES user profile
   const handleSubmit = (e) => {
     e.preventDefault();
-    const isReq = validate();
+    alert("here")
+
+    /*const isReq = validate();
+
+ 
     if (isReq) {
       const token = localStorage.getItem('token');
       axios.put(`https://powerful-coast-48240.herokuapp.com/users/${currentUser}`, {
@@ -102,7 +108,7 @@ export function ProfileView(props) {
       .catch(error => {
         console.error(error);
         alert('Unable to update profile.');
-      });
+      }); */
     }
   };
 

@@ -15,7 +15,7 @@ export function UpdateUserView(props) {
     passwordErr: '',
     emailErr: '',
   });
-
+}
   // validate user inputs
   const validate =() => {
     let isReq = true;
