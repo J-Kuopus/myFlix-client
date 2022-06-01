@@ -62,6 +62,37 @@ class MainView extends React.Component {
       console.log(error);
     });
   }
+
+      // PUTS movie on favorite list
+  addToFavorites(movieId) {
+      const currentUser = localStorage.getItem('user');
+      const token = localStorage.getItem('token');
+      axios.put(`https://powerful-coast-48240.herokuapp.com/users/${currentUser}/movies/${movieId}`, 
+      {},
+      {
+        headers: { Authorization: `Bearer ${token}`}
+      })
+      .then((response) => {
+        this.setState({
+          user: {...this.state.user, favoriteMovies: [...this.state.user.favoriteMovies, movieId]}
+      })
+      alert(`The movie was added to your favorites.`)
+      })
+      .catch(error => console.error(error))
+      }
+
+        //DELETES movie from favorites list
+  removeFromFavorites(movieId) {
+    axios.delete(`https://powerful-coast-48240.herokuapp.com/users/${currentUser}/movies/${movieId}`, {
+      headers: { Authorization: `Bearer ${token}`}
+    })
+    .then((response) => {
+      this.setState({user: {...this.state.user, favoriteMovies: this.state.user.favoriteMovies.filter(m => m != movieId)}})
+      alert(`The movie was removed from favorites list.`)
+    })
+    .catch(error => 
+      console.error(error)
+    )};
   
 
   render() {
