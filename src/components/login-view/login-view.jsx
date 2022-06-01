@@ -46,9 +46,10 @@ export function LoginView(props) {
             const data = response.data;
             props.onLoggedIn(data);
           })
-          .catch(e => {
-            console.log('No such user.')
-          });
+          .catch(response => {
+            console.error(response);
+            alert('Unable to login');
+        });
         }
     };
     
