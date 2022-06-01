@@ -38282,9 +38282,7 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
             key: "addToFavorites",
             value: function addToFavorites(movieId) {
                 var _this3 = this;
-                var currentUser = localStorage.getItem('user');
-                var token = localStorage.getItem('token');
-                _axios["default"].put("https://powerful-coast-48240.herokuapp.com/users/".concat(currentUser, "/movies/").concat(movieId), {}, {
+                _axios["default"].put("https://powerful-coast-48240.herokuapp.com/users/".concat(currentUser, "/movies/").concat(movieId), {
                     headers: {
                         Authorization: "Bearer ".concat(token)
                     }
