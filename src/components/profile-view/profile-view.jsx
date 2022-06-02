@@ -99,7 +99,8 @@ export function ProfileView(props) {
       .then(response => {
         console.log(response.data);
         alert('Profile was successfully updated!');
-        window.open('/users/:Username', '_self');
+        localStorage.setItem('user', response.data.Username);
+        window.open('/users/' + response.data.Username, '_self');
       })
       .catch(error => {
         console.error(error);

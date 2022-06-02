@@ -45356,7 +45356,8 @@ function ProfileView(props) {
             }).then(function(response) {
                 console.log(response.data);
                 alert('Profile was successfully updated!');
-                window.open('/users/:Username', '_self');
+                localStorage.setItem('user', response.data.Username);
+                window.open('/users/' + response.data.Username, '_self');
             })["catch"](function(error) {
                 console.error(error);
                 alert('Unable to update profile.');
