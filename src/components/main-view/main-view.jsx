@@ -65,7 +65,7 @@ class MainView extends React.Component {
 
       // PUTS movie on favorite list
   addToFavorites(movieId) {
-    axios.put(`https://powerful-coast-48240.herokuapp.com/users/${currentUser}/movies/${movieId}`, {
+    axios.put(`https://powerful-coast-48240.herokuapp.com/users/${user}/movies/${movieId}`, {
       headers: { Authorization: `Bearer ${token}`}
     })
       .then((response) => {
@@ -80,7 +80,7 @@ class MainView extends React.Component {
 
         //DELETES movie from favorites list
   removeFromFavorites(movieId) {
-    axios.delete(`https://powerful-coast-48240.herokuapp.com/users/${currentUser}/movies/${movieId}`, {
+    axios.delete(`https://powerful-coast-48240.herokuapp.com/users/${user}/movies/${movieId}`, {
       headers: { Authorization: `Bearer ${token}`}
     })
     .then((response) => {

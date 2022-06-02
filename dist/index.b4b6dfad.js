@@ -38282,7 +38282,7 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
             key: "addToFavorites",
             value: function addToFavorites(movieId) {
                 var _this3 = this;
-                _axios["default"].put("https://powerful-coast-48240.herokuapp.com/users/".concat(currentUser, "/movies/").concat(movieId), {
+                _axios["default"].put("https://powerful-coast-48240.herokuapp.com/users/".concat(user, "/movies/").concat(movieId), {
                     headers: {
                         Authorization: "Bearer ".concat(token)
                     }
@@ -38304,7 +38304,7 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
             key: "removeFromFavorites",
             value: function removeFromFavorites(movieId) {
                 var _this4 = this;
-                _axios["default"]["delete"]("https://powerful-coast-48240.herokuapp.com/users/".concat(currentUser, "/movies/").concat(movieId), {
+                _axios["default"]["delete"]("https://powerful-coast-48240.herokuapp.com/users/".concat(user, "/movies/").concat(movieId), {
                     headers: {
                         Authorization: "Bearer ".concat(token)
                     }
