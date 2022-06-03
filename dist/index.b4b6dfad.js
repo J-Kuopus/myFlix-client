@@ -38398,6 +38398,7 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
                             className: "main-view"
                         });
                         return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_movieView.MovieView, {
+                            addToFavorites: _this5.addToFavorites,
                             movie: movies.find(function(m) {
                                 return m._id === match.params.movieId;
                             }),
