@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Row, Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Redirect, Link } from 'react-router-dom';
-import { setMovies } from '../../actions/actions';
+import { setMovies, setUser } from '../../actions/actions';
 import MoviesList from '../movies-list/movies-list';
 import './main-view.scss';
 
@@ -204,10 +204,25 @@ class MainView extends React.Component {
   }
 }
 
-let mapStateToProps = state => {
-  return { movies: state.movies}
+let mapStateToProps = store => {
+  return { 
+    movies: store.movies,
+    user: store.user
+  }
+  
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setUser: (user) => {
+      dispatch(setUser(user))
+    },
+    setMovies: (movies) => {
+      dispatch(setMovies(movies))
+    }
+  };
 }
                     
-export default connect(mapStateToProps, { setMovies } )(MainView);          
+export default connect(mapStateToProps, mapDispatchToProps )(MainView);          
 
 
