@@ -20,7 +20,9 @@ class MainView extends React.Component {
     // Initial state is set to null
     this.state = {
       movies: [],
-      user: null,
+      user: {
+        username: null,
+        favoriteMovies: []}
     };
   }
 
@@ -65,7 +67,7 @@ class MainView extends React.Component {
 
       // PUTS movie on favorite list
   addToFavorites(movieId) {
-    axios.put(`https://powerful-coast-48240.herokuapp.com/users/${user}/movies/${movieId}`, {
+    axios.put(`https://powerful-coast-48240.herokuapp.com/users/${username}/movies/${movieId}`, {
       headers: { Authorization: `Bearer ${token}`}
     })
       .then((response) => {

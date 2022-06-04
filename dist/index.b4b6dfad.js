@@ -38230,7 +38230,10 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
         _this = _super.call(this); // Initial state is set to null
         _this.state = {
             movies: [],
-            user: null
+            user: {
+                username: null,
+                favoriteMovies: []
+            }
         };
         return _this;
     }
@@ -38282,7 +38285,7 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
             key: "addToFavorites",
             value: function addToFavorites(movieId) {
                 var _this3 = this;
-                _axios["default"].put("https://powerful-coast-48240.herokuapp.com/users/".concat(user, "/movies/").concat(movieId), {
+                _axios["default"].put("https://powerful-coast-48240.herokuapp.com/users/".concat(username, "/movies/").concat(movieId), {
                     headers: {
                         Authorization: "Bearer ".concat(token)
                     }
