@@ -38230,10 +38230,7 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
         _this = _super.call(this); // Initial state is set to null
         _this.state = {
             movies: [],
-            user: {
-                username: null,
-                favoriteMovies: []
-            }
+            user: null
         };
         return _this;
     }
