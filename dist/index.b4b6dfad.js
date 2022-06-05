@@ -38062,7 +38062,7 @@ var _movieView = require("../movie-view/movie-view");
 var _registrationView = require("../registration-view/registration-view");
 var _directorView = require("../director-view/director-view");
 var _genreView = require("../genre-view/genre-view");
-var _profileView = require("../profile-view/profile-view");
+var _profileView = _interopRequireDefault(require("../profile-view/profile-view"));
 var _navbar = require("../navbar/navbar");
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -38408,7 +38408,7 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
                             lg: 7,
                             md: 8,
                             sm: 12
-                        }, /*#__PURE__*/ _react["default"].createElement(_profileView.ProfileView, {
+                        }, /*#__PURE__*/ _react["default"].createElement(_profileView["default"], {
                             movies: movies,
                             user: user1 === match.params.Username,
                             onBackClick: function onBackClick() {
@@ -43939,6 +43939,7 @@ var _reactRouterDom = require("react-router-dom");
 var _axios = _interopRequireDefault(require("axios"));
 require("./login-view.scss");
 var _reactRedux = require("react-redux");
+var _actions = require("../../actions/actions");
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
         "default": obj
@@ -44102,7 +44103,7 @@ var mapStateToProps = function mapStateToProps(state) {
     };
 };
 var _default = (0, _reactRedux.connect)(mapStateToProps, {
-    setUser: setUser
+    setUser: _actions.setUser
 })(LoginView);
 exports["default"] = _default;
 var _c;
@@ -44113,7 +44114,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","prop-types":"7wKI2","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","axios":"jo6P5","./login-view.scss":"e57ax","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko","react-redux":"bdVon"}],"e57ax":[function() {},{}],"bdVon":[function(require,module,exports) {
+},{"react":"21dqq","prop-types":"7wKI2","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","axios":"jo6P5","./login-view.scss":"e57ax","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko","react-redux":"bdVon","../../actions/actions":"biFwH"}],"e57ax":[function() {},{}],"bdVon":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "batch", ()=>_reactBatchedUpdates.unstable_batchedUpdates
@@ -45640,7 +45641,59 @@ const useStore = /*#__PURE__*/ createStoreHook();
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"h1Kx6"}],"ggaUx":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"h1Kx6"}],"biFwH":[function(require,module,exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.SET_USER = exports.SET_MOVIES = exports.SET_FILTER = exports.REM_FAV = exports.ADD_FAV = void 0;
+exports.addFav = addFav;
+exports.remFav = remFav;
+exports.setFilter = setFilter;
+exports.setMovies = setMovies;
+exports.setUser = setUser;
+var SET_MOVIES = 'SET_MOVIES';
+exports.SET_MOVIES = SET_MOVIES;
+var SET_FILTER = 'SET_FILTER';
+exports.SET_FILTER = SET_FILTER;
+var SET_USER = 'SET_USER';
+exports.SET_USER = SET_USER;
+var ADD_FAV = 'ADD_FAV';
+exports.ADD_FAV = ADD_FAV;
+var REM_FAV = 'REM_FAV';
+exports.REM_FAV = REM_FAV;
+function setMovies(value) {
+    return {
+        type: SET_MOVIES,
+        value: value
+    };
+}
+function setFilter(value) {
+    return {
+        type: SET_FILTER,
+        value: value
+    };
+}
+function setUser(user) {
+    return {
+        type: SET_USER,
+        user: user === null || user === void 0 ? void 0 : user.Username
+    };
+}
+function addFav(value) {
+    return {
+        type: ADD_FAV,
+        value: value
+    };
+}
+function remFav(value) {
+    return {
+        type: REM_FAV,
+        value: value
+    };
+}
+
+},{}],"ggaUx":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$e9f6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -46611,10 +46664,11 @@ function _arrayWithHoles(arr) {
     if (Array.isArray(arr)) return arr;
 }
 function ProfileView(props) {
+    var _this = this;
     var _useState = (0, _react.useState)(props.user), _useState2 = _slicedToArray(_useState, 2), user = _useState2[0], setUser = _useState2[1];
     var _useState3 = (0, _react.useState)(props.movies), _useState4 = _slicedToArray(_useState3, 2), movies = _useState4[0], setMovies = _useState4[1];
     var _useState5 = (0, _react.useState)([]), _useState6 = _slicedToArray(_useState5, 2), favoriteMovies = _useState6[0], setFavoriteMovies = _useState6[1];
-    var _useState7 = (0, _react.useState)(''), _useState8 = _slicedToArray(_useState7, 2), username = _useState8[0], setUsername = _useState8[1];
+    var _useState7 = (0, _react.useState)(''), _useState8 = _slicedToArray(_useState7, 2), username1 = _useState8[0], setUsername = _useState8[1];
     var _useState9 = (0, _react.useState)(''), _useState10 = _slicedToArray(_useState9, 2), password = _useState10[0], setPassword = _useState10[1];
     var _useState11 = (0, _react.useState)(''), _useState12 = _slicedToArray(_useState11, 2), email = _useState12[0], setEmail = _useState12[1];
     var _useState13 = (0, _react.useState)(''), _useState14 = _slicedToArray(_useState13, 2), birthday = _useState14[0], setBirthday = _useState14[1]; // Declare hook for each input
@@ -46622,11 +46676,11 @@ function ProfileView(props) {
     var _useState17 = (0, _react.useState)(''), _useState18 = _slicedToArray(_useState17, 2), passwordErr = _useState18[0], setPasswordErr = _useState18[1];
     var _useState19 = (0, _react.useState)(''), _useState20 = _slicedToArray(_useState19, 2), emailErr = _useState20[0], setEmailErr = _useState20[1];
     var currentUser = localStorage.getItem('user');
-    var token = localStorage.getItem('token'); // GETS user info
+    var token1 = localStorage.getItem('token'); // GETS user info
     var getUser = function getUser() {
         _axios["default"].get("https://powerful-coast-48240.herokuapp.com/users/".concat(currentUser), {
             headers: {
-                Authorization: "Bearer ".concat(token)
+                Authorization: "Bearer ".concat(token1)
             }
         }).then(function(response) {
             setUser(response.data);
@@ -46641,7 +46695,7 @@ function ProfileView(props) {
     var handleDelete = function handleDelete() {
         _axios["default"]["delete"]("https://powerful-coast-48240.herokuapp.com/users/".concat(currentUser), {
             headers: {
-                Authorization: "Bearer ".concat(token)
+                Authorization: "Bearer ".concat(token1)
             }
         }).then(function() {
             alert("The profile ".concat(user.Username, " was successfully deleted."));
@@ -46653,10 +46707,10 @@ function ProfileView(props) {
     }; // Validate user inputs
     var validate = function validate() {
         var isReq = true;
-        if (!username) {
+        if (!username1) {
             setUsernameErr('Username is required');
             isReq = false;
-        } else if (username.length < 5) {
+        } else if (username1.length < 5) {
             setUsernameErr('Username must be at least 5 characters long');
             isReq = false;
         }
@@ -46682,7 +46736,7 @@ function ProfileView(props) {
         if (isReq) {
             var _token = localStorage.getItem('token');
             _axios["default"].put("https://powerful-coast-48240.herokuapp.com/users/".concat(currentUser), {
-                Username: username,
+                Username: username1,
                 Password: password,
                 Email: email,
                 Birthday: birthday
@@ -46701,6 +46755,25 @@ function ProfileView(props) {
             });
         }
     };
+    removeFromFavorites = function removeFromFavorites(movieId) {
+        var username = localStorage.getItem('user');
+        var token = localStorage.getItem('token');
+        console.log('remove fav auth: ', token);
+        _axios["default"]["delete"]("https://powerful-coast-48240.herokuapp.com/users/".concat(username, "/movies/").concat(movieId), {
+            headers: {
+                Authorization: "Bearer ".concat(token)
+            }
+        }).then(function(res) {
+            var _res$data;
+            _this.setState({
+                FavoriteMovies: res === null || res === void 0 ? void 0 : (_res$data = res.data) === null || _res$data === void 0 ? void 0 : _res$data.FavoriteMovies
+            });
+            _this.props.remFav(res === null || res === void 0 ? void 0 : res.data);
+            alert('The movie was removed from your favorites');
+        })["catch"](function(err) {
+            console.log(err);
+        });
+    };
     return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, "Profile Info"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
         className: "label"
     }, "Username: "), user.Username), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
@@ -46716,20 +46789,21 @@ function ProfileView(props) {
             return fav === movie._id;
         })) return /*#__PURE__*/ _react["default"].createElement("img", {
             "class": "fav-movie-img",
-            src: movie.ImagePath
+            src: movie.ImagePath,
+            key: movie._id
         });
     }), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
         variant: "secondary",
         onClick: function onClick() {
-            removeFromFavorites();
+            return _this.removeFromFavorites(movie._id);
         }
-    }))), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.Link, {
+    }, "Remove"))), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.Link, {
         to: '/'
     }, "Back to Main")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, "Edit profile info"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
         controlId: "formUsername"
     }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Username:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
         type: "text",
-        value: username,
+        value: username1,
         onChange: function onChange(e) {
             return setUsername(e.target.value);
         },
@@ -46793,59 +46867,7 @@ $RefreshReg$(_c, "ProfileView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","./profile-view.scss":"eyKYH","axios":"jo6P5","prop-types":"7wKI2","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko","../../actions/actions":"biFwH","react-redux":"bdVon"}],"eyKYH":[function() {},{}],"biFwH":[function(require,module,exports) {
-"use strict";
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.SET_USER = exports.SET_MOVIES = exports.SET_FILTER = exports.REM_FAV = exports.ADD_FAV = void 0;
-exports.addFav = addFav;
-exports.remFav = remFav;
-exports.setFilter = setFilter;
-exports.setMovies = setMovies;
-exports.setUser = setUser;
-var SET_MOVIES = 'SET_MOVIES';
-exports.SET_MOVIES = SET_MOVIES;
-var SET_FILTER = 'SET_FILTER';
-exports.SET_FILTER = SET_FILTER;
-var SET_USER = 'SET_USER';
-exports.SET_USER = SET_USER;
-var ADD_FAV = 'ADD_FAV';
-exports.ADD_FAV = ADD_FAV;
-var REM_FAV = 'REM_FAV';
-exports.REM_FAV = REM_FAV;
-function setMovies(value) {
-    return {
-        type: SET_MOVIES,
-        value: value
-    };
-}
-function setFilter(value) {
-    return {
-        type: SET_FILTER,
-        value: value
-    };
-}
-function setUser(user) {
-    return {
-        type: SET_USER,
-        user: user === null || user === void 0 ? void 0 : user.Username
-    };
-}
-function addFav(value) {
-    return {
-        type: ADD_FAV,
-        value: value
-    };
-}
-function remFav(value) {
-    return {
-        type: REM_FAV,
-        value: value
-    };
-}
-
-},{}],"bPxKK":[function(require,module,exports) {
+},{"react":"21dqq","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","./profile-view.scss":"eyKYH","axios":"jo6P5","prop-types":"7wKI2","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko","../../actions/actions":"biFwH","react-redux":"bdVon"}],"eyKYH":[function() {},{}],"bPxKK":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$89c8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

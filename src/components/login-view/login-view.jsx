@@ -7,6 +7,7 @@ import axios from 'axios';
 
 import './login-view.scss';
 import { connect } from 'react-redux';
+import { setUser } from '../../actions/actions';
 
 export function LoginView(props) {
     const [ username, setUsername] = useState('');
