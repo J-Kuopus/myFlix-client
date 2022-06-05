@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 import './login-view.scss';
+import { connect } from 'react-redux';
 
 export function LoginView(props) {
     const [ username, setUsername] = useState('');
@@ -117,3 +118,11 @@ LoginView.propTypes = {
     }),
     onLoggedIn: PropTypes.func.isRequired,
 };
+
+const mapStateToProps = (state) => {
+    return {
+        user: state.user
+    };
+}
+
+export default connect(mapStateToProps, { setUser })(LoginView);
