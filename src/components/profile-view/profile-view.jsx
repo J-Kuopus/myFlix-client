@@ -129,41 +129,26 @@ export function ProfileView(props) {
 
     return (
         <Container>
-            <Card>
-              <Card.Body>
-                <Container>
+          <Row>
+            <Col>
+              <Card>
+                <Card.Body>
                   <Card.Title>Profile Info</Card.Title>
-                    <Card.Text><span className="label">Username: </span>{user.Username}</Card.Text>
-                    <Card.Text><span className="label">Password: </span>******</Card.Text>
-                    <Card.Text><span className="label">Email: </span>{user.Email}</Card.Text>
-                    <Card.Text><span className="label">Birthday: </span>{user.Birthday}</Card.Text>
-                    <Card.Text><span className="label">Favorite Movies: </span></Card.Text>
-                    <Container>
-                      {favoriteMovies?.length > 0 && movies.map((movie) => {
-                        if (movie._id === favoriteMovies.find((fav) => fav === movie._id)) {
-                          return (
-                            <img class="fav-movie-img" src={movie.ImagePath} key={movie._id}/>
-                          );
-                        }
-                      })}  
-                        <Button variant="secondary"
-                                onClick={() => this.removeFromFavorites(movie._id) }>
-                            Remove
-                        </Button>
-                    </Container>
-                    </Container>
-                  <p></p>
-                    <Container>
-                    <Link to={'/'}>
+                      <Card.Text><span className="label">Username: </span>{user.Username}</Card.Text>
+                      <Card.Text><span className="label">Password: </span>******</Card.Text>
+                      <Card.Text><span className="label">Email: </span>{user.Email}</Card.Text>
+                      <Card.Text><span className="label">Birthday: </span>{user.Birthday}</Card.Text>
+                      <Link to={'/'}>
                         Back to Main
-                    </Link>
-                    </Container>
+                      </Link>
                 </Card.Body>
-            </Card>
-            <Card>
-              <Card.Body> 
-              <Card.Text>Edit profile info</Card.Text>
-                <Form>
+              </Card>
+            </Col>
+            <Col>
+              <Card>
+                <Card.Body> 
+                <Card.Text>Edit profile info</Card.Text>
+                  <Form>
                   <Form.Group controlId="formUsername">
                     <Form.Label>Username:</Form.Label>
                     <Form.Control type="text" value={username} onChange={e => setUsername(e.target.value)} placeholder="Username" required/>
@@ -191,9 +176,31 @@ export function ProfileView(props) {
                     </Form.Group>
                 </Form>
                 </Card.Body>
+                <Button variant="secondary" onClick={handleDelete}>Delete profile</Button>
             </Card>
-            <Button variant="secondary" onClick={handleDelete}>Delete profile</Button>
-        </Container>
+            </Col>
+            </Row>
+            <Row>
+              <Col>
+                <Card>
+                  <Card.Text><span className="label">Favorite Movies: </span></Card.Text>
+                    <Container>
+                      {favoriteMovies?.length > 0 && movies.map((movie) => {
+                        if (movie._id === favoriteMovies.find((fav) => fav === movie._id)) {
+                          return (
+                            <img class="fav-movie-img" src={movie.ImagePath} key={movie._id}/>
+                          );
+                        }
+                      })}  
+                        <Button variant="secondary"
+                          onClick={() => this.removeFromFavorites(movie._id) }>
+                          Remove
+                        </Button>
+                  </Container>
+                </Card>
+              </Col>
+            </Row>
+      </Container>
       );
   };
   

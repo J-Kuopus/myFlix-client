@@ -46774,7 +46774,7 @@ function ProfileView(props) {
             console.log(err);
         });
     };
-    return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, "Profile Info"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
+    return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, "Profile Info"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
         className: "label"
     }, "Username: "), user.Username), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
         className: "label"
@@ -46782,24 +46782,9 @@ function ProfileView(props) {
         className: "label"
     }, "Email: "), user.Email), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
         className: "label"
-    }, "Birthday: "), user.Birthday), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
-        className: "label"
-    }, "Favorite Movies: ")), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, (favoriteMovies === null || favoriteMovies === void 0 ? void 0 : favoriteMovies.length) > 0 && movies.map(function(movie) {
-        if (movie._id === favoriteMovies.find(function(fav) {
-            return fav === movie._id;
-        })) return /*#__PURE__*/ _react["default"].createElement("img", {
-            "class": "fav-movie-img",
-            src: movie.ImagePath,
-            key: movie._id
-        });
-    }), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
-        variant: "secondary",
-        onClick: function onClick() {
-            return _this.removeFromFavorites(movie._id);
-        }
-    }, "Remove"))), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.Link, {
+    }, "Birthday: "), user.Birthday), /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.Link, {
         to: '/'
-    }, "Back to Main")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, "Edit profile info"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+    }, "Back to Main")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, "Edit profile info"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
         controlId: "formUsername"
     }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Username:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
         type: "text",
@@ -46844,10 +46829,25 @@ function ProfileView(props) {
         variant: "primary",
         type: "submit",
         onClick: handleSubmit
-    }, "Edit profile"))))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
+    }, "Edit profile")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
         variant: "secondary",
         onClick: handleDelete
-    }, "Delete profile"));
+    }, "Delete profile")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
+        className: "label"
+    }, "Favorite Movies: ")), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, (favoriteMovies === null || favoriteMovies === void 0 ? void 0 : favoriteMovies.length) > 0 && movies.map(function(movie) {
+        if (movie._id === favoriteMovies.find(function(fav) {
+            return fav === movie._id;
+        })) return /*#__PURE__*/ _react["default"].createElement("img", {
+            "class": "fav-movie-img",
+            src: movie.ImagePath,
+            key: movie._id
+        });
+    }), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
+        variant: "secondary",
+        onClick: function onClick() {
+            return _this.removeFromFavorites(movie._id);
+        }
+    }, "Remove"))))));
 }
 _c = ProfileView;
 var mapStateToProps = function mapStateToProps(state) {
