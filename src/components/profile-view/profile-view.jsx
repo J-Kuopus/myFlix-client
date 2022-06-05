@@ -109,6 +109,24 @@ export function ProfileView(props) {
     }
   };
 
+  removeFromFavorites = (movieId) => {
+    const username = localStorage.getItem('user');
+    const token = localStorage.getItem('token');
+    console.log('remove fav auth: ', token)
+
+    axios.delete(`https://powerful-coast-48240.herokuapp.com/users/${username}/movies/${movieId}`,
+        {headers: { Authorization:`Bearer ${token}`}}
+      )
+      .then((res) => {
+        this.setState({ FavoriteMovies: res?.data?.FavoriteMovies });
+        this.props.remFav(res?.data)
+        alert('The movie was removed from your favorites');
+      })
+      .catch((err) => {
+        console.log(err);
+  })
+}
+
     return (
         <Container>
             <Card>
@@ -124,12 +142,13 @@ export function ProfileView(props) {
                       {favoriteMovies?.length > 0 && movies.map((movie) => {
                         if (movie._id === favoriteMovies.find((fav) => fav === movie._id)) {
                           return (
-                            <img class="fav-movie-img" src={movie.ImagePath} />
+                            <img class="fav-movie-img" src={movie.ImagePath} key={movie._id}/>
                           );
                         }
                       })}  
                         <Button variant="secondary"
-                          onClick={()=> {removeFromFavorites()}}>
+                                onClick={() => this.removeFromFavorites(movie._id) }>
+                            Remove
                         </Button>
                     </Container>
                     </Container>
