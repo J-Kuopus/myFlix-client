@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import './profile-view.scss';
 import axios from 'axios';
 import PropTypes, { string } from 'prop-types';
-/* import { FavoriteMoviesView } from './favorite-movies';
-import { UpdateUserView } from './update-user' */;
+import { remFav } from '../../actions/actions';
+import { connect } from 'react-redux';
 
 export function ProfileView(props) {
   const [ user, setUser ] = useState(props.user);
@@ -109,12 +109,6 @@ export function ProfileView(props) {
     }
   };
 
-  const favoriteMoviesId = favoriteMovies.map(m => m._id)
-  
-  const favoriteMoviesList = movies.filter(m => {
-    return favoriteMoviesId.includes(m._id)
-  })
-
     return (
         <Container>
             <Card>
@@ -127,21 +121,16 @@ export function ProfileView(props) {
                     <Card.Text><span className="label">Birthday: </span>{user.Birthday}</Card.Text>
                     <Card.Text><span className="label">Favorite Movies: </span></Card.Text>
                     <Container>
-                        {favoriteMoviesList.map((movie) => {
-                                return (
-                                  <div key={movie._id}>
-                                    <img src={movie.ImagePath} />
-                                    <Link to={`/movies/${movie._id}`} >
-                                    <h4>{movie.Title}</h4>
-                                    </Link>
-                                    <button variant="secondary"
-                                            onClick={()=> {removeFromFavorites(movie._id)}}>
-                                    </button>
-                                  </div>
-                                )
-                              }
-                            )
-                          }
+                      {favoriteMovies?.length > 0 && movies.map((movie) => {
+                        if (movie._id === favoriteMovies.find((fav) => fav === movie._id)) {
+                          return (
+                            <img class="fav-movie-img" src={movie.ImagePath} />
+                          );
+                        }
+                      })}  
+                        <Button variant="secondary"
+                          onClick={()=> {removeFromFavorites()}}>
+                        </Button>
                     </Container>
                     </Container>
                   <p></p>
@@ -188,3 +177,11 @@ export function ProfileView(props) {
         </Container>
       );
   };
+  
+  const mapStateToProps = (state) => {
+    return {
+      user: state.user
+    }
+  }
+
+  export default connect(mapStateToProps, { remFav })(ProfileView);
