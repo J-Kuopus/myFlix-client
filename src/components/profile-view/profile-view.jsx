@@ -147,7 +147,7 @@ export function ProfileView(props) {
             <Col>
               <Card>
                 <Card.Body> 
-                <Card.Text>Edit profile info</Card.Text>
+                <Card.Title>Edit profile info</Card.Title>
                   <Form>
                   <Form.Group controlId="formUsername">
                     <Form.Label>Username:</Form.Label>
@@ -183,12 +183,12 @@ export function ProfileView(props) {
             <Row>
               <Col>
                 <Card>
-                  <Card.Text><span className="label">Favorite Movies: </span></Card.Text>
+                  <Card.Title>Favorite Movies:</Card.Title>
                     <Container>
                       {favoriteMovies?.length > 0 && movies.map((movie) => {
                         if (movie._id === favoriteMovies.find((fav) => fav === movie._id)) {
                           return (
-                            <img class="fav-movie-img" src={movie.ImagePath} key={movie._id}/>
+                            <img className="fav-movie-img" src={movie.ImagePath} key={movie._id}/>
                           );
                         }
                       })}  
