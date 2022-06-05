@@ -15,9 +15,7 @@ export class MovieView extends React.Component {
     
         axios.put(`https://powerful-coast-48240.herokuapp.com/users/${username}/movies/${movieId}`,
             {},
-            {
-              headers: { Authorization: `Bearer ${token}` }
-            }
+            {headers: { Authorization: `Bearer ${token}` }}
           )
           .then(() => {
             alert('The movie was added to your favorites');
