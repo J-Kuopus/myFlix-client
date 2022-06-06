@@ -46757,9 +46757,7 @@ function ProfileView(props) {
         className: "label"
     }, "Email: "), user.Email), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
         className: "label"
-    }, "Birthday: "), user.Birthday), /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.Link, {
-        to: '/'
-    }, "Back to Main")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, "Edit profile info"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+    }, "Birthday: "), user.Birthday)))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, "Edit profile info"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
         controlId: "formUsername"
     }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Username:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
         type: "text",
