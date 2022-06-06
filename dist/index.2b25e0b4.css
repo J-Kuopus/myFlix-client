@@ -54,6 +54,11 @@
   font-weight: bold;
 }
 
+.fav-movie-img {
+  height: auto;
+  max-width: 15rem !important;
+}
+
 .movie-card {
   height: 100%;
 }
