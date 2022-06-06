@@ -44862,7 +44862,8 @@ function NavbarView() {
     }), isAuth() && /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Navbar.Collapse, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Nav, {
         className: "me-auto"
     }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Nav.Link, {
-        to: '/'
+        as: _reactRouterDom.Link,
+        to: "/users/".concat(user)
     }, "Hello, ", user), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Nav.Link, {
         as: _reactRouterDom.Link,
         to: "/users/".concat(user)
