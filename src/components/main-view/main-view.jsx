@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import axios from 'axios';
 import { Row, Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
@@ -37,7 +37,7 @@ class MainView extends React.Component {
       }
   }
 
-    // When a user successfully logs in, this function updates the 'user' property in state to that particular user
+  // When a user successfully logs in, this function updates the 'user' property in state to that particular user
   onLoggedIn(authData) {
     console.log(authData);
     this.setState({
@@ -49,7 +49,7 @@ class MainView extends React.Component {
     this.getMovies(authData.token);
   }
 
-     // GETS list of movies once the user is logged in
+  // GETS list of movies once the user is logged in
   getMovies(token) {
     axios.get('https://powerful-coast-48240.herokuapp.com/movies', {
       headers: { Authorization:`Bearer ${token}`}
@@ -71,7 +71,7 @@ class MainView extends React.Component {
         <NavbarView user={user} />
         <Row className="main-view justify-content-md-center" xs={1} md={3} lg={4}>
           
-          
+         {/* MAIN VIEW */}
           <Route exact path="/" 
                  render={() => {
             
@@ -93,7 +93,7 @@ class MainView extends React.Component {
             ))
           }} />
 
-          
+          {/* REGISTER VIEW */}
           <Route path="/register" 
                  render={() => {
             if (user) return <Redirect to="/" />
@@ -103,7 +103,7 @@ class MainView extends React.Component {
                    </Col> 
           }} />
 
-          
+          {/* SINGLE MOVIE VIEW */}
           <Route path="/movies/:movieId" 
                  render={({ match, history }) => {
             if (!user) return <Col className="login-view" xxl={6} xl={6} lg={7} md={8} sm={12}>
@@ -117,7 +117,7 @@ class MainView extends React.Component {
                   </Col>
           }} />
 
-          
+          {/* DIRECTOR VIEW */}
           <Route path="/directors/:name" 
                  render={({ match, history }) =>{
             if (!user) return <Col className="login-view" xxl={6} xl={6} lg={7} md={8} sm={12}>
@@ -132,7 +132,7 @@ class MainView extends React.Component {
             }
           } />
 
-          
+          {/* GENRE VIEW */}
           <Route path="/genres/:name" 
                  render={({ match, history  }) =>{
              if (!user) return <Col className="login-view" xxl={6} xl={6} lg={7} md={8} sm={12}>
@@ -149,7 +149,7 @@ class MainView extends React.Component {
             }
           } />
 
-          {/* Route for link on main-view to profile-view */}
+          {/* PROFILE VIEW */}
           <Route path={'/users/:Username'} 
                  render={( { history, match } ) => {
 
