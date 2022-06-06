@@ -46502,7 +46502,8 @@ function NavbarView() {
     }), isAuth() && /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Navbar.Collapse, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Nav, {
         className: "me-auto"
     }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Nav.Link, {
-        to: '/'
+        as: _reactRouterDom.Link,
+        to: "/users/".concat(user)
     }, "Hello, ", user), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Nav.Link, {
         as: _reactRouterDom.Link,
         to: "/users/".concat(user)
@@ -46832,7 +46833,7 @@ function ProfileView(props) {
     }, "Edit profile")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
         variant: "secondary",
         onClick: handleDelete
-    }, "Delete profile")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, null, /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, "Favorite Movies:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, (favoriteMovies === null || favoriteMovies === void 0 ? void 0 : favoriteMovies.length) > 0 && movies.map(function(movie) {
+    }, "Delete profile")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, null, /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, "Favorite Movies:"), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, (favoriteMovies === null || favoriteMovies === void 0 ? void 0 : favoriteMovies.length) > 0 && movies.map(function(movie) {
         if (movie._id === favoriteMovies.find(function(fav) {
             return fav === movie._id;
         })) return /*#__PURE__*/ _react["default"].createElement("img", {
@@ -46845,7 +46846,7 @@ function ProfileView(props) {
         onClick: function onClick() {
             return _this.removeFromFavorites(movie._id);
         }
-    }, "Remove"))))));
+    }, "Remove")))))));
 }
 _c = ProfileView;
 var mapStateToProps = function mapStateToProps(state) {

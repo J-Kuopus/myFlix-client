@@ -185,7 +185,9 @@ export function ProfileView(props) {
               <p></p>
               <Col>
                 <Card>
+                  <Card.Body>
                   <Card.Title>Favorite Movies:</Card.Title>
+                  <p></p>
                     <Container>
                       {favoriteMovies?.length > 0 && movies.map((movie) => {
                         if (movie._id === favoriteMovies.find((fav) => fav === movie._id)) {
@@ -199,6 +201,7 @@ export function ProfileView(props) {
                           Remove
                         </Button>
                   </Container>
+                  </Card.Body>
                 </Card>
               </Col>
             </Row>
