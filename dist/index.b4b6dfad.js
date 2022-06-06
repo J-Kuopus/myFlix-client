@@ -45019,13 +45019,13 @@ function _iterableToArrayLimit(arr, i) {
 }
 function _arrayWithHoles(arr) {
     if (Array.isArray(arr)) return arr;
-} /* import { FavoriteMoviesView } from './favorite-movies';
-import { UpdateUserView } from './update-user' */ 
+}
 function ProfileView(props) {
+    var _this = this;
     var _useState = (0, _react.useState)(props.user), _useState2 = _slicedToArray(_useState, 2), user = _useState2[0], setUser = _useState2[1];
     var _useState3 = (0, _react.useState)(props.movies), _useState4 = _slicedToArray(_useState3, 2), movies = _useState4[0], setMovies = _useState4[1];
     var _useState5 = (0, _react.useState)([]), _useState6 = _slicedToArray(_useState5, 2), favoriteMovies = _useState6[0], setFavoriteMovies = _useState6[1];
-    var _useState7 = (0, _react.useState)(''), _useState8 = _slicedToArray(_useState7, 2), username = _useState8[0], setUsername = _useState8[1];
+    var _useState7 = (0, _react.useState)(''), _useState8 = _slicedToArray(_useState7, 2), username1 = _useState8[0], setUsername = _useState8[1];
     var _useState9 = (0, _react.useState)(''), _useState10 = _slicedToArray(_useState9, 2), password = _useState10[0], setPassword = _useState10[1];
     var _useState11 = (0, _react.useState)(''), _useState12 = _slicedToArray(_useState11, 2), email = _useState12[0], setEmail = _useState12[1];
     var _useState13 = (0, _react.useState)(''), _useState14 = _slicedToArray(_useState13, 2), birthday = _useState14[0], setBirthday = _useState14[1]; // Declare hook for each input
@@ -45033,11 +45033,11 @@ function ProfileView(props) {
     var _useState17 = (0, _react.useState)(''), _useState18 = _slicedToArray(_useState17, 2), passwordErr = _useState18[0], setPasswordErr = _useState18[1];
     var _useState19 = (0, _react.useState)(''), _useState20 = _slicedToArray(_useState19, 2), emailErr = _useState20[0], setEmailErr = _useState20[1];
     var currentUser = localStorage.getItem('user');
-    var token = localStorage.getItem('token'); // GETS user info
+    var token1 = localStorage.getItem('token'); // GETS user info
     var getUser = function getUser() {
         _axios["default"].get("https://powerful-coast-48240.herokuapp.com/users/".concat(currentUser), {
             headers: {
-                Authorization: "Bearer ".concat(token)
+                Authorization: "Bearer ".concat(token1)
             }
         }).then(function(response) {
             setUser(response.data);
@@ -45052,7 +45052,7 @@ function ProfileView(props) {
     var handleDelete = function handleDelete() {
         _axios["default"]["delete"]("https://powerful-coast-48240.herokuapp.com/users/".concat(currentUser), {
             headers: {
-                Authorization: "Bearer ".concat(token)
+                Authorization: "Bearer ".concat(token1)
             }
         }).then(function() {
             alert("The profile ".concat(user.Username, " was successfully deleted."));
@@ -45064,10 +45064,10 @@ function ProfileView(props) {
     }; // Validate user inputs
     var validate = function validate() {
         var isReq = true;
-        if (!username) {
+        if (!username1) {
             setUsernameErr('Username is required');
             isReq = false;
-        } else if (username.length < 5) {
+        } else if (username1.length < 5) {
             setUsernameErr('Username must be at least 5 characters long');
             isReq = false;
         }
@@ -45093,7 +45093,7 @@ function ProfileView(props) {
         if (isReq) {
             var _token = localStorage.getItem('token');
             _axios["default"].put("https://powerful-coast-48240.herokuapp.com/users/".concat(currentUser), {
-                Username: username,
+                Username: username1,
                 Password: password,
                 Email: email,
                 Birthday: birthday
@@ -45112,13 +45112,22 @@ function ProfileView(props) {
             });
         }
     };
-    var favoriteMoviesId = favoriteMovies.map(function(m) {
-        return m._id;
-    });
-    var favoriteMoviesList = movies.filter(function(m) {
-        return favoriteMoviesId.includes(m._id);
-    });
-    return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, "Profile Info"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
+    removeFromFavorites = function removeFromFavorites(movieId) {
+        var username = localStorage.getItem('user');
+        var token = localStorage.getItem('token');
+        console.log('remove fav auth: ', token);
+        _axios["default"]["delete"]("https://powerful-coast-48240.herokuapp.com/users/".concat(username, "/movies/").concat(movieId), {
+            headers: {
+                Authorization: "Bearer ".concat(token)
+            }
+        }).then(function(res) {
+            alert('The movie was removed from your favorites');
+            window.open('users/:Username', '_self');
+        })["catch"](function(err) {
+            console.log(err);
+        });
+    };
+    return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, "Profile Info"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
         className: "label"
     }, "Username: "), user.Username), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
         className: "label"
@@ -45126,28 +45135,11 @@ function ProfileView(props) {
         className: "label"
     }, "Email: "), user.Email), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
         className: "label"
-    }, "Birthday: "), user.Birthday), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
-        className: "label"
-    }, "Favorite Movies: ")), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, favoriteMoviesList.map(function(movie) {
-        return /*#__PURE__*/ _react["default"].createElement("div", {
-            key: movie._id
-        }, /*#__PURE__*/ _react["default"].createElement("img", {
-            src: movie.ImagePath
-        }), /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.Link, {
-            to: "/movies/".concat(movie._id)
-        }, /*#__PURE__*/ _react["default"].createElement("h4", null, movie.Title)), /*#__PURE__*/ _react["default"].createElement("button", {
-            variant: "secondary",
-            onClick: function onClick() {
-                removeFromFavorites(movie._id);
-            }
-        }));
-    }))), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.Link, {
-        to: '/'
-    }, "Back to Main")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, "Edit profile info"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+    }, "Birthday: "), user.Birthday)))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, "Edit profile info"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
         controlId: "formUsername"
     }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Username:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
         type: "text",
-        value: username,
+        value: username1,
         onChange: function onChange(e) {
             return setUsername(e.target.value);
         },
@@ -45188,10 +45180,23 @@ function ProfileView(props) {
         variant: "primary",
         type: "submit",
         onClick: handleSubmit
-    }, "Edit profile"))))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
+    }, "Edit profile")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
         variant: "secondary",
         onClick: handleDelete
-    }, "Delete profile"));
+    }, "Delete profile")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, null, /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, "Favorite Movies"), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, (favoriteMovies === null || favoriteMovies === void 0 ? void 0 : favoriteMovies.length) > 0 && movies.map(function(movie) {
+        if (movie._id === favoriteMovies.find(function(fav) {
+            return fav === movie._id;
+        })) return /*#__PURE__*/ _react["default"].createElement("img", {
+            className: "fav-movie-img",
+            src: movie.ImagePath,
+            key: movie._id
+        });
+    }), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
+        variant: "secondary",
+        onClick: function onClick() {
+            return _this.removeFromFavorites(movie._id);
+        }
+    }, "Remove")))))));
 }
 _c = ProfileView;
 var _c;
