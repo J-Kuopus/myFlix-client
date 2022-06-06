@@ -186,7 +186,7 @@ export function ProfileView(props) {
               <Col>
                 <Card>
                   <Card.Body>
-                  <Card.Title>Favorite Movies:</Card.Title>
+                  <Card.Title>Favorite Movies</Card.Title>
                   <p></p>
                     <Container>
                       {favoriteMovies?.length > 0 && movies.map((movie) => {
