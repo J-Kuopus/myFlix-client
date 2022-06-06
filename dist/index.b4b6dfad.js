@@ -38087,62 +38087,6 @@ function _interopRequireWildcard(obj, nodeInterop) {
     if (cache) cache.set(obj, newObj);
     return newObj;
 }
-function _toConsumableArray(arr) {
-    return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
-}
-function _nonIterableSpread() {
-    throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-}
-function _unsupportedIterableToArray(o, minLen) {
-    if (!o) return;
-    if (typeof o === "string") return _arrayLikeToArray(o, minLen);
-    var n = Object.prototype.toString.call(o).slice(8, -1);
-    if (n === "Object" && o.constructor) n = o.constructor.name;
-    if (n === "Map" || n === "Set") return Array.from(o);
-    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
-}
-function _iterableToArray(iter) {
-    if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
-}
-function _arrayWithoutHoles(arr) {
-    if (Array.isArray(arr)) return _arrayLikeToArray(arr);
-}
-function _arrayLikeToArray(arr, len) {
-    if (len == null || len > arr.length) len = arr.length;
-    for(var i = 0, arr2 = new Array(len); i < len; i++)arr2[i] = arr[i];
-    return arr2;
-}
-function ownKeys(object, enumerableOnly) {
-    var keys = Object.keys(object);
-    if (Object.getOwnPropertySymbols) {
-        var symbols = Object.getOwnPropertySymbols(object);
-        enumerableOnly && (symbols = symbols.filter(function(sym) {
-            return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-        })), keys.push.apply(keys, symbols);
-    }
-    return keys;
-}
-function _objectSpread(target) {
-    for(var i = 1; i < arguments.length; i++){
-        var source = null != arguments[i] ? arguments[i] : {};
-        i % 2 ? ownKeys(Object(source), !0).forEach(function(key) {
-            _defineProperty(target, key, source[key]);
-        }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function(key) {
-            Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-        });
-    }
-    return target;
-}
-function _defineProperty(obj, key, value) {
-    if (key in obj) Object.defineProperty(obj, key, {
-        value: value,
-        enumerable: true,
-        configurable: true,
-        writable: true
-    });
-    else obj[key] = value;
-    return obj;
-}
 function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) throw new TypeError("Cannot call a class as a function");
 }
@@ -38276,56 +38220,12 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
                 })["catch"](function(error) {
                     console.log(error);
                 });
-            } // PUTS movie on favorite list
-        },
-        {
-            key: "addToFavorites",
-            value: function addToFavorites(movieId) {
-                var _this3 = this;
-                _axios["default"].put("https://powerful-coast-48240.herokuapp.com/users/".concat(username, "/movies/").concat(movieId), {
-                    headers: {
-                        Authorization: "Bearer ".concat(token)
-                    }
-                }).then(function(response) {
-                    _this3.setState({
-                        user: _objectSpread(_objectSpread({}, _this3.state.user), {}, {
-                            favoriteMovies: [].concat(_toConsumableArray(_this3.state.user.favoriteMovies), [
-                                movieId
-                            ])
-                        })
-                    });
-                    alert("The movie was added to your favorites.");
-                })["catch"](function(error) {
-                    return console.error(error);
-                });
-            } //DELETES movie from favorites list
-        },
-        {
-            key: "removeFromFavorites",
-            value: function removeFromFavorites(movieId) {
-                var _this4 = this;
-                _axios["default"]["delete"]("https://powerful-coast-48240.herokuapp.com/users/".concat(user, "/movies/").concat(movieId), {
-                    headers: {
-                        Authorization: "Bearer ".concat(token)
-                    }
-                }).then(function(response) {
-                    _this4.setState({
-                        user: _objectSpread(_objectSpread({}, _this4.state.user), {}, {
-                            favoriteMovies: _this4.state.user.favoriteMovies.filter(function(m) {
-                                return m != movieId;
-                            })
-                        })
-                    });
-                    alert("The movie was removed from favorites list.");
-                })["catch"](function(error) {
-                    return console.error(error);
-                });
             }
         },
         {
             key: "render",
             value: function render() {
-                var _this5 = this;
+                var _this3 = this;
                 var _this$state = this.state, movies = _this$state.movies, user1 = _this$state.user; // Deconstructed variables
                 return /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/ _react["default"].createElement(_navbar.NavbarView, {
                     user: user1
@@ -38348,7 +38248,7 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
                             sm: 12
                         }, /*#__PURE__*/ _react["default"].createElement(_loginView.LoginView, {
                             onLoggedIn: function onLoggedIn(user) {
-                                return _this5.onLoggedIn(user);
+                                return _this3.onLoggedIn(user);
                             }
                         })); // Before the movies have been loaded
                         if (movies.length === 0) return /*#__PURE__*/ _react["default"].createElement("div", {
@@ -38391,14 +38291,14 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
                             sm: 12
                         }, /*#__PURE__*/ _react["default"].createElement(_loginView.LoginView, {
                             onLoggedIn: function onLoggedIn(user) {
-                                return _this5.onLoggedIn(user);
+                                return _this3.onLoggedIn(user);
                             }
                         }));
                         if (movies.length === 0) return /*#__PURE__*/ _react["default"].createElement("div", {
                             className: "main-view"
                         });
                         return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_movieView.MovieView, {
-                            addToFavorites: _this5.addToFavorites,
+                            addToFavorites: _this3.addToFavorites,
                             movie: movies.find(function(m) {
                                 return m._id === match.params.movieId;
                             }),
@@ -38420,7 +38320,7 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
                             sm: 12
                         }, /*#__PURE__*/ _react["default"].createElement(_loginView.LoginView, {
                             onLoggedIn: function onLoggedIn(user) {
-                                return _this5.onLoggedIn(user);
+                                return _this3.onLoggedIn(user);
                             }
                         }));
                         if (movies.length === 0) return /*#__PURE__*/ _react["default"].createElement("div", {
@@ -38455,7 +38355,7 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
                             sm: 12
                         }, /*#__PURE__*/ _react["default"].createElement(_loginView.LoginView, {
                             onLoggedIn: function onLoggedIn(user) {
-                                return _this5.onLoggedIn(user);
+                                return _this3.onLoggedIn(user);
                             }
                         }));
                         if (movies.length === 0) return /*#__PURE__*/ _react["default"].createElement("div", {
@@ -38491,7 +38391,7 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
                             sm: 12
                         }, /*#__PURE__*/ _react["default"].createElement(_loginView.LoginView, {
                             onLoggedIn: function onLoggedIn(user) {
-                                return _this5.onLoggedIn(user);
+                                return _this3.onLoggedIn(user);
                             }
                         }));
                         if (movies.length === 0) return /*#__PURE__*/ _react["default"].createElement("div", {
