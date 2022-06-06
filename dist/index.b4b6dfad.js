@@ -46832,7 +46832,7 @@ function ProfileView(props) {
     }, "Edit profile")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
         variant: "secondary",
         onClick: handleDelete
-    }, "Delete profile")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, "Favorite Movies:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, (favoriteMovies === null || favoriteMovies === void 0 ? void 0 : favoriteMovies.length) > 0 && movies.map(function(movie) {
+    }, "Delete profile")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, null, /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, "Favorite Movies:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, (favoriteMovies === null || favoriteMovies === void 0 ? void 0 : favoriteMovies.length) > 0 && movies.map(function(movie) {
         if (movie._id === favoriteMovies.find(function(fav) {
             return fav === movie._id;
         })) return /*#__PURE__*/ _react["default"].createElement("img", {
@@ -46903,12 +46903,7 @@ function MoviesList(props) {
     if (!movies) return /*#__PURE__*/ _react["default"].createElement("div", {
         className: "main-view"
     });
-    return /*#__PURE__*/ _react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/ _react["default"].createElement(_Col["default"], {
-        md: 12,
-        style: {
-            margin: '1em'
-        }
-    }, /*#__PURE__*/ _react["default"].createElement(_visibilityFilterInput["default"], {
+    return /*#__PURE__*/ _react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/ _react["default"].createElement(_Col["default"], null, /*#__PURE__*/ _react["default"].createElement(_visibilityFilterInput["default"], {
         visibilityFilter: visibilityFilter
     })), filteredMovies.map(function(m) {
         return /*#__PURE__*/ _react["default"].createElement(_Col["default"], {

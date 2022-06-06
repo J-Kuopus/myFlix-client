@@ -181,6 +181,8 @@ export function ProfileView(props) {
             </Col>
             </Row>
             <Row>
+              <p></p>
+              <p></p>
               <Col>
                 <Card>
                   <Card.Title>Favorite Movies:</Card.Title>
