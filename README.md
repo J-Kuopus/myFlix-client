@@ -1,6 +1,17 @@
 # myFlix-client
 
-This is the front end of an API created for getting and displaying movies to a user. The user can register an account and login to see details about the movies (images, director, genre, etc.). They can also view and update their profile information (username, password, email, birthdate) as well as create a list of favorite movies. The movie API can be found here: https://github.com/J-Kuopus/myFlix-app
+This is a user interface built with React that connects to an API (found here: https://github.com/J-Kuopus/myFlix-app ) for getting and displaying movie information to a user. 
+
+## Key Features
+
+- Welcome view where users can register an account and login to the website
+- A movies view that displays images of all of the movies
+- A single movie view for each movie that displays more detailed information (synopsis, release year, etc.)
+- A director view that displays information about the movie's director (bio, birthyear, etc.)
+- A genre view that displays information about the movie's genre (name, description)
+- A profile view that displays the user's account information
+- A form for editing and updating profile information
+
 
 ## Dependencies
 
