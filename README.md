@@ -2,7 +2,7 @@
 
 This is the front end of an API created for getting and displaying movies to a user. The user can register an account and login to see details about the movies (images, director, genre, etc.). They can also view and update their profile information (username, password, email, birthdate) as well as create a list of favorite movies. The movie API can be found here: https://github.com/J-Kuopus/myFlix-app
 
-##Dependencies
+## Dependencies
 
 - Axios: "axios": "^0.27.2",
 - Bootstrap: "bootstrap": "^5.1.3",
@@ -12,7 +12,7 @@ This is the front end of an API created for getting and displaying movies to a u
 - React-DOM: "react-dom": "^18.1.0",
 - React-Router-DOM: "react-router-dom": "^5.3.0"
 
-##Setup
+## Setup
 
 The app is bundled through Parcel v2.5.0. To view locally:
 
