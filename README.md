@@ -1,6 +1,6 @@
 # myFlix-client
 
-This is a user interface built with React that connects to an API (found here: https://github.com/J-Kuopus/myFlix-app ) for getting and displaying movie information to a user. 
+This is a user interface, built with React, that displays movie information. It connects to an API (found here: https://github.com/J-Kuopus/myFlix-app ) to fetch the movie data from a database (MongoDB). 
 
 ## Key Features
 
