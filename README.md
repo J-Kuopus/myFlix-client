@@ -4,13 +4,13 @@ This is the front end of an API created for getting and displaying movies to a u
 
 ##Dependencies
 
-Axios: "axios": "^0.27.2",
-Bootstrap: "bootstrap": "^5.1.3",
-PropTypes: "prop-types": "^15.8.1",
-React: "react": "^18.1.0",
-React-Bootstrap: "react-bootstrap": "^2.3.1",
-React-DOM: "react-dom": "^18.1.0",
-React-Router-DOM: "react-router-dom": "^5.3.0"
+- Axios: "axios": "^0.27.2",
+- Bootstrap: "bootstrap": "^5.1.3",
+- PropTypes: "prop-types": "^15.8.1",
+- React: "react": "^18.1.0",
+- React-Bootstrap: "react-bootstrap": "^2.3.1",
+- React-DOM: "react-dom": "^18.1.0",
+- React-Router-DOM: "react-router-dom": "^5.3.0"
 
 ##Setup
 
