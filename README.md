@@ -26,7 +26,7 @@ Mobile version:
 
 - React
 - React-Bootstrap
-- 
+
 ## Dependencies
 
 - Axios: "axios": "^0.27.2",
