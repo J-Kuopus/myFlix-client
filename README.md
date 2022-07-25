@@ -3,6 +3,8 @@
 ## Description
 This is a user interface, built with React, that displays movie information. It connects to an API (found here: https://github.com/J-Kuopus/myFlix-app ) to fetch the movie data from a database (MongoDB). 
 
+## Images
+
 Web version:
 ![Retro Video Web Version](img/retro-video-site1.jpg?raw=true "Title")
 
