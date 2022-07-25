@@ -53,10 +53,10 @@ export function RegistrationView(props) {
         if(isReq) {
             //Send a request to the server for authentication
           axios.post('https://powerful-coast-48240.herokuapp.com/users', {
-            username: username,
-            password: password,
-            email: email,
-            birthday: birthday
+            Username: username,
+            Password: password,
+            Email: email,
+            Birthday: birthday
           })
           .then(response => {
             const data = response.data;
@@ -145,8 +145,9 @@ export function RegistrationView(props) {
 
 RegistrationView.propTypes = {
     register: PropTypes.shape({
-        username: PropTypes.string.isRequired,
-        password: PropTypes.string.isRequired,
-        email: PropTypes.string.isRequired
+        Username: PropTypes.string.isRequired,
+        Password: PropTypes.string.isRequired,
+        Email: PropTypes.string.isRequired,
+        Birthday: PropTypes.string
     }),
 };

@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Card, CardGroup, Container, Col, Row, ListGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 import './movie-view.scss';
 
 export class MovieView extends React.Component {
+
 
     render() {
         const { movie, onBackClick } = this.props;
@@ -25,6 +27,7 @@ export class MovieView extends React.Component {
                                 <span className="label">Released: </span>{movie.Released}</ListGroup.Item>
                             <ListGroup.Item><span className="label">Summary: </span>{movie.Description}</ListGroup.Item> 
                         </ListGroup>
+                        <Button  variant="primary" size="sm" onClick={() => this.addToFavorites(movie._id) }>Add to favorites</Button>
                     </div> 
                     </Col>
                     <Col xxl="4" xl="4" lg="6" md="4">

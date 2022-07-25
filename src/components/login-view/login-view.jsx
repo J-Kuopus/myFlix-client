@@ -30,7 +30,7 @@ export function LoginView(props) {
         }else if(password.length < 6){
             setPasswordErr('Password must be at least 6 characters long');
             isReq = false;
-        }else if (username) return isReq;  
+        } return isReq;  
     };
 
     const handleSubmit = (e) => {
@@ -46,9 +46,10 @@ export function LoginView(props) {
             const data = response.data;
             props.onLoggedIn(data);
           })
-          .catch(e => {
-            console.log('No such user.')
-          });
+          .catch(response => {
+            console.error(response);
+            alert('Unable to login');
+        });
         }
     };
     
@@ -110,5 +111,9 @@ export function LoginView(props) {
 }
 
 LoginView.propTypes = {
+    user: PropTypes.shape({
+        Username: PropTypes.string.isRequired,
+        Password: PropTypes.string.isRequired,
+    }),
     onLoggedIn: PropTypes.func.isRequired,
 };
