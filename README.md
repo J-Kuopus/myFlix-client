@@ -20,7 +20,11 @@ This is a user interface, built with React, that displays movie information. It 
 - A profile view that displays the user's account information
 - A form for editing and updating profile information
 
+## Tech Stack
 
+- React
+- React-Bootstrap
+- 
 ## Dependencies
 
 - Axios: "axios": "^0.27.2",
