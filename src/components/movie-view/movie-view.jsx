@@ -7,6 +7,28 @@ import axios from 'axios';
 import './movie-view.scss';
 
 export class MovieView extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            FavoriteMovies: [],
+        }
+    }
+
+    addToFavorites = (movieId) => {
+        const username = localStorage.getItem('user');
+        const token = localStorage.getItem('token');
+    
+        axios.put(`https://powerful-coast-48240.herokuapp.com/users/${username}/movies/${movieId}`,
+            {headers: { Authorization:`Bearer ${token}`}}
+          )
+          .then((res) => {
+            alert('The movie was added to your favorites');
+            window.open('users/:Username', '_self');
+          })
+          .catch((err) => {
+            console.log(err);
+      })
+    }
 
 
     render() {
