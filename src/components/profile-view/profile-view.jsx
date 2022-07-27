@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import './profile-view.scss';
 import axios from 'axios';
 import PropTypes, { string } from 'prop-types';
+import { FavoriteMoviesView } from './favorite-movies';
 
 export function ProfileView(props) {
   const [ user, setUser ] = useState(props.user);
