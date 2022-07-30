@@ -70,7 +70,7 @@ export class MovieView extends React.Component {
           }).then((response) => {
             console.log(response.data);
             alert(
-              `${this.props.movie.Title} has been removed from favorites!`
+              `${this.props.movie.Title} has been removed from your favorites!`
             );
             window.open(`/movies/${this.props.movie._id}`, "_self");
           })

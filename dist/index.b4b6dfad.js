@@ -44232,7 +44232,7 @@ var MovieView = /*#__PURE__*/ function(_React$Component) {
                 }
             }).then(function(response) {
                 console.log(response.data);
-                alert("".concat(_this.props.movie.Title, " has been removed from favorites!"));
+                alert("".concat(_this.props.movie.Title, " has been removed from your favorites!"));
                 window.open("/movies/".concat(_this.props.movie._id), "_self");
             })["catch"](function(e) {
                 console.log('Error');
