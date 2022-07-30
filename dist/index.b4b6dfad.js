@@ -44310,7 +44310,7 @@ var MovieView = /*#__PURE__*/ function(_React$Component) {
                     variant: "primary",
                     onClick: this.addFavMovie
                 }, "Add to Favorites"), isFav && /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
-                    variant: "primary",
+                    variant: "warning",
                     onClick: this.removeFavMovie
                 }, "Remove from Favorites"))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, {
                     xxl: "4",

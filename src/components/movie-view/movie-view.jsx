@@ -105,7 +105,7 @@ export class MovieView extends React.Component {
                             <Button  variant="primary" onClick={this.addFavMovie}>Add to Favorites</Button>
                             )}
                         {isFav && (
-                            <Button  variant="primary" onClick={this.removeFavMovie}>Remove from Favorites</Button>
+                            <Button  variant="warning" onClick={this.removeFavMovie}>Remove from Favorites</Button>
                         )}
                     </div> 
                     </Col>
