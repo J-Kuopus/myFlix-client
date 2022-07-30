@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './profile-view.scss';
 import axios from 'axios';
 import PropTypes, { string } from 'prop-types';
-import { FavoriteMoviesView } from './favorite-movies';
+import { MovieCard } from '../movie-card/movie-card';
 
 export function ProfileView(props) {
   const [ user, setUser ] = useState(props.user);
@@ -108,22 +108,44 @@ export function ProfileView(props) {
     }
   };
 
-  removeFromFavorites = (movieId) => {
-    const username = localStorage.getItem('user');
-    const token = localStorage.getItem('token');
-    console.log('remove fav auth: ', token)
-
-    axios.delete(`https://powerful-coast-48240.herokuapp.com/users/${username}/movies/${movieId}`,
-        {headers: { Authorization:`Bearer ${token}`}}
-      )
-      .then((res) => {
-        alert('The movie was removed from your favorites');
-        window.open('users/:Username', '_self');
+  removeFavMovie = () => {
+    let token = localStorage.getItem('token');
+    let user = localStorage.getItem("user");
+    axios.delete(`https://powerful-coast-48240.herokuapp.com/users/${user}/movies/${this.props.movie._id}`,
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      }).then((response) => {
+        console.log(response.data);
+        alert(
+          `${this.props.movie.Title} has been removed from favorites!`
+        );
+        window.open(`/movies/${this.props.movie._id}`, "_self");
       })
-      .catch((err) => {
-        console.log(err);
-  })
-}
+      .catch(e => {
+        console.log('Error')
+      });
+  }
+
+  const renderFavourites = () => {
+    console.log(movies)
+    if (movies.length + 0) {
+
+      return (
+        <Row className="justify-content-md-center">
+
+          {favoriteMovies.length === 0 ? (<h5>Add some movies to your list</h5>) : (
+            favoriteMovies.map((movieId, i) => (
+              <Col md={6} lg={4}>
+               <MovieCard key={`${i}-${movieId}`} movie={movies.find(m => m._id == movieId)} />
+              {/*  <Button  variant="primary" onClick={this.removeFavMovie}>Remove from Favorites</Button> */}
+              </Col>
+            ))
+          )}
+
+        </Row>
+      )
+    }
+  }
 
     return (
         <Container>
@@ -185,27 +207,8 @@ export function ProfileView(props) {
           <Row>
               <p></p>
               <p></p>
-              <Col>
-                <Card>
-                  <Card.Body>
-                    <Card.Title>Favorite Movies</Card.Title>
-                    <p></p>
-                      <Container>
-                        {favoriteMovies?.length > 0 && movies.map((movie) => {
-                          if (movie._id === favoriteMovies.find((fav) => fav === movie._id)) {
-                            return (
-                              <img className="fav-movie-img" src={movie.ImagePath} key={movie._id}/>
-                            );
-                          }
-                        })}  
-                          <Button variant="secondary"
-                            onClick={() => this.removeFromFavorites(movie._id) }>
-                            Remove
-                          </Button>
-                    </Container>
-                  </Card.Body>
-                </Card>
-              </Col>
+              <h3>Favorite Movies</h3>
+              {renderFavourites()}
           </Row>
         </Container>
       );
