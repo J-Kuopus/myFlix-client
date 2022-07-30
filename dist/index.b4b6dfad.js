@@ -38297,7 +38297,6 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
                             className: "main-view"
                         });
                         return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_movieView.MovieView, {
-                            addToFavorites: _this3.addToFavorites,
                             movie: movies.find(function(m) {
                                 return m._id === match.params.movieId;
                             }),
@@ -44206,18 +44205,37 @@ var MovieView = /*#__PURE__*/ function(_React$Component) {
         var _this;
         _classCallCheck(this, MovieView1);
         _this = _super.call(this, props);
-        _defineProperty(_assertThisInitialized(_this), "addToFavorites", function(movieId) {
-            var username = localStorage.getItem('user');
+        _defineProperty(_assertThisInitialized(_this), "addFavMovie", function() {
             var token = localStorage.getItem('token');
-            _axios["default"].put("https://powerful-coast-48240.herokuapp.com/users/".concat(username, "/movies/").concat(movieId), {
+            var user = localStorage.getItem('user');
+            var userFavMovies = _this.state.FavoriteMovies;
+            var isFav = userFavMovies.includes(_this.props.movie._id);
+            if (!isFav) _axios["default"].put("https://powerful-coast-48240.herokuapp.com/users/".concat(user, "/movies/").concat(_this.props.movie._id), {}, {
                 headers: {
                     Authorization: "Bearer ".concat(token)
                 }
-            }).then(function(res) {
-                alert('The movie was added to your favorites');
-                window.open('users/:Username', '_self');
-            })["catch"](function(err) {
-                console.log(err);
+            }).then(function(response) {
+                console.log(response.data);
+                alert("".concat(_this.props.movie.Title, " has been added to your favorites!"));
+                window.open("/movies/".concat(_this.props.movie._id), "_self");
+            })["catch"](function(e) {
+                console.log('Error');
+            });
+            else if (isFav) alert("".concat(_this.props.movie.Title, " is already on your favorites list!"));
+        });
+        _defineProperty(_assertThisInitialized(_this), "removeFavMovie", function() {
+            var token = localStorage.getItem('token');
+            var user = localStorage.getItem("user");
+            _axios["default"]["delete"]("https://powerful-coast-48240.herokuapp.com/users/".concat(user, "/movies/").concat(_this.props.movie._id), {
+                headers: {
+                    Authorization: "Bearer ".concat(token)
+                }
+            }).then(function(response) {
+                console.log(response.data);
+                alert("".concat(_this.props.movie.Title, " has been removed from favorites!"));
+                window.open("/movies/".concat(_this.props.movie._id), "_self");
+            })["catch"](function(e) {
+                console.log('Error');
             });
         });
         _this.state = {
@@ -44227,10 +44245,38 @@ var MovieView = /*#__PURE__*/ function(_React$Component) {
     }
     _createClass(MovieView1, [
         {
+            key: "getUser",
+            value: function getUser(token) {
+                var _this2 = this;
+                var user = localStorage.getItem('user');
+                _axios["default"].get("https://powerful-coast-48240.herokuapp.com/users/".concat(user), {
+                    headers: {
+                        Authorization: "Bearer ".concat(token)
+                    }
+                }).then(function(response) {
+                    //assign the result to the state
+                    _this2.setState({
+                        FavoriteMovies: response.data.FavoriteMovies
+                    });
+                })["catch"](function(e) {
+                    return console.log(e);
+                });
+            }
+        },
+        {
+            key: "componentDidMount",
+            value: function componentDidMount() {
+                var accessToken = localStorage.getItem('token');
+                this.getUser(accessToken);
+            }
+        },
+        {
             key: "render",
             value: function render() {
-                var _this2 = this;
                 var _this$props = this.props, movie = _this$props.movie, onBackClick = _this$props.onBackClick;
+                var FavoriteMovies = this.state.FavoriteMovies;
+                var userFavMovies = this.state.FavoriteMovies;
+                var isFav = userFavMovies.includes(this.props.movie._id);
                 return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, {
                     className: "movie-view d-flex position-absolute top-50 start-50 translate-middle"
                 }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, {
@@ -44260,13 +44306,13 @@ var MovieView = /*#__PURE__*/ function(_React$Component) {
                     className: "label"
                 }, "Released: "), movie.Released), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.ListGroup.Item, null, /*#__PURE__*/ _react["default"].createElement("span", {
                     className: "label"
-                }, "Summary: "), movie.Description)), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
+                }, "Summary: "), movie.Description)), !isFav && /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
                     variant: "primary",
-                    size: "sm",
-                    onClick: function onClick() {
-                        return _this2.addToFavorites(movie._id);
-                    }
-                }, "Add to favorites"))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, {
+                    onClick: this.addFavMovie
+                }, "Add to Favorites"), isFav && /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
+                    variant: "primary",
+                    onClick: this.removeFavMovie
+                }, "Remove from Favorites"))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, {
                     xxl: "4",
                     xl: "4",
                     lg: "6",
@@ -44862,6 +44908,7 @@ var _reactRouterDom = require("react-router-dom");
 require("./profile-view.scss");
 var _axios = _interopRequireDefault(require("axios"));
 var _propTypes = _interopRequireWildcard(require("prop-types"));
+var _movieCard = require("../movie-card/movie-card");
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
         "default": obj
@@ -44941,10 +44988,10 @@ function _arrayWithHoles(arr) {
 }
 function ProfileView(props) {
     var _this = this;
-    var _useState = (0, _react.useState)(props.user), _useState2 = _slicedToArray(_useState, 2), user = _useState2[0], setUser = _useState2[1];
+    var _useState = (0, _react.useState)(props.user), _useState2 = _slicedToArray(_useState, 2), user1 = _useState2[0], setUser = _useState2[1];
     var _useState3 = (0, _react.useState)(props.movies), _useState4 = _slicedToArray(_useState3, 2), movies = _useState4[0], setMovies = _useState4[1];
     var _useState5 = (0, _react.useState)([]), _useState6 = _slicedToArray(_useState5, 2), favoriteMovies = _useState6[0], setFavoriteMovies = _useState6[1];
-    var _useState7 = (0, _react.useState)(''), _useState8 = _slicedToArray(_useState7, 2), username1 = _useState8[0], setUsername = _useState8[1];
+    var _useState7 = (0, _react.useState)(''), _useState8 = _slicedToArray(_useState7, 2), username = _useState8[0], setUsername = _useState8[1];
     var _useState9 = (0, _react.useState)(''), _useState10 = _slicedToArray(_useState9, 2), password = _useState10[0], setPassword = _useState10[1];
     var _useState11 = (0, _react.useState)(''), _useState12 = _slicedToArray(_useState11, 2), email = _useState12[0], setEmail = _useState12[1];
     var _useState13 = (0, _react.useState)(''), _useState14 = _slicedToArray(_useState13, 2), birthday = _useState14[0], setBirthday = _useState14[1]; // Declare hook for each input
@@ -44974,7 +45021,7 @@ function ProfileView(props) {
                 Authorization: "Bearer ".concat(token1)
             }
         }).then(function() {
-            alert("The profile ".concat(user.Username, " was successfully deleted."));
+            alert("The profile ".concat(user1.Username, " was successfully deleted."));
             localStorage.clear();
             window.open('/register', '_self');
         })["catch"](function(error) {
@@ -44983,10 +45030,10 @@ function ProfileView(props) {
     }; // Validate user inputs
     var validate = function validate() {
         var isReq = true;
-        if (!username1) {
+        if (!username) {
             setUsernameErr('Username is required');
             isReq = false;
-        } else if (username1.length < 5) {
+        } else if (username.length < 5) {
             setUsernameErr('Username must be at least 5 characters long');
             isReq = false;
         }
@@ -45012,7 +45059,7 @@ function ProfileView(props) {
         if (isReq) {
             var _token = localStorage.getItem('token');
             _axios["default"].put("https://powerful-coast-48240.herokuapp.com/users/".concat(currentUser), {
-                Username: username1,
+                Username: username,
                 Password: password,
                 Email: email,
                 Birthday: birthday
@@ -45031,34 +45078,50 @@ function ProfileView(props) {
             });
         }
     };
-    removeFromFavorites = function removeFromFavorites(movieId) {
-        var username = localStorage.getItem('user');
+    removeFavMovie = function removeFavMovie() {
         var token = localStorage.getItem('token');
-        console.log('remove fav auth: ', token);
-        _axios["default"]["delete"]("https://powerful-coast-48240.herokuapp.com/users/".concat(username, "/movies/").concat(movieId), {
+        var user = localStorage.getItem("user");
+        _axios["default"]["delete"]("https://powerful-coast-48240.herokuapp.com/users/".concat(user, "/movies/").concat(_this.props.movie._id), {
             headers: {
                 Authorization: "Bearer ".concat(token)
             }
-        }).then(function(res) {
-            alert('The movie was removed from your favorites');
-            window.open('users/:Username', '_self');
-        })["catch"](function(err) {
-            console.log(err);
+        }).then(function(response) {
+            console.log(response.data);
+            alert("".concat(_this.props.movie.Title, " has been removed from favorites!"));
+            window.open("/movies/".concat(_this.props.movie._id), "_self");
+        })["catch"](function(e) {
+            console.log('Error');
         });
+    };
+    var renderFavourites = function renderFavourites() {
+        console.log(movies);
+        if (movies.length + 0) return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, {
+            className: "justify-content-md-center"
+        }, favoriteMovies.length === 0 ? /*#__PURE__*/ _react["default"].createElement("h5", null, "Add some movies to your list") : favoriteMovies.map(function(movieId, i) {
+            return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, {
+                md: 6,
+                lg: 4
+            }, /*#__PURE__*/ _react["default"].createElement(_movieCard.MovieCard, {
+                key: "".concat(i, "-").concat(movieId),
+                movie: movies.find(function(m) {
+                    return m._id == movieId;
+                })
+            }));
+        }));
     };
     return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, "Profile Info"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
         className: "label"
-    }, "Username: "), user.Username), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
+    }, "Username: "), user1.Username), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
         className: "label"
     }, "Password: "), "******"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
         className: "label"
-    }, "Email: "), user.Email), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
+    }, "Email: "), user1.Email), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
         className: "label"
-    }, "Birthday: "), user.Birthday)))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, "Edit profile info"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+    }, "Birthday: "), user1.Birthday)))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, "Edit profile info"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
         controlId: "formUsername"
     }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Username:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
         type: "text",
-        value: username1,
+        value: username,
         onChange: function onChange(e) {
             return setUsername(e.target.value);
         },
@@ -45102,20 +45165,7 @@ function ProfileView(props) {
     }, "Edit profile")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
         variant: "secondary",
         onClick: handleDelete
-    }, "Delete profile")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, null, /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, "Favorite Movies"), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, (favoriteMovies === null || favoriteMovies === void 0 ? void 0 : favoriteMovies.length) > 0 && movies.map(function(movie) {
-        if (movie._id === favoriteMovies.find(function(fav) {
-            return fav === movie._id;
-        })) return /*#__PURE__*/ _react["default"].createElement("img", {
-            className: "fav-movie-img",
-            src: movie.ImagePath,
-            key: movie._id
-        });
-    }), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
-        variant: "secondary",
-        onClick: function onClick() {
-            return _this.removeFromFavorites(movie._id);
-        }
-    }, "Remove")))))));
+    }, "Delete profile")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, null, /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement("h3", null, "Favorite Movies"), renderFavourites()));
 }
 _c = ProfileView;
 var _c;
@@ -45126,7 +45176,7 @@ $RefreshReg$(_c, "ProfileView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","./profile-view.scss":"eyKYH","axios":"jo6P5","prop-types":"7wKI2","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko"}],"eyKYH":[function() {},{}],"bwuIu":[function(require,module,exports) {
+},{"react":"21dqq","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","./profile-view.scss":"eyKYH","axios":"jo6P5","prop-types":"7wKI2","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bS9ko","../movie-card/movie-card":"bwuIu"}],"eyKYH":[function() {},{}],"bwuIu":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
