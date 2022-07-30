@@ -14,25 +14,77 @@ export class MovieView extends React.Component {
         }
     }
 
-    addToFavorites = (movieId) => {
-        const username = localStorage.getItem('user');
-        const token = localStorage.getItem('token');
-    
-        axios.put(`https://powerful-coast-48240.herokuapp.com/users/${username}/movies/${movieId}`,
-            {headers: { Authorization:`Bearer ${token}`}}
-          )
-          .then((res) => {
-            alert('The movie was added to your favorites');
-            window.open('users/:Username', '_self');
+    getUser(token) {
+        let user = localStorage.getItem('user');
+        axios
+          .get(`https://powerful-coast-48240.herokuapp.com/users/${user}`, {
+            headers: { Authorization: `Bearer ${token}` },
           })
-          .catch((err) => {
-            console.log(err);
-      })
-    }
+          .then((response) => {
+            //assign the result to the state
+            this.setState({
+              FavoriteMovies: response.data.FavoriteMovies,
+            });
+          })
+          .catch((e) => console.log(e));
+      }
+      componentDidMount() {
+        const accessToken = localStorage.getItem('token');
+        this.getUser(accessToken);
+      }
+
+    addFavMovie = () => {
+        let token = localStorage.getItem('token');
+        let user = localStorage.getItem('user');
+        let userFavMovies = this.state.FavoriteMovies;
+        let isFav = userFavMovies.includes(this.props.movie._id);
+        if (!isFav) {
+          axios.put(`https://powerful-coast-48240.herokuapp.com/users/${user}/movies/${this.props.movie._id}`, {},
+            {
+              headers: {
+                Authorization: `Bearer ${token}`
+              }
+            }).then((response) => {
+              console.log(response.data);
+              alert(
+                `${this.props.movie.Title} has been added to your favorites!`
+              );
+              window.open(`/movies/${this.props.movie._id}`, "_self");
+            })
+            .catch(e => {
+              console.log('Error')
+            });
+        } else if (isFav) {
+          alert(
+            `${this.props.movie.Title} is already on your favorites list!`
+          );
+        }
+      }
+
+      removeFavMovie = () => {
+        let token = localStorage.getItem('token');
+        let user = localStorage.getItem("user");
+        axios.delete(`https://powerful-coast-48240.herokuapp.com/users/${user}/movies/${this.props.movie._id}`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }).then((response) => {
+            console.log(response.data);
+            alert(
+              `${this.props.movie.Title} has been removed from favorites!`
+            );
+            window.open(`/movies/${this.props.movie._id}`, "_self");
+          })
+          .catch(e => {
+            console.log('Error')
+          });
+      }
 
 
     render() {
         const { movie, onBackClick } = this.props;
+        const { FavoriteMovies } = this.state;
+        let userFavMovies = this.state.FavoriteMovies;
+        let isFav = userFavMovies.includes(this.props.movie._id);
 
         return (
             <Container className="movie-view d-flex position-absolute top-50 start-50 translate-middle">
@@ -49,7 +101,12 @@ export class MovieView extends React.Component {
                                 <span className="label">Released: </span>{movie.Released}</ListGroup.Item>
                             <ListGroup.Item><span className="label">Summary: </span>{movie.Description}</ListGroup.Item> 
                         </ListGroup>
-                        <Button  variant="primary" size="sm" onClick={() => this.addToFavorites(movie._id) }>Add to favorites</Button>
+                        {!isFav && (
+                            <Button  variant="primary" onClick={this.addFavMovie}>Add to Favorites</Button>
+                            )}
+                        {isFav && (
+                            <Button  variant="primary" onClick={this.removeFavMovie}>Remove from Favorites</Button>
+                        )}
                     </div> 
                     </Col>
                     <Col xxl="4" xl="4" lg="6" md="4">
