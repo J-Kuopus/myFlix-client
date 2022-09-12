@@ -3,7 +3,6 @@ import { Form, Button, Card, Container, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './profile-view.scss';
 import axios from 'axios';
-import PropTypes, { string } from 'prop-types';
 import { MovieCard } from '../movie-card/movie-card';
 
 export function ProfileView(props) {
