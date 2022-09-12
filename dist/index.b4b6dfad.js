@@ -37084,7 +37084,7 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
                     className: "main-view justify-content-md-center",
                     xs: 1,
                     md: 3,
-                    lg: 4
+                    lg: 5
                 }, /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.Route, {
                     exact: true,
                     path: "/",
