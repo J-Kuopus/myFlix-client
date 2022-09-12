@@ -127,7 +127,6 @@ export function ProfileView(props) {
   }
 
   const renderFavourites = () => {
-    console.log(movies)
     if (movies.length + 0) {
 
       return (
@@ -135,9 +134,8 @@ export function ProfileView(props) {
 
           {favoriteMovies.length === 0 ? (<h5>Add some movies to your list</h5>) : (
             favoriteMovies.map((movieId, i) => (
-              <Col md={6} lg={4}>
-               <MovieCard key={`${i}-${movieId}`} movie={movies.find(m => m._id == movieId)} />
-              {/*  <Button  variant="primary" onClick={this.removeFavMovie}>Remove from Favorites</Button> */}
+              <Col md={6} lg={4} key={`${i}-${movieId}`} >
+               <MovieCard movie={movies.find(m => m._id == movieId)} />
               </Col>
             ))
           )}
