@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { Button, Col, Container, Form, Row, Card, CardGroup } from 'react-bootstrap';
 import axios from 'axios';
 
