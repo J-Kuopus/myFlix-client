@@ -10,10 +10,22 @@
 
 .login-view, .registration-view {
   background-blend-mode: multiply;
-  height: 850px;
+  height: 800px;
   background-color: #ccc;
   background-image: url("vhs-pic-sm.e2d8eba7.jpg");
-  background-position: -370px 0;
+  background-position: -200px 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 50px;
+  position: relative;
+}
+
+.profile-view {
+  background-blend-mode: multiply;
+  height: 1400px;
+  background-color: #ccc;
+  background-image: url("vhs-pic-sm.e2d8eba7.jpg");
+  background-position: -800px 0;
   background-repeat: no-repeat;
   background-size: cover;
   padding: 50px;
@@ -84,6 +96,10 @@
 .fav-movie-img {
   height: auto;
   max-width: 15rem !important;
+}
+
+.profile-card {
+  padding: 15px;
 }
 
 

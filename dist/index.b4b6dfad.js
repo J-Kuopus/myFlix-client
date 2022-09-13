@@ -37092,10 +37092,10 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
                         /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are 
           passed as a prop to the LoginView */ if (!user) return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, {
                             className: "login-view",
-                            xxl: 6,
-                            xl: 6,
-                            lg: 7,
-                            md: 8,
+                            xxl: 8,
+                            xl: 8,
+                            lg: 9,
+                            md: 10,
                             sm: 12
                         }, /*#__PURE__*/ _react["default"].createElement(_loginView.LoginView, {
                             onLoggedIn: function onLoggedIn(user) {
@@ -37122,10 +37122,10 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
                         });
                         return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, {
                             className: "registration-view",
-                            xxl: 6,
-                            xl: 6,
-                            lg: 7,
-                            md: 8,
+                            xxl: 8,
+                            xl: 8,
+                            lg: 9,
+                            md: 10,
                             sm: 12
                         }, /*#__PURE__*/ _react["default"].createElement(_registrationView.RegistrationView, null));
                     }
@@ -37163,10 +37163,10 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
                         var match = _ref2.match, history = _ref2.history;
                         if (!user) return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, {
                             className: "login-view",
-                            xxl: 6,
-                            xl: 6,
-                            lg: 7,
-                            md: 8,
+                            xxl: 8,
+                            xl: 8,
+                            lg: 9,
+                            md: 10,
                             sm: 12
                         }, /*#__PURE__*/ _react["default"].createElement(_loginView.LoginView, {
                             onLoggedIn: function onLoggedIn(user) {
@@ -37198,10 +37198,10 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
                         var match = _ref3.match, history = _ref3.history;
                         if (!user) return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, {
                             className: "login-view",
-                            xxl: 6,
-                            xl: 6,
-                            lg: 7,
-                            md: 8,
+                            xxl: 8,
+                            xl: 8,
+                            lg: 9,
+                            md: 10,
                             sm: 12
                         }, /*#__PURE__*/ _react["default"].createElement(_loginView.LoginView, {
                             onLoggedIn: function onLoggedIn(user) {
@@ -37234,10 +37234,10 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
                         var history = _ref4.history, match = _ref4.match;
                         if (!user) return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, {
                             className: "login-view",
-                            xxl: 6,
-                            xl: 6,
-                            lg: 7,
-                            md: 8,
+                            xxl: 8,
+                            xl: 8,
+                            lg: 9,
+                            md: 10,
                             sm: 12
                         }, /*#__PURE__*/ _react["default"].createElement(_loginView.LoginView, {
                             onLoggedIn: function onLoggedIn(user) {
@@ -37248,11 +37248,11 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
                             className: "main-view"
                         });
                         return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, {
-                            className: "login-view",
-                            xxl: 6,
-                            xl: 6,
-                            lg: 7,
-                            md: 8,
+                            className: "profile-view",
+                            xxl: 8,
+                            xl: 8,
+                            lg: 9,
+                            md: 10,
                             sm: 12
                         }, /*#__PURE__*/ _react["default"].createElement(_profileView.ProfileView, {
                             movies: movies,
@@ -42840,7 +42840,13 @@ function LoginView(props) {
     };
     return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, {
         className: "justify-content-center"
-    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.CardGroup, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, {
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, {
+        xxl: 8,
+        xl: 8,
+        lg: 9,
+        md: 10,
+        sm: 12
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.CardGroup, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, {
         className: "login-card"
     }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, "Welcome to Retro Video!"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Header, null, "Please enter your username and password to enter."), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form, {
         noValidate: true
@@ -43601,7 +43607,13 @@ function RegistrationView(props) {
     };
     return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, {
         className: "justify-content-center"
-    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.CardGroup, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, "Register a new account"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Header, null, "Please enter the following information:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, {
+        xxl: 8,
+        xl: 8,
+        lg: 9,
+        md: 10,
+        sm: 12
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.CardGroup, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, "Register a new account"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Header, null, "Please enter the following information:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
         controlId: "formBasicUsername"
     }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Username: "), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
         type: "text",
@@ -44194,7 +44206,11 @@ function ProfileView(props) {
             }));
         }));
     };
-    return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, "Profile Info"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
+    return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, {
+        className: "profile-card"
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, /*#__PURE__*/ _react["default"].createElement("span", {
+        className: "label"
+    }, "Profile Info")), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
         className: "label"
     }, "Username: "), user.Username), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
         className: "label"
@@ -44202,7 +44218,11 @@ function ProfileView(props) {
         className: "label"
     }, "Email: "), user.Email), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
         className: "label"
-    }, "Birthday: "), user.Birthday)))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, "Edit profile info"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+    }, "Birthday: "), user.Birthday)))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, {
+        className: "profile-card"
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, /*#__PURE__*/ _react["default"].createElement("span", {
+        className: "label"
+    }, "Edit profile info")), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
         controlId: "formUsername"
     }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Username:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
         type: "text",
@@ -44250,7 +44270,11 @@ function ProfileView(props) {
     }, "Edit profile")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
         variant: "secondary",
         onClick: handleDelete
-    }, "Delete profile")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, null, /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement("h3", null, "Favorite Movies"), renderFavourites()));
+    }, "Delete profile")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, null, /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, {
+        className: "profile-card"
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, /*#__PURE__*/ _react["default"].createElement("span", {
+        className: "label"
+    }, "Favorite Movies")), renderFavourites()))));
 }
 _c = ProfileView;
 var _c;
