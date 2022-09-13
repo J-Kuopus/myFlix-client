@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Card, CardGroup, Container, Col, Row, ListGroup } from 'react-bootstrap';
+import { Button, Container, Col, Row, ListGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { IoArrowBackCircleSharp } from "react-icons/io5";
 
 import './movie-view.scss';
 
@@ -90,8 +91,9 @@ export class MovieView extends React.Component {
             <Container className="movie-view d-flex position-absolute top-50 start-50 translate-middle">
                 <Row>
                     <Col xxl="8" xl="8" lg="6" md="4">
+                    <IoArrowBackCircleSharp className='back-arrow' onClick={() => { onBackClick(null); }}/>
                     <div className="movie-info">
-                        <ListGroup>
+                        <ListGroup className="info-list">
                             <ListGroup.Item className="movie-title">{movie.Title}</ListGroup.Item>
                             <ListGroup.Item className="movie-genre">
                                 <span className="label">Genre: </span><Link to={`/genres/${movie.Genre.Name}`}>{movie.Genre.Name}</Link></ListGroup.Item>
@@ -101,6 +103,9 @@ export class MovieView extends React.Component {
                                 <span className="label">Released: </span>{movie.Released}</ListGroup.Item>
                             <ListGroup.Item><span className="label">Summary: </span>{movie.Description}</ListGroup.Item> 
                         </ListGroup>
+                        <p></p>
+                        <p></p>
+                        <p></p>
                         {!isFav && (
                             <Button  variant="primary" onClick={this.addFavMovie}>Add to Favorites</Button>
                             )}
@@ -117,13 +122,6 @@ export class MovieView extends React.Component {
                         />
                     </div>
                     </Col>
-                    <div className="btn-wrapper">
-                        <Button 
-                            className="movie-button" 
-                            variant="danger" 
-                            onClick={() => { onBackClick(null); }}>Back to Main
-                        </Button>
-                    </div>
                 </Row>
             </Container>
         );
