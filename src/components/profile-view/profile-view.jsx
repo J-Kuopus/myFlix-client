@@ -148,10 +148,10 @@ export function ProfileView(props) {
         <Container>
           <Row>
             <Col>
-              <Card>
+              <Card className="profile-card">
                 <Card.Body>
 
-                  <Card.Title>Profile Info</Card.Title>
+                  <Card.Title><span className="label">Profile Info</span></Card.Title>
                       <Card.Text><span className="label">Username: </span>{user.Username}</Card.Text>
                       <Card.Text><span className="label">Password: </span>******</Card.Text>
                       <Card.Text><span className="label">Email: </span>{user.Email}</Card.Text>
@@ -161,9 +161,9 @@ export function ProfileView(props) {
               </Card>
             </Col>
             <Col>
-              <Card>
+              <Card className="profile-card">
                 <Card.Body> 
-                <Card.Title>Edit profile info</Card.Title>
+                <Card.Title><span className="label">Edit profile info</span></Card.Title>
                   <Form>
 
                     <Form.Group controlId="formUsername">
@@ -204,8 +204,12 @@ export function ProfileView(props) {
           <Row>
               <p></p>
               <p></p>
-              <h3>Favorite Movies</h3>
+              <Card className="profile-card">
+                <Card.Body>
+              <Card.Title><span className="label">Favorite Movies</span></Card.Title>
               {renderFavourites()}
+              </Card.Body>
+              </Card>
           </Row>
         </Container>
       );
