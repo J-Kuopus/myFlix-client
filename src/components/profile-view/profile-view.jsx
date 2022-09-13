@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Button, Card, Container, Col, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import './profile-view.scss';
 import axios from 'axios';
 import { MovieCard } from '../movie-card/movie-card';
@@ -134,7 +133,7 @@ export function ProfileView(props) {
           {favoriteMovies.length === 0 ? (<h5>Add some movies to your list</h5>) : (
             favoriteMovies.map((movieId, i) => (
               <Col md={6} lg={4} key={`${i}-${movieId}`} >
-               <MovieCard movie={movies.find(m => m._id == movieId)} />
+                <MovieCard movie={movies.find(m => m._id == movieId)} />
               </Col>
             ))
           )}
