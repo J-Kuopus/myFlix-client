@@ -75,6 +75,21 @@
   max-width: 25rem !important;
 }
 
+.back-arrow {
+  color: #fff;
+  background-color: #333;
+  border-radius: 50%;
+  margin-bottom: 30px;
+  font-size: 40px;
+}
+
+.back-arrow:hover {
+  cursor: pointer;
+  opacity: .7;
+  color: #333;
+  background-color: #fff;
+}
+
 @media (max-width: 768px) {
   .movie-view {
     padding-top: 320px;

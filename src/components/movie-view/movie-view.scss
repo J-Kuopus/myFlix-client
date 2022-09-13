@@ -16,6 +16,20 @@
     height: auto;
 }
 
+.back-arrow {
+    font-size: 40px;
+    background-color: #333;
+    color: #fff;
+    margin-bottom: 30px;
+    border-radius: 50%;
+    &:hover {
+        cursor: pointer;
+        opacity: 0.7;
+        color: #333;
+        background-color: #fff;
+    }
+}
+
 @media all and (max-width: 768px) {
     .movie-view {
     padding-top: 320px;
