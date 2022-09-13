@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import axios from 'axios';
 import { Row, Col } from 'react-bootstrap';
-import { BrowserRouter as Router, Route, Redirect, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import './main-view.scss';
 
 import { LoginView } from '../login-view/login-view';
@@ -174,6 +174,6 @@ class MainView extends React.Component {
   }
 }
                     
-export default MainView; // Defines MainView as the default view          
+export default MainView;         
 
 
