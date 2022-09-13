@@ -56,7 +56,7 @@ export function LoginView(props) {
     return (
         <Container>
             <Row className="justify-content-center">
-            <Col>
+            <Col xxl={8} xl={8} lg={9} md={10} sm={12}>
             <CardGroup>
                 <Card className="login-card">
                     <Card.Body>
