@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Card, Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Button, Card, Container, ListGroup } from 'react-bootstrap';
+import { IoArrowBackCircleSharp } from "react-icons/io5";
+import './director-view.scss';
 
 export class DirectorView extends React.Component {
     render() {
@@ -10,28 +11,19 @@ export class DirectorView extends React.Component {
         return (
             <Card>
                 <Card.Body>
-                    <Card.Header>
-                        <Button
-                            variant="danger"
-                            type="submit"
-                            onClick={() => {
-                                onBackClick();
-                            }}>Back
-                        </Button>
-                    </Card.Header>
+                    <IoArrowBackCircleSharp className='back-arrow-director' onClick={() => { onBackClick(); }}/> 
                     <p></p>
                     <Container>
-                    <Card.Title>Director Info</Card.Title>
-                    <Card.Text><span className="label">Name: </span>{director.Name}</Card.Text>
-                    <Card.Text><span className="label">Bio:  </span>{director.Bio}</Card.Text>
-                    <Card.Text><span className="label">Birthyear: </span>{director.Birth}</Card.Text>
-                    <Card.Text><span className="label">Deathyear: </span>{director.Death}</Card.Text>
+                        <ListGroup>
+                            <ListGroup.Item><span className="director-label">Director Info</span></ListGroup.Item>
+                            <ListGroup.Item><span className="label">Name: </span>{director.Name}</ListGroup.Item>
+                            <ListGroup.Item><span className="label">Bio:  </span>{director.Bio}</ListGroup.Item>
+                            <ListGroup.Item><span className="label">Birthyear: </span>{director.Birth}</ListGroup.Item>
+                            <ListGroup.Item><span className="label">Deathyear: </span>{director.Death}</ListGroup.Item>
+                        </ListGroup>
                     </Container>
                     <p></p>
                     <Container>
-                    <Link to={'/'}>
-                        Back to Main
-                    </Link>
                     </Container>
                 </Card.Body>
             </Card>
