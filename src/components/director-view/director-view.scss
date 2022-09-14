@@ -1,3 +1,22 @@
 .label {
     font-weight: bold;
 }
+
+.director-label {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.back-arrow-director {
+    font-size: 40px;
+    background-color: #333;
+    color: #fff;
+    margin: 5px;
+    border-radius: 50%;
+    &:hover {
+        cursor: pointer;
+        opacity: 0.7;
+        color: #333;
+        background-color: #fff;
+    }
+}
