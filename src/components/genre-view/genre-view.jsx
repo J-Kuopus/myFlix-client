@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Card, Container, Col, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Button, Card, Container, Col, Row, ListGroup } from 'react-bootstrap';
+import { IoArrowBackCircleSharp } from "react-icons/io5";
+import './genre-view.scss';
 
 export class GenreView extends React.Component {
     render() {
@@ -11,24 +12,15 @@ export class GenreView extends React.Component {
             <Container>
                 <Row>
                     <Col>
-                        <Card>
+                        <Card className="genre-card">
                             <Card.Body>
-                                <Card.Header>
-                                    <Button
-                                        variant="danger"
-                                        type="submit"
-                                        onClick={() => {
-                                            onBackClick();
-                                        }}>Back
-                                    </Button>  
-                                </Card.Header>
+                                <IoArrowBackCircleSharp className='back-arrow-genre' onClick={() => { onBackClick(); }}/> 
                                 <p></p>
-                                    <Card.Title><span>{genre.Name}</span> Genre</Card.Title>
-                                    <Card.Text><span className="label">Description: </span></Card.Text>
-                                    <Card.Text>{genre.Description}</Card.Text>
-                                    <Link to={'/'}>
-                                        Back to Main
-                                    </Link>
+                                <ListGroup>
+                                    <ListGroup.Item><span className="genre-label">{genre.Name} Genre</span></ListGroup.Item>
+                                    <ListGroup.Item><span className="label">Description: </span></ListGroup.Item>
+                                    <ListGroup.Item>{genre.Description}</ListGroup.Item>
+                                </ListGroup>
                             </Card.Body>
                         </Card>
                     </Col>
