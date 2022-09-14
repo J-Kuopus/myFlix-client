@@ -35,7 +35,7 @@ class MainView extends React.Component {
       }
   }
 
-    // When a user successfully logs in, this function updates the 'user' property in state to that particular user
+  // When a user successfully logs in, this function updates the 'user' property in state to that particular user
   onLoggedIn(authData) {
     this.setState({
       user: authData.user.Username
@@ -46,7 +46,7 @@ class MainView extends React.Component {
     this.getMovies(authData.token);
   }
 
-     // GETS list of movies once the user is logged in
+  // GETS list of movies once the user is logged in
   getMovies(token) {
     axios.get('https://powerful-coast-48240.herokuapp.com/movies', {
       headers: { Authorization:`Bearer ${token}`}
@@ -63,14 +63,11 @@ class MainView extends React.Component {
   }
 
   render() {
-    const { movies, user } = this.state; // Deconstructed variables
+    const { movies, user } = this.state;
 
     return (
       <Router>
-        <NavbarView user={user} />
         <Row className="main-view justify-content-md-center" xs={1} md={3} lg={4} xl={5}>
-          
-          
           <Route exact path="/" 
                  render={() => {
             
@@ -87,6 +84,7 @@ class MainView extends React.Component {
 
             return movies.map(m => (
               <Col className="movie-card-col" key={m._id}>
+                <NavbarView user={user} /> 
                 <MovieCard movie={m} />
               </Col>
             ))
@@ -112,6 +110,7 @@ class MainView extends React.Component {
             if (movies.length === 0) return <div className="main-view" />;  
             
             return <Col>
+                    <NavbarView user={user} /> 
                     <MovieView movie={movies.find(m => m._id === match.params.movieId)} onBackClick={() => history.goBack()}/>
                   </Col>
           }} />
@@ -126,6 +125,7 @@ class MainView extends React.Component {
             if (movies.length === 0) return <div className="main-view" />;
             
             return <Col className="director-view" xxl={6} xl={6} lg={7} md={8} sm={12}>
+                    <NavbarView user={user} /> 
                     <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director} onBackClick={() => history.goBack()} />
                   </Col>
             }
@@ -141,6 +141,7 @@ class MainView extends React.Component {
              if (movies.length === 0) return <div className="main-view" />;
              
              return <Col className="genre-view" xxl={6} xl={6} lg={7} md={8} sm={12}>
+                     <NavbarView user={user} /> 
                      <GenreView genre={movies.find((m) => m.Genre.Name === match.params.name).Genre}
                                 movies={movies} 
                                 onBackClick={() => history.goBack()} />
@@ -160,6 +161,7 @@ class MainView extends React.Component {
 
             
             return <Col className="profile-view" xxl={8} xl={8} lg={9} md={10} sm={12}>
+                      <NavbarView user={user} /> 
                       <ProfileView movies={movies}
                                    user={user === match.params.Username}
                                    onBackClick={() => history.goBack()}

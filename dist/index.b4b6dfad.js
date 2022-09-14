@@ -37051,10 +37051,8 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
             key: "render",
             value: function render() {
                 var _this3 = this;
-                var _this$state = this.state, movies = _this$state.movies, user = _this$state.user; // Deconstructed variables
-                return /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/ _react["default"].createElement(_navbar.NavbarView, {
-                    user: user
-                }), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, {
+                var _this$state = this.state, movies = _this$state.movies, user = _this$state.user;
+                return /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, {
                     className: "main-view justify-content-md-center",
                     xs: 1,
                     md: 3,
@@ -37084,7 +37082,9 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
                             return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, {
                                 className: "movie-card-col",
                                 key: m._id
-                            }, /*#__PURE__*/ _react["default"].createElement(_movieCard.MovieCard, {
+                            }, /*#__PURE__*/ _react["default"].createElement(_navbar.NavbarView, {
+                                user: user
+                            }), /*#__PURE__*/ _react["default"].createElement(_movieCard.MovieCard, {
                                 movie: m
                             }));
                         });
@@ -37123,7 +37123,9 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
                         if (movies.length === 0) return /*#__PURE__*/ _react["default"].createElement("div", {
                             className: "main-view"
                         });
-                        return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_movieView.MovieView, {
+                        return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_navbar.NavbarView, {
+                            user: user
+                        }), /*#__PURE__*/ _react["default"].createElement(_movieView.MovieView, {
                             movie: movies.find(function(m) {
                                 return m._id === match.params.movieId;
                             }),
@@ -37158,7 +37160,9 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
                             lg: 7,
                             md: 8,
                             sm: 12
-                        }, /*#__PURE__*/ _react["default"].createElement(_directorView.DirectorView, {
+                        }, /*#__PURE__*/ _react["default"].createElement(_navbar.NavbarView, {
+                            user: user
+                        }), /*#__PURE__*/ _react["default"].createElement(_directorView.DirectorView, {
                             director: movies.find(function(m) {
                                 return m.Director.Name === match.params.name;
                             }).Director,
@@ -37193,7 +37197,9 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
                             lg: 7,
                             md: 8,
                             sm: 12
-                        }, /*#__PURE__*/ _react["default"].createElement(_genreView.GenreView, {
+                        }, /*#__PURE__*/ _react["default"].createElement(_navbar.NavbarView, {
+                            user: user
+                        }), /*#__PURE__*/ _react["default"].createElement(_genreView.GenreView, {
                             genre: movies.find(function(m) {
                                 return m.Genre.Name === match.params.name;
                             }).Genre,
@@ -37229,7 +37235,9 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
                             lg: 9,
                             md: 10,
                             sm: 12
-                        }, /*#__PURE__*/ _react["default"].createElement(_profileView.ProfileView, {
+                        }, /*#__PURE__*/ _react["default"].createElement(_navbar.NavbarView, {
+                            user: user
+                        }), /*#__PURE__*/ _react["default"].createElement(_profileView.ProfileView, {
                             movies: movies,
                             user: user === match.params.Username,
                             onBackClick: function onBackClick() {
