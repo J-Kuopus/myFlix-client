@@ -6,21 +6,28 @@
     font-weight: bold;
 }
 
+.movie-info {
+    padding: 24px;
+    box-shadow: 4px 4px 6px #333;
+}
+
 .movie-title {
-    font-size: larger;
+    font-size: 24px;
     font-weight: bold;
 }
 
 .movie-poster {
     max-width: 25rem !important;
     height: auto;
+    box-shadow: 4px 4px 6px #333;
 }
 
 .back-arrow {
     font-size: 40px;
     background-color: #333;
     color: #fff;
-    margin-bottom: 30px;
+    margin-left: 0px;
+    margin-bottom: 22px;
     border-radius: 50%;
     &:hover {
         cursor: pointer;
@@ -28,6 +35,11 @@
         color: #333;
         background-color: #fff;
     }
+}
+
+.fav-button {
+    width: 240px;
+    box-shadow: 1px 1px 2px #333;
 }
 
 @media all and (max-width: 768px) {
