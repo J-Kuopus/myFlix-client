@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Container, Col, Row, ListGroup } from 'react-bootstrap';
+import { Button, Container, Col, Row, ListGroup, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { IoArrowBackCircleSharp } from "react-icons/io5";
-
 import './movie-view.scss';
 
 export class MovieView extends React.Component {
@@ -29,7 +28,8 @@ export class MovieView extends React.Component {
           })
           .catch((e) => console.log(e));
       }
-      componentDidMount() {
+
+    componentDidMount() {
         const accessToken = localStorage.getItem('token');
         this.getUser(accessToken);
       }
@@ -91,8 +91,8 @@ export class MovieView extends React.Component {
             <Container className="movie-view d-flex position-absolute top-50 start-50 translate-middle">
                 <Row>
                     <Col xxl="8" xl="8" lg="6" md="4">
-                    <IoArrowBackCircleSharp className='back-arrow' onClick={() => { onBackClick(null); }}/>
-                    <div className="movie-info">
+                      <Card className="movie-info">
+                        <IoArrowBackCircleSharp className='back-arrow' onClick={() => { onBackClick(null); }}/>
                         <ListGroup className="info-list">
                             <ListGroup.Item className="movie-title">{movie.Title}</ListGroup.Item>
                             <ListGroup.Item className="movie-genre">
@@ -107,12 +107,12 @@ export class MovieView extends React.Component {
                         <p></p>
                         <p></p>
                         {!isFav && (
-                            <Button  variant="primary" onClick={this.addFavMovie}>Add to Favorites</Button>
+                            <Button  className="fav-button" variant="primary" onClick={this.addFavMovie}>Add to Favorites</Button>
                             )}
                         {isFav && (
-                            <Button  variant="warning" onClick={this.removeFavMovie}>Remove from Favorites</Button>
+                            <Button  className="fav-button" variant="warning" onClick={this.removeFavMovie}>Remove from Favorites</Button>
                         )}
-                    </div> 
+                      </Card> 
                     </Col>
                     <Col xxl="4" xl="4" lg="6" md="4">
                     <div className="img-wrapper">
