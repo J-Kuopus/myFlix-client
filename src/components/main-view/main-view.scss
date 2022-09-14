@@ -7,18 +7,8 @@
     padding-top: 50px;
 }
 
-.login-view,
-.registration-view {
-    background-image: url('../../../img/vhs-pic-sm.jpg');
-    background-position-x: -200px;
-    background-position-y: 0px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: #ccc;
-    background-blend-mode: multiply;
-    height: 800px;
-    padding: 50px;
-    position: relative;
+.main-view {
+    padding-top: 90px;
 }
 
 .profile-view {
