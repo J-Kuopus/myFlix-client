@@ -37064,7 +37064,6 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
                     render: function render() {
                         /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are 
           passed as a prop to the LoginView */ if (!user) return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, {
-                            className: "login-view",
                             xxl: 8,
                             xl: 8,
                             lg: 9,
@@ -37096,7 +37095,6 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
                             to: "/"
                         });
                         return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, {
-                            className: "registration-view",
                             xxl: 8,
                             xl: 8,
                             lg: 9,
@@ -37109,7 +37107,6 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
                     render: function render(_ref) {
                         var match = _ref.match, history = _ref.history;
                         if (!user) return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, {
-                            className: "login-view",
                             xxl: 6,
                             xl: 6,
                             lg: 7,
@@ -37139,7 +37136,6 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
                     render: function render(_ref2) {
                         var match = _ref2.match, history = _ref2.history;
                         if (!user) return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, {
-                            className: "login-view",
                             xxl: 8,
                             xl: 8,
                             lg: 9,
@@ -37176,7 +37172,6 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
                     render: function render(_ref3) {
                         var match = _ref3.match, history = _ref3.history;
                         if (!user) return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, {
-                            className: "login-view",
                             xxl: 8,
                             xl: 8,
                             lg: 9,
@@ -37214,7 +37209,6 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
                     render: function render(_ref4) {
                         var history = _ref4.history, match = _ref4.match;
                         if (!user) return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, {
-                            className: "login-view",
                             xxl: 8,
                             xl: 8,
                             lg: 9,
@@ -42705,6 +42699,7 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 var _reactBootstrap = require("react-bootstrap");
 var _reactRouterDom = require("react-router-dom");
 var _axios = _interopRequireDefault(require("axios"));
+var _rvLogo = _interopRequireDefault(require("../../../img/rv-logo.png"));
 require("./login-view.scss");
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -42821,7 +42816,9 @@ function LoginView(props) {
             alert("Unable to login");
         });
     };
-    return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, {
+    return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, {
+        className: "login-view"
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, {
         className: "justify-content-center"
     }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, {
         xxl: 8,
@@ -42829,9 +42826,19 @@ function LoginView(props) {
         lg: 9,
         md: 10,
         sm: 12
-    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.CardGroup, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, {
+    }, /*#__PURE__*/ _react["default"].createElement("div", {
+        className: "title-wrapper"
+    }, /*#__PURE__*/ _react["default"].createElement("img", {
+        src: _rvLogo["default"],
+        alt: "retro video logo"
+    }), /*#__PURE__*/ _react["default"].createElement("h1", {
+        className: "welcome-text"
+    }, "Welcome to Retro Video!"), /*#__PURE__*/ _react["default"].createElement("p", {
+        className: "slogan"
+    }, "A mini movie database that's a blast from the past.")), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, {
         className: "login-card"
-    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, "Welcome to Retro Video!"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Header, null, "Please enter your username and password to enter."), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form, {
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Header, null, "Please enter your username and password to enter."), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form, {
+        className: "login-form",
         noValidate: true
     }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
         controlId: "formUsername"
@@ -42849,17 +42856,17 @@ function LoginView(props) {
         onChange: function onChange(e) {
             return setPassword(e.target.value);
         }
-    }), passwordErr && /*#__PURE__*/ _react["default"].createElement("p", null, passwordErr)), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
+    }), passwordErr && /*#__PURE__*/ _react["default"].createElement("p", null, passwordErr)), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
         variant: "danger",
         type: "submit",
         onClick: handleSubmit
-    }, "Submit"))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Footer, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, "Don't have an account? You can register here."), /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.Link, {
+    }, "Let's Go!"))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Footer, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, "Don't have an account? You can register here."), /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.Link, {
         to: "/register"
     }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
         variant: "outline-secondary",
         size: "sm",
         type: "submit"
-    }, "Register"))))))));
+    }, "Register")))))));
 }
 _c = LoginView;
 LoginView.propTypes = {
@@ -42877,7 +42884,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","prop-types":"7wKI2","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","axios":"jo6P5","./login-view.scss":"e57ax","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"e57ax":[function() {},{}],"km3Ru":[function(require,module,exports) {
+},{"react":"21dqq","prop-types":"7wKI2","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","axios":"jo6P5","./login-view.scss":"e57ax","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../../img/rv-logo.png":"9lIK2"}],"e57ax":[function() {},{}],"km3Ru":[function(require,module,exports) {
 "use strict";
 var Refresh = require("react-refresh/runtime");
 function debounce(func, delay) {
@@ -42997,7 +43004,44 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"react-refresh/runtime":"786KC"}],"bwuIu":[function(require,module,exports) {
+},{"react-refresh/runtime":"786KC"}],"9lIK2":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("byUka") + "rv-logo.c8c00829.png" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"lgJ39":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return "/";
+}
+function getBaseURL(url) {
+    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error("Origin not found");
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"bwuIu":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -77321,7 +77365,9 @@ function RegistrationView(props) {
             alert("Unable to register");
         });
     };
-    return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, {
+    return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, {
+        className: "registration-view"
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, {
         className: "justify-content-center"
     }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, {
         xxl: 8,
@@ -78060,43 +78106,6 @@ $RefreshReg$(_c, "NavbarView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","./navbar.scss":"8wkoA","../../../img/rv-logo.png":"9lIK2","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"8wkoA":[function() {},{}],"9lIK2":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("byUka") + "rv-logo.c8c00829.png" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"lgJ39":[function(require,module,exports) {
-"use strict";
-var bundleURL = {};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return "/";
-}
-function getBaseURL(url) {
-    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
-} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
-    if (!matches) throw new Error("Origin not found");
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"lJZlQ":[function() {},{}]},["1xC6H","jVvJi","d8Dch"], "d8Dch", "parcelRequireaec4")
+},{"react":"21dqq","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","./navbar.scss":"8wkoA","../../../img/rv-logo.png":"9lIK2","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"8wkoA":[function() {},{}],"lJZlQ":[function() {},{}]},["1xC6H","jVvJi","d8Dch"], "d8Dch", "parcelRequireaec4")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
