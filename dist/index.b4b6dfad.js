@@ -43348,14 +43348,14 @@ var MovieView = /*#__PURE__*/ function(_React$Component) {
                     xl: "8",
                     lg: "6",
                     md: "4"
+                }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, {
+                    className: "movie-info"
                 }, /*#__PURE__*/ _react["default"].createElement(_io.IoArrowBackCircleSharp, {
                     className: "back-arrow",
                     onClick: function onClick() {
                         onBackClick(null);
                     }
-                }), /*#__PURE__*/ _react["default"].createElement("div", {
-                    className: "movie-info"
-                }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.ListGroup, {
+                }), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.ListGroup, {
                     className: "info-list"
                 }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.ListGroup.Item, {
                     className: "movie-title"
@@ -43378,9 +43378,11 @@ var MovieView = /*#__PURE__*/ function(_React$Component) {
                 }, "Released: "), movie.Released), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.ListGroup.Item, null, /*#__PURE__*/ _react["default"].createElement("span", {
                     className: "label"
                 }, "Summary: "), movie.Description)), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement("p", null), !isFav && /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
+                    className: "fav-button",
                     variant: "primary",
                     onClick: this.addFavMovie
                 }, "Add to Favorites"), isFav && /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
+                    className: "fav-button",
                     variant: "warning",
                     onClick: this.removeFavMovie
                 }, "Remove from Favorites"))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, {
@@ -77404,7 +77406,8 @@ exports.DirectorView = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
 var _reactBootstrap = require("react-bootstrap");
-var _reactRouterDom = require("react-router-dom");
+var _io = require("react-icons/io5");
+require("./director-view.scss");
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
         "default": obj
@@ -77500,23 +77503,22 @@ var DirectorView = /*#__PURE__*/ function(_React$Component) {
             key: "render",
             value: function render() {
                 var _this$props = this.props, director = _this$props.director, onBackClick = _this$props.onBackClick, movies = _this$props.movies;
-                return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Header, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
-                    variant: "danger",
-                    type: "submit",
+                return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_io.IoArrowBackCircleSharp, {
+                    className: "back-arrow-director",
                     onClick: function onClick() {
                         onBackClick();
                     }
-                }, "Back")), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, "Director Info"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
+                }), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.ListGroup, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.ListGroup.Item, null, /*#__PURE__*/ _react["default"].createElement("span", {
+                    className: "director-label"
+                }, "Director Info")), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.ListGroup.Item, null, /*#__PURE__*/ _react["default"].createElement("span", {
                     className: "label"
-                }, "Name: "), director.Name), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
+                }, "Name: "), director.Name), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.ListGroup.Item, null, /*#__PURE__*/ _react["default"].createElement("span", {
                     className: "label"
-                }, "Bio:  "), director.Bio), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
+                }, "Bio:  "), director.Bio), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.ListGroup.Item, null, /*#__PURE__*/ _react["default"].createElement("span", {
                     className: "label"
-                }, "Birthyear: "), director.Birth), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
+                }, "Birthyear: "), director.Birth), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.ListGroup.Item, null, /*#__PURE__*/ _react["default"].createElement("span", {
                     className: "label"
-                }, "Deathyear: "), director.Death)), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.Link, {
-                    to: "/"
-                }, "Back to Main"))));
+                }, "Deathyear: "), director.Death))), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null)));
             }
         }
     ]);
@@ -77537,7 +77539,7 @@ DirectorView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","prop-types":"7wKI2","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4tuA0":[function(require,module,exports) {
+},{"react":"21dqq","prop-types":"7wKI2","react-bootstrap":"3AD9A","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-icons/io5":"1cRHe","./director-view.scss":"cVy0f"}],"cVy0f":[function() {},{}],"4tuA0":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$377f = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -77560,7 +77562,8 @@ exports.GenreView = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
 var _reactBootstrap = require("react-bootstrap");
-var _reactRouterDom = require("react-router-dom");
+var _io = require("react-icons/io5");
+require("./genre-view.scss");
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
         "default": obj
@@ -77656,17 +77659,18 @@ var GenreView = /*#__PURE__*/ function(_React$Component) {
             key: "render",
             value: function render() {
                 var _this$props = this.props, genre = _this$props.genre, movie = _this$props.movie, onBackClick = _this$props.onBackClick;
-                return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Header, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
-                    variant: "danger",
-                    type: "submit",
+                return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, {
+                    className: "genre-card"
+                }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_io.IoArrowBackCircleSharp, {
+                    className: "back-arrow-genre",
                     onClick: function onClick() {
                         onBackClick();
                     }
-                }, "Back")), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, /*#__PURE__*/ _react["default"].createElement("span", null, genre.Name), " Genre"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
+                }), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.ListGroup, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.ListGroup.Item, null, /*#__PURE__*/ _react["default"].createElement("span", {
+                    className: "genre-label"
+                }, genre.Name, " Genre")), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.ListGroup.Item, null, /*#__PURE__*/ _react["default"].createElement("span", {
                     className: "label"
-                }, "Description: ")), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, genre.Description), /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.Link, {
-                    to: "/"
-                }, "Back to Main"))))));
+                }, "Description: ")), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.ListGroup.Item, null, genre.Description)))))));
             }
         }
     ]);
@@ -77686,7 +77690,7 @@ GenreView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","prop-types":"7wKI2","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"2vVqf":[function(require,module,exports) {
+},{"react":"21dqq","prop-types":"7wKI2","react-bootstrap":"3AD9A","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-icons/io5":"1cRHe","./genre-view.scss":"bk3gk"}],"bk3gk":[function() {},{}],"2vVqf":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$3c12 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -77789,7 +77793,6 @@ function _arrayWithHoles(arr) {
     if (Array.isArray(arr)) return arr;
 }
 function ProfileView(props) {
-    var _this = this;
     var _useState = (0, _react.useState)(props.user), _useState2 = _slicedToArray(_useState, 2), user = _useState2[0], setUser = _useState2[1];
     var _useState3 = (0, _react.useState)(props.movies), _useState4 = _slicedToArray(_useState3, 2), movies = _useState4[0], setMovies = _useState4[1];
     var _useState5 = (0, _react.useState)([]), _useState6 = _slicedToArray(_useState5, 2), favoriteMovies = _useState6[0], setFavoriteMovies = _useState6[1];
@@ -77880,26 +77883,12 @@ function ProfileView(props) {
             });
         }
     };
-    removeFavMovie = function removeFavMovie1() {
-        var token = localStorage.getItem("token");
-        var user = localStorage.getItem("user");
-        _axios["default"]["delete"]("https://powerful-coast-48240.herokuapp.com/users/".concat(user, "/movies/").concat(_this.props.movie._id), {
-            headers: {
-                Authorization: "Bearer ".concat(token)
-            }
-        }).then(function(response) {
-            console.log(response.data);
-            alert("".concat(_this.props.movie.Title, " has been removed from favorites!"));
-            window.open("/movies/".concat(_this.props.movie._id), "_self");
-        })["catch"](function(e) {
-            console.log("Error");
-        });
-    };
     var renderFavourites = function renderFavourites() {
         if (movies.length + 0) return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, {
             className: "justify-content-md-center"
         }, favoriteMovies.length === 0 ? /*#__PURE__*/ _react["default"].createElement("h5", null, "Add some movies to your list") : favoriteMovies.map(function(movieId, i) {
             return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, {
+                className: "fav-list",
                 md: 6,
                 lg: 4,
                 key: "".concat(i, "-").concat(movieId)
