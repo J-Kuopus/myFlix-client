@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Form, Button, Card, CardGroup, Container, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import RV from '../../../img/rv-logo.png';
 
 import './login-view.scss';
 
@@ -54,15 +55,18 @@ export function LoginView(props) {
     };
     
     return (
-        <Container>
+        <Container className="login-view">
             <Row className="justify-content-center">
             <Col xxl={8} xl={8} lg={9} md={10} sm={12}>
-            <CardGroup>
+            <div className='title-wrapper'>
+                        <img src={RV} alt="retro video logo" />
+                        <h1 className="welcome-text">Welcome to Retro Video!</h1>
+                        <p className="slogan">A mini movie database that's a blast from the past.</p>
+            </div>
                 <Card className="login-card">
                     <Card.Body>
-                    <Card.Title>Welcome to Retro Video!</Card.Title>
                     <Card.Header>Please enter your username and password to enter.</Card.Header>
-                    <Form noValidate>
+                    <Form className="login-form" noValidate>
                         <Form.Group controlId="formUsername">
                             <Form.Label>Username:</Form.Label>
                             <Form.Control 
@@ -84,10 +88,12 @@ export function LoginView(props) {
                                 {/* Displays validation error */}
                                 {passwordErr && <p>{passwordErr}</p>}
                         </Form.Group>
+                        <p></p>
+                        <p></p>
                         <Button 
                             variant="danger" 
                             type="submit" 
-                            onClick={handleSubmit}>Submit
+                            onClick={handleSubmit}>Let's Go!
                         </Button>
                     </Form>
                     </Card.Body>
@@ -103,7 +109,6 @@ export function LoginView(props) {
                         </Link>
                     </Card.Footer>
                 </Card>
-            </CardGroup>
             </Col>
             </Row>
         </Container>
