@@ -74,7 +74,7 @@ class MainView extends React.Component {
             /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are 
             passed as a prop to the LoginView */
             if (!user) return (
-              <Col className="login-view" xxl={8} xl={8} lg={9} md={10} sm={12}>
+              <Col xxl={8} xl={8} lg={9} md={10} sm={12}>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
               </Col>
               );
@@ -95,7 +95,7 @@ class MainView extends React.Component {
                  render={() => {
             if (user) return <Redirect to="/" />
             
-            return <Col className="registration-view" xxl={8} xl={8} lg={9} md={10} sm={12}>
+            return <Col xxl={8} xl={8} lg={9} md={10} sm={12}>
                       <RegistrationView />
                    </Col> 
           }} />
@@ -103,7 +103,7 @@ class MainView extends React.Component {
           
           <Route path="/movies/:movieId" 
                  render={({ match, history }) => {
-            if (!user) return <Col className="login-view" xxl={6} xl={6} lg={7} md={8} sm={12}>
+            if (!user) return <Col xxl={6} xl={6} lg={7} md={8} sm={12}>
                                   <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                               </Col>;
             
@@ -118,7 +118,7 @@ class MainView extends React.Component {
           
           <Route path="/directors/:name" 
                  render={({ match, history }) =>{
-            if (!user) return <Col className="login-view" xxl={8} xl={8} lg={9} md={10} sm={12}>
+            if (!user) return <Col xxl={8} xl={8} lg={9} md={10} sm={12}>
                                   <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                                </Col>;
             
@@ -134,7 +134,7 @@ class MainView extends React.Component {
           
           <Route path="/genres/:name" 
                  render={({ match, history  }) =>{
-             if (!user) return <Col className="login-view" xxl={8} xl={8} lg={9} md={10} sm={12}>
+             if (!user) return <Col xxl={8} xl={8} lg={9} md={10} sm={12}>
                                   <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                                 </Col>;
 
@@ -153,7 +153,7 @@ class MainView extends React.Component {
           <Route path={'/users/:Username'} 
                  render={( { history, match } ) => {
 
-            if (!user) return <Col className="login-view" xxl={8} xl={8} lg={9} md={10} sm={12}>
+            if (!user) return <Col xxl={8} xl={8} lg={9} md={10} sm={12}>
                                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                               </Col>;
 
