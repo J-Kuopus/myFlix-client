@@ -38,3 +38,18 @@
         background-attachment: fixed;
     }
 }
+
+@media all and (max-width: 500px) {
+    .reg-card h1 {
+        font-size: 24px;
+    }
+
+    .registration-view {
+        padding: 40px;
+    }
+
+    .reg-form {
+        padding: 10px;
+    }
+
+}
