@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Form, Button, Card, Container, Col, Row } from 'react-bootstrap';
+import { Form, Button, Card, Container, Col, Row, ListGroup } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './profile-view.scss';
 import axios from 'axios';
 import { MovieCard } from '../movie-card/movie-card';
+import { IoArrowBackCircleSharp } from "react-icons/io5";
 
 export function ProfileView(props) {
   const [ user, setUser ] = useState(props.user);
@@ -13,10 +15,10 @@ export function ProfileView(props) {
   const [ email, setEmail ] = useState('');
   const [ birthday, setBirthday] = useState('');
 
-   // Declare hook for each input
-   const [ usernameErr, setUsernameErr ] = useState('');
-   const [ passwordErr, setPasswordErr ] = useState('');
-   const [ emailErr, setEmailErr ] = useState('');
+  // Declare hook for each input
+  const [ usernameErr, setUsernameErr ] = useState('');
+  const [ passwordErr, setPasswordErr ] = useState('');
+  const [ emailErr, setEmailErr ] = useState('');
   
   const currentUser = localStorage.getItem('user');
   const token = localStorage.getItem('token');
@@ -126,54 +128,58 @@ export function ProfileView(props) {
   }
 
     return (
-        <Container>
+        <Container className="profile-view">
           <Row>
             <Col>
               <Card className="profile-card">
                 <Card.Body>
-
-                  <Card.Title><span className="label">Profile Info</span></Card.Title>
-                      <Card.Text><span className="label">Username: </span>{user.Username}</Card.Text>
-                      <Card.Text><span className="label">Password: </span>******</Card.Text>
-                      <Card.Text><span className="label">Email: </span>{user.Email}</Card.Text>
-                      <Card.Text><span className="label">Birthday: </span>{user.Birthday}</Card.Text>
-
+                  <Link to={'/'}>
+                    <IoArrowBackCircleSharp className='profile-back-arrow'/>
+                  </Link>
+                  <h1>Profile Info</h1>
+                  <ListGroup>
+                      <ListGroup.Item className="profile-text"><span className="label">Username: </span>{user.Username}</ListGroup.Item>
+                      <ListGroup.Item className="profile-text"><span className="label">Password: </span>******</ListGroup.Item>
+                      <ListGroup.Item className="profile-text"><span className="label">Email: </span>{user.Email}</ListGroup.Item>
+                      <ListGroup.Item className="profile-text"><span className="label">Birthday: </span>{user.Birthday}</ListGroup.Item>
+                  </ListGroup>
                 </Card.Body>
               </Card>
             </Col>
             <Col>
-              <Card className="profile-card">
+              <Card className="edit-card">
                 <Card.Body> 
-                <Card.Title><span className="label">Edit profile info</span></Card.Title>
-                  <Form>
+                  <h2>Edit profile info</h2>
+                  <Card.Header>Enter the info you would like to change here.</Card.Header>
+                  <Form className="edit-form">
 
-                    <Form.Group controlId="formUsername">
+                    <Form.Group className="edit-input" controlId="formUsername">
                       <Form.Label>Username:</Form.Label>
                       <Form.Control type="text" value={username} onChange={e => setUsername(e.target.value)} placeholder="Username" required/>
                       {/* display validation error */}
                       {usernameErr && <p>{usernameErr}</p>} {/* Displays validation error */}
                       </Form.Group>
 
-                      <Form.Group controlId="formPassword">
+                      <Form.Group className="edit-input" controlId="formPassword">
                         <Form.Label>Password:</Form.Label>
                         <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" required />
                         {/* display validation error */}
                         {passwordErr && <p>{passwordErr}</p>}
                       </Form.Group>
 
-                      <Form.Group controlId="formEmail">
+                      <Form.Group className="edit-input" controlId="formEmail">
                         <Form.Label>Email:</Form.Label>
                         <Form.Control type="text" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" required />
                         {/* display validation error */}
                         {emailErr && <p>{emailErr}</p>}
                       </Form.Group>
 
-                      <Form.Group controlId="formBirthday">
+                      <Form.Group className="edit-input" controlId="formBirthday">
                         <Form.Label>Birthday:</Form.Label>
                         <Form.Control type="date" value={birthday} onChange={e => setBirthday(e.target.value)} />
                       </Form.Group>
                       <Form.Group controlId="formBirthday" className="mt-3">
-                        <Button  variant="primary" type="submit" onClick={handleSubmit}>Edit profile</Button>
+                        <Button  variant="primary" type="submit" onClick={handleSubmit}>Submit</Button>
                       </Form.Group>
 
                   </Form>
@@ -185,11 +191,11 @@ export function ProfileView(props) {
           <Row>
               <p></p>
               <p></p>
-              <Card className="profile-card">
+              <Card className="fav-card">
                 <Card.Body>
-              <Card.Title><span className="label">Favorite Movies</span></Card.Title>
-              {renderFavourites()}
-              </Card.Body>
+                  <h3>Favorite Movies</h3>
+                  {renderFavourites()}
+                </Card.Body>
               </Card>
           </Row>
         </Container>
