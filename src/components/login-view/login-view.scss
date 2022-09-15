@@ -1,5 +1,6 @@
 .login-card {
     padding: 10px;
+    box-shadow: 4px 4px 6px #333;
 }
 
 .welcome-text {
@@ -26,13 +27,19 @@
 
 .login-view {
     background-image: url('../../../img/vhs-pic-sm.jpg');
-    background-position-x: -200px;
-    background-position-y: 0px;
+    background-position: right top;
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: #ccc;
-    background-blend-mode: multiply;
+    background-color: #333;
+    background-blend-mode: exclusion;
+    background-attachment: local;
     height: 900px;
     padding: 50px;
     position: relative;
+}
+
+@media all and (max-width: 992px) {
+    .login-view {
+        background-attachment: fixed;
+    }
 }
