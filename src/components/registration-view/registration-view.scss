@@ -10,6 +10,29 @@
     position: relative;
 }
 
+.registration-view h1 {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 18px;
+}
+
+.reg-card {
+    padding: 10px;
+}
+
+.reg-header {
+    text-align: center;
+}
+
+.reg-form {
+    padding: 15px;
+}
+
+.reg-input {
+    padding-bottom: 20px;
+}
+
 @media all and (max-width: 992px) {
     .registration-view {
         background-attachment: fixed;
