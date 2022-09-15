@@ -160,7 +160,7 @@ class MainView extends React.Component {
             if (movies.length === 0) return <div className="main-view" />;
 
             
-            return <Col className="profile-view" xxl={8} xl={8} lg={9} md={10} sm={12}>
+            return <Col xxl={8} xl={8} lg={9} md={10} sm={12}>
                       <NavbarView user={user} /> 
                       <ProfileView movies={movies}
                                    user={user === match.params.Username}
