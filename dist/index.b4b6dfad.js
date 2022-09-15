@@ -2866,7 +2866,7 @@ var MyFlixApplication = /*#__PURE__*/ function(_React$Component) {
         {
             key: "render",
             value: function render() {
-                return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_mainView["default"], null));
+                return /*#__PURE__*/ _react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/ _react["default"].createElement(_mainView["default"], null));
             }
         }
     ]);
@@ -42828,6 +42828,7 @@ function LoginView(props) {
     }, /*#__PURE__*/ _react["default"].createElement("div", {
         className: "title-wrapper"
     }, /*#__PURE__*/ _react["default"].createElement("img", {
+        className: "logo-img",
         src: _rvLogo["default"],
         alt: "retro video logo"
     }), /*#__PURE__*/ _react["default"].createElement("h1", {
@@ -42836,7 +42837,9 @@ function LoginView(props) {
         className: "slogan"
     }, "A mini movie database that's a blast from the past.")), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, {
         className: "login-card"
-    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Header, null, "Please enter your username and password to enter."), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form, {
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Header, {
+        className: "login-header"
+    }, "Please enter your username and password to enter."), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form, {
         className: "login-form",
         noValidate: true
     }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
