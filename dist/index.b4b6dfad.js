@@ -77375,7 +77375,7 @@ function RegistrationView(props) {
         lg: 9,
         md: 10,
         sm: 12
-    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.CardGroup, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, "Register a new account"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Header, null, "Please enter the following information:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, "Register a new account"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Header, null, "Please enter the following information:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
         controlId: "formBasicUsername"
     }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Username: "), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
         type: "text",
@@ -77419,7 +77419,7 @@ function RegistrationView(props) {
         onClick: handleSubmit
     }, "Submit"))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Footer, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, "Already registered? ", /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.Link, {
         to: "/"
-    }, "Sign in"), " here")))))));
+    }, "Sign in"), " here"))))));
 }
 _c = RegistrationView;
 RegistrationView.propTypes = {

@@ -74,7 +74,6 @@ export function RegistrationView(props) {
         <Container className="registration-view">
             <Row className="justify-content-center">
             <Col xxl={8} xl={8} lg={9} md={10} sm={12}>
-            <CardGroup>
                 <Card>
                     <Card.Body>
                     <Card.Title>Register a new account</Card.Title>
@@ -135,7 +134,6 @@ export function RegistrationView(props) {
                         <Card.Text>Already registered? <Link to={'/'}>Sign in</Link> here</Card.Text>
                     </Card.Footer>
                 </Card>
-            </CardGroup>
             </Col>
             </Row>
         </Container>
