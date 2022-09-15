@@ -10,23 +10,3 @@
 .main-view {
     padding-top: 90px;
 }
-
-.profile-view {
-    background-image: url('../../../img/vhs-pic-sm.jpg');
-    background-position-x: -800px;
-    background-position-y: 0px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: #ccc;
-    background-blend-mode: multiply;
-    height: 1400px;
-    padding: 50px;
-    position: relative;
-}
-
-@media all and (max-width: 615px) {
-    .login-view,
-    .registration-view {
-        padding-top: 50px;
-    }
-} 
