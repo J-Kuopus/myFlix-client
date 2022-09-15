@@ -48,3 +48,31 @@
         background-attachment: fixed;
     }
 }
+
+@media all and (max-width: 500px) {
+    .logo-img {
+        width: 250px;
+    }
+
+    .welcome-text {
+        font-size: 24px;
+       
+    }
+
+    .slogan {
+        font-size: 16px;
+    }
+
+    .login-view {
+        padding: 40px;
+    }
+
+
+}
+
+@media all and (max-width: 380px) {
+    .logo-img {
+        width: 220px;
+    }
+
+}
