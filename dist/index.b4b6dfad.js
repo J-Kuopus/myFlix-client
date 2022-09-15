@@ -37223,7 +37223,6 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
                             className: "main-view"
                         });
                         return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, {
-                            className: "profile-view",
                             xxl: 8,
                             xl: 8,
                             lg: 9,
@@ -42841,6 +42840,7 @@ function LoginView(props) {
         className: "login-form",
         noValidate: true
     }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+        className: "login-input",
         controlId: "formUsername"
     }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Username:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
         type: "text",
@@ -42849,6 +42849,7 @@ function LoginView(props) {
             return setUsername(e.target.value);
         }
     }), usernameErr && /*#__PURE__*/ _react["default"].createElement("p", null, usernameErr)), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+        className: "login-input",
         controlId: "formPassword"
     }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Password:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
         type: "password",
@@ -77375,7 +77376,14 @@ function RegistrationView(props) {
         lg: 9,
         md: 10,
         sm: 12
-    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, "Register a new account"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Header, null, "Please enter the following information:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, {
+        className: "reg-card"
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement("h1", null, "Register a new account"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Header, {
+        className: "reg-header"
+    }, "Please enter the following information:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form, {
+        className: "reg-form"
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+        className: "reg-input",
         controlId: "formBasicUsername"
     }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Username: "), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
         type: "text",
@@ -77385,6 +77393,7 @@ function RegistrationView(props) {
         },
         placeholder: "Must be at least 5 characters long"
     }), usernameErr && /*#__PURE__*/ _react["default"].createElement("p", null, usernameErr), " "), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+        className: "reg-input",
         controlId: "formBasicPassword"
     }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Password: "), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
         type: "password",
@@ -77394,6 +77403,7 @@ function RegistrationView(props) {
         },
         placeholder: "Must be at least 6 characters long"
     }), passwordErr && /*#__PURE__*/ _react["default"].createElement("p", null, passwordErr)), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+        className: "reg-input",
         controlId: "formBasicEmail"
     }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Email: "), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
         type: "email",
@@ -77401,10 +77411,11 @@ function RegistrationView(props) {
         onChange: function onChange(e) {
             return setEmail(e.target.value);
         },
-        placeholder: "Enter your email address"
+        placeholder: "Enter valid email address"
     }), emailErr && /*#__PURE__*/ _react["default"].createElement("p", null, emailErr), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Text, {
         className: "muted"
     }, "We'll never share your email with anyone else.")), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+        className: "reg-input",
         controlId: "formBasicBirthdate"
     }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Birthday: "), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
         type: "date",
@@ -77767,9 +77778,11 @@ Object.defineProperty(exports, "__esModule", {
 exports.ProfileView = ProfileView;
 var _react = _interopRequireWildcard(require("react"));
 var _reactBootstrap = require("react-bootstrap");
+var _reactRouterDom = require("react-router-dom");
 require("./profile-view.scss");
 var _axios = _interopRequireDefault(require("axios"));
 var _movieCard = require("../movie-card/movie-card");
+var _io = require("react-icons/io5");
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
         "default": obj
@@ -77954,23 +77967,36 @@ function ProfileView(props) {
             }));
         }));
     };
-    return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, {
+    return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Container, {
+        className: "profile-view"
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, {
         className: "profile-card"
-    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, /*#__PURE__*/ _react["default"].createElement("span", {
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactRouterDom.Link, {
+        to: "/"
+    }, /*#__PURE__*/ _react["default"].createElement(_io.IoArrowBackCircleSharp, {
+        className: "profile-back-arrow"
+    })), /*#__PURE__*/ _react["default"].createElement("h1", null, "Profile Info"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.ListGroup, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.ListGroup.Item, {
+        className: "profile-text"
+    }, /*#__PURE__*/ _react["default"].createElement("span", {
         className: "label"
-    }, "Profile Info")), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
+    }, "Username: "), user.Username), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.ListGroup.Item, {
+        className: "profile-text"
+    }, /*#__PURE__*/ _react["default"].createElement("span", {
         className: "label"
-    }, "Username: "), user.Username), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
+    }, "Password: "), "******"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.ListGroup.Item, {
+        className: "profile-text"
+    }, /*#__PURE__*/ _react["default"].createElement("span", {
         className: "label"
-    }, "Password: "), "******"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
+    }, "Email: "), user.Email), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.ListGroup.Item, {
+        className: "profile-text"
+    }, /*#__PURE__*/ _react["default"].createElement("span", {
         className: "label"
-    }, "Email: "), user.Email), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Text, null, /*#__PURE__*/ _react["default"].createElement("span", {
-        className: "label"
-    }, "Birthday: "), user.Birthday)))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, {
-        className: "profile-card"
-    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, /*#__PURE__*/ _react["default"].createElement("span", {
-        className: "label"
-    }, "Edit profile info")), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+    }, "Birthday: "), user.Birthday))))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, {
+        className: "edit-card"
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement("h2", null, "Edit profile info"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Header, null, "Enter the info you would like to change here."), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form, {
+        className: "edit-form"
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+        className: "edit-input",
         controlId: "formUsername"
     }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Username:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
         type: "text",
@@ -77981,6 +78007,7 @@ function ProfileView(props) {
         placeholder: "Username",
         required: true
     }), usernameErr && /*#__PURE__*/ _react["default"].createElement("p", null, usernameErr), " "), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+        className: "edit-input",
         controlId: "formPassword"
     }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Password:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
         type: "password",
@@ -77991,6 +78018,7 @@ function ProfileView(props) {
         placeholder: "Password",
         required: true
     }), passwordErr && /*#__PURE__*/ _react["default"].createElement("p", null, passwordErr)), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+        className: "edit-input",
         controlId: "formEmail"
     }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Email:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
         type: "text",
@@ -78001,6 +78029,7 @@ function ProfileView(props) {
         placeholder: "Email",
         required: true
     }), emailErr && /*#__PURE__*/ _react["default"].createElement("p", null, emailErr)), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Group, {
+        className: "edit-input",
         controlId: "formBirthday"
     }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Label, null, "Birthday:"), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Form.Control, {
         type: "date",
@@ -78015,14 +78044,12 @@ function ProfileView(props) {
         variant: "primary",
         type: "submit",
         onClick: handleSubmit
-    }, "Edit profile")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
+    }, "Submit")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Button, {
         variant: "secondary",
         onClick: handleDelete
     }, "Delete profile")))), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Row, null, /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement("p", null), /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card, {
-        className: "profile-card"
-    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Title, null, /*#__PURE__*/ _react["default"].createElement("span", {
-        className: "label"
-    }, "Favorite Movies")), renderFavourites()))));
+        className: "fav-card"
+    }, /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/ _react["default"].createElement("h3", null, "Favorite Movies"), renderFavourites()))));
 }
 _c = ProfileView;
 var _c;
@@ -78033,7 +78060,7 @@ $RefreshReg$(_c, "ProfileView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","react-bootstrap":"3AD9A","./profile-view.scss":"eyKYH","axios":"jo6P5","../movie-card/movie-card":"bwuIu","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"eyKYH":[function() {},{}],"bNPgg":[function(require,module,exports) {
+},{"react":"21dqq","react-bootstrap":"3AD9A","./profile-view.scss":"eyKYH","axios":"jo6P5","../movie-card/movie-card":"bwuIu","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-icons/io5":"1cRHe","react-router-dom":"cHIiW"}],"eyKYH":[function() {},{}],"bNPgg":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$8fd2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
