@@ -2,15 +2,11 @@
 @import "https://fonts.googleapis.com/css2?family=Montserrat&display=swap";
 @import "https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap";
 .movie-card-col {
-  padding: 20px;
+  padding-top: 100px;
 }
 
 .genre-view, .director-view {
   padding-top: 50px;
-}
-
-.main-view {
-  padding-top: 90px;
 }
 
 .login-card {
@@ -64,8 +60,34 @@
   }
 }
 
+@media (max-width: 500px) {
+  .logo-img {
+    width: 250px;
+  }
+
+  .welcome-text {
+    font-size: 24px;
+  }
+
+  .slogan {
+    font-size: 16px;
+  }
+
+  .login-view {
+    padding: 40px;
+  }
+}
+
+@media (max-width: 380px) {
+  .logo-img {
+    width: 220px;
+  }
+}
+
 .movie-card {
   height: 100%;
+  margin-left: 15px;
+  margin-right: 15px;
   transition: transform .3s;
 }
 
@@ -175,6 +197,20 @@
 @media (max-width: 992px) {
   .registration-view {
     background-attachment: fixed;
+  }
+}
+
+@media (max-width: 500px) {
+  .reg-card h1 {
+    font-size: 24px;
+  }
+
+  .registration-view {
+    padding: 40px;
+  }
+
+  .reg-form {
+    padding: 10px;
   }
 }
 
