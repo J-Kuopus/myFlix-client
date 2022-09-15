@@ -59,13 +59,13 @@ export function LoginView(props) {
             <Row className="justify-content-center">
             <Col xxl={8} xl={8} lg={9} md={10} sm={12}>
             <div className='title-wrapper'>
-                        <img src={RV} alt="retro video logo" />
+                        <img className="logo-img" src={RV} alt="retro video logo" />
                         <h1 className="welcome-text">Welcome to Retro Video!</h1>
                         <p className="slogan">A mini movie database that's a blast from the past.</p>
             </div>
                 <Card className="login-card">
                     <Card.Body>
-                    <Card.Header>Please enter your username and password to enter.</Card.Header>
+                    <Card.Header className="login-header">Please enter your username and password to enter.</Card.Header>
                     <Form className="login-form" noValidate>
                         <Form.Group className="login-input" controlId="formUsername">
                             <Form.Label>Username:</Form.Label>
