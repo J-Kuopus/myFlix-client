@@ -67,7 +67,7 @@ export function LoginView(props) {
                     <Card.Body>
                     <Card.Header>Please enter your username and password to enter.</Card.Header>
                     <Form className="login-form" noValidate>
-                        <Form.Group controlId="formUsername">
+                        <Form.Group className="login-input" controlId="formUsername">
                             <Form.Label>Username:</Form.Label>
                             <Form.Control 
                                 type ="text"
@@ -78,7 +78,7 @@ export function LoginView(props) {
                             {usernameErr && <p>{usernameErr}</p>}
                         </Form.Group>
                                 
-                        <Form.Group controlId="formPassword">
+                        <Form.Group className="login-input" controlId="formPassword">
                             <Form.Label>Password:</Form.Label>
                                 <Form.Control 
                                     type="password"
