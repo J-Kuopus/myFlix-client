@@ -74,12 +74,12 @@ export function RegistrationView(props) {
         <Container className="registration-view">
             <Row className="justify-content-center">
             <Col xxl={8} xl={8} lg={9} md={10} sm={12}>
-                <Card>
+                <Card className="reg-card">
                     <Card.Body>
-                    <Card.Title>Register a new account</Card.Title>
-                    <Card.Header>Please enter the following information:</Card.Header>
-                    <Form>
-                        <Form.Group controlId="formBasicUsername">
+                    <h1>Register a new account</h1>
+                    <Card.Header className="reg-header">Please enter the following information:</Card.Header>
+                    <Form className="reg-form">
+                        <Form.Group className="reg-input" controlId="formBasicUsername">
                         <Form.Label>Username: </Form.Label>
                         <Form.Control
                             type="text" 
@@ -90,7 +90,7 @@ export function RegistrationView(props) {
                         {usernameErr && <p>{usernameErr}</p>} {/* Displays validation error */}
                         </Form.Group>
 
-                        <Form.Group controlId="formBasicPassword">
+                        <Form.Group className="reg-input" controlId="formBasicPassword">
                         <Form.Label>Password: </Form.Label>
                         <Form.Control 
                             type="password" 
@@ -100,13 +100,13 @@ export function RegistrationView(props) {
                         />{passwordErr && <p>{passwordErr}</p>}
                         </Form.Group>
 
-                        <Form.Group controlId="formBasicEmail">
+                        <Form.Group className="reg-input" controlId="formBasicEmail">
                         <Form.Label>Email: </Form.Label>
                         <Form.Control 
                             type="email" 
                             value={email} 
                             onChange={e => setEmail(e.target.value)}
-                            placeholder="Enter your email address"
+                            placeholder="Enter valid email address"
                         />
                         {emailErr && <p>{emailErr}</p>}
                         <Form.Text className="muted">
@@ -114,7 +114,7 @@ export function RegistrationView(props) {
                         </Form.Text>
                         </Form.Group>
 
-                        <Form.Group controlId="formBasicBirthdate">
+                        <Form.Group className="reg-input" controlId="formBasicBirthdate">
                         <Form.Label>Birthday: </Form.Label>
                         <Form.Control 
                             type="date" 
