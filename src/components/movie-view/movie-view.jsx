@@ -69,7 +69,6 @@ export class MovieView extends React.Component {
           {
             headers: { Authorization: `Bearer ${token}` },
           }).then((response) => {
-            console.log(response.data);
             alert(
               `${this.props.movie.Title} has been removed from your favorites!`
             );
