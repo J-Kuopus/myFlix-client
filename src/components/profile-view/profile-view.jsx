@@ -5,21 +5,14 @@ import './profile-view.scss';
 import axios from 'axios';
 import { MovieCard } from '../movie-card/movie-card';
 import { IoArrowBackCircleSharp } from "react-icons/io5";
+import { Formik } from 'formik';
+import * as yup from 'yup';
 
 export function ProfileView(props) {
   const [ user, setUser ] = useState(props.user);
   const [ movies, setMovies ] = useState(props.movies);
   const [ favoriteMovies, setFavoriteMovies ] = useState([]);
-  const [ username, setUsername] = useState('');
-  const [ password, setPassword] = useState('');
-  const [ email, setEmail ] = useState('');
-  const [ birthday, setBirthday] = useState('');
 
-  // Declare hook for each input
-  const [ usernameErr, setUsernameErr ] = useState('');
-  const [ passwordErr, setPasswordErr ] = useState('');
-  const [ emailErr, setEmailErr ] = useState('');
-  
   const currentUser = localStorage.getItem('user');
   const token = localStorage.getItem('token');
 
@@ -52,62 +45,6 @@ export function ProfileView(props) {
     catch(error => console.error(error))
   }
 
-  // Validate user inputs
-    const validate = () => {
-      let isReq = true;
-      if(!username) {
-          setUsernameErr('Username is required');
-          isReq = false;
-      } else if (username.length < 5) {
-          setUsernameErr('Username must be at least 5 characters long')
-          isReq = false;
-      }
-      if (!password) {
-          setPasswordErr('Password is required, must be at least 6 characters long');
-          isReq = false;
-      } else if(password.length < 6){
-          setPasswordErr('Password must be at least 6 characters long');
-          isReq = false;
-      }
-      if (!email) {
-        setEmailErr('Please enter email address');
-          isReq = false;
-      } else if(email.indexOf('@') === -1) {
-          setEmail('Email must be a valid email address');
-          isReq = false
-      }
-
-        return isReq;
-    }
-
-  // UPDATES user profile
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const isReq = validate();
-    if (isReq) {
-      const token = localStorage.getItem('token');
-      axios.put(`https://powerful-coast-48240.herokuapp.com/users/${currentUser}`, {
-        Username: username,
-        Password: password,
-        Email: email,
-        Birthday: birthday
-      },
-      {
-        headers: { Authorization: `Bearer ${token}`}
-      })
-      .then(response => {
-        console.log(response.data);
-        alert('Profile was successfully updated!');
-        localStorage.setItem('user', response.data.Username);
-        window.open('/users/' + response.data.Username, '_self');
-      })
-      .catch(error => {
-        console.error(error);
-        alert('Unable to update profile.');
-      });
-    }
-  };
-
   const renderFavourites = () => {
     if (movies.length + 0) {
 
@@ -128,76 +65,159 @@ export function ProfileView(props) {
   }
 
     return (
-        <Container className="profile-view">
-          <Row>
-            <Col>
-              <Card className="profile-card">
-                <Card.Body>
-                  <Link to={'/'}>
-                    <IoArrowBackCircleSharp className='profile-back-arrow'/>
-                  </Link>
-                  <h1>Profile Info</h1>
-                  <ListGroup>
-                      <ListGroup.Item className="profile-text"><span className="label">Username: </span>{user.Username}</ListGroup.Item>
-                      <ListGroup.Item className="profile-text"><span className="label">Password: </span>******</ListGroup.Item>
-                      <ListGroup.Item className="profile-text"><span className="label">Email: </span>{user.Email}</ListGroup.Item>
-                      <ListGroup.Item className="profile-text"><span className="label">Birthday: </span>{user.Birthday}</ListGroup.Item>
-                  </ListGroup>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col>
-              <Card className="edit-card">
-                <Card.Body> 
-                  <h2>Edit profile info</h2>
-                  <Card.Header>Enter the info you would like to change here.</Card.Header>
-                  <Form className="edit-form">
 
-                    <Form.Group className="edit-input" controlId="formUsername">
-                      <Form.Label>Username:</Form.Label>
-                      <Form.Control type="text" value={username} onChange={e => setUsername(e.target.value)} placeholder="Username" required/>
-                      {/* display validation error */}
-                      {usernameErr && <p>{usernameErr}</p>} {/* Displays validation error */}
-                      </Form.Group>
+      <Container>
+        <Formik
+           validationSchema={yup.object({
+            username: yup.string()
+            .min(5, 'Must be at least 5 characters')
+            .required('Required'),
+            password: yup.string()
+            .min(6, 'Must be at least 6 characters')
+            .required('Required'),
+            email: yup.string().email('Invalid email').required('Required'),
+            birthday: yup.string(),
+            })}
 
-                      <Form.Group className="edit-input" controlId="formPassword">
-                        <Form.Label>Password:</Form.Label>
-                        <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" required />
-                        {/* display validation error */}
-                        {passwordErr && <p>{passwordErr}</p>}
-                      </Form.Group>
+            onSubmit={(values, { resetForm }) => {
+              resetForm();
+              axios.put(`https://powerful-coast-48240.herokuapp.com/users/${currentUser}`, {
+                  Username: values.username,
+                  Password: values.password,
+                  Email: values.email,
+                  Birthday: values.birthday
+              },
+              {
+                headers: { Authorization: `Bearer ${token}`}
+              })
+              .then(response => {
+                  alert('Profile was successfully updated!');
+                  localStorage.setItem('user', response.data.Username);
+                  window.open('/users/' + response.data.Username, '_self');
+              })
+              .catch(error => {
+                  console.error(error);
+                  alert('Unable to update profile! Please check that your data is correct.');
+              });
+          }}
 
-                      <Form.Group className="edit-input" controlId="formEmail">
-                        <Form.Label>Email:</Form.Label>
-                        <Form.Control type="text" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" required />
-                        {/* display validation error */}
-                        {emailErr && <p>{emailErr}</p>}
-                      </Form.Group>
+            initialValues={{
+              username: "",
+              password: "",
+              email: "",
+              birthday: ""
+            }}
+        >
+          {({
+            handleSubmit,
+            handleChange,
+            resetForm,
+            touched,
+            values,
+            errors,
+          }) => (
+                  <Container className="profile-view">
+                    <Row>
+                      <Col>
+                        <Card className="profile-card">
+                          <Card.Body>
+                            <Link to={'/'}>
+                            <IoArrowBackCircleSharp className='profile-back-arrow'/>
+                            </Link>
+                            <h1>Profile Info</h1>
+                            <ListGroup>
+                              <ListGroup.Item className="profile-text"><span className="label">Username: </span>{user.Username}</ListGroup.Item>
+                              <ListGroup.Item className="profile-text"><span className="label">Password: </span>******</ListGroup.Item>
+                              <ListGroup.Item className="profile-text"><span className="label">Email: </span>{user.Email}</ListGroup.Item>
+                              <ListGroup.Item className="profile-text"><span className="label">Birthday: </span>{user.Birthday}</ListGroup.Item>
+                            </ListGroup>
+                          </Card.Body>
+                        </Card>
+                      </Col>
+                      <Col>
+                        <Card className="edit-card">
+                          <Card.Body> 
+                            <h2>Edit profile info</h2>
+                            <Card.Header>Enter the info you would like to change here.</Card.Header>
+                            <Form className="edit-form">
+                              <Form.Group className="edit-input">
+                                <Form.Label>Username:</Form.Label>
+                                <Form.Control 
+                                  type="text" 
+                                  value={values.username} 
+                                  onChange={handleChange("username")} 
+                                  placeholder="Enter new username"
+                                  isInvalid={touched.username && !!errors.username}
+                                />
+                                <Form.Control.Feedback type="invalid">
+                                  {errors.username}
+                                </Form.Control.Feedback>
+                              </Form.Group>
 
-                      <Form.Group className="edit-input" controlId="formBirthday">
-                        <Form.Label>Birthday:</Form.Label>
-                        <Form.Control type="date" value={birthday} onChange={e => setBirthday(e.target.value)} />
-                      </Form.Group>
-                      <Form.Group controlId="formBirthday" className="mt-3">
-                        <Button  variant="primary" type="submit" onClick={handleSubmit}>Submit</Button>
-                      </Form.Group>
+                              <Form.Group className="edit-input">
+                                <Form.Label>Password:</Form.Label>
+                                <Form.Control 
+                                  type="password" 
+                                  value={values.password} 
+                                  onChange={handleChange("password")} 
+                                  placeholder="Enter new password"
+                                  isInvalid={touched.password && !!errors.password} 
+                                />
+                                <Form.Control.Feedback type="invalid">
+                                  {errors.password}
+                                </Form.Control.Feedback>
+                              </Form.Group>
 
-                  </Form>
-                  </Card.Body>
-                  <Button variant="secondary" onClick={handleDelete}>Delete profile</Button>
-              </Card>
-            </Col>
-          </Row>
-          <Row>
-              <p></p>
-              <p></p>
-              <Card className="fav-card">
-                <Card.Body>
-                  <h3>Favorite Movies</h3>
-                  {renderFavourites()}
-                </Card.Body>
-              </Card>
-          </Row>
-        </Container>
-      );
-  };
+                              <Form.Group className="edit-input">
+                                <Form.Label>Email:</Form.Label>
+                                <Form.Control 
+                                  type="email" 
+                                  value={values.email} 
+                                  onChange={handleChange("email")} 
+                                  placeholder="Enter new email"
+                                  isInvalid={touched.email && !!errors.email} 
+                                />
+                                <Form.Text className="muted">
+                                  We'll never share your email with anyone else.
+                                </Form.Text>
+                                <Form.Control.Feedback type="invalid">
+                                  {errors.email}
+                                </Form.Control.Feedback>
+                              </Form.Group>
+
+                              <Form.Group className="edit-input">
+                                <Form.Label>Birthday:</Form.Label>
+                                  <Form.Control 
+                                    type="date" 
+                                    value={values.birthday} 
+                                    onChange={handleChange("birthday")} 
+                                    placeholder="Enter birthdate (optional)"
+                                  />
+                              </Form.Group>
+                              <Button variant="secondary" onClick={resetForm}>Clear</Button>{' '}
+                              <Button  variant="primary" type="submit" onClick={handleSubmit}>Submit</Button>
+                            </Form>
+                          </Card.Body>
+                          <Card.Footer>
+                            <Card.Text>Click here to delete your profile. This cannot be undone.</Card.Text>
+                            <Button className="delete-button" variant="danger" onClick={handleDelete}>Delete profile</Button>
+                          </Card.Footer>
+                        </Card>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <p></p>
+                      <p></p>
+                      <Card className="fav-card">
+                        <Card.Body>
+                          <h3>Favorite Movies</h3>
+                          {renderFavourites()}
+                        </Card.Body>
+                      </Card>
+                    </Row>
+                  </Container>
+                )}
+        </Formik>
+      </Container>
+    );
+}
