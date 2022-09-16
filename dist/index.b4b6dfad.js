@@ -37065,8 +37065,8 @@ var MainView = /*#__PURE__*/ function(_React$Component) {
                         /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are 
           passed as a prop to the LoginView */ if (!user) return /*#__PURE__*/ _react["default"].createElement(_reactBootstrap.Col, {
                             xxl: 8,
-                            xl: 8,
-                            lg: 9,
+                            xl: 10,
+                            lg: 10,
                             md: 10,
                             sm: 12
                         }, /*#__PURE__*/ _react["default"].createElement(_loginView.LoginView, {

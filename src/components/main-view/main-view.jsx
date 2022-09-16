@@ -74,7 +74,7 @@ class MainView extends React.Component {
             /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are 
             passed as a prop to the LoginView */
             if (!user) return (
-              <Col xxl={8} xl={8} lg={9} md={10} sm={12}>
+              <Col xxl={8} xl={10} lg={10} md={10} sm={12}>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
               </Col>
               );
