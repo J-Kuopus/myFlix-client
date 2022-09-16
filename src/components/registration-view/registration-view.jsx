@@ -41,7 +41,7 @@ export function RegistrationView() {
                     console.error(response);
                     alert('Unable to register! Please check that your data is correct.');
                 });
-          }}
+            }}
           
             initialValues={{
                 username: "",
@@ -116,8 +116,8 @@ export function RegistrationView() {
                                                 <Form.Label>Birthday: </Form.Label>
                                                 <Form.Control 
                                                     type="date" 
-                                                        value={values.birthday} 
-                                                onChange={handleChange("birthday")} 
+                                                    value={values.birthday} 
+                                                    onChange={handleChange("birthday")} 
                                                     placeholder="Enter birthdate (optional)"
                                                 />
                                             </Form.Group>
