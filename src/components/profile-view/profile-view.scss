@@ -48,9 +48,10 @@
     background-color: #333;
     background-blend-mode: exclusion;
     background-attachment: local;
-    height: 1300px;
+    height: 1500px;
     padding: 50px;
     position: relative;
+    margin-top: 100px;
 }
 
 .edit-card {
@@ -80,4 +81,9 @@
     font-size: 25px;
     font-weight: bold;
     text-align: center;
+}
+
+.delete-button {
+    width: 150px;
+    margin-left: 15px;
 }
