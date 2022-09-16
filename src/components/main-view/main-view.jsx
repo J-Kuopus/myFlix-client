@@ -29,7 +29,7 @@ class MainView extends React.Component {
     let accessToken = localStorage.getItem('token');
       if (accessToken !== null) {
         this.setState({
-          user: localStorage.getItem('user')
+          user: localStorage.getItem('user'),
         });
         this.getMovies(accessToken);
       }
@@ -54,7 +54,7 @@ class MainView extends React.Component {
     .then(response => {
       // Assign the result to the state
       this.setState({
-        movies: response.data
+        movies: response.data,
       });
     })
     .catch(function (error) {
@@ -80,12 +80,12 @@ class MainView extends React.Component {
               );
 
             // Before the movies have been loaded
-            if (movies.length === 0) return <div className="main-view" />;   
+            if (movies.length === 0) return <div className="main-view"/>;   
 
             return movies.map(m => (
               <Col className="movie-card-col" key={m._id}>
                 <NavbarView user={user} /> 
-                <MovieCard movie={m} />
+                <MovieCard movie={m} />      
               </Col>
             ))
           }} />
