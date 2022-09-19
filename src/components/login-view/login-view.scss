@@ -65,6 +65,11 @@
 
     .login-view {
         padding: 40px;
+        background-image: none;
+    }
+
+    .login-header {
+        display: none;
     }
 
 
@@ -73,6 +78,15 @@
 @media all and (max-width: 380px) {
     .logo-img {
         width: 220px;
+    }
+
+    .login-card {
+        padding: 0px;
+    }
+
+    .login-view {
+        padding: 10px;
+        padding-top: 30px;
     }
 
 }
