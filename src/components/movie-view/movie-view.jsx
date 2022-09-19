@@ -88,10 +88,10 @@ export class MovieView extends React.Component {
 
         return (
             <Container className="movie-view">
-                <Row>
-                    <Col lg={10}>
+              <IoArrowBackCircleSharp className='back-arrow' onClick={() => { onBackClick(null); }}/>
                       <Card className="movie-info">
-                        <IoArrowBackCircleSharp className='back-arrow' onClick={() => { onBackClick(null); }}/>
+                        <Row>
+                          <Col>
                         <ListGroup className="info-list">
                             <ListGroup.Item className="movie-title">{movie.Title}</ListGroup.Item>
                             <ListGroup.Item className="movie-genre">
@@ -108,17 +108,17 @@ export class MovieView extends React.Component {
                         {isFav && (
                             <Button  className="fav-button" variant="warning" onClick={this.removeFavMovie}>Remove from Favorites</Button>
                         )}
+                        </Col>
+                        <Col>
+                         <div className="img-wrapper">
+                            <img 
+                              className="movie-poster" 
+                              src={movie.ImagePath}
+                            />
+                        </div>
+                        </Col>
+                        </Row>
                       </Card> 
-                    </Col>
-                    <Col lg={2}>
-                    <div className="img-wrapper">
-                        <img 
-                            className="movie-poster" 
-                            src={movie.ImagePath}
-                        />
-                    </div>
-                    </Col>
-                </Row>
             </Container>
         );
     }
