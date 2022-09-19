@@ -51,7 +51,7 @@ export function ProfileView(props) {
       return (
         <Row className="justify-content-md-center">
 
-          {favoriteMovies.length === 0 ? (<h5>Add some movies to your list</h5>) : (
+          {favoriteMovies.length === 0 ? (<p>Add some movies to your list</p>) : (
             favoriteMovies.map((movieId, i) => (
               <Col className="fav-list" md={6} lg={4} key={`${i}-${movieId}`} >
                 <MovieCard movie={movies.find(m => m._id == movieId)} />
@@ -116,14 +116,14 @@ export function ProfileView(props) {
             values,
             errors,
           }) => (
-                  <Container className="profile-view">
+                  <div className="profile-view">
+                    <Link to={'/'}>
+                      <IoArrowBackCircleSharp className='profile-back-arrow'/>
+                    </Link>
                     <Row>
                       <Col>
                         <Card className="profile-card">
                           <Card.Body>
-                            <Link to={'/'}>
-                            <IoArrowBackCircleSharp className='profile-back-arrow'/>
-                            </Link>
                             <h1>Profile</h1>
                             <ListGroup>
                               <ListGroup.Item className="profile-text"><span className="label">Username: </span>{user.Username}</ListGroup.Item>
@@ -215,7 +215,7 @@ export function ProfileView(props) {
                         </Card.Body>
                       </Card>
                     </Row>
-                  </Container>
+                  </div>
                 )}
         </Formik>
       </Container>
