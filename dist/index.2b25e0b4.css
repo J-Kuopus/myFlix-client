@@ -74,13 +74,26 @@
   }
 
   .login-view {
+    background-image: none;
     padding: 40px;
+  }
+
+  .login-header {
+    display: none;
   }
 }
 
 @media (max-width: 380px) {
   .logo-img {
     width: 220px;
+  }
+
+  .login-card {
+    padding: 0;
+  }
+
+  .login-view {
+    padding: 30px 10px 10px;
   }
 }
 
@@ -103,10 +116,23 @@
   height: 100%;
 }
 
+@media (max-width: 710px) {
+  .movie-card {
+    max-width: 350px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .movie-card {
+    max-width: 300px;
+  }
+}
+
 .movie-view {
-  flex-direction: row;
+  margin-top: 90px;
   line-height: 30px;
-  display: flex;
 }
 
 .label {
@@ -114,6 +140,7 @@
 }
 
 .movie-info {
+  text-align: center;
   padding: 24px;
   box-shadow: 4px 4px 6px #333;
 }
@@ -124,9 +151,9 @@
 }
 
 .movie-poster {
+  width: 28rem;
   height: auto;
-  box-shadow: 4px 4px 6px #333;
-  max-width: 25rem !important;
+  border-radius: 5px;
 }
 
 .back-arrow {
@@ -140,8 +167,6 @@
 .back-arrow:hover {
   cursor: pointer;
   opacity: .7;
-  color: #333;
-  background-color: #fff;
 }
 
 .fav-button {
@@ -150,12 +175,41 @@
 }
 
 .info-list {
+  text-align: left;
   padding-bottom: 30px;
 }
 
 @media (max-width: 992px) {
-  .movie-view {
-    padding-top: 450px;
+  .img-wrapper {
+    padding-top: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .movie-poster {
+    width: 24rem;
+  }
+}
+
+@media (max-width: 490px) {
+  .movie-poster {
+    width: 20rem;
+  }
+
+  .movie-info {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 410px) {
+  .movie-poster {
+    width: 18rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .movie-poster {
+    width: 16rem;
   }
 }
 
@@ -206,6 +260,7 @@
   }
 
   .registration-view {
+    background-image: none;
     padding: 40px;
   }
 
@@ -274,7 +329,7 @@
   color: #fff;
   background-color: #333;
   border-radius: 50%;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   font-size: 40px;
 }
 
@@ -294,10 +349,6 @@
   padding: 15px;
 }
 
-.profile-card {
-  padding: 0;
-}
-
 .profile-card h1 {
   text-align: center;
   padding-bottom: 18px;
@@ -311,15 +362,14 @@
 
 .profile-view {
   background-blend-mode: exclusion;
-  height: 1500px;
+  height: 1400px;
   background-color: #333;
   background-image: url("vhs-pic-sm.e2d8eba7.jpg");
   background-position: bottom;
-  background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: local;
+  background-attachment: fixed;
   margin-top: 100px;
-  padding: 50px;
+  padding: 15px 25px;
   position: relative;
 }
 
@@ -357,15 +407,53 @@
   margin-left: 15px;
 }
 
+@media (max-width: 992px) {
+  .profile-view {
+    background-color: #c9c4c3;
+    background-image: none;
+    margin-top: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-card {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 570px) {
+  .profile-view {
+    padding: 5px 10px;
+  }
+}
+
 .navbar {
-  padding: 10px;
+  padding-right: 20px;
   font-family: Montserrat, sans-serif;
   font-size: 18px;
 }
 
 .navbar-brand {
+  padding-left: 15px;
+  padding-right: 15px;
   font-family: Permanent Marker, sans-serif;
   font-size: 27px !important;
+}
+
+.ham-menu {
+  margin-left: 20px;
+}
+
+@media (max-width: 350px) {
+  .navbar-logo {
+    width: 50px;
+    padding-top: 5px;
+  }
+
+  .navbar-brand {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
 }
 
 body {
