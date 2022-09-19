@@ -11,9 +11,23 @@
     }
 }
 
-
-
 .card-image {
-    object-fit:cover;
+    object-fit: cover;
     height: 100%;
+}
+
+@media all and (max-width: 710px) {
+    .movie-card {
+        margin-left: 10px;
+        margin-right: 10px;
+        max-width: 350px;
+    }
+
+}
+
+@media all and (max-width: 400px) {
+    .movie-card {
+        max-width: 300px;
+    }
+
 }
