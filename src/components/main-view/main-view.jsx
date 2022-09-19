@@ -83,7 +83,7 @@ class MainView extends React.Component {
             if (movies.length === 0) return <div className="main-view"/>;   
 
             return movies.map(m => (
-              <Col className="movie-card-col" lg="auto" /* sm={6} md={5} lg={4} xl={3} */ key={m._id}>
+              <Col className="movie-card-col"  xs="auto" /* sm={6} md={5} lg={4} xl={3} */ key={m._id}>
                 <NavbarView user={user} /> 
                 <MovieCard movie={m} />      
               </Col>
@@ -160,7 +160,7 @@ class MainView extends React.Component {
             if (movies.length === 0) return <div className="main-view" />;
 
             
-            return <Col xxl={8} xl={8} lg={9} md={10} sm={12}>
+            return <Col>
                       <NavbarView user={user} /> 
                       <ProfileView movies={movies}
                                    user={user === match.params.Username}
