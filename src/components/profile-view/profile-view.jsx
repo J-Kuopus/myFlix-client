@@ -124,7 +124,7 @@ export function ProfileView(props) {
                             <Link to={'/'}>
                             <IoArrowBackCircleSharp className='profile-back-arrow'/>
                             </Link>
-                            <h1>Profile Info</h1>
+                            <h1>Profile</h1>
                             <ListGroup>
                               <ListGroup.Item className="profile-text"><span className="label">Username: </span>{user.Username}</ListGroup.Item>
                               <ListGroup.Item className="profile-text"><span className="label">Password: </span>******</ListGroup.Item>
@@ -137,7 +137,7 @@ export function ProfileView(props) {
                       <Col>
                         <Card className="edit-card">
                           <Card.Body> 
-                            <h2>Edit profile info</h2>
+                            <h2>Edit profile</h2>
                             <Card.Header>Enter the info you would like to change here.</Card.Header>
                             <Form className="edit-form">
                               <Form.Group className="edit-input">
