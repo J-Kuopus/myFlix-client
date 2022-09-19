@@ -87,9 +87,9 @@ export class MovieView extends React.Component {
         let isFav = userFavMovies.includes(this.props.movie._id);
 
         return (
-            <Container className="movie-view d-flex position-absolute top-50 start-50 translate-middle">
+            <Container className="movie-view">
                 <Row>
-                    <Col xxl="8" xl="8" lg="6" md="4">
+                    <Col lg={10}>
                       <Card className="movie-info">
                         <IoArrowBackCircleSharp className='back-arrow' onClick={() => { onBackClick(null); }}/>
                         <ListGroup className="info-list">
@@ -102,9 +102,6 @@ export class MovieView extends React.Component {
                                 <span className="label">Released: </span>{movie.Released}</ListGroup.Item>
                             <ListGroup.Item><span className="label">Summary: </span>{movie.Description}</ListGroup.Item> 
                         </ListGroup>
-                        <p></p>
-                        <p></p>
-                        <p></p>
                         {!isFav && (
                             <Button  className="fav-button" variant="primary" onClick={this.addFavMovie}>Add to Favorites</Button>
                             )}
@@ -113,10 +110,10 @@ export class MovieView extends React.Component {
                         )}
                       </Card> 
                     </Col>
-                    <Col xxl="4" xl="4" lg="6" md="4">
+                    <Col lg={2}>
                     <div className="img-wrapper">
                         <img 
-                            className="movie-poster d-block" 
+                            className="movie-poster" 
                             src={movie.ImagePath}
                         />
                     </div>
