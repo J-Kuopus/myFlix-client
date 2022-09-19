@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import './main-view.scss';
 
@@ -67,7 +67,7 @@ class MainView extends React.Component {
 
     return (
       <Router>
-        <Row className="main-view justify-content-md-center" xs={1} md={3} lg={4} xl={5}>
+        <Row className="main-view justify-content-center">
           <Route exact path="/" 
                  render={() => {
             
@@ -83,7 +83,7 @@ class MainView extends React.Component {
             if (movies.length === 0) return <div className="main-view"/>;   
 
             return movies.map(m => (
-              <Col className="movie-card-col" key={m._id}>
+              <Col className="movie-card-col" lg="auto" /* sm={6} md={5} lg={4} xl={3} */ key={m._id}>
                 <NavbarView user={user} /> 
                 <MovieCard movie={m} />      
               </Col>
