@@ -1,5 +1,7 @@
 .movie-view {
     line-height: 30px;
+    display: flex;
+    flex-direction: row;
 }
 
 .label {
@@ -41,7 +43,25 @@
     box-shadow: 1px 1px 2px #333;
 }
 
-@media all and (max-width: 768px) {
+.info-list {
+    padding-bottom: 30px;
+}
+
+@media all and (max-width: 992px) {
+    .movie-view {
+        padding-top: 450px;
+    }
+
+    
+   
+}
+
+
+
+
+
+
+/* @media all and (max-width: 768px) {
     .movie-view {
     padding-top: 320px;
     }
@@ -51,4 +71,4 @@
     .movie-view {
         padding-top: 400px;
     }
-}
+} */
