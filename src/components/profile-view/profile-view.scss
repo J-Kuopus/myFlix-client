@@ -6,7 +6,7 @@
     font-size: 40px;
     background-color: #333;
     color: #fff;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     border-radius: 50%;
     &:hover {
         cursor: pointer;
@@ -25,10 +25,6 @@
     padding: 15px;
 }
 
-.profile-card {
-    padding: 0px;
-}
-
 .profile-card h1 {
     font-size: 25px;
     font-weight: bold;
@@ -44,12 +40,11 @@
     background-image: url('../../../img/vhs-pic-sm.jpg');
     background-position: center bottom;
     background-size: cover;
-    background-repeat: no-repeat;
     background-color: #333;
     background-blend-mode: exclusion;
-    background-attachment: local;
-    height: 1500px;
-    padding: 50px;
+    background-attachment: fixed;
+    height: 1400px;
+    padding: 15px 25px;
     position: relative;
     margin-top: 100px;
 }
@@ -86,4 +81,24 @@
 .delete-button {
     width: 150px;
     margin-left: 15px;
+}
+
+@media all and (max-width: 992px) {
+    .profile-view {
+        background-image: none;
+        background-color: #c9c4c3;
+        margin-top: 70px;
+    }
+}
+
+@media all and (max-width: 768px) {
+    .profile-card {
+        margin-bottom: 20px;
+    }
+}
+
+@media all and (max-width: 570px) {
+   .profile-view {
+    padding: 5px 10px;
+   }
 }
