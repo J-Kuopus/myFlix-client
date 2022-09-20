@@ -88,35 +88,35 @@ export class MovieView extends React.Component {
 
         return (
             <Container className="movie-view">
-              <IoArrowBackCircleSharp className='back-arrow' onClick={() => { onBackClick(null); }}/>
-                      <Card className="movie-info">
+              <IoArrowBackCircleSharp className='back-arrow' onClick={onBackClick}/>
+                      <Card className="movie-info" style={{ backgroundColor:'#333'}}>
                         <Row>
                           <Col>
-                        <ListGroup className="info-list">
-                            <ListGroup.Item className="movie-title">{movie.Title}</ListGroup.Item>
-                            <ListGroup.Item className="movie-genre">
+                            <ListGroup className="info-list">
+                              <ListGroup.Item className="movie-title">{movie.Title}</ListGroup.Item>
+                              <ListGroup.Item className="movie-genre">
                                 <span className="label">Genre: </span><Link to={`/genres/${movie.Genre.Name}`}>{movie.Genre.Name}</Link></ListGroup.Item>
-                            <ListGroup.Item className="movie-director">
+                              <ListGroup.Item className="movie-director">
                                 <span className="label">Director: </span><Link to={`/directors/${movie.Director.Name}`}>{movie.Director.Name}</Link></ListGroup.Item>
-                            <ListGroup.Item className="release-year">
+                              <ListGroup.Item className="release-year">
                                 <span className="label">Released: </span>{movie.Released}</ListGroup.Item>
-                            <ListGroup.Item><span className="label">Summary: </span>{movie.Description}</ListGroup.Item> 
-                        </ListGroup>
-                        {!isFav && (
+                              <ListGroup.Item><span className="label">Summary: </span>{movie.Description}</ListGroup.Item> 
+                            </ListGroup>
+                            {!isFav && (
                             <Button  className="fav-button" variant="primary" onClick={this.addFavMovie}>Add to Favorites</Button>
                             )}
-                        {isFav && (
+                            {isFav && (
                             <Button  className="fav-button" variant="warning" onClick={this.removeFavMovie}>Remove from Favorites</Button>
-                        )}
-                        </Col>
-                        <Col>
-                         <div className="img-wrapper">
-                            <img 
-                              className="movie-poster" 
-                              src={movie.ImagePath}
-                            />
-                        </div>
-                        </Col>
+                            )}
+                          </Col>
+                          <Col>
+                          <div className="img-wrapper">
+                              <img 
+                                className="movie-poster" 
+                                src={movie.ImagePath}
+                              />
+                          </div>
+                          </Col>
                         </Row>
                       </Card> 
             </Container>
