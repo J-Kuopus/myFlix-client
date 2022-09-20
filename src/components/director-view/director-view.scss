@@ -11,7 +11,8 @@
     font-size: 40px;
     background-color: #333;
     color: #fff;
-    margin: 5px;
+    margin-top: 90px;
+    margin-bottom: 20px;
     border-radius: 50%;
     &:hover {
         cursor: pointer;
@@ -20,3 +21,56 @@
         background-color: #fff;
     }
 }
+
+.director-info {
+    padding: 24px;
+    box-shadow: 4px 4px 6px #333;
+    text-align: center;
+}
+
+.director-photo {
+    width: 25rem;
+    height: auto;
+    border-radius: 5px;
+}
+
+.dir-info-list {
+    text-align: left;
+}
+
+@media all and (max-width: 992px) {
+    .director-photo {
+        width: 23rem;
+    }
+}
+
+@media all and (max-width: 768px) {
+    .dir-img-wrapper {
+        padding-top: 40px;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .director-photo {
+        width: 19rem;
+    }
+
+    .director-info {
+        padding: 18px;
+    }
+} 
+
+@media all and (max-width: 435px) {
+    .director-photo {
+        width: 16rem;
+    }
+}
+
+@media all and (max-width: 375px) {
+    .director-photo {
+        width: 14rem;
+    }
+}
+
+
+
