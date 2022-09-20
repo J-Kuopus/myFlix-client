@@ -12,6 +12,7 @@ import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
 import { ProfileView } from '../profile-view/profile-view';
 import { NavbarView } from '../navbar/navbar';
+import ScrollToTop from "../ScrollToTop/ScrollToTop";
 
 class MainView extends React.Component {
 
@@ -67,6 +68,7 @@ class MainView extends React.Component {
 
     return (
       <Router>
+        <ScrollToTop />
         <Row className="main-view justify-content-center">
           <Route exact path="/" 
                  render={() => {
@@ -74,7 +76,7 @@ class MainView extends React.Component {
             /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are 
             passed as a prop to the LoginView */
             if (!user) return (
-              <Col xxl={8} xl={10} lg={10} md={10} sm={12}>
+              <Col>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
               </Col>
               );
@@ -83,7 +85,7 @@ class MainView extends React.Component {
             if (movies.length === 0) return <div className="main-view"/>;   
 
             return movies.map(m => (
-              <Col className="movie-card-col"  xs="auto" /* sm={6} md={5} lg={4} xl={3} */ key={m._id}>
+              <Col className="movie-card-col"  xs="auto" key={m._id}>
                 <NavbarView user={user} /> 
                 <MovieCard movie={m} />      
               </Col>
@@ -95,7 +97,7 @@ class MainView extends React.Component {
                  render={() => {
             if (user) return <Redirect to="/" />
             
-            return <Col xxl={8} xl={8} lg={9} md={10} sm={12}>
+            return <Col>
                       <RegistrationView />
                    </Col> 
           }} />
@@ -103,7 +105,7 @@ class MainView extends React.Component {
           
           <Route path="/movies/:movieId" 
                  render={({ match, history }) => {
-            if (!user) return <Col xxl={6} xl={6} lg={7} md={8} sm={12}>
+            if (!user) return <Col>
                                   <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                               </Col>;
             
@@ -118,13 +120,13 @@ class MainView extends React.Component {
           
           <Route path="/directors/:name" 
                  render={({ match, history }) =>{
-            if (!user) return <Col xxl={8} xl={8} lg={9} md={10} sm={12}>
+            if (!user) return <Col>
                                   <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                                </Col>;
             
             if (movies.length === 0) return <div className="main-view" />;
             
-            return <Col className="director-view" xxl={6} xl={6} lg={7} md={8} sm={12}>
+            return <Col>
                     <NavbarView user={user} /> 
                     <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director} onBackClick={() => history.goBack()} />
                   </Col>
@@ -134,13 +136,13 @@ class MainView extends React.Component {
           
           <Route path="/genres/:name" 
                  render={({ match, history  }) =>{
-             if (!user) return <Col xxl={8} xl={8} lg={9} md={10} sm={12}>
+             if (!user) return <Col>
                                   <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                                 </Col>;
 
              if (movies.length === 0) return <div className="main-view" />;
              
-             return <Col className="genre-view" xxl={6} xl={6} lg={7} md={8} sm={12}>
+             return <Col>
                      <NavbarView user={user} /> 
                      <GenreView genre={movies.find((m) => m.Genre.Name === match.params.name).Genre}
                                 movies={movies} 
@@ -153,7 +155,7 @@ class MainView extends React.Component {
           <Route path={'/users/:Username'} 
                  render={( { history, match } ) => {
 
-            if (!user) return <Col xxl={8} xl={8} lg={9} md={10} sm={12}>
+            if (!user) return <Col>
                                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                               </Col>;
 
