@@ -10,12 +10,11 @@ export class GenreView extends React.Component {
 
         return (
             <Container>
+                <IoArrowBackCircleSharp className='back-arrow-genre' onClick={onBackClick}/> 
                 <Row>
                     <Col>
-                        <Card className="genre-card">
+                        <Card className="genre-card" style={{ backgroundColor:'#333'}}>
                             <Card.Body>
-                                <IoArrowBackCircleSharp className='back-arrow-genre' onClick={() => { onBackClick(); }}/> 
-                                <p></p>
                                 <ListGroup>
                                     <ListGroup.Item><span className="genre-label">{genre.Name} Genre</span></ListGroup.Item>
                                     <ListGroup.Item><span className="label">Description: </span></ListGroup.Item>
