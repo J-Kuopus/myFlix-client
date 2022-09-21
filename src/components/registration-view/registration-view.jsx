@@ -16,9 +16,11 @@ export function RegistrationView() {
             validationSchema={yup.object({
             username: yup.string()
             .min(5, 'Must be at least 5 characters')
+            .max(10, 'Should not exceed 10 characters')
             .required('Required'),
             password: yup.string()
             .min(6, 'Must be at least 6 characters')
+            .max(12, 'Should not exceed 12 characters')
             .required('Required'),
             email: yup.string().email('Invalid email').required('Required'),
             birthday: yup.string(),
