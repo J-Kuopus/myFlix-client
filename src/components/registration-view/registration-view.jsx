@@ -8,7 +8,7 @@ import * as yup from 'yup';
 
 
 export function RegistrationView() {
-    
+
     return (
     
     <Container>
@@ -17,12 +17,15 @@ export function RegistrationView() {
             username: yup.string()
             .min(5, 'Must be at least 5 characters')
             .max(10, 'Should not exceed 10 characters')
+            .matches(/^[a-zA-Z0-9]+$/,"Only alphanumeric characters allowed (A-Z, 0-9)")
             .required('Required'),
             password: yup.string()
             .min(6, 'Must be at least 6 characters')
-            .max(12, 'Should not exceed 12 characters')
+            .max(10, 'Should not exceed 10 characters')
             .required('Required'),
-            email: yup.string().email('Invalid email').required('Required'),
+            email: yup.string()
+            .email('Invalid email')
+            .required('Required'),
             birthday: yup.string(),
             })}
 
@@ -40,7 +43,6 @@ export function RegistrationView() {
                     window.open('/', '_self'); // '_self is needed so the page will open in current tab
                 })
                 .catch(response => {
-                    console.error(response);
                     alert('Unable to register! Please check that your data is correct.');
                 });
             }}
@@ -72,20 +74,26 @@ export function RegistrationView() {
                                             <Form.Group className="reg-input">
                                                 <Form.Label>Username: </Form.Label>
                                                 <Form.Control
+                                                    name="username"
                                                     type="text" 
                                                     value={values.username} 
                                                     onChange={handleChange("username")}
                                                     placeholder="Enter username"
                                                     isInvalid={touched.username && !!errors.username}
+                                                    onKeyUp={(e) => {
+                                                        if (new RegExp(/[a-zA-Z0-9]/).test(e.key)) {
+                                                        } else e.preventDefault();
+                                                      }}
                                                 />
                                                 <Form.Control.Feedback type="invalid">
-                                                    {errors.username}
+                                                   {errors.username}
                                                 </Form.Control.Feedback>
                                             </Form.Group>
     
                                             <Form.Group className="reg-input">
                                                 <Form.Label>Password: </Form.Label>
                                                 <Form.Control 
+                                                    name="password"
                                                     type="password" 
                                                     value={values.password} 
                                                     onChange={handleChange("password")}
@@ -124,7 +132,7 @@ export function RegistrationView() {
                                                 />
                                             </Form.Group>
                                             <Button variant="secondary" onClick={resetForm}>Clear</Button>{' '}
-                                            <Button variant="danger" onClick={handleSubmit}>Submit</Button>
+                                            <Button variant="danger" type="submit" onClick={handleSubmit}>Submit</Button>
                                         </Form>
                                     </Card.Body>
                                     <Card.Footer>

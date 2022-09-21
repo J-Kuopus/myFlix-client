@@ -16,10 +16,13 @@ export function LoginView(props) {
             <Formik
               validationSchema={yup.object({
                 username: yup.string()
-                .min(5, 'Username must be at least 5 characters')
+                .min(5, 'Must be at least 5 characters')
+                .max(10, 'Must not exceed 10 characters')
+                .matches(/^[a-zA-Z0-9]+$/,"Only alphanumeric characters allowed (A-Z, 0-9)")
                 .required('Required'),
                 password: yup.string()
-                .min(6, 'Password must be at least 6 characters')
+                .min(6, 'Must be at least 6 characters')
+                .max(10, 'Must not exceed 10 characters')
                 .required('Required')
               })}
               
@@ -34,7 +37,6 @@ export function LoginView(props) {
                     props.onLoggedIn(data);
                   })
                     .catch(response => {
-                        console.error(response);
                         alert('Unable to login! Please check that your data is correct.');
                     });
               }}
@@ -68,11 +70,16 @@ export function LoginView(props) {
                                                 <Form.Group className="login-input">
                                                     <Form.Label>Username:</Form.Label>
                                                     <Form.Control 
+                                                        name="username"
                                                         type ="text"
                                                         value={values.username} 
                                                         onChange={handleChange("username")} 
                                                         placeholder="Enter username"
                                                         isInvalid={touched.username && !!errors.username}
+                                                        onKeyUp={(e) => {
+                                                            if (new RegExp(/[a-zA-Z0-9]/).test(e.key)) {
+                                                            } else e.preventDefault();
+                                                          }}
                                                     />
                                                     <Form.Control.Feedback type="invalid">
                                                         {errors.username}
@@ -82,6 +89,7 @@ export function LoginView(props) {
                                                 <Form.Group className="login-input">
                                                     <Form.Label>Password:</Form.Label>
                                                     <Form.Control 
+                                                        name="password"
                                                         type="password"
                                                         value={values.password} 
                                                         onChange={handleChange("password")} 
@@ -93,7 +101,7 @@ export function LoginView(props) {
                                                     </Form.Control.Feedback>
                                                 </Form.Group>
                                                 <Button variant="secondary" onClick={resetForm}>Clear</Button>{' '}
-                                                <Button variant="danger" onClick={handleSubmit}>Let's Go!</Button>
+                                                <Button variant="danger" type="submit" onClick={handleSubmit}>Let's Go!</Button>
                                             </Form>
                                         </Card.Body>
                                         <Card.Footer>
