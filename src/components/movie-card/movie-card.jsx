@@ -10,11 +10,11 @@ export class MovieCard extends React.Component {
         const { movie } = this.props; // Extracts MovieCard data
         
         return (
-        <Link to={`/movies/${movie._id}`}>
-        <Card className="movie-card">
-            <Card.Img className="card-image" variant="top" src={movie.ImagePath} />
-        </Card>
-        </Link>
+        <div className="movie-card">
+            <Link to={`/movies/${movie._id}`}>
+                <Card.Img className="card-image" src={movie.ImagePath} />
+            </Link>
+        </div>
         );
     }
 }

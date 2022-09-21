@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
 import './navbar.scss';
 import image from '../../../img/rv-logo.png';
 
@@ -26,9 +25,7 @@ export function NavbarView() {
 
 
         return (
-            <Container>
-                <Navbar className="navbar" fixed="top" bg="dark" variant="dark" expand="lg">
-                    <Container>
+                <Navbar className="navbar" fixed="top" bg="dark" variant="dark" expand="md">
                         <Navbar.Brand as={Link}  to={'/'} className="navbar-brand">
                             <img
                                 src={image}
@@ -38,22 +35,20 @@ export function NavbarView() {
                             />{' '}
                             Retro Video
                         </Navbar.Brand>
-                    </Container>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
                     {isAuth() && (
-                    <Navbar.Collapse>
-                        <Nav className="me-auto">
-                            <Nav.Link to={'/'}>Hello, {user}</Nav.Link>
-                            <Nav.Link as={Link} to={`/users/${user}`}>Profile</Nav.Link>
-                            <Nav.Link onClick={() => { 
-                                onLoggedOut(); 
-                            }}>Logout
-                            </Nav.Link>
-                        </Nav>
-                    </Navbar.Collapse>
+                        <Navbar.Collapse className='ham-menu'>
+                            <Nav>
+                                <Nav.Link as={Link} to={`/users/${user}`}>Hello, {user}</Nav.Link>
+                                <Nav.Link as={Link} to={`/users/${user}`}>Profile</Nav.Link>
+                                <Nav.Link onClick={() => { 
+                                 onLoggedOut(); 
+                                }}>Logout
+                                </Nav.Link>
+                            </Nav>
+                        </Navbar.Collapse>
                     )}
                 </Navbar>
-            </Container>
         );
 }

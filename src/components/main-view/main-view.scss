@@ -1,15 +1,8 @@
 .movie-card-col {
-    padding: 20px;
+    padding-top: 100px;
 }
 
-.genre-view,
-.director-view {
-    padding-top: 50px;
+.main-view {
+    padding-bottom: 100px;;
 }
 
-@media all and (max-width: 615px) {
-    .login-view,
-    .registration-view {
-        padding-top: 50px;
-    }
-}
